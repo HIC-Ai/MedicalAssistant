@@ -322,7 +322,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Resource Include="Resources\Themes\MedicalAppTheme.tssp" />
     <EmbeddedResource Include="Themes\MedicalAppTheme.tssp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
