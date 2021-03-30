@@ -22,7 +22,7 @@ namespace MedicalAssistant.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace MedicalAssistant.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MedicalAssistant.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace MedicalAssistant.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace MedicalAssistant.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] chatbot {
+        public static byte[] chatbot {
             get {
                 object obj = ResourceManager.GetObject("chatbot", resourceCulture);
                 return ((byte[])(obj));
@@ -73,7 +73,7 @@ namespace MedicalAssistant.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_Email_Send_32 {
+        public static System.Drawing.Bitmap icons8_Email_Send_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_Email_Send_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +83,7 @@ namespace MedicalAssistant.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_medical_doctor_48 {
+        public static System.Drawing.Bitmap icons8_medical_doctor_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8_medical_doctor_48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +93,7 @@ namespace MedicalAssistant.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap received_264768345150339 {
+        public static System.Drawing.Bitmap received_264768345150339 {
             get {
                 object obj = ResourceManager.GetObject("received_264768345150339", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +103,7 @@ namespace MedicalAssistant.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] recognition {
+        public static byte[] recognition {
             get {
                 object obj = ResourceManager.GetObject("recognition", resourceCulture);
                 return ((byte[])(obj));
@@ -113,7 +113,7 @@ namespace MedicalAssistant.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream SOUND1 {
+        public static System.IO.UnmanagedMemoryStream SOUND1 {
             get {
                 return ResourceManager.GetStream("SOUND1", resourceCulture);
             }
@@ -122,7 +122,7 @@ namespace MedicalAssistant.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream SOUND2 {
+        public static System.IO.UnmanagedMemoryStream SOUND2 {
             get {
                 return ResourceManager.GetStream("SOUND2", resourceCulture);
             }
