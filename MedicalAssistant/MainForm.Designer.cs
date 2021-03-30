@@ -135,7 +135,7 @@ namespace MedicalAssistant
             this.radButton2.BackColor = System.Drawing.SystemColors.Control;
             this.radButton2.Dock = System.Windows.Forms.DockStyle.Right;
             this.radButton2.ForeColor = System.Drawing.Color.SeaGreen;
-            this.radButton2.Location = new System.Drawing.Point(1220, 0);
+            this.radButton2.Location = new System.Drawing.Point(1224, 0);
             this.radButton2.Name = "radButton2";
             this.radButton2.Size = new System.Drawing.Size(124, 24);
             this.radButton2.TabIndex = 17;
@@ -160,7 +160,7 @@ namespace MedicalAssistant
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(1344, 24);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(1348, 24);
             this.bunifuGradientPanel1.TabIndex = 7;
             this.bunifuGradientPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bunifuGradientPanel1_MouseDown);
             // 
@@ -844,7 +844,7 @@ namespace MedicalAssistant
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1344, 570);
+            this.ClientSize = new System.Drawing.Size(1348, 570);
             this.Controls.Add(this.bunifuButton7);
             this.Controls.Add(this.panalMain);
             this.Controls.Add(this.panel4);
