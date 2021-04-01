@@ -25,8 +25,8 @@ namespace MedicalAssistant.chat
         }
         void AdjustHeight()
         {
-            gunaCirclePictureBox1.Location = new Point(1, 1);
-            Label3.Height = utils.GetTextHeight(Label3) + 5;
+            //gunaCirclePictureBox1.Location = new Point(1, 1);
+            Label3.Height = utils.GetTextHeight(Label3) + 8;
             bunifuUserControl1.Height = Label3.Top + bunifuUserControl1.Top + Label3.Height;
             this.Height = bunifuUserControl1.Bottom + 1;
 

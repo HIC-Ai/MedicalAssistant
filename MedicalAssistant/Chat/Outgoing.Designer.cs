@@ -38,7 +38,7 @@ namespace MedicalAssistant.chat
             this.bunifuUserControl2.AllowAnimations = false;
             this.bunifuUserControl2.AllowBorderColorChanges = false;
             this.bunifuUserControl2.AllowMouseEffects = false;
-            this.bunifuUserControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.bunifuUserControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.bunifuUserControl2.AnimationSpeed = 200;
             this.bunifuUserControl2.BackColor = System.Drawing.Color.Transparent;
@@ -55,21 +55,21 @@ namespace MedicalAssistant.chat
             this.bunifuUserControl2.Location = new System.Drawing.Point(0, 3);
             this.bunifuUserControl2.Name = "bunifuUserControl2";
             this.bunifuUserControl2.ShowBorders = true;
-            this.bunifuUserControl2.Size = new System.Drawing.Size(232, 43);
+            this.bunifuUserControl2.Size = new System.Drawing.Size(275, 43);
             this.bunifuUserControl2.Style = Bunifu.UI.WinForms.BunifuUserControl.UserControlStyles.Flat;
             this.bunifuUserControl2.TabIndex = 0;
             this.bunifuUserControl2.Click += new System.EventHandler(this.bunifuUserControl2_Click);
             // 
             // Label2
             // 
-            this.Label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.Label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.Label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
             this.Label2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Label2.Location = new System.Drawing.Point(25, 13);
             this.Label2.Name = "Label2";
             this.Label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Label2.Size = new System.Drawing.Size(183, 16);
+            this.Label2.Size = new System.Drawing.Size(226, 16);
             this.Label2.TabIndex = 2;
             this.Label2.Text = "وعليكم السلام ";
             this.Label2.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
@@ -83,7 +83,7 @@ namespace MedicalAssistant.chat
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.bunifuUserControl2);
             this.Name = "Outgoing";
-            this.Size = new System.Drawing.Size(232, 49);
+            this.Size = new System.Drawing.Size(276, 49);
             this.DockChanged += new System.EventHandler(this.Outgoing_DockChanged);
             this.ResumeLayout(false);
 

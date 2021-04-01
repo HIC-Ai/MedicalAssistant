@@ -10,14 +10,49 @@ using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.Media;
+using System.Drawing.Drawing2D;
+using MedicalAssistant.Properties;
+using System.Text;
+using System.Collections.Generic;
 
 namespace MedicalAssistant
 {
     public partial class MainForm : RadForm
     {
+        //public StringBuilder CommendsWords = new StringBuilder("Hello World!");
+        List<string> CommendsWords = new List<string>();
+
         public MainForm()
         {
+            CommendsWords.Add("المهام");
+            CommendsWords.Add("الاخبار");
+
             InitializeComponent();
+
+
+
+
+            //radButton1.TabStop = false;
+            //radButton1.FlatStyle = FlatStyle.Flat;
+            //radButton1.FlatAppearance.BorderSize = 0;
+
+
+            this.SetCurrentPageViewPage(this.radPageViewPageSchedule);
+            this.SetCurrentPageViewPage(this.radPageViewPageDashboard);
+            //panel1.HorizontalScroll.Maximum = 0;
+            //panel1.HorizontalScroll.Visible = false;
+            //panel1.Scroll.Maximum = 0;
+
+
+            panel1.AutoScroll = true;
+            panel1.AutoScrollMinSize = new Size(0, 500);
+            //panel1.Paint += panel1_Paint;
+            //this.panel1.AutoSize = true;
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly;
+            panel5.BackgroundImage = Gradient2D(panel5.ClientRectangle, Color.LightPink, Color.LightPink, Color.LightPink, Color.LightPink);
+
+
+
             //this.radProgressBar1.Text = "Loading";
             //this.progressBarAdv1.TextStyle = ProgressBarTextStyles.Custom;
 
@@ -35,8 +70,41 @@ namespace MedicalAssistant
             DataSources.PatientsDataSet.Appointments.AppointmentsRowChanged += Appointments_AppointmentsRowChanged;
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.TranslateTransform(panel1.AutoScrollPosition.X, panel1.AutoScrollPosition.Y);
+            e.Graphics.DrawLine(Pens.Red, 100, 0, 100, 100);
+            e.Graphics.DrawLine(Pens.Red, 100, 0, 0, 100);
+
+        }
+        Bitmap Gradient2D(Rectangle r, Color c1, Color c2, Color c3, Color c4)
+        {
+            Bitmap bmp = new Bitmap(r.Width, r.Height);
+
+            float delta12R = 1f * (c2.R - c1.R) / r.Height;
+            float delta12G = 1f * (c2.G - c1.G) / r.Height;
+            float delta12B = 1f * (c2.B - c1.B) / r.Height;
+            float delta34R = 1f * (c4.R - c3.R) / r.Height;
+            float delta34G = 1f * (c4.G - c3.G) / r.Height;
+            float delta34B = 1f * (c4.B - c3.B) / r.Height;
+            using (Graphics G = Graphics.FromImage(bmp))
+                for (int y = 0; y < r.Height; y++)
+                {
+                    Color c12 = Color.FromArgb(255, c1.R + (int)(y * delta12R),
+                          c1.G + (int)(y * delta12G), c1.B + (int)(y * delta12B));
+                    Color c34 = Color.FromArgb(255, c3.R + (int)(y * delta34R),
+                          c3.G + (int)(y * delta34G), c3.B + (int)(y * delta34B));
+                    using (LinearGradientBrush lgBrush = new LinearGradientBrush(
+                          new Rectangle(0, y, r.Width, 1), c12, c34, 0f))
+                    { G.FillRectangle(lgBrush, 0, y, r.Width, 1); }
+                }
+            return bmp;
+        }
         public string message_send = "مرحبا";
         public string message_rev = "السلام عليكم";
+        public bool voice = true;
+
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -173,32 +241,28 @@ namespace MedicalAssistant
             }
         }
 
-        private void bunifuButton7_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
 
 
-        private void bunifuButton3_Click(object sender, EventArgs e)
-        {
-            if (page != 3)
-            {
-                page = 3;
-                panalMain.Controls.Clear();
-            }
-            //panalMain.Controls.Add(new dashboardMain());
-        }
+        //private void bunifuButton3_Click(object sender, EventArgs e)
+        //{
+        //    if (page != 3)
+        //    {
+        //        page = 3;
+        //        panalMain.Controls.Clear();
+        //    }
+        //    //panalMain.Controls.Add(new dashboardMain());
+        //}
 
-        private void scheduleToggleButton_ToggleStateChanged(object sender, StateChangedEventArgs args)
-        {
-            if (page != 2)
-            {
-                page = 2;
-                panalMain.Controls.Clear();
-            }
-            //panalMain.Controls.Add(new dashboardMain());
-        }
+        //private void scheduleToggleButton_ToggleStateChanged(object sender, StateChangedEventArgs args)
+        //{
+        //    if (page != 2)
+        //    {
+        //        page = 2;
+        //        panalMain.Controls.Clear();
+        //    }
+        //    //panalMain.Controls.Add(new dashboardMain());
+        //}
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
@@ -216,11 +280,6 @@ namespace MedicalAssistant
 
 
 
-        private void bunifuButton7_Click_1(object sender, EventArgs e)
-        {
-            Environment.Exit(Environment.ExitCode);
-
-        }
 
 
         int ticks = 0;
@@ -236,15 +295,15 @@ namespace MedicalAssistant
             }
         }
 
-        private void guna2CircleButton1_Click(object sender, EventArgs e)
-        {
-            timer2.Enabled = true;
-            new recognitionArabic().Louding(true, false);
-            guna2CircleButton1.Enabled = false;
-            guna2Button1.Enabled = true;
-            guna2Button1.FillColor = Color.Red;
+        //private void guna2CircleButton1_Click(object sender, EventArgs e)
+        //{
+        //    timer2.Enabled = true;
+        //    new recognitionArabic().Louding(true, false);
+        //    guna2CircleButton1.Enabled = false;
+        //    guna2Button1.Enabled = true;
+        //    guna2Button1.FillColor = Color.Red;
 
-        }
+        //}
         void AddIncomming(string message)
         {
             chat.Incomming bubble = new chat.Incomming();
@@ -268,42 +327,42 @@ namespace MedicalAssistant
             AddOutgoing(message_rev);
             timer1.Start();
         }
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            ticks = 0;
-            timer2.Enabled = false;
-            message_rev = new recognitionArabic().Louding(false, true);
-            if (message_rev != "")
-            {
-                guna2CircleButton1.Enabled = true;
-                guna2Button1.Enabled = false;
-                SoundPlayer Send = new SoundPlayer("SOUND1.wav");
-                SoundPlayer Rcv = new SoundPlayer("SOUND2.wav");
-                send(message_rev);
-                Send.Play();
+        //private void guna2Button1_Click(object sender, EventArgs e)
+        //{
+        //    ticks = 0;
+        //    timer2.Enabled = false;
+        //    message_rev = new recognitionArabic().Louding(false, true);
+        //    if (message_rev != "")
+        //    {
+        //        guna2CircleButton1.Enabled = true;
+        //        guna2Button1.Enabled = false;
+        //        SoundPlayer Send = new SoundPlayer("Sounds\\SOUND1.wav");
+        //        SoundPlayer Rcv = new SoundPlayer("Sounds\\SOUND2.wav");
+        //        send(message_rev);
+        //        Send.Play();
 
-                var t = new System.Windows.Forms.Timer();
-                t.Interval = 1000 + (message_rev.Length * 100);
-                txtTyping.Show();
+        //        var t = new System.Windows.Forms.Timer();
+        //        t.Interval = 1000 + (message_rev.Length * 100);
+        //        txtTyping.Show();
 
-                t.Tick += (s, d) =>
-                {
-                    txtTyping.Hide();
-                    message_send = new database().Database(message_send, message_rev);
-                    new recognitionArabic().CloudTextToSpeech(message_send);
-                    Debug.WriteLine("message_send " + message_send);
-                    AddIncomming(message_send);
-                    Rcv.Play();
-                    t.Stop();
-                };
-                t.Start(); // Start Timer
+        //        t.Tick += (s, d) =>
+        //        {
+        //            txtTyping.Hide();
+        //            message_send = new database().Database(message_send, message_rev);
+        //            new recognitionArabic().CloudTextToSpeech(message_send);
+        //            Debug.WriteLine("message_send " + message_send);
+        //            AddIncomming(message_send);
+        //            Rcv.Play();
+        //            t.Stop();
+        //        };
+        //        t.Start(); // Start Timer
 
 
-            }
+        //    }
 
-            guna2CircleButton1.Enabled = true;
-            guna2Button1.Enabled = false;
-        }
+        //    guna2CircleButton1.Enabled = true;
+        //    guna2Button1.Enabled = false;
+        //}
 
         private void bunifuGradientPanel1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -373,7 +432,7 @@ namespace MedicalAssistant
         private void SetCurrentPageViewPage(RadPageViewPage page)
         {
             //this.radPageViewPageDashboard.Item.Visibility = ElementVisibility.Collapsed;
-            this.radPageViewPageSchedule.Item.Visibility = ElementVisibility.Collapsed;
+            //this.radPageViewPageSchedule.Item.Visibility = ElementVisibility.Collapsed;
             page.Item.Visibility = ElementVisibility.Visible;
             this.radPageView1.SelectedPage = page;
         }
@@ -603,6 +662,326 @@ namespace MedicalAssistant
         private void radLabelTodayAppointmentsCount_Click(object sender, EventArgs e)
         {
             this.SetSchedulerPageActive(CurrentDate);
+        }
+
+        private void panel3_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+        public bool rec_text()
+        {
+            ticks = 0;
+            timer2.Enabled = false;
+            
+            if (message_rev != "")
+            {
+                SoundPlayer Send = new SoundPlayer("Sounds\\SOUND1.wav");
+                SoundPlayer Rcv = new SoundPlayer("Sounds\\SOUND2.wav");
+                send(message_rev);
+                Send.Play();
+
+                var t = new System.Windows.Forms.Timer();
+                t.Interval = 1000 + (message_rev.Length * 100);
+                txtTyping.Show();
+
+                t.Tick += (s, d) =>
+                {
+                    txtTyping.Hide();
+                    if (CommendsWords.Contains(message_rev) == true)
+                    {
+                        Debug.WriteLine("Yes");
+                        if (message_rev == CommendsWords[0])
+                        {
+
+                            this.SetCurrentPageViewPage(this.radPageViewPageSchedule);
+                            AddIncomming("حسنا");
+                        }
+
+                        if (message_rev == CommendsWords[1])
+                        {
+
+                            this.SetCurrentPageViewPage(this.radPageViewPageCharts);
+
+                        }
+                        new recognitionArabic().CloudTextToSpeech("حسنا");
+
+                    }
+                    else
+                    {
+                        message_send = new database().Database(message_send, message_rev);
+                        new recognitionArabic().CloudTextToSpeech(message_send);
+                        Debug.WriteLine("message_send " + message_send);
+                        AddIncomming(message_send);
+                    }
+                    Rcv.Play();
+                    t.Stop();
+                };
+                t.Start(); // Start Timer
+                
+
+
+            }
+            return true;
+        }
+        private void bunifuPictureBox1_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        //private void bunifuPictureBox2_Click(object sender, EventArgs e)
+        //{
+        //    ticks = 0;
+        //    timer2.Enabled = false;
+        //    message_rev = new recognitionArabic().Louding(false, true);
+        //    if (message_rev != "")
+        //    {
+        //        bunifuPictureBox1.Enabled = true;
+        //        bunifuPictureBox2.Enabled = false;
+        //        SoundPlayer Send = new SoundPlayer("Sounds\\SOUND1.wav");
+        //        SoundPlayer Rcv = new SoundPlayer("Sounds\\SOUND2.wav");
+        //        send(message_rev);
+        //        Send.Play();
+
+        //        var t = new System.Windows.Forms.Timer();
+        //        t.Interval = 1000 + (message_rev.Length * 100);
+        //        txtTyping.Show();
+
+        //        t.Tick += (s, d) =>
+        //        {
+        //            txtTyping.Hide();
+        //            message_send = new database().Database(message_send, message_rev);
+        //            new recognitionArabic().CloudTextToSpeech(message_send);
+        //            Debug.WriteLine("message_send " + message_send);
+        //            AddIncomming(message_send);
+        //            Rcv.Play();
+        //            t.Stop();
+        //        };
+        //        t.Start(); // Start Timer
+
+
+        //    }
+
+        //    bunifuPictureBox1.Enabled = true;
+        //    bunifuPictureBox2.Enabled = false;
+        //}
+
+        private void txtTyping_Click(object sender, EventArgs e)
+        {
+
+        }
+        bool talk = false;
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void InputTxt_MouseUp(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void InputTxt_MouseLeave(object sender, EventArgs e)
+        {
+            //InputTxt.HintText = "";
+
+            //InputTxt.Enabled = false;
+            if (talk == false)
+            {
+                if (InputTxt.Text == "" || InputTxt.Text == null)
+                {
+                    InputTxt.HintText = "اكتب رسالتك هنا";
+                }
+            }
+        }
+
+       
+
+        private void InputTxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                talk = true;
+
+                InputTxt.Enabled = false;
+                message_rev = InputTxt.Text;
+
+
+                rec_text();
+                InputTxt.Enabled = true;
+                InputTxt.Text = string.Empty;
+                e.SuppressKeyPress = true; // Disable windows error sound
+                InputTxt.HintText = "اكتب رسالتك هنا";
+
+            }
+        }
+
+        private void bunifuGradientPanel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radButtonNewAppointment_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radListView1_SelectedItemChanged(object sender, EventArgs e)
+        {
+            if (radListView1.SelectedItem != null)
+            {
+                message_rev = radListView1.SelectedItem.Text;
+
+
+                InputTxt.Enabled = false;
+                rec_text();
+                talk = false;
+                InputTxt.Enabled = true;
+                InputTxt.HintText = "اكتب رسالتك هنا";
+
+            }
+
+        }
+
+        private void radButton1_MouseDown(object sender, MouseEventArgs e)
+        {
+            //radButton1.BackColor = Color.DodgerBlue;
+        }
+
+        private void radButton1_MouseHover(object sender, EventArgs e)
+        {
+            radButton1.BackColor = Color.FromArgb(105, 181, 255);
+            radButton1.ForeColor = Color.White;
+            //radButton1.BorderColor = Color.Red;
+            //this.radButton1.ButtonElement.BorderElement.PaintUsingParentShape = false;
+            //this.radButton1.ButtonElement.ShowBorder = true;
+            //this.radButton1.ButtonElement.BorderElement.BoxStyle = BorderBoxStyle.FourBorders;
+            //this.radButton1.ButtonElement.BorderElement.TopColor = Color.Transparent;
+            //this.radButton1.ButtonElement.BorderElement.BottomColor = Color.Transparent;
+
+            //this.radButton1.ButtonElement.BorderElement.LeftShadowColor = Color.Transparent;
+
+            //this.radButton1.ButtonElement.BorderElement.TopShadowColor = Color.Transparent;
+            //this.radButton1.ButtonElement.BorderElement.RightShadowColor = Color.Transparent;
+            //this.radButton1.ButtonElement.BorderElement.BottomShadowColor = Color.Transparent;
+            //this.radButton1.ButtonElement.BorderElement.ForeColor4 = Color.Transparent;
+            //this.radButton1.ButtonElement.BorderElement.ForeColor2 = Color.Transparent;
+            //this.radButton1.ButtonElement.BorderElement.ForeColor3 = Color.Transparent;
+            //this.radButton1.ButtonElement.BorderElement.InnerColor = Color.Transparent;
+            //this.radButton1.ButtonElement.BorderElement.InnerColor2 = Color.Transparent;
+            //this.radButton1.ButtonElement.BorderElement.RightColor = Color.Transparent;
+            //this.radButton1.ButtonElement.BorderElement.InnerColor4 = Color.Transparent;
+            //this.radButton1.ButtonElement.BorderElement.LeftColor = Color.Transparent;
+            //this.radButton1.ButtonElement.BorderElement.InnerColor3 = Color.Transparent;
+            //this.radButton1.ButtonElement.BorderElement.TopColor = Color.Transparent;
+            //this.radButton1.ButtonElement.BorderElement.TopColor = Color.Transparent;
+            //this.radButton1.ButtonElement.BorderElement.TopColor = Color.Transparent;
+
+            //this.radButton1.ButtonElement.BorderElement.TopWidth = 1;
+            //this.radButton1.ButtonElement.BorderElement.BottomColor = Color.FromArgb(105, 181, 255);
+            //this.radButton1.ButtonElement.BorderElement.BottomWidth = 1;
+            //this.radButton1.ButtonElement.BorderElement.LeftColor = Color.FromArgb(105, 181, 255);
+            //this.radButton1.ButtonElement.BorderElement.LeftWidth = 1;
+            //this.radButton1.ButtonElement.BorderElement.RightColor = Color.FromArgb(105, 181, 255);
+            //this.radButton1.ButtonElement.BorderElement.RightWidth = 1;
+        }
+
+        private void radButton1_MouseLeave(object sender, EventArgs e)
+        {
+            //this.radButton1.ButtonElement.ShowBorder = true;
+
+            radButton1.BackColor = Color.Transparent;
+            radButton1.ForeColor = Color.FromArgb(105, 181, 255);
+
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            //button1.BackColor = Color.FromArgb(105, 181, 255);
+            //button1.ForeColor = Color.White;
+
+
+
+
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            radButton1.BackColor = Color.Transparent;
+            radButton1.ForeColor = Color.FromArgb(105, 181, 255);
+        }
+
+        private void radButton1_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(Environment.ExitCode);
+
+        }
+
+        private void guna2CirclePictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            talk = true;
+
+            InputTxt.Enabled = false;
+            message_rev = InputTxt.Text;
+
+
+            rec_text();
+            talk = false;
+            InputTxt.Enabled = true;
+            InputTxt.Text = string.Empty;
+            InputTxt.HintText = "اكتب رسالتك هنا";
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if (voice == true)
+            {
+                InputTxt.HintText = "";
+                pictureBox1.Enabled = false;
+                radProgressBar1.Visible = true;
+                InputTxt.Enabled = false;
+                voice = false;
+                timer2.Enabled = true;
+                new recognitionArabic().Louding(true, false);
+                //bunifuPictureBox1.Enabled = false;
+                //bunifuPictureBox2.Enabled = true;
+                pictureBox2.Image = Resources.block_microphone;
+
+                //bunifuPictureBox2.FillColor = Color.Red;
+            }
+            else
+            {
+
+                voice = true;
+                message_rev = new recognitionArabic().Louding(false, true);
+                rec_text();
+                pictureBox2.Image = Resources.add_record;
+                InputTxt.Enabled = true;
+                radProgressBar1.Visible = false;
+                pictureBox1.Enabled = true;
+                InputTxt.HintText = "اكتب رسالتك هنا";
+
+
+            }
+        }
+
+        private void panel5_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
     }
 

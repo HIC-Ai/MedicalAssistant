@@ -30,35 +30,36 @@ namespace MedicalAssistant
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem6 = new Telerik.WinControls.UI.ListViewDataItem("السلام عليكم");
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem7 = new Telerik.WinControls.UI.ListViewDataItem("المهام");
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem8 = new Telerik.WinControls.UI.ListViewDataItem("من انا");
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem9 = new Telerik.WinControls.UI.ListViewDataItem("اعرض كورونا");
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem10 = new Telerik.WinControls.UI.ListViewDataItem("اعرض الصداع");
             Telerik.WinControls.UI.SchedulerDailyPrintStyle schedulerDailyPrintStyle2 = new Telerik.WinControls.UI.SchedulerDailyPrintStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn5 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "Name");
             Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn6 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "Age");
             Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn7 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "Gender");
             Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn8 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 3", "EncounterTime");
-            this.radButton2 = new Telerik.WinControls.UI.RadButton();
-            this.uiPanelManager1 = new Janus.Windows.UI.Dock.UIPanelManager(this.components);
-            this.bunifuGradientPanel1 = new Bunifu.UI.WinForms.BunifuGradientPanel();
-            this.bunifuGroupBox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
-            this.radProgressBar1 = new Telerik.WinControls.UI.RadProgressBar();
-            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtTyping = new System.Windows.Forms.Label();
+            this.radProgressBar1 = new Telerik.WinControls.UI.RadProgressBar();
+            this.InputTxt = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.radButton1 = new Telerik.WinControls.UI.RadButton();
-            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.radListView1 = new Telerik.WinControls.UI.RadListView();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.object_ed72cbad_facf_4a15_8078_4f0e9b98e184 = new Telerik.WinControls.RootRadElement();
             this.radPageView1 = new Telerik.WinControls.UI.RadPageView();
             this.radPageViewPageDashboard = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radButtonNewAppointment = new Telerik.WinControls.UI.RadButton();
             this.dashboardClockCalendarPanel = new Telerik.WinControls.UI.RadPanel();
             this.radCalendarDashboard = new Telerik.WinControls.UI.RadCalendar();
             this.radClock1 = new Telerik.WinControls.UI.RadClock();
-            this.radButtonNewAppointment = new Telerik.WinControls.UI.RadButton();
             this.radPanelTodaysAppointments = new Telerik.WinControls.UI.RadPanel();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
             this.radLabelLastAppointmentToday = new Telerik.WinControls.UI.RadLabel();
@@ -77,8 +78,6 @@ namespace MedicalAssistant
             this.radScheduler1 = new Telerik.WinControls.UI.RadScheduler();
             this.radPageViewPageCharts = new Telerik.WinControls.UI.RadPageViewPage();
             this.radPageViewPageSettings = new Telerik.WinControls.UI.RadPageViewPage();
-            this.panalMain = new System.Windows.Forms.Panel();
-            this.bunifuButton7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.radListViewNextPatients = new Telerik.WinControls.UI.RadListView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -86,25 +85,31 @@ namespace MedicalAssistant
             this.patientsDataSet = new MedicalAssistant.PatientsDataSet();
             this.appointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.appointmentsTableAdapter = new MedicalAssistant.PatientsDataSetTableAdapters.AppointmentsTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uiPanelManager1)).BeginInit();
-            this.bunifuGradientPanel1.SuspendLayout();
-            this.bunifuGroupBox1.SuspendLayout();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.uiPanelManager1 = new Janus.Windows.UI.Dock.UIPanelManager(this.components);
+            this.object_e3bdc5d3_c56d_48bf_bc43_aa607a6c2b99 = new Telerik.WinControls.RootRadElement();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.radButton2 = new Telerik.WinControls.UI.RadButton();
+            this.radButton1 = new Telerik.WinControls.UI.RadButton();
+            this.panel5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
             this.radPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radProgressBar1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radListView1)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).BeginInit();
             this.radPageView1.SuspendLayout();
             this.radPageViewPageDashboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButtonNewAppointment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardClockCalendarPanel)).BeginInit();
             this.dashboardClockCalendarPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radCalendarDashboard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radClock1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButtonNewAppointment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanelTodaysAppointments)).BeginInit();
             this.radPanelTodaysAppointments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
@@ -123,167 +128,167 @@ namespace MedicalAssistant
             ((System.ComponentModel.ISupportInitialize)(this.radButtonNewAppointmentScheduler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radSchedulerNavigator1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radScheduler1)).BeginInit();
-            this.panalMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radListViewNextPatients)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsBindingSource)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.uiPanelManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
-            // radButton2
-            // 
-            this.radButton2.BackColor = System.Drawing.SystemColors.Control;
-            this.radButton2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.radButton2.ForeColor = System.Drawing.Color.SeaGreen;
-            this.radButton2.Location = new System.Drawing.Point(1224, 0);
-            this.radButton2.Name = "radButton2";
-            this.radButton2.Size = new System.Drawing.Size(124, 24);
-            this.radButton2.TabIndex = 17;
-            this.radButton2.Text = "المساعد الطبي";
-            // 
-            // uiPanelManager1
-            // 
-            this.uiPanelManager1.ContainerControl = this;
-            // 
-            // bunifuGradientPanel1
-            // 
-            this.bunifuGradientPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
-            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel1.BorderRadius = 1;
-            this.bunifuGradientPanel1.Controls.Add(this.radButton2);
-            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(153)))));
-            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(65)))), ((int)(((byte)(108)))));
-            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(100)))), ((int)(((byte)(20)))));
-            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(75)))), ((int)(((byte)(43)))));
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
-            this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(1348, 24);
-            this.bunifuGradientPanel1.TabIndex = 7;
-            this.bunifuGradientPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bunifuGradientPanel1_MouseDown);
-            // 
-            // bunifuGroupBox1
-            // 
-            this.bunifuGroupBox1.BorderColor = System.Drawing.SystemColors.Control;
-            this.bunifuGroupBox1.BorderRadius = 1;
-            this.bunifuGroupBox1.BorderThickness = 1;
-            this.bunifuGroupBox1.Controls.Add(this.radPanel2);
-            this.bunifuGroupBox1.Controls.Add(this.panel1);
-            this.bunifuGroupBox1.Controls.Add(this.radButton1);
-            this.bunifuGroupBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bunifuGroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuGroupBox1.LabelAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bunifuGroupBox1.LabelIndent = 10;
-            this.bunifuGroupBox1.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
-            this.bunifuGroupBox1.Location = new System.Drawing.Point(0, 24);
-            this.bunifuGroupBox1.Name = "bunifuGroupBox1";
-            this.bunifuGroupBox1.Size = new System.Drawing.Size(290, 546);
-            this.bunifuGroupBox1.TabIndex = 16;
-            this.bunifuGroupBox1.TabStop = false;
-            // 
             // radPanel2
             // 
-            this.radPanel2.Controls.Add(this.radProgressBar1);
-            this.radPanel2.Controls.Add(this.guna2CircleButton1);
-            this.radPanel2.Controls.Add(this.guna2Button1);
+            this.radPanel2.BackColor = System.Drawing.SystemColors.Control;
+            this.radPanel2.Controls.Add(this.pictureBox2);
+            this.radPanel2.Controls.Add(this.pictureBox1);
             this.radPanel2.Controls.Add(this.txtTyping);
-            this.radPanel2.Location = new System.Drawing.Point(6, 488);
+            this.radPanel2.Controls.Add(this.radProgressBar1);
+            this.radPanel2.Controls.Add(this.InputTxt);
+            this.radPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.radPanel2.Location = new System.Drawing.Point(0, 504);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(278, 54);
+            this.radPanel2.Size = new System.Drawing.Size(293, 51);
             this.radPanel2.TabIndex = 20;
             // 
-            // radProgressBar1
+            // pictureBox2
             // 
-            this.radProgressBar1.Location = new System.Drawing.Point(48, 22);
-            this.radProgressBar1.Name = "radProgressBar1";
-            this.radProgressBar1.Size = new System.Drawing.Size(169, 10);
-            this.radProgressBar1.TabIndex = 21;
-            ((Telerik.WinControls.UI.RadProgressBarElement)(this.radProgressBar1.GetChildAt(0))).Text = "";
-            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.radProgressBar1.GetChildAt(0).GetChildAt(1))).BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(164)))), ((int)(((byte)(177)))));
-            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.radProgressBar1.GetChildAt(0).GetChildAt(1))).BackColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(45)))), ((int)(((byte)(210)))));
-            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.radProgressBar1.GetChildAt(0).GetChildAt(1))).BackColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(49)))), ((int)(((byte)(135)))));
-            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.radProgressBar1.GetChildAt(0).GetChildAt(1))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(164)))), ((int)(((byte)(164)))));
-            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.radProgressBar1.GetChildAt(0).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
+            this.pictureBox2.Image = global::MedicalAssistant.Properties.Resources.add_record;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 19);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 25;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // guna2CircleButton1
+            // pictureBox1
             // 
-            this.guna2CircleButton1.CheckedState.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.CustomImages.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.FillColor = System.Drawing.Color.DarkRed;
-            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(18, 16);
-            this.guna2CircleButton1.Name = "guna2CircleButton1";
-            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(24, 22);
-            this.guna2CircleButton1.TabIndex = 13;
-            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.Enabled = false;
-            this.guna2Button1.FillColor = System.Drawing.Color.DimGray;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.Silver;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(223, 16);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(25, 22);
-            this.guna2Button1.TabIndex = 12;
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.pictureBox1.Image = global::MedicalAssistant.Properties.Resources.filled_sent;
+            this.pictureBox1.Location = new System.Drawing.Point(251, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // txtTyping
             // 
+            this.txtTyping.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTyping.AutoSize = true;
-            this.txtTyping.Location = new System.Drawing.Point(92, 38);
+            this.txtTyping.BackColor = System.Drawing.SystemColors.Control;
+            this.txtTyping.Location = new System.Drawing.Point(149, 22);
             this.txtTyping.Name = "txtTyping";
+            this.txtTyping.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtTyping.Size = new System.Drawing.Size(82, 13);
             this.txtTyping.TabIndex = 10;
             this.txtTyping.Text = "البوت يكتب ..... ";
             this.txtTyping.Visible = false;
+            this.txtTyping.Click += new System.EventHandler(this.txtTyping_Click);
+            // 
+            // radProgressBar1
+            // 
+            this.radProgressBar1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radProgressBar1.Location = new System.Drawing.Point(0, 0);
+            this.radProgressBar1.Margin = new System.Windows.Forms.Padding(0);
+            this.radProgressBar1.Name = "radProgressBar1";
+            this.radProgressBar1.Size = new System.Drawing.Size(293, 10);
+            this.radProgressBar1.TabIndex = 21;
+            this.radProgressBar1.Visible = false;
+            ((Telerik.WinControls.UI.RadProgressBarElement)(this.radProgressBar1.GetChildAt(0))).Text = "";
+            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.radProgressBar1.GetChildAt(0).GetChildAt(1))).BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(164)))), ((int)(((byte)(177)))));
+            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.radProgressBar1.GetChildAt(0).GetChildAt(1))).BackColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(93)))));
+            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.radProgressBar1.GetChildAt(0).GetChildAt(1))).BackColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(93)))));
+            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.radProgressBar1.GetChildAt(0).GetChildAt(1))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(164)))), ((int)(((byte)(164)))));
+            ((Telerik.WinControls.UI.UpperProgressIndicatorElement)(this.radProgressBar1.GetChildAt(0).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
+            ((Telerik.WinControls.UI.ProgressBarTextElement)(this.radProgressBar1.GetChildAt(0).GetChildAt(3))).ImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(229)))), ((int)(((byte)(212)))));
+            ((Telerik.WinControls.UI.ProgressBarTextElement)(this.radProgressBar1.GetChildAt(0).GetChildAt(3))).Text = "";
+            // 
+            // InputTxt
+            // 
+            this.InputTxt.AccessibleDescription = "";
+            this.InputTxt.AccessibleName = "";
+            this.InputTxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.InputTxt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.InputTxt.BackColor = System.Drawing.SystemColors.Control;
+            this.InputTxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.InputTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.InputTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.InputTxt.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.InputTxt.HintForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.InputTxt.HintText = "اكتب رسالتك هنا";
+            this.InputTxt.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
+            this.InputTxt.isPassword = false;
+            this.InputTxt.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.InputTxt.LineIdleColor = System.Drawing.Color.Gray;
+            this.InputTxt.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.InputTxt.LineThickness = 3;
+            this.InputTxt.Location = new System.Drawing.Point(42, 12);
+            this.InputTxt.Margin = new System.Windows.Forms.Padding(4);
+            this.InputTxt.MaxLength = 32767;
+            this.InputTxt.Name = "InputTxt";
+            this.InputTxt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.InputTxt.Size = new System.Drawing.Size(195, 39);
+            this.InputTxt.TabIndex = 23;
+            this.InputTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.InputTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InputTxt_KeyDown);
+            this.InputTxt.MouseUp += new System.Windows.Forms.MouseEventHandler(this.InputTxt_MouseUp);
             // 
             // panel1
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Location = new System.Drawing.Point(3, 36);
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Location = new System.Drawing.Point(3, 0);
             this.panel1.Name = "panel1";
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel1.Size = new System.Drawing.Size(285, 446);
+            this.panel1.Size = new System.Drawing.Size(287, 484);
             this.panel1.TabIndex = 13;
             // 
-            // radButton1
+            // panel3
             // 
-            this.radButton1.Location = new System.Drawing.Point(0, 0);
-            this.radButton1.Name = "radButton1";
-            this.radButton1.Size = new System.Drawing.Size(288, 31);
-            this.radButton1.TabIndex = 12;
-            this.radButton1.Text = "الشات";
+            this.panel3.Controls.Add(this.radListView1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 431);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(293, 73);
+            this.panel3.TabIndex = 0;
             // 
-            // guna2CirclePictureBox2
+            // radListView1
             // 
-            this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2CirclePictureBox2.FillColor = System.Drawing.Color.Black;
-            this.guna2CirclePictureBox2.Image = global::MedicalAssistant.Properties.Resources.received_264768345150339;
-            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(839, 6);
-            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
-            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox2.ShadowDecoration.Parent = this.guna2CirclePictureBox2;
-            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(56, 54);
-            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox2.TabIndex = 14;
-            this.guna2CirclePictureBox2.TabStop = false;
+            this.radListView1.CheckBoxesPosition = Telerik.WinControls.UI.CheckBoxesPosition.Right;
+            this.radListView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radListView1.FullRowSelect = false;
+            this.radListView1.GroupItemSize = new System.Drawing.Size(200, 28);
+            listViewDataItem6.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            listViewDataItem6.Text = "السلام عليكم";
+            listViewDataItem6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            listViewDataItem7.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            listViewDataItem7.Text = "المهام";
+            listViewDataItem8.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            listViewDataItem8.Text = "من انا";
+            listViewDataItem9.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            listViewDataItem9.Text = "اعرض كورونا";
+            listViewDataItem10.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            listViewDataItem10.Text = "اعرض الصداع";
+            listViewDataItem10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radListView1.Items.AddRange(new Telerik.WinControls.UI.ListViewDataItem[] {
+            listViewDataItem6,
+            listViewDataItem7,
+            listViewDataItem8,
+            listViewDataItem9,
+            listViewDataItem10});
+            this.radListView1.ItemSize = new System.Drawing.Size(50, 50);
+            this.radListView1.ItemSpacing = 3;
+            this.radListView1.Location = new System.Drawing.Point(0, 0);
+            this.radListView1.Name = "radListView1";
+            this.radListView1.Size = new System.Drawing.Size(293, 73);
+            this.radListView1.TabIndex = 0;
+            this.radListView1.ThemeName = "Fluent";
+            this.radListView1.ViewType = Telerik.WinControls.UI.ListViewType.IconsView;
+            this.radListView1.SelectedItemChanged += new System.EventHandler(this.radListView1_SelectedItemChanged);
             // 
             // guna2GradientPanel1
             // 
@@ -294,10 +299,10 @@ namespace MedicalAssistant
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(93)))));
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(0, -3);
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(901, 62);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(859, 47);
             this.guna2GradientPanel1.TabIndex = 15;
             // 
             // label1
@@ -308,21 +313,37 @@ namespace MedicalAssistant
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(27, 16);
+            this.label1.Location = new System.Drawing.Point(126, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(806, 40);
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label1.Size = new System.Drawing.Size(631, 28);
             this.label1.TabIndex = 8;
             this.label1.Text = "نصائح طبية";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.UseMnemonic = false;
+            // 
+            // guna2CirclePictureBox2
+            // 
+            this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2CirclePictureBox2.FillColor = System.Drawing.Color.Black;
+            this.guna2CirclePictureBox2.Image = global::MedicalAssistant.Properties.Resources.received_264768345150339;
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(797, 3);
+            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
+            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox2.ShadowDecoration.Parent = this.guna2CirclePictureBox2;
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(56, 41);
+            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox2.TabIndex = 14;
+            this.guna2CirclePictureBox2.TabStop = false;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Controls.Add(this.guna2GradientPanel1);
-            this.panel4.Location = new System.Drawing.Point(297, 509);
+            this.panel4.Location = new System.Drawing.Point(296, 530);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(901, 59);
+            this.panel4.Size = new System.Drawing.Size(859, 47);
             this.panel4.TabIndex = 17;
             // 
             // object_ed72cbad_facf_4a15_8078_4f0e9b98e184
@@ -333,79 +354,143 @@ namespace MedicalAssistant
             // 
             // radPageView1
             // 
+            this.radPageView1.BackColor = System.Drawing.Color.Transparent;
             this.radPageView1.Controls.Add(this.radPageViewPageDashboard);
             this.radPageView1.Controls.Add(this.radPageViewPageSchedule);
             this.radPageView1.Controls.Add(this.radPageViewPageCharts);
             this.radPageView1.Controls.Add(this.radPageViewPageSettings);
-            this.radPageView1.Location = new System.Drawing.Point(2, 13);
+            this.radPageView1.Location = new System.Drawing.Point(299, 33);
             this.radPageView1.Name = "radPageView1";
+            // 
+            // 
+            // 
+            this.radPageView1.RootElement.BorderHighlightColor = System.Drawing.Color.Transparent;
+            this.radPageView1.RootElement.FocusBorderColor = System.Drawing.Color.Transparent;
+            this.radPageView1.RootElement.HighlightColor = System.Drawing.Color.Transparent;
+            this.radPageView1.RootElement.RippleAnimationColor = System.Drawing.Color.Transparent;
             this.radPageView1.SelectedPage = this.radPageViewPageDashboard;
-            this.radPageView1.Size = new System.Drawing.Size(1044, 406);
+            this.radPageView1.Size = new System.Drawing.Size(1007, 470);
             this.radPageView1.TabIndex = 0;
             this.radPageView1.ViewMode = Telerik.WinControls.UI.PageViewMode.Backstage;
-            ((Telerik.WinControls.UI.RadPageViewBackstageElement)(this.radPageView1.GetChildAt(0))).ItemAlignment = Telerik.WinControls.UI.StripViewItemAlignment.Near;
-            ((Telerik.WinControls.UI.RadPageViewBackstageElement)(this.radPageView1.GetChildAt(0))).ItemFitMode = Telerik.WinControls.UI.StripViewItemFitMode.Fill;
+            ((Telerik.WinControls.UI.RadPageViewBackstageElement)(this.radPageView1.GetChildAt(0))).ItemAlignment = Telerik.WinControls.UI.StripViewItemAlignment.Center;
+            ((Telerik.WinControls.UI.RadPageViewBackstageElement)(this.radPageView1.GetChildAt(0))).ItemFitMode = Telerik.WinControls.UI.StripViewItemFitMode.Shrink;
             ((Telerik.WinControls.UI.RadPageViewBackstageElement)(this.radPageView1.GetChildAt(0))).StripAlignment = Telerik.WinControls.UI.StripViewAlignment.Right;
+            ((Telerik.WinControls.UI.RadPageViewBackstageElement)(this.radPageView1.GetChildAt(0))).ItemDragMode = Telerik.WinControls.UI.PageViewItemDragMode.Preview;
+            ((Telerik.WinControls.UI.RadPageViewBackstageElement)(this.radPageView1.GetChildAt(0))).ItemSpacing = 40;
+            ((Telerik.WinControls.UI.RadPageViewBackstageElement)(this.radPageView1.GetChildAt(0))).ItemSizeMode = Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight;
             ((Telerik.WinControls.UI.RadPageViewBackstageElement)(this.radPageView1.GetChildAt(0))).BackColor4 = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.UI.StripViewItemContainer)(this.radPageView1.GetChildAt(0).GetChildAt(0))).MinSize = new System.Drawing.Size(35, 0);
-            ((Telerik.WinControls.UI.StripViewItemLayout)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(0))).BorderInnerColor = System.Drawing.SystemColors.Control;
+            ((Telerik.WinControls.UI.RadPageViewBackstageElement)(this.radPageView1.GetChildAt(0))).BackColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.StripViewItemContainer)(this.radPageView1.GetChildAt(0).GetChildAt(0))).BorderColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.StripViewItemContainer)(this.radPageView1.GetChildAt(0).GetChildAt(0))).BorderColor2 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.StripViewItemContainer)(this.radPageView1.GetChildAt(0).GetChildAt(0))).BorderColor3 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.StripViewItemContainer)(this.radPageView1.GetChildAt(0).GetChildAt(0))).BorderColor4 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.StripViewItemContainer)(this.radPageView1.GetChildAt(0).GetChildAt(0))).BorderInnerColor3 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.StripViewItemContainer)(this.radPageView1.GetChildAt(0).GetChildAt(0))).BorderInnerColor4 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.StripViewItemContainer)(this.radPageView1.GetChildAt(0).GetChildAt(0))).BackColor2 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.StripViewItemContainer)(this.radPageView1.GetChildAt(0).GetChildAt(0))).BackColor3 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.StripViewItemContainer)(this.radPageView1.GetChildAt(0).GetChildAt(0))).BorderLeftColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.StripViewItemContainer)(this.radPageView1.GetChildAt(0).GetChildAt(0))).BorderRightColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.StripViewItemContainer)(this.radPageView1.GetChildAt(0).GetChildAt(0))).BorderBottomColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.StripViewItemContainer)(this.radPageView1.GetChildAt(0).GetChildAt(0))).BorderBottomShadowColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.StripViewItemContainer)(this.radPageView1.GetChildAt(0).GetChildAt(0))).ImageTransparentColor = System.Drawing.Color.Magenta;
+            ((Telerik.WinControls.UI.StripViewItemContainer)(this.radPageView1.GetChildAt(0).GetChildAt(0))).BackColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.StripViewItemContainer)(this.radPageView1.GetChildAt(0).GetChildAt(0))).MinSize = new System.Drawing.Size(25, 0);
+            ((Telerik.WinControls.UI.StripViewItemLayout)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(0))).BorderInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             ((Telerik.WinControls.UI.StripViewItemLayout)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(0))).BackColor2 = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.UI.StripViewItemLayout)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(0))).ImageTransparentColor = System.Drawing.Color.Magenta;
-            ((Telerik.WinControls.UI.StripViewItemLayout)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(0))).BackColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.UI.RadPageViewContentAreaElement)(this.radPageView1.GetChildAt(0).GetChildAt(1))).BackColor = System.Drawing.SystemColors.Control;
+            ((Telerik.WinControls.UI.StripViewItemLayout)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(0))).BackColor3 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.StripViewItemLayout)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(0))).BorderRightColor = System.Drawing.Color.DodgerBlue;
+            ((Telerik.WinControls.UI.StripViewItemLayout)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(0))).BorderBottomColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.StripViewItemLayout)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(0))).BorderRightShadowColor = System.Drawing.Color.DodgerBlue;
+            ((Telerik.WinControls.UI.StripViewItemLayout)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(0))).BackColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.StripViewButtonsPanel)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(1))).ImageTransparentColor = System.Drawing.Color.Magenta;
+            ((Telerik.WinControls.UI.StripViewButtonsPanel)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(1))).BorderHighlightColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.StripViewButtonsPanel)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(1))).ForeColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(0))).BackColor2 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(0))).BackColor3 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(0))).BackColor4 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageTransparentColor = System.Drawing.Color.Magenta;
+            ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(0))).ToolTipText = "Scroll Strip Left";
+            ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(0))).Enabled = false;
+            ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(0))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
+            ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(1))).ImageTransparentColor = System.Drawing.Color.Magenta;
+            ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(1))).ToolTipText = "Scroll Strip Right";
+            ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(1))).Enabled = false;
+            ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
+            ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(2))).ImageTransparentColor = System.Drawing.Color.Magenta;
+            ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(2))).ToolTipText = "Available Pages";
+            ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(2))).Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(3))).ImageTransparentColor = System.Drawing.Color.Magenta;
+            ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.radPageView1.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(3))).ToolTipText = "Close Selected Page";
+            ((Telerik.WinControls.UI.RadPageViewContentAreaElement)(this.radPageView1.GetChildAt(0).GetChildAt(1))).BorderInnerColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.RadPageViewContentAreaElement)(this.radPageView1.GetChildAt(0).GetChildAt(1))).BorderInnerColor2 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.RadPageViewContentAreaElement)(this.radPageView1.GetChildAt(0).GetChildAt(1))).BorderInnerColor3 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.RadPageViewContentAreaElement)(this.radPageView1.GetChildAt(0).GetChildAt(1))).BackColor2 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.RadPageViewContentAreaElement)(this.radPageView1.GetChildAt(0).GetChildAt(1))).BackColor3 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.RadPageViewContentAreaElement)(this.radPageView1.GetChildAt(0).GetChildAt(1))).BackColor4 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.RadPageViewContentAreaElement)(this.radPageView1.GetChildAt(0).GetChildAt(1))).BorderTopColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.RadPageViewContentAreaElement)(this.radPageView1.GetChildAt(0).GetChildAt(1))).BorderRightColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.RadPageViewContentAreaElement)(this.radPageView1.GetChildAt(0).GetChildAt(1))).BorderBottomColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.RadPageViewContentAreaElement)(this.radPageView1.GetChildAt(0).GetChildAt(1))).BorderBottomShadowColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.RadPageViewContentAreaElement)(this.radPageView1.GetChildAt(0).GetChildAt(1))).BorderHighlightColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.RadPageViewContentAreaElement)(this.radPageView1.GetChildAt(0).GetChildAt(1))).BackColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.RadPageViewLabelElement)(this.radPageView1.GetChildAt(0).GetChildAt(2))).BackColor2 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.UI.RadPageViewLabelElement)(this.radPageView1.GetChildAt(0).GetChildAt(2))).TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            ((Telerik.WinControls.UI.RadPageViewLabelElement)(this.radPageView1.GetChildAt(0).GetChildAt(2))).Text = "الصفحه الرئسية";
+            ((Telerik.WinControls.UI.RadPageViewLabelElement)(this.radPageView1.GetChildAt(0).GetChildAt(2))).BackColor = System.Drawing.Color.Transparent;
             // 
             // radPageViewPageDashboard
             // 
-            this.radPageViewPageDashboard.BackColor = System.Drawing.SystemColors.Control;
-            this.radPageViewPageDashboard.Controls.Add(this.dashboardClockCalendarPanel);
+            this.radPageViewPageDashboard.BackColor = System.Drawing.Color.Transparent;
             this.radPageViewPageDashboard.Controls.Add(this.radButtonNewAppointment);
+            this.radPageViewPageDashboard.Controls.Add(this.dashboardClockCalendarPanel);
             this.radPageViewPageDashboard.Controls.Add(this.radPanelTodaysAppointments);
             this.radPageViewPageDashboard.Controls.Add(this.radLabel2);
             this.radPageViewPageDashboard.Controls.Add(this.radPanelTomorrowAppointments);
-            this.radPageViewPageDashboard.ItemSize = new System.Drawing.SizeF(93F, 97F);
+            this.radPageViewPageDashboard.Image = global::MedicalAssistant.Properties.Resources.home__2_;
+            this.radPageViewPageDashboard.ItemSize = new System.Drawing.SizeF(125F, 45F);
             this.radPageViewPageDashboard.Location = new System.Drawing.Point(5, 4);
             this.radPageViewPageDashboard.Name = "radPageViewPageDashboard";
-            this.radPageViewPageDashboard.Size = new System.Drawing.Size(917, 398);
+            this.radPageViewPageDashboard.Size = new System.Drawing.Size(848, 462);
             this.radPageViewPageDashboard.Text = "الصفحه الرئسية";
             this.radPageViewPageDashboard.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // radButtonNewAppointment
+            // 
+            this.radButtonNewAppointment.Location = new System.Drawing.Point(646, 52);
+            this.radButtonNewAppointment.Name = "radButtonNewAppointment";
+            this.radButtonNewAppointment.Size = new System.Drawing.Size(170, 33);
+            this.radButtonNewAppointment.TabIndex = 23;
+            this.radButtonNewAppointment.Text = "اضافة موعد";
+            this.radButtonNewAppointment.Click += new System.EventHandler(this.newAppointment_Click);
             // 
             // dashboardClockCalendarPanel
             // 
             this.dashboardClockCalendarPanel.BackColor = System.Drawing.Color.Transparent;
             this.dashboardClockCalendarPanel.Controls.Add(this.radCalendarDashboard);
             this.dashboardClockCalendarPanel.Controls.Add(this.radClock1);
-            this.dashboardClockCalendarPanel.Location = new System.Drawing.Point(14, 74);
+            this.dashboardClockCalendarPanel.Location = new System.Drawing.Point(4, 113);
             this.dashboardClockCalendarPanel.Name = "dashboardClockCalendarPanel";
-            this.dashboardClockCalendarPanel.Size = new System.Drawing.Size(402, 303);
+            this.dashboardClockCalendarPanel.Size = new System.Drawing.Size(387, 320);
             this.dashboardClockCalendarPanel.TabIndex = 22;
             // 
             // radCalendarDashboard
             // 
             this.radCalendarDashboard.DayNameFormat = Telerik.WinControls.UI.DayNameFormat.FirstTwoLetters;
-            this.radCalendarDashboard.Location = new System.Drawing.Point(193, 75);
+            this.radCalendarDashboard.Location = new System.Drawing.Point(142, 83);
             this.radCalendarDashboard.Name = "radCalendarDashboard";
             this.radCalendarDashboard.ShowFastNavigationButtons = false;
             this.radCalendarDashboard.ShowNavigationButtons = false;
             this.radCalendarDashboard.ShowRowHeaders = true;
-            this.radCalendarDashboard.Size = new System.Drawing.Size(197, 180);
+            this.radCalendarDashboard.Size = new System.Drawing.Size(216, 153);
             this.radCalendarDashboard.TabIndex = 1;
             this.radCalendarDashboard.SelectionChanged += new System.EventHandler(this.radCalendarDashboard_SelectionChanged);
             // 
             // radClock1
             // 
-            this.radClock1.Location = new System.Drawing.Point(20, 75);
+            this.radClock1.Location = new System.Drawing.Point(2, 93);
             this.radClock1.Name = "radClock1";
             this.radClock1.Size = new System.Drawing.Size(134, 135);
             this.radClock1.TabIndex = 0;
-            // 
-            // radButtonNewAppointment
-            // 
-            this.radButtonNewAppointment.Location = new System.Drawing.Point(695, 14);
-            this.radButtonNewAppointment.Name = "radButtonNewAppointment";
-            this.radButtonNewAppointment.Size = new System.Drawing.Size(170, 33);
-            this.radButtonNewAppointment.TabIndex = 21;
-            this.radButtonNewAppointment.Text = "اضافة موعد";
-            this.radButtonNewAppointment.Click += new System.EventHandler(this.newAppointment_Click);
             // 
             // radPanelTodaysAppointments
             // 
@@ -413,9 +498,9 @@ namespace MedicalAssistant
             this.radPanelTodaysAppointments.Controls.Add(this.radLabelLastAppointmentToday);
             this.radPanelTodaysAppointments.Controls.Add(this.radLabelTodayAppointmentsCount);
             this.radPanelTodaysAppointments.Controls.Add(this.radLabel3);
-            this.radPanelTodaysAppointments.Location = new System.Drawing.Point(433, 74);
+            this.radPanelTodaysAppointments.Location = new System.Drawing.Point(420, 114);
             this.radPanelTodaysAppointments.Name = "radPanelTodaysAppointments";
-            this.radPanelTodaysAppointments.Size = new System.Drawing.Size(206, 303);
+            this.radPanelTodaysAppointments.Size = new System.Drawing.Size(186, 320);
             this.radPanelTodaysAppointments.TabIndex = 18;
             // 
             // radLabel6
@@ -428,6 +513,7 @@ namespace MedicalAssistant
             this.radLabel6.Size = new System.Drawing.Size(70, 31);
             this.radLabel6.TabIndex = 1;
             this.radLabel6.Text = "المواعيد";
+            this.radLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             // 
             // radLabelLastAppointmentToday
             // 
@@ -438,17 +524,19 @@ namespace MedicalAssistant
             this.radLabelLastAppointmentToday.Size = new System.Drawing.Size(150, 26);
             this.radLabelLastAppointmentToday.TabIndex = 1;
             this.radLabelLastAppointmentToday.Text = "last one at 5:00 PM";
+            this.radLabelLastAppointmentToday.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             // 
             // radLabelTodayAppointmentsCount
             // 
             this.radLabelTodayAppointmentsCount.BackColor = System.Drawing.Color.Transparent;
             this.radLabelTodayAppointmentsCount.Font = new System.Drawing.Font("Segoe UI Light", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabelTodayAppointmentsCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(109)))), ((int)(((byte)(192)))));
-            this.radLabelTodayAppointmentsCount.Location = new System.Drawing.Point(1, 83);
+            this.radLabelTodayAppointmentsCount.Location = new System.Drawing.Point(4, 83);
             this.radLabelTodayAppointmentsCount.Name = "radLabelTodayAppointmentsCount";
             this.radLabelTodayAppointmentsCount.Size = new System.Drawing.Size(129, 108);
             this.radLabelTodayAppointmentsCount.TabIndex = 1;
             this.radLabelTodayAppointmentsCount.Text = "25";
+            this.radLabelTodayAppointmentsCount.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.radLabelTodayAppointmentsCount.UseCompatibleTextRendering = false;
             this.radLabelTodayAppointmentsCount.Click += new System.EventHandler(this.radLabelTodayAppointmentsCount_Click);
             // 
@@ -462,16 +550,18 @@ namespace MedicalAssistant
             this.radLabel3.Size = new System.Drawing.Size(43, 30);
             this.radLabel3.TabIndex = 0;
             this.radLabel3.Text = "اليوم";
+            this.radLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             // 
             // radLabel2
             // 
             this.radLabel2.BackColor = System.Drawing.Color.Transparent;
             this.radLabel2.Font = new System.Drawing.Font("Segoe UI Light", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel2.Location = new System.Drawing.Point(425, 7);
+            this.radLabel2.Location = new System.Drawing.Point(429, 47);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(121, 43);
             this.radLabel2.TabIndex = 20;
             this.radLabel2.Text = "Schedule";
+            this.radLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             // 
             // radPanelTomorrowAppointments
             // 
@@ -479,9 +569,9 @@ namespace MedicalAssistant
             this.radPanelTomorrowAppointments.Controls.Add(this.radLabel9);
             this.radPanelTomorrowAppointments.Controls.Add(this.radLabelTomorrowAppointmentsCount);
             this.radPanelTomorrowAppointments.Controls.Add(this.radLabel4);
-            this.radPanelTomorrowAppointments.Location = new System.Drawing.Point(659, 74);
+            this.radPanelTomorrowAppointments.Location = new System.Drawing.Point(642, 114);
             this.radPanelTomorrowAppointments.Name = "radPanelTomorrowAppointments";
-            this.radPanelTomorrowAppointments.Size = new System.Drawing.Size(206, 303);
+            this.radPanelTomorrowAppointments.Size = new System.Drawing.Size(184, 320);
             this.radPanelTomorrowAppointments.TabIndex = 19;
             // 
             // radLabelFirstAppointmentTomorrow
@@ -493,6 +583,7 @@ namespace MedicalAssistant
             this.radLabelFirstAppointmentTomorrow.Size = new System.Drawing.Size(154, 26);
             this.radLabelFirstAppointmentTomorrow.TabIndex = 1;
             this.radLabelFirstAppointmentTomorrow.Text = "first one at 7:00 AM";
+            this.radLabelFirstAppointmentTomorrow.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             // 
             // radLabel9
             // 
@@ -504,17 +595,19 @@ namespace MedicalAssistant
             this.radLabel9.Size = new System.Drawing.Size(70, 31);
             this.radLabel9.TabIndex = 1;
             this.radLabel9.Text = "المواعيد";
+            this.radLabel9.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             // 
             // radLabelTomorrowAppointmentsCount
             // 
             this.radLabelTomorrowAppointmentsCount.BackColor = System.Drawing.Color.Transparent;
             this.radLabelTomorrowAppointmentsCount.Font = new System.Drawing.Font("Segoe UI Light", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabelTomorrowAppointmentsCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(109)))), ((int)(((byte)(192)))));
-            this.radLabelTomorrowAppointmentsCount.Location = new System.Drawing.Point(1, 83);
+            this.radLabelTomorrowAppointmentsCount.Location = new System.Drawing.Point(6, 83);
             this.radLabelTomorrowAppointmentsCount.Name = "radLabelTomorrowAppointmentsCount";
             this.radLabelTomorrowAppointmentsCount.Size = new System.Drawing.Size(129, 108);
             this.radLabelTomorrowAppointmentsCount.TabIndex = 1;
             this.radLabelTomorrowAppointmentsCount.Text = "32";
+            this.radLabelTomorrowAppointmentsCount.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.radLabelTomorrowAppointmentsCount.UseCompatibleTextRendering = false;
             this.radLabelTomorrowAppointmentsCount.Click += new System.EventHandler(this.radLabelTomorrowAppointmentsCount_Click);
             // 
@@ -528,6 +621,7 @@ namespace MedicalAssistant
             this.radLabel4.Size = new System.Drawing.Size(34, 30);
             this.radLabel4.TabIndex = 1;
             this.radLabel4.Text = "غدا";
+            this.radLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             // 
             // radPageViewPageSchedule
             // 
@@ -537,42 +631,49 @@ namespace MedicalAssistant
             this.radPageViewPageSchedule.Controls.Add(this.radSchedulerNavigator1);
             this.radPageViewPageSchedule.Controls.Add(this.radScheduler1);
             this.radPageViewPageSchedule.ForeColor = System.Drawing.Color.Transparent;
-            this.radPageViewPageSchedule.ItemSize = new System.Drawing.SizeF(93F, 97F);
+            this.radPageViewPageSchedule.Image = global::MedicalAssistant.Properties.Resources.schedule__3_;
+            this.radPageViewPageSchedule.ItemSize = new System.Drawing.SizeF(125F, 45F);
             this.radPageViewPageSchedule.Location = new System.Drawing.Point(5, 4);
             this.radPageViewPageSchedule.Name = "radPageViewPageSchedule";
             this.radPageViewPageSchedule.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radPageViewPageSchedule.Size = new System.Drawing.Size(917, 398);
+            this.radPageViewPageSchedule.Size = new System.Drawing.Size(848, 462);
             this.radPageViewPageSchedule.Text = "المهام";
             this.radPageViewPageSchedule.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // radCalendarSchedule
             // 
             this.radCalendarSchedule.DayNameFormat = Telerik.WinControls.UI.DayNameFormat.FirstTwoLetters;
-            this.radCalendarSchedule.Location = new System.Drawing.Point(679, 139);
+            this.radCalendarSchedule.Location = new System.Drawing.Point(600, 174);
             this.radCalendarSchedule.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.radCalendarSchedule.Name = "radCalendarSchedule";
             this.radCalendarSchedule.SelectedDates.AddRange(new System.DateTime[] {
             new System.DateTime(1900, 1, 1, 0, 0, 0, 0)});
             this.radCalendarSchedule.ShowRowHeaders = true;
-            this.radCalendarSchedule.Size = new System.Drawing.Size(221, 170);
+            this.radCalendarSchedule.Size = new System.Drawing.Size(204, 170);
             this.radCalendarSchedule.TabIndex = 4;
             this.radCalendarSchedule.SelectionChanged += new System.EventHandler(this.radCalendarSchedule_SelectionChanged);
             // 
             // radButtonNewAppointmentScheduler
             // 
-            this.radButtonNewAppointmentScheduler.Location = new System.Drawing.Point(679, 21);
+            this.radButtonNewAppointmentScheduler.Location = new System.Drawing.Point(600, 37);
             this.radButtonNewAppointmentScheduler.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.radButtonNewAppointmentScheduler.Name = "radButtonNewAppointmentScheduler";
-            this.radButtonNewAppointmentScheduler.Size = new System.Drawing.Size(221, 33);
+            this.radButtonNewAppointmentScheduler.Size = new System.Drawing.Size(204, 33);
             this.radButtonNewAppointmentScheduler.TabIndex = 5;
             this.radButtonNewAppointmentScheduler.Text = "اضافو موعد";
             this.radButtonNewAppointmentScheduler.Click += new System.EventHandler(this.newAppointment_Click);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButtonNewAppointmentScheduler.GetChildAt(0))).Text = "اضافو موعد";
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radButtonNewAppointmentScheduler.GetChildAt(0).GetChildAt(0))).BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(241)))), ((int)(((byte)(252)))));
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radButtonNewAppointmentScheduler.GetChildAt(0).GetChildAt(0))).BackColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(226)))), ((int)(((byte)(244)))));
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radButtonNewAppointmentScheduler.GetChildAt(0).GetChildAt(0))).BackColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(240)))), ((int)(((byte)(251)))));
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radButtonNewAppointmentScheduler.GetChildAt(0).GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(241)))), ((int)(((byte)(252)))));
             // 
             // radSchedulerNavigator1
             // 
             this.radSchedulerNavigator1.AssociatedScheduler = this.radScheduler1;
             this.radSchedulerNavigator1.DateFormat = "MMMM d, yyyy";
-            this.radSchedulerNavigator1.Location = new System.Drawing.Point(19, 15);
+            this.radSchedulerNavigator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
+            this.radSchedulerNavigator1.Location = new System.Drawing.Point(-2, 13);
             this.radSchedulerNavigator1.Margin = new System.Windows.Forms.Padding(0);
             this.radSchedulerNavigator1.Name = "radSchedulerNavigator1";
             this.radSchedulerNavigator1.NavigationStepType = Telerik.WinControls.UI.NavigationStepTypes.Day;
@@ -580,13 +681,16 @@ namespace MedicalAssistant
             // 
             // 
             this.radSchedulerNavigator1.RootElement.StretchVertically = false;
-            this.radSchedulerNavigator1.Size = new System.Drawing.Size(653, 77);
+            this.radSchedulerNavigator1.Size = new System.Drawing.Size(594, 77);
             this.radSchedulerNavigator1.TabIndex = 1;
+            ((Telerik.WinControls.UI.SchedulerNavigatorElement)(this.radSchedulerNavigator1.GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(0))).ForeColor = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(1))).ForeColor = System.Drawing.SystemColors.Control;
+            ((Telerik.WinControls.RadItem)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0))).TopColor = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0))).BottomColor = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0))).ForeColor = System.Drawing.SystemColors.Control;
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(1))).BackColor = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.UI.RadToggleButtonElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(0))).ForeColor = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2))).InnerColor = System.Drawing.SystemColors.Control;
@@ -607,22 +711,33 @@ namespace MedicalAssistant
             ((Telerik.WinControls.UI.RadCheckBoxElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(5).GetChildAt(0))).ForeColor = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(5).GetChildAt(0).GetChildAt(1).GetChildAt(1).GetChildAt(1))).ForeColor = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.UI.RadLabelElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(0))).Text = "(UTC+02:00) Cairo";
+            ((Telerik.WinControls.UI.RadLabelElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(0).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(0).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(0).GetChildAt(1))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.Default;
             ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(0).GetChildAt(2).GetChildAt(0))).ForeColor = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(0).GetChildAt(2).GetChildAt(0))).Alignment = System.Drawing.ContentAlignment.MiddleLeft;
+            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(0).GetChildAt(2).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
+            ((Telerik.WinControls.UI.RadDropDownListElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(1).GetChildAt(0))).ForeColor = System.Drawing.SystemColors.Control;
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(1).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             ((Telerik.WinControls.UI.StackLayoutElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(1).GetChildAt(2))).ImageTransparentColor = System.Drawing.Color.Magenta;
             ((Telerik.WinControls.UI.StackLayoutElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(1).GetChildAt(2))).ForeColor = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(0))).BackColor2 = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(0))).BackColor = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.UI.SchedulerNavigatorSearchTextbox)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(2))).MaxSize = new System.Drawing.Size(-13, 0);
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(2).GetChildAt(1))).ForeColor = System.Drawing.SystemColors.Control;
+            ((Telerik.WinControls.RadItem)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0))).LeftColor = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0))).TopColor = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0))).RightColor = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0))).BottomColor = System.Drawing.SystemColors.Control;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.Default;
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(1))).BackColor = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(1))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(0).GetChildAt(0))).BackColor2 = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(0).GetChildAt(0))).BackColor3 = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(0).GetChildAt(0))).BackColor4 = System.Drawing.SystemColors.Control;
@@ -636,13 +751,40 @@ namespace MedicalAssistant
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(0).GetChildAt(2))).InnerColor = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(0).GetChildAt(2))).ForeColor = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.Primitives.FocusPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(0).GetChildAt(3))).ForeColor = System.Drawing.SystemColors.Control;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(0))).BackColor2 = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(0))).BackColor3 = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(0))).BackColor4 = System.Drawing.SystemColors.Control;
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(0))).BackColor = System.Drawing.SystemColors.Control;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(1).GetChildAt(0))).TransparentColor = System.Drawing.Color.Magenta;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(1).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
+            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(1).GetChildAt(1))).LineLimit = false;
+            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(1).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
+            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(1).GetChildAt(1))).Alignment = System.Drawing.ContentAlignment.MiddleCenter;
+            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(1).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(2))).InnerColor = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(2))).ForeColor = System.Drawing.SystemColors.Control;
+            ((Telerik.WinControls.Primitives.FocusPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(3))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
+            ((Telerik.WinControls.UI.RadLabelElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2))).Text = "أبريل 1, 2021";
+            ((Telerik.WinControls.UI.RadLabelElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(78)))));
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(78)))));
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(78)))));
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2).GetChildAt(1))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.Default;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2).GetChildAt(2).GetChildAt(0))).TransparentColor = System.Drawing.Color.Magenta;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2).GetChildAt(2).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(78)))));
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2).GetChildAt(2).GetChildAt(0))).Alignment = System.Drawing.ContentAlignment.MiddleLeft;
+            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2).GetChildAt(2).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(78)))));
             ((Telerik.WinControls.UI.LightVisualElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(3))).ForeColor = System.Drawing.SystemColors.Control;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(3).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(3).GetChildAt(0).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(3).GetChildAt(0).GetChildAt(1).GetChildAt(0))).TransparentColor = System.Drawing.Color.Magenta;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(3).GetChildAt(0).GetChildAt(1).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
+            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(3).GetChildAt(0).GetChildAt(1).GetChildAt(1))).LineLimit = false;
+            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(3).GetChildAt(0).GetChildAt(1).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
+            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(3).GetChildAt(0).GetChildAt(1).GetChildAt(1))).Alignment = System.Drawing.ContentAlignment.MiddleCenter;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(3).GetChildAt(0).GetChildAt(2))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
+            ((Telerik.WinControls.Primitives.FocusPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(3).GetChildAt(0).GetChildAt(3))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             // 
             // radScheduler1
             // 
@@ -654,7 +796,7 @@ namespace MedicalAssistant
             this.radScheduler1.AllowCopyPaste = Telerik.WinControls.UI.CopyPasteMode.Disallow;
             this.radScheduler1.Culture = new System.Globalization.CultureInfo("ar-EG");
             this.radScheduler1.HeaderFormat = "dddd M\\/d";
-            this.radScheduler1.Location = new System.Drawing.Point(19, 92);
+            this.radScheduler1.Location = new System.Drawing.Point(-8, 90);
             this.radScheduler1.Margin = new System.Windows.Forms.Padding(0);
             this.radScheduler1.Name = "radScheduler1";
             schedulerDailyPrintStyle2.AppointmentFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -663,7 +805,7 @@ namespace MedicalAssistant
             schedulerDailyPrintStyle2.DateStartRange = new System.DateTime(2015, 8, 17, 0, 0, 0, 0);
             schedulerDailyPrintStyle2.PageHeadingFont = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold);
             this.radScheduler1.PrintStyle = schedulerDailyPrintStyle2;
-            this.radScheduler1.Size = new System.Drawing.Size(653, 306);
+            this.radScheduler1.Size = new System.Drawing.Size(600, 373);
             this.radScheduler1.TabIndex = 6;
             this.radScheduler1.ThemeName = "MedicalAppTheme";
             this.radScheduler1.AppointmentDeleted += new System.EventHandler<Telerik.WinControls.UI.SchedulerAppointmentEventArgs>(this.radScheduler1_AppointmentDeleted);
@@ -674,123 +816,25 @@ namespace MedicalAssistant
             // 
             // radPageViewPageCharts
             // 
-            this.radPageViewPageCharts.BackColor = System.Drawing.SystemColors.Control;
-            this.radPageViewPageCharts.ItemSize = new System.Drawing.SizeF(93F, 97F);
+            this.radPageViewPageCharts.BackColor = System.Drawing.Color.Transparent;
+            this.radPageViewPageCharts.Image = global::MedicalAssistant.Properties.Resources.live;
+            this.radPageViewPageCharts.ItemSize = new System.Drawing.SizeF(125F, 45F);
             this.radPageViewPageCharts.Location = new System.Drawing.Point(5, 4);
             this.radPageViewPageCharts.Name = "radPageViewPageCharts";
-            this.radPageViewPageCharts.Size = new System.Drawing.Size(917, 398);
+            this.radPageViewPageCharts.Size = new System.Drawing.Size(848, 462);
             this.radPageViewPageCharts.Text = "اخبار الصحة";
             this.radPageViewPageCharts.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // radPageViewPageSettings
             // 
-            this.radPageViewPageSettings.BackColor = System.Drawing.SystemColors.Control;
-            this.radPageViewPageSettings.ItemSize = new System.Drawing.SizeF(93F, 97F);
+            this.radPageViewPageSettings.BackColor = System.Drawing.Color.Transparent;
+            this.radPageViewPageSettings.Image = global::MedicalAssistant.Properties.Resources.settings;
+            this.radPageViewPageSettings.ItemSize = new System.Drawing.SizeF(125F, 45F);
             this.radPageViewPageSettings.Location = new System.Drawing.Point(5, 4);
             this.radPageViewPageSettings.Name = "radPageViewPageSettings";
-            this.radPageViewPageSettings.Size = new System.Drawing.Size(917, 398);
+            this.radPageViewPageSettings.Size = new System.Drawing.Size(848, 462);
             this.radPageViewPageSettings.Text = "الاعدادات";
             this.radPageViewPageSettings.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panalMain
-            // 
-            this.panalMain.BackColor = System.Drawing.SystemColors.Control;
-            this.panalMain.Controls.Add(this.radPageView1);
-            this.panalMain.ForeColor = System.Drawing.Color.Transparent;
-            this.panalMain.Location = new System.Drawing.Point(292, 43);
-            this.panalMain.Name = "panalMain";
-            this.panalMain.Size = new System.Drawing.Size(1046, 456);
-            this.panalMain.TabIndex = 19;
-            // 
-            // bunifuButton7
-            // 
-            this.bunifuButton7.AllowAnimations = true;
-            this.bunifuButton7.AllowMouseEffects = true;
-            this.bunifuButton7.AllowToggling = false;
-            this.bunifuButton7.AnimationSpeed = 200;
-            this.bunifuButton7.AutoGenerateColors = false;
-            this.bunifuButton7.AutoRoundBorders = false;
-            this.bunifuButton7.AutoSizeLeftIcon = true;
-            this.bunifuButton7.AutoSizeRightIcon = true;
-            this.bunifuButton7.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuButton7.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.bunifuButton7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton7.BackgroundImage")));
-            this.bunifuButton7.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton7.ButtonText = "خروج";
-            this.bunifuButton7.ButtonTextMarginLeft = 0;
-            this.bunifuButton7.ColorContrastOnClick = 45;
-            this.bunifuButton7.ColorContrastOnHover = 45;
-            this.bunifuButton7.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.bunifuButton7.CustomizableEdges = borderEdges2;
-            this.bunifuButton7.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.bunifuButton7.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.bunifuButton7.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuButton7.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.bunifuButton7.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton7.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuButton7.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuButton7.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuButton7.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuButton7.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.bunifuButton7.IconMarginLeft = 11;
-            this.bunifuButton7.IconPadding = 10;
-            this.bunifuButton7.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bunifuButton7.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuButton7.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.bunifuButton7.IconSize = 25;
-            this.bunifuButton7.IdleBorderColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuButton7.IdleBorderRadius = 1;
-            this.bunifuButton7.IdleBorderThickness = 1;
-            this.bunifuButton7.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.bunifuButton7.IdleIconLeftImage = null;
-            this.bunifuButton7.IdleIconRightImage = null;
-            this.bunifuButton7.IndicateFocus = false;
-            this.bunifuButton7.Location = new System.Drawing.Point(1203, 509);
-            this.bunifuButton7.Name = "bunifuButton7";
-            this.bunifuButton7.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.bunifuButton7.OnDisabledState.BorderRadius = 1;
-            this.bunifuButton7.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton7.OnDisabledState.BorderThickness = 1;
-            this.bunifuButton7.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuButton7.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.bunifuButton7.OnDisabledState.IconLeftImage = null;
-            this.bunifuButton7.OnDisabledState.IconRightImage = null;
-            this.bunifuButton7.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.bunifuButton7.onHoverState.BorderRadius = 1;
-            this.bunifuButton7.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton7.onHoverState.BorderThickness = 1;
-            this.bunifuButton7.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.bunifuButton7.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton7.onHoverState.IconLeftImage = null;
-            this.bunifuButton7.onHoverState.IconRightImage = null;
-            this.bunifuButton7.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuButton7.OnIdleState.BorderRadius = 1;
-            this.bunifuButton7.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton7.OnIdleState.BorderThickness = 1;
-            this.bunifuButton7.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.bunifuButton7.OnIdleState.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuButton7.OnIdleState.IconLeftImage = null;
-            this.bunifuButton7.OnIdleState.IconRightImage = null;
-            this.bunifuButton7.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuButton7.OnPressedState.BorderRadius = 1;
-            this.bunifuButton7.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton7.OnPressedState.BorderThickness = 1;
-            this.bunifuButton7.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuButton7.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton7.OnPressedState.IconLeftImage = null;
-            this.bunifuButton7.OnPressedState.IconRightImage = null;
-            this.bunifuButton7.Size = new System.Drawing.Size(139, 57);
-            this.bunifuButton7.TabIndex = 21;
-            this.bunifuButton7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuButton7.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.bunifuButton7.TextMarginLeft = 0;
-            this.bunifuButton7.TextPadding = new System.Windows.Forms.Padding(0);
-            this.bunifuButton7.UseDefaultRadiusAndThickness = true;
-            this.bunifuButton7.Click += new System.EventHandler(this.bunifuButton7_Click_1);
             // 
             // radListViewNextPatients
             // 
@@ -839,17 +883,123 @@ namespace MedicalAssistant
             // 
             this.appointmentsTableAdapter.ClearBeforeFill = true;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.radPanel2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 24);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(293, 555);
+            this.panel2.TabIndex = 22;
+            // 
+            // uiPanelManager1
+            // 
+            this.uiPanelManager1.ContainerControl = this;
+            // 
+            // object_e3bdc5d3_c56d_48bf_bc43_aa607a6c2b99
+            // 
+            this.object_e3bdc5d3_c56d_48bf_bc43_aa607a6c2b99.Name = "object_e3bdc5d3_c56d_48bf_bc43_aa607a6c2b99";
+            this.object_e3bdc5d3_c56d_48bf_bc43_aa607a6c2b99.StretchHorizontally = true;
+            this.object_e3bdc5d3_c56d_48bf_bc43_aa607a6c2b99.StretchVertically = true;
+            // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.Image = global::MedicalAssistant.Properties.Resources.icons8_chat_50;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(124, 2);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.ShadowDecoration.Parent = this.guna2CirclePictureBox1;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(37, 21);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.guna2CirclePictureBox1.TabIndex = 24;
+            this.guna2CirclePictureBox1.TabStop = false;
+            // 
+            // radButton2
+            // 
+            this.radButton2.BackColor = System.Drawing.SystemColors.Control;
+            this.radButton2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.radButton2.ForeColor = System.Drawing.Color.SeaGreen;
+            this.radButton2.Location = new System.Drawing.Point(1184, 0);
+            this.radButton2.Name = "radButton2";
+            this.radButton2.Size = new System.Drawing.Size(124, 24);
+            this.radButton2.TabIndex = 17;
+            this.radButton2.Text = "المساعد الطبي";
+            // 
+            // radButton1
+            // 
+            this.radButton1.BackColor = System.Drawing.Color.Transparent;
+            this.radButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.radButton1.Location = new System.Drawing.Point(1159, 534);
+            this.radButton1.Name = "radButton1";
+            // 
+            // 
+            // 
+            this.radButton1.RootElement.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.radButton1.RootElement.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.Auto;
+            this.radButton1.RootElement.BorderHighlightColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.radButton1.RootElement.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.radButton1.RootElement.HighlightColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.radButton1.RootElement.RippleAnimationColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.radButton1.RootElement.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.radButton1.Size = new System.Drawing.Size(147, 42);
+            this.radButton1.TabIndex = 24;
+            this.radButton1.Text = "خروج";
+            this.radButton1.TextWrap = true;
+            this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
+            this.radButton1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.radButton1_MouseDown);
+            this.radButton1.MouseLeave += new System.EventHandler(this.radButton1_MouseLeave);
+            this.radButton1.MouseHover += new System.EventHandler(this.radButton1_MouseHover);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).Text = "خروج";
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).RippleAnimationColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).HighlightColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).BorderHighlightColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(0))).BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(0))).BackColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(0))).BackColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(0))).BackColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0))).TransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(2))).LeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(2))).TopColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(2))).RightColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(2))).BottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(2))).ForeColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(2))).ForeColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(2))).ForeColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(2))).InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(2))).InnerColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(2))).InnerColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(2))).InnerColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radButton1.GetChildAt(0).GetChildAt(2))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.guna2CirclePictureBox1);
+            this.panel5.Controls.Add(this.radButton2);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1308, 24);
+            this.panel5.TabIndex = 24;
+            this.panel5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1348, 570);
-            this.Controls.Add(this.bunifuButton7);
-            this.Controls.Add(this.panalMain);
+            this.ClientSize = new System.Drawing.Size(1308, 579);
+            this.Controls.Add(this.radButton1);
+            this.Controls.Add(this.radPageView1);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.bunifuGroupBox1);
-            this.Controls.Add(this.bunifuGradientPanel1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             // 
@@ -858,28 +1008,27 @@ namespace MedicalAssistant
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "main5";
             this.Load += new System.EventHandler(this.main5_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uiPanelManager1)).EndInit();
-            this.bunifuGradientPanel1.ResumeLayout(false);
-            this.bunifuGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).EndInit();
             this.radPanel2.ResumeLayout(false);
             this.radPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radProgressBar1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radListView1)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).EndInit();
             this.radPageView1.ResumeLayout(false);
             this.radPageViewPageDashboard.ResumeLayout(false);
             this.radPageViewPageDashboard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButtonNewAppointment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardClockCalendarPanel)).EndInit();
             this.dashboardClockCalendarPanel.ResumeLayout(false);
             this.dashboardClockCalendarPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radCalendarDashboard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radClock1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButtonNewAppointment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanelTodaysAppointments)).EndInit();
             this.radPanelTodaysAppointments.ResumeLayout(false);
             this.radPanelTodaysAppointments.PerformLayout();
@@ -901,27 +1050,27 @@ namespace MedicalAssistant
             ((System.ComponentModel.ISupportInitialize)(this.radButtonNewAppointmentScheduler)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radSchedulerNavigator1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radScheduler1)).EndInit();
-            this.panalMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radListViewNextPatients)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsBindingSource)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.uiPanelManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
+            this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Janus.Windows.UI.Dock.UIPanelManager uiPanelManager1;
-        private Bunifu.UI.WinForms.BunifuGroupBox bunifuGroupBox1;
-        private Telerik.WinControls.UI.RadButton radButton1;
-        private Telerik.WinControls.UI.RadButton radButton2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
         private System.Windows.Forms.Panel panel4;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label txtTyping;
         private Telerik.WinControls.RootRadElement object_ed72cbad_facf_4a15_8078_4f0e9b98e184;
-        private System.Windows.Forms.Panel panalMain;
         private Telerik.WinControls.UI.RadPageView radPageView1;
         private Telerik.WinControls.UI.RadPageViewPage radPageViewPageDashboard;
         private Telerik.WinControls.UI.RadPageViewPage radPageViewPageSchedule;
@@ -930,7 +1079,6 @@ namespace MedicalAssistant
         private Telerik.WinControls.UI.RadPanel dashboardClockCalendarPanel;
         private Telerik.WinControls.UI.RadCalendar radCalendarDashboard;
         private Telerik.WinControls.UI.RadClock radClock1;
-        private Telerik.WinControls.UI.RadButton radButtonNewAppointment;
         private Telerik.WinControls.UI.RadPanel radPanelTodaysAppointments;
         private Telerik.WinControls.UI.RadLabel radLabel6;
         private Telerik.WinControls.UI.RadLabel radLabelLastAppointmentToday;
@@ -942,17 +1090,13 @@ namespace MedicalAssistant
         private Telerik.WinControls.UI.RadLabel radLabel9;
         private Telerik.WinControls.UI.RadLabel radLabelTomorrowAppointmentsCount;
         private Telerik.WinControls.UI.RadLabel radLabel4;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton7;
         private Telerik.WinControls.UI.RadButton radButtonNewAppointmentScheduler;
         private Telerik.WinControls.UI.RadCalendar radCalendarSchedule;
         private Telerik.WinControls.UI.RadSchedulerNavigator radSchedulerNavigator1;
         private Telerik.WinControls.UI.RadListView radListViewNextPatients;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Timer timer1;
-        private Bunifu.UI.WinForms.BunifuGradientPanel bunifuGradientPanel1;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private Telerik.WinControls.UI.RadProgressBar radProgressBar1;
         private System.Windows.Forms.Timer timer2;
         private Telerik.WinControls.UI.RadScheduler radScheduler1;
@@ -960,6 +1104,19 @@ namespace MedicalAssistant
         private System.Windows.Forms.BindingSource appointmentsBindingSource;
         private PatientsDataSetTableAdapters.AppointmentsTableAdapter appointmentsTableAdapter;
         private Telerik.WinControls.UI.RadPanel radPanel2;
+        private System.Windows.Forms.Panel panel2;
+        private Telerik.WinControls.UI.RadButton radButton2;
+        private Janus.Windows.UI.Dock.UIPanelManager uiPanelManager1;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox InputTxt;
+        private Telerik.WinControls.RootRadElement object_e3bdc5d3_c56d_48bf_bc43_aa607a6c2b99;
+        private Telerik.WinControls.UI.RadButton radButtonNewAppointment;
+        private System.Windows.Forms.Panel panel3;
+        private Telerik.WinControls.UI.RadListView radListView1;
+        private Telerik.WinControls.UI.RadButton radButton1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel5;
         //private dashboardMain dashboardMain1;
     }
 }

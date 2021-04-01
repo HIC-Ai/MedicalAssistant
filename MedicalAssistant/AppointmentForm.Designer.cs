@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppointmentForm));
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
@@ -44,7 +43,7 @@
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.radButton2 = new Telerik.WinControls.UI.RadButton();
             this.nameTextBoxControl = new Telerik.WinControls.UI.RadTextBoxControl();
-            this.bunifuGradientPanel2 = new Bunifu.UI.WinForms.BunifuGradientPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
@@ -203,22 +202,13 @@
             this.nameTextBoxControl.TabIndex = 5;
             this.nameTextBoxControl.ThemeName = "MedicalAppTheme";
             // 
-            // bunifuGradientPanel2
+            // panel3
             // 
-            this.bunifuGradientPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuGradientPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel2.BackgroundImage")));
-            this.bunifuGradientPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel2.BorderRadius = 1;
-            this.bunifuGradientPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuGradientPanel2.GradientBottomLeft = System.Drawing.Color.LightPink;
-            this.bunifuGradientPanel2.GradientBottomRight = System.Drawing.Color.LightPink;
-            this.bunifuGradientPanel2.GradientTopLeft = System.Drawing.Color.LightPink;
-            this.bunifuGradientPanel2.GradientTopRight = System.Drawing.Color.LightPink;
-            this.bunifuGradientPanel2.Location = new System.Drawing.Point(0, 0);
-            this.bunifuGradientPanel2.Name = "bunifuGradientPanel2";
-            this.bunifuGradientPanel2.Quality = 10;
-            this.bunifuGradientPanel2.Size = new System.Drawing.Size(542, 10);
-            this.bunifuGradientPanel2.TabIndex = 41;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(542, 10);
+            this.panel3.TabIndex = 41;
             // 
             // AppointmentForm
             // 
@@ -226,7 +216,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(542, 226);
-            this.Controls.Add(this.bunifuGradientPanel2);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.descriptionTextBoxControl);
@@ -283,10 +273,9 @@
         private Telerik.WinControls.UI.RadButton cancelButton;
         private Telerik.WinControls.UI.RadButton saveButton;
         private PatientsDataSetTableAdapters.AppointmentsTableAdapter appointmentsTableAdapter1;
-        private Bunifu.UI.WinForms.BunifuGradientPanel bunifuGradientPanel1;
         private Telerik.WinControls.UI.RadButton radButton2;
         private Telerik.WinControls.UI.RadButton radButton1;
         private Telerik.WinControls.UI.RadTextBoxControl nameTextBoxControl;
-        private Bunifu.UI.WinForms.BunifuGradientPanel bunifuGradientPanel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }
