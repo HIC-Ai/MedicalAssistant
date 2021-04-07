@@ -900,9 +900,7 @@ namespace MedicalAssistant
         WaveIn waveIn;
         WaveFileWriter writer;
 
-
-
-
+        [Obsolete]
         void waveIn_DataAvailable(object sender, WaveInEventArgs e)
         {
             try
