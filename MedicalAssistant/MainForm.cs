@@ -20,21 +20,26 @@ using Newtonsoft.Json.Linq;
 using System.Web.Script.Serialization;
 using NAudio.Wave;
 using System.Threading;
+using System.Net;
 
 namespace MedicalAssistant
 {
+
     public partial class MainForm : RadForm
     {
         List<string> CommendsWords = new List<string>();
         private string QS = "";
         private string AS = "";
         bool waitSpechbool = false;
+        string genderVoice = "female";
         public class ObjectList
         {
             public int ID { get; set; }
             public string QS { get; set; }
             public string ANS { get; set; }
         }
+
+
         //public WaveOutEvent spt;
 
         public WaveOutEvent spt = new WaveOutEvent(); // or WaveOutEvent()
@@ -175,7 +180,7 @@ namespace MedicalAssistant
                                     //message_send = new Database.database().Database(message_send, message_rev);
                                     AddIncomming(message_send);
 
-                                    spt = new recognitionArabic().CloudTextToSpeech(message_send);
+                                    spt = new recognitionArabic().CloudTextToSpeech(message_send, genderVoice);
                                     timer3.Start();
                                     Debug.WriteLine("message_send " + message_send);
                                     talk = false;
@@ -260,7 +265,7 @@ namespace MedicalAssistant
                     else
                     {
                         message_send = new Database.database().Database(message_send, message_rev);
-                        new recognitionArabic().CloudTextToSpeech(message_send);
+                        new recognitionArabic().CloudTextToSpeech(message_send , genderVoice);
                         Debug.WriteLine("message_send " + message_send);
                         AddIncomming(message_send);
                         timer3.Start();
@@ -397,7 +402,7 @@ namespace MedicalAssistant
 
 
 
-                    spt = new recognitionArabic().CloudTextToSpeech("نصيحة : " + tip);
+                    spt = new recognitionArabic().CloudTextToSpeech("نصيحة : " + tip, "male");
                     len = tip.Length;
                     //label1.Text = "";
                     timer1.Interval = len;
@@ -790,7 +795,7 @@ namespace MedicalAssistant
         {
             AddIncomming("حسنا");
 
-            spt = new recognitionArabic().CloudTextToSpeech("حسنا");
+            spt = new recognitionArabic().CloudTextToSpeech("حسنا", genderVoice);
             timer3.Start();
 
         }
@@ -892,6 +897,57 @@ namespace MedicalAssistant
             InputTxt.Text = string.Empty;
             InputTxt.HintText = "اكتب رسالتك هنا";
         }
+        WaveIn waveIn;
+        WaveFileWriter writer;
+
+
+        string[] ParseJson(string json)
+        {
+            List<string> list = new List<string>();
+            try
+            {
+                string[] lines = json.Split(new[] { "\"transcript\":\"" }, StringSplitOptions.RemoveEmptyEntries);
+
+
+                for (int i = 1; i < lines.Length; i++)
+                    list.Add(lines[i].Substring(0, lines[i].IndexOf("\"", StringComparison.Ordinal)));
+            }
+            catch
+            {
+
+            }
+
+            return list.ToArray();
+        }
+
+        void waveIn_DataAvailable(object sender, WaveInEventArgs e)
+        {
+            try
+            {
+                writer.WriteData(e.Buffer, 0, e.BytesRecorded);
+
+            }
+            catch
+            {
+
+            }
+        }
+
+        void waveIn_RecordingStopped(object sender, EventArgs e)
+        {
+            try
+            {
+                waveIn.Dispose();
+                waveIn = null;
+                writer.Close();
+                writer = null;
+            }
+            catch
+            {
+
+            }
+
+        }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -903,14 +959,59 @@ namespace MedicalAssistant
                 InputTxt.Enabled = false;
                 voice = false;
                 timer2.Enabled = true;
-                new recognitionArabic().Louding(true, false);
+                //new recognitionArabic().Louding(true, false);
+                //var result = new recognitionArabic().SpeakRecognitionRecord();
+
+                //var RecordObjectList = new recognitionArabic().SpeakRecognitionRecord();
+                //waveIn = RecordObjectList.waveIn;
+                //writer = RecordObjectList.writer;
+
+
+                waveIn = new WaveIn();
+                waveIn.DeviceNumber = 0;
+                waveIn.DataAvailable += waveIn_DataAvailable;
+                waveIn.RecordingStopped +=
+                    new EventHandler<NAudio.Wave.StoppedEventArgs>(waveIn_RecordingStopped);
+                waveIn.WaveFormat = new WaveFormat(16000, 1);
+                writer = new WaveFileWriter("dddmeo.wav", waveIn.WaveFormat);
+                // label1.Text = "Идет запись...";
+                waveIn.StartRecording();
+
+
                 pictureBox2.Image = Resources.block_microphone;
             }
             else
             {
+                waveIn.StopRecording();
+                waveIn.Dispose();
+                writer.Close();
+                writer.Dispose();
+
+                WebRequest request = WebRequest.Create("https://www.google.com/speech-api/v2/recognize?output=json&lang=AR-eg&key=AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw");
+                //
+                request.Method = "POST";
+                byte[] byteArray = File.ReadAllBytes("dddmeo.wav");
+                request.ContentType = "audio/l16; rate=16000"; //"16000";
+                request.ContentLength = byteArray.Length;
+                request.GetRequestStream().Write(byteArray, 0, byteArray.Length);
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                StreamReader reader = new StreamReader(response.GetResponseStream());
+                string str = reader.ReadToEnd();
+                string[] strs = ParseJson(str);
+                string phrase = "";
+
+                if (strs.Length > 0) phrase = strs[0].ToLower();
+
+                Console.WriteLine(phrase);
+                message_rev = phrase;
 
                 voice = true;
-                message_rev = new recognitionArabic().Louding(false, true);
+                //message_rev = new recognitionArabic().Louding(false, true);
+                //message_rev = new recognitionArabic().SpeakRecognitionStop(waveIn, writer);
+
+
+
+
                 rec_text();
                 pictureBox2.Image = Resources.add_record;
                 InputTxt.Enabled = true;

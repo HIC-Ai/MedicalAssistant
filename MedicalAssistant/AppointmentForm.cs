@@ -136,6 +136,7 @@ namespace MedicalAssistant
             {
                 this.AddAppointment();
             }
+            new recognitionArabic().CloudTextToSpeech("تم اضافة المَوعِد", "male");
 
             this.Close();
         }

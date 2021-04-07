@@ -450,7 +450,6 @@
     <None Include="Resources\chatbot.sqlite">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\recognition.exe" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
