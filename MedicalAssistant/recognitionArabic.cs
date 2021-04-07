@@ -12,7 +12,7 @@ namespace MedicalAssistant
 {
     class recognitionArabic
     {
-
+        string phrase = "";
         static WaveOutEvent MixAudioFiles(string speechMp3)
         {
 
@@ -28,14 +28,21 @@ namespace MedicalAssistant
 
         static void CloudTextToSpeech(string outFileName, string text, string lang, string gender, double speed = 0.5, double pitch = 0.5, double rate = 0.5, double maxresults = 1, double xjerr = 1)
         {
-            const string key = "AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw";
-            using (WebClient client = new WebClient())
+            try
             {
-                client.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows)");
-                int txtLen = text.Length;
-                text = "%" + BitConverter.ToString(Encoding.UTF8.GetBytes(text)).Replace("-", "%");
-                string url = $"https://www.google.com/speech-api/v2/synthesize?ie=UTF-8enc=mpeg&client=chromium&key={key}&text={text}&xjerr={xjerr}&lang={lang}&gender={gender}&speed ={speed}&pitch={pitch}&maxresults={maxresults}";
-                client.DownloadFile(url, outFileName);
+                const string key = "AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw";
+                using (WebClient client = new WebClient())
+                {
+                    client.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows)");
+                    int txtLen = text.Length;
+                    text = "%" + BitConverter.ToString(Encoding.UTF8.GetBytes(text)).Replace("-", "%");
+                    string url = $"https://www.google.com/speech-api/v2/synthesize?ie=UTF-8enc=mpeg&client=chromium&key={key}&text={text}&xjerr={xjerr}&lang={lang}&gender={gender}&speed={speed}&pitch={pitch}&maxresults={maxresults}";
+                    client.DownloadFile(url, outFileName);
+                }
+            }
+            catch
+            {
+
             }
         }
         string[] ParseJson(string json)
@@ -58,23 +65,27 @@ namespace MedicalAssistant
         }
         public string SpeakRecognition()
         {
+            try
+            {
+                WebRequest request = WebRequest.Create("https://www.google.com/speech-api/v2/recognize?output=json&lang=AR-eg&key=AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw");
+                //
+                request.Method = "POST";
+                byte[] byteArray = File.ReadAllBytes("test.wav");
+                request.ContentType = "audio/l16; rate=16000"; //"16000";
+                request.ContentLength = byteArray.Length;
+                request.GetRequestStream().Write(byteArray, 0, byteArray.Length);
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                StreamReader reader = new StreamReader(response.GetResponseStream());
+                string str = reader.ReadToEnd();
+                string[] strs = ParseJson(str);
+                
 
-            WebRequest request = WebRequest.Create("https://www.google.com/speech-api/v2/recognize?output=json&lang=AR-eg&key=AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw");
-            //
-            request.Method = "POST";
-            byte[] byteArray = File.ReadAllBytes("test.wav");
-            request.ContentType = "audio/l16; rate=16000"; //"16000";
-            request.ContentLength = byteArray.Length;
-            request.GetRequestStream().Write(byteArray, 0, byteArray.Length);
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            StreamReader reader = new StreamReader(response.GetResponseStream());
-            string str = reader.ReadToEnd();
-            string[] strs = ParseJson(str);
-            string phrase = "";
+                if (strs.Length > 0) phrase = strs[0].ToLower();
 
-            if (strs.Length > 0) phrase = strs[0].ToLower();
-
-            Console.WriteLine(phrase);
+                Console.WriteLine(phrase);
+            }
+            catch
+            { }
             return phrase;
         }
         public WaveOutEvent CloudTextToSpeech(string text, string gender)

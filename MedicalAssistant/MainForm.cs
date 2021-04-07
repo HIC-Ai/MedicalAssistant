@@ -28,9 +28,6 @@ namespace MedicalAssistant
     public partial class MainForm : RadForm
     {
         List<string> CommendsWords = new List<string>();
-        private string QS = "";
-        private string AS = "";
-        bool waitSpechbool = false;
         string genderVoice = "female";
         public class ObjectList
         {
@@ -38,9 +35,6 @@ namespace MedicalAssistant
             public string QS { get; set; }
             public string ANS { get; set; }
         }
-
-
-        //public WaveOutEvent spt;
 
         public WaveOutEvent spt = new WaveOutEvent(); // or WaveOutEvent()
 
@@ -332,11 +326,10 @@ namespace MedicalAssistant
 
         string tip = "";
         int i = 0;
-        string txt;
         int len = 0;
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            System.Threading.Thread.Sleep(5000);
+            Thread.Sleep(5000);
 
             BackgroundWorker worker = sender as BackgroundWorker;
 
@@ -362,7 +355,7 @@ namespace MedicalAssistant
 
                         //tip = new database().Tips_database();
                         worker.ReportProgress(i * 1);
-                        System.Threading.Thread.Sleep(300000);
+                        Thread.Sleep(300000);
                     }
 
 
@@ -930,6 +923,7 @@ namespace MedicalAssistant
 
         }
 
+        [Obsolete]
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             if (voice == true)
@@ -1012,7 +1006,7 @@ namespace MedicalAssistant
                     {
                         label1.ForeColor = Color.Black;
                     }
-                    System.Threading.Thread.Sleep(100);
+                    Thread.Sleep(100);
 
                     //time1 = 0;
                     //timer1.Stop();
@@ -1087,7 +1081,23 @@ namespace MedicalAssistant
 
         }
 
-   
+        private void timer3_Tick_1(object sender, EventArgs e)
+        {
+            if (spt.PlaybackState != PlaybackState.Playing)
+            {
+
+                this.radListView1.Enabled = true;
+                this.pictureBox2.Enabled = true;
+                InputTxt.Enabled = true;
+                pictureBox1.Enabled = true;
+                talk = false;
+
+                InputTxt.Enabled = true;
+                InputTxt.HintText = "اكتب رسالتك هنا";
+                timer3.Stop();
+            }
+
+        }
 
         public class MyFormBehavior : RadFormBehavior
         {
@@ -1131,23 +1141,7 @@ namespace MedicalAssistant
             }
         }
 
-        private void timer3_Tick_1(object sender, EventArgs e)
-        {
-            if (spt.PlaybackState != PlaybackState.Playing)
-            {
-
-                this.radListView1.Enabled = true;
-                this.pictureBox2.Enabled = true;
-                InputTxt.Enabled = true;
-                pictureBox1.Enabled = true;
-                talk = false;
-
-                InputTxt.Enabled = true;
-                InputTxt.HintText = "اكتب رسالتك هنا";
-                timer3.Stop();
-            }
-            
-        }
+       
     }
 }
     
