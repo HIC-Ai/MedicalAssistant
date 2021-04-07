@@ -957,7 +957,6 @@ namespace MedicalAssistant
                     new EventHandler<NAudio.Wave.StoppedEventArgs>(waveIn_RecordingStopped);
                 waveIn.WaveFormat = new WaveFormat(16000, 1);
                 writer = new WaveFileWriter("test.wav", waveIn.WaveFormat);
-                // label1.Text = "Идет запись...";
                 waveIn.StartRecording();
 
 
