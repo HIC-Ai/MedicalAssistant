@@ -14,51 +14,111 @@ using System.Drawing.Drawing2D;
 using MedicalAssistant.Properties;
 using System.Text;
 using System.Collections.Generic;
+using System.Collections;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Web.Script.Serialization;
+using NAudio.Wave;
+using System.Threading;
 
 namespace MedicalAssistant
 {
     public partial class MainForm : RadForm
     {
-        //public StringBuilder CommendsWords = new StringBuilder("Hello World!");
         List<string> CommendsWords = new List<string>();
+        private string QS = "";
+        private string AS = "";
+        bool waitSpechbool = false;
+        public class ObjectList
+        {
+            public int ID { get; set; }
+            public string QS { get; set; }
+            public string ANS { get; set; }
+        }
+        //public WaveOutEvent spt;
 
+        public WaveOutEvent spt = new WaveOutEvent(); // or WaveOutEvent()
+
+
+        public List<ObjectList> RootObjects;
         public MainForm()
         {
             CommendsWords.Add("المهام");
-            CommendsWords.Add("الاخبار");
+            //CommendsWords.Add("الاخبار");
+            //CommendsWords.Add("من انا");
+            //CommendsWords.Add("علاج ضيق التنفس عند النوم بالأعشاب");
+
+            //var mySuperDictionary = JsonConvert.DeserializeObject(JsonConvert.SerializeObject(new Database.database().Questions()));
+
+            RootObjects = JsonConvert.DeserializeObject<List<ObjectList>>(JsonConvert.SerializeObject(new Database.database().Questions()));
+
+
+            //var jObject = JObject.Parse(new Database.database().Questions().ToString());
+
+
+            //JavaScriptSerializer jss = new JavaScriptSerializer();
+            //var obj = jsonObj;
+
+
+            //Console.WriteLine(jsonObj);
+
+
+
+
 
             InitializeComponent();
 
+            foreach (var rootObject in RootObjects)
+            {
+                if (rootObject.QS != null)
+                {
+                    Console.WriteLine(rootObject.QS);
+                    this.radListView1.Items.AddRange(rootObject.QS);
+
+                    CommendsWords.Add(rootObject.QS);
+
+                    //Console.WriteLine("lol "+ rootObject.ANS);
+                }
+            }
+            //this.radListView1.SelectedItem = null;
+            //PatientsDataSet.QuestionsRow questionsRow = this.Tag as PatientsDataSet.QuestionsRow;
+            //if (questionsRow != null)
+            //{
+            //    Console.WriteLine("lol");
+            //    this.QS = questionsRow.QS;
+            //    this.AS = questionsRow.AS;
+
+            //}
+
+            //foreach (PatientsDataSet.QuestionsRow person in DataSources.PatientsDataSet.Questions)
+            //{
+            //    Console.WriteLine("lol");
+
+            //}
+            //BindingSource bs = (BindingSource)dgvTestData.DataSource;
+            //var dt = (bs.DataSource as DataSet).Tables[bs.DataMember];
 
 
-
-            //radButton1.TabStop = false;
-            //radButton1.FlatStyle = FlatStyle.Flat;
-            //radButton1.FlatAppearance.BorderSize = 0;
-
-
+            //foreach (PatientsDataSet.QuestionsRow person in DataSources.PatientsDataSet.Questions)
+            //{
+            //    Console.WriteLine(person.QS);
+            //}
             this.SetCurrentPageViewPage(this.radPageViewPageSchedule);
             this.SetCurrentPageViewPage(this.radPageViewPageDashboard);
-            //panel1.HorizontalScroll.Maximum = 0;
-            //panel1.HorizontalScroll.Visible = false;
-            //panel1.Scroll.Maximum = 0;
 
+
+            panel1.VerticalScroll.Enabled = true;
+            panel1.VerticalScroll.Visible = true;
 
             panel1.AutoScroll = true;
             panel1.AutoScrollMinSize = new Size(0, 500);
-            //panel1.Paint += panel1_Paint;
-            //this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly;
             panel5.BackgroundImage = Gradient2D(panel5.ClientRectangle, Color.LightPink, Color.LightPink, Color.LightPink, Color.LightPink);
 
 
 
-            //this.radProgressBar1.Text = "Loading";
-            //this.progressBarAdv1.TextStyle = ProgressBarTextStyles.Custom;
 
 
-            backgroundWorker1.WorkerReportsProgress = true;
-            backgroundWorker1.WorkerSupportsCancellation = true;
             //this.SetToggleButtonsStateImages();
             //this.radChat1.Author = new Author(Properties.Resources.icons8_Chat_32, "Nancy");
             string startupPath = Directory.GetCurrentDirectory();
@@ -69,8 +129,158 @@ namespace MedicalAssistant
             DataSources.PatientsDataSet = this.patientsDataSet;
             DataSources.PatientsDataSet.Appointments.AppointmentsRowChanged += Appointments_AppointmentsRowChanged;
 
+
+
+            backgroundWorker1.WorkerReportsProgress = true;
+            backgroundWorker1.WorkerSupportsCancellation = true;
+
+        }
+        public void rec_text()
+        {
+            //radListView1.Enabled = false;
+
+            ticks = 0;
+            timer2.Enabled = false;
+
+            if (message_rev != "")
+            {
+                this.radListView1.Enabled = false;
+
+                SoundPlayer Send = new SoundPlayer("Sounds\\SOUND1.wav");
+                SoundPlayer Rcv = new SoundPlayer("Sounds\\SOUND2.wav");
+                send(message_rev);
+                Send.Play();
+
+                var t = new System.Windows.Forms.Timer();
+                t.Interval = 1000 + (message_rev.Length * 100);
+                //t.Interval = 1000 + (1 * 100);
+                txtTyping.Show();
+
+                t.Tick += (s, d) =>
+                {
+                    txtTyping.Hide();
+                    if (CommendsWords.Contains(message_rev) == true)
+                    {
+
+                        foreach (var rootObject in RootObjects)
+                        {
+                            if (rootObject.QS != null)
+                            {
+                                if (message_rev == rootObject.QS)
+                                {
+
+                                    message_send = rootObject.ANS;
+                                    InputTxt.Enabled = false;
+                                    InputTxt.HintText = "اكتب رسالتك هنا";
+                                    //message_send = new Database.database().Database(message_send, message_rev);
+                                    AddIncomming(message_send);
+
+                                    spt = new recognitionArabic().CloudTextToSpeech(message_send);
+                                    timer3.Start();
+                                    Debug.WriteLine("message_send " + message_send);
+                                    talk = false;
+
+
+                                    //timer3.Start();
+
+                                }
+
+                            }
+                        }
+
+
+
+                        if (message_rev == CommendsWords[0])
+                        {
+                            sp_txt_ok();
+                            this.SetCurrentPageViewPage(this.radPageViewPageSchedule);
+                        }
+                        if (message_rev == "لدي صداع")
+                        {
+                            sp_txt_ok();
+                            this.SetCurrentPageViewPage(this.radPageViewPageSchedule);
+                        }
+
+                        //if (message_rev == CommendsWords[1])
+                        //{
+                        //    sp_txt_ok();
+
+                        //    this.SetCurrentPageViewPage(this.radPageViewPageCharts);
+
+                        //}
+
+                        //if (message_rev == CommendsWords[3])
+                        //{
+                        //    message_send = "";
+                        //    InputTxt.Enabled = false;
+                        //    InputTxt.HintText = "اكتب رسالتك هنا";
+                        //    //message_send = new Database.database().Database(message_send, message_rev);
+                        //    new recognitionArabic().CloudTextToSpeech(message_send);
+                        //    Debug.WriteLine("message_send " + message_send);
+                        //    AddIncomming(message_send);
+                        //    talk = false;
+
+                        //    InputTxt.Enabled = true;
+
+
+                        //    //sp_txt_ok();
+                        //    //try
+                        //    //{
+                        //    //    //f();
+                        //    //}
+                        //    //catch { }
+                        //    //message_send = "حسنا اضف كمثال : المعياع مع الدكتور احمد في تاريخ اليوم الساعه الثانيه عشر";
+                        //    //new recognitionArabic().CloudTextToSpeech(message_send);
+                        //    //AddIncomming(message_send);
+
+                        //    //await DemoSchandeler DemoSchandeler = new DemoSchandeler();
+                        //    //DemoSchandeler.ShowDialog();
+
+
+                        //    //DemoSchandeler modalForm = new DemoSchandeler();
+                        //    //BeginInvoke((Action)(() => modalForm.ShowDialog()));
+
+                        //    //DemoSchandeler DemoSchandeler = new DemoSchandeler();
+
+                        //    //// prepare a operation to call it async --> your ShowDialog-call
+                        //    //var asyncCall = new Action(() => BeginInvoke(
+                        //    //                                 new Action(() => DemoSchandeler.Show())
+                        //    //                           ));
+
+                        //    //asyncCall.BeginInvoke(ar => DemoSchandeler = null, null);
+                        //    //await new DemoSchandeler().Show();
+
+
+
+
+                        //    //this.SetSchedulerAppointmentsBackground();
+                        //    //message_rev = "";
+                        //}
+                    }
+                    else
+                    {
+                        message_send = new Database.database().Database(message_send, message_rev);
+                        new recognitionArabic().CloudTextToSpeech(message_send);
+                        Debug.WriteLine("message_send " + message_send);
+                        AddIncomming(message_send);
+                        timer3.Start();
+
+                    }
+                    Rcv.Play();
+                    t.Stop();
+                };
+                t.Start(); // Start Timer
+
+
+            }
+
         }
 
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+
+     
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.TranslateTransform(panel1.AutoScrollPosition.X, panel1.AutoScrollPosition.Y);
@@ -121,11 +331,18 @@ namespace MedicalAssistant
         int len = 0;
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
+            System.Threading.Thread.Sleep(5000);
 
             BackgroundWorker worker = sender as BackgroundWorker;
 
             while (true)
             {
+
+                ArrayList TipsWords = new ArrayList();
+
+
+                TipsWords = new Database.database().Tips_database();
+
                 i = i + 1;
                 if (worker.CancellationPending == true)
                 {
@@ -134,9 +351,16 @@ namespace MedicalAssistant
                 }
                 else
                 {
-                    System.Threading.Thread.Sleep(2000);
-                    //tip = new database().Tips_database();
-                    worker.ReportProgress(i * 1);
+                    foreach (string fg in TipsWords)
+                    {
+                        tip = fg;
+
+                        //tip = new database().Tips_database();
+                        worker.ReportProgress(i * 1);
+                        System.Threading.Thread.Sleep(300000);
+                    }
+
+
 
                     //label1.Text = tip;
                 }
@@ -144,14 +368,55 @@ namespace MedicalAssistant
         }
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            tip = new database().Tips_database();
+            //ArrayList TipsWords = new ArrayList();
+
+
+            //TipsWords = new Database.database().Tips_database();
+            //Debug.WriteLine(TipsWords);
+
+
             //label1.Text = (e.ProgressPercentage.ToString());
 
-            txt = label1.Text;
-            len = txt.Length;
-            label1.Text = tip;
-            timer1.Start();
+            //txt = tip;
 
+
+
+            //foreach (string fg in TipsWords)
+            //{
+            //    tip = fg;
+            if (tip != "")
+            {
+                Debug.WriteLine(tip);
+                if (spt.PlaybackState == PlaybackState.Stopped)
+                {
+                    this.radListView1.Enabled = false;
+                    this.pictureBox2.Enabled = false;
+                    this.pictureBox1.Enabled = false; InputTxt.Enabled = false;
+                    this.InputTxt.Enabled = false;
+                    talk = true;
+
+
+
+                    spt = new recognitionArabic().CloudTextToSpeech("نصيحة : " + tip);
+                    len = tip.Length;
+                    //label1.Text = "";
+                    timer1.Interval = len;
+
+                    timer1.Start();
+                    timer3.Start();
+
+                }
+
+
+                //System.Threading.Thread.Sleep(20000);
+
+            }
+            //}
+            //if (time1 > len)
+            //{
+            //    time1 = 0;
+            //    timer1.Stop();
+            //}
         }
 
         public int page = 1;
@@ -161,31 +426,14 @@ namespace MedicalAssistant
         }
         private void main5_Load(object sender, EventArgs e)
         {
-            AddIncomming("مرحبا");
-            if (backgroundWorker1.IsBusy != true)
-            {
-                backgroundWorker1.DoWork += new DoWorkEventHandler(backgroundWorker1_DoWork);
-                backgroundWorker1.ProgressChanged += new ProgressChangedEventHandler(backgroundWorker1_ProgressChanged);
-                backgroundWorker1.RunWorkerAsync();
-            }
+            AddIncomming("ماذا لديك");
+
 
             this.appointmentsTableAdapter.Fill(this.patientsDataSet.Appointments);
-            //this.patientsTableAdapter.Fill(this.patientsDataSet.Patients);
 
-            //this.SetPageViewPageVisualStyles(this.radPageViewPageDashboard);
-            //this.SetPageViewPageVisualStyles(this.radPageViewPageSchedule);
-            //this.SetCurrentPageViewPage(this.radPageViewPageDashboard);
             this.UpdateSelectedPageData();
 
-            // Main panel
-            //this.FormElement.TitleBar.MaximizeButton.Enabled = false;
-            //this.FormElement.ImageBorder.BorderTMedicalAssistantkness = new Padding(0);
-            //this.mainPanel.PanelElement.PanelBorder.Visibility = ElementVisibility.Collapsed;
-            //this.radPanelButtonsContainer.PanelElement.PanelBorder.Visibility = ElementVisibility.Collapsed;
-            //this.radSplitButton1.DropDownButtonElement.DropDownMenu.PopupElement.Alignment = ContentAlignment.MiddleRight;
 
-            // Dashboard
-            //this.dashboardClockCalendarPanel.PanelElement.PanelBorder.Visibility = ElementVisibility.Collapsed;
             this.radCalendarDashboard.FocusedDate = CurrentDate;
 
             // Schedule
@@ -196,91 +444,16 @@ namespace MedicalAssistant
             this.AddSchedulerAppointmentBackgrounds();
             this.BindScheduler();
 
-            //CalendarNavigationElement navigationElement = this.radCalendarSchedule.CalendarElement.CalendarNavigationElement;
-            //navigationElement.PreviousButton.Visibility = ElementVisibility.Visible;
-            //navigationElement.NextButton.Visibility = ElementVisibility.Visible;
-            //navigationElement.BackColor = Color.FromArgb(242, 242, 243);
-            //navigationElement.MinSize = new Size(0, 32);
-            //navigationElement.Padding = new Padding(3, 6, 3, 6);
-        }
 
 
-
-
-
-        //private void AddMessageProgrammatically()
-        //{
-        //    this.radChat1.AutoAddUserMessages = false;
-        //    this.radChat1.SendMessage += radChat1_SendMessage;
-        //}
-        private void radChat1_SendMessage(object sender, SendMessageEventArgs e)
-        {
-            ChatTextMessage textMessage = e.Message as ChatTextMessage;
-
-            //ChatTextMessage message1 = new ChatTextMessage("Hello", author2, DateTime.Now.AddHours(1));
-            //this.radChat1.AddMessage(message1);
-
-
-            //textMessage.Message = textMessage.Message;
-            if (textMessage.Message == "السلام عليكم")
+            if (backgroundWorker1.IsBusy != true)
             {
-                Author author2 = new Author(Properties.Resources.icons8_Email_Send_32, "Andrew");
-
-                ChatTextMessage message3 = new ChatTextMessage("عليكم السلام", author2, DateTime.Now);
-                //this.radChat1.AddMessage(message3);
-
+                backgroundWorker1.DoWork += new DoWorkEventHandler(backgroundWorker1_DoWork);
+                backgroundWorker1.ProgressChanged += new ProgressChangedEventHandler(backgroundWorker1_ProgressChanged);
+                backgroundWorker1.RunWorkerAsync();
             }
-            //this.radChat1.AddMessage(textMessage);
-        }
-
-        private void bunifuButton6_Click(object sender, EventArgs e)
-        {
-            if (page != 4)
-            {
-                page = 4;
-            }
-        }
-
-
-
-
-        //private void bunifuButton3_Click(object sender, EventArgs e)
-        //{
-        //    if (page != 3)
-        //    {
-        //        page = 3;
-        //        panalMain.Controls.Clear();
-        //    }
-        //    //panalMain.Controls.Add(new dashboardMain());
-        //}
-
-        //private void scheduleToggleButton_ToggleStateChanged(object sender, StateChangedEventArgs args)
-        //{
-        //    if (page != 2)
-        //    {
-        //        page = 2;
-        //        panalMain.Controls.Clear();
-        //    }
-        //    //panalMain.Controls.Add(new dashboardMain());
-        //}
-
-        private void bunifuButton1_Click(object sender, EventArgs e)
-        {
-
-
-            //panalMain.Controls.Clear();
-            //panalMain.Controls.Add(new dashboardMain());
-        }
-
-        private void dashboardMain1_Load(object sender, EventArgs e)
-        {
 
         }
-
-
-
-
-
 
         int ticks = 0;
 
@@ -295,15 +468,7 @@ namespace MedicalAssistant
             }
         }
 
-        //private void guna2CircleButton1_Click(object sender, EventArgs e)
-        //{
-        //    timer2.Enabled = true;
-        //    new recognitionArabic().Louding(true, false);
-        //    guna2CircleButton1.Enabled = false;
-        //    guna2Button1.Enabled = true;
-        //    guna2Button1.FillColor = Color.Red;
 
-        //}
         void AddIncomming(string message)
         {
             chat.Incomming bubble = new chat.Incomming();
@@ -327,42 +492,7 @@ namespace MedicalAssistant
             AddOutgoing(message_rev);
             timer1.Start();
         }
-        //private void guna2Button1_Click(object sender, EventArgs e)
-        //{
-        //    ticks = 0;
-        //    timer2.Enabled = false;
-        //    message_rev = new recognitionArabic().Louding(false, true);
-        //    if (message_rev != "")
-        //    {
-        //        guna2CircleButton1.Enabled = true;
-        //        guna2Button1.Enabled = false;
-        //        SoundPlayer Send = new SoundPlayer("Sounds\\SOUND1.wav");
-        //        SoundPlayer Rcv = new SoundPlayer("Sounds\\SOUND2.wav");
-        //        send(message_rev);
-        //        Send.Play();
 
-        //        var t = new System.Windows.Forms.Timer();
-        //        t.Interval = 1000 + (message_rev.Length * 100);
-        //        txtTyping.Show();
-
-        //        t.Tick += (s, d) =>
-        //        {
-        //            txtTyping.Hide();
-        //            message_send = new database().Database(message_send, message_rev);
-        //            new recognitionArabic().CloudTextToSpeech(message_send);
-        //            Debug.WriteLine("message_send " + message_send);
-        //            AddIncomming(message_send);
-        //            Rcv.Play();
-        //            t.Stop();
-        //        };
-        //        t.Start(); // Start Timer
-
-
-        //    }
-
-        //    guna2CircleButton1.Enabled = true;
-        //    guna2Button1.Enabled = false;
-        //}
 
         private void bunifuGradientPanel1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -403,30 +533,12 @@ namespace MedicalAssistant
 
         private void UpdateSelectedPageData()
         {
-            //if (this.radPageView1.SelectedPage != null && this.radPageView1.Pages.IndexOf(this.radPageView1.SelectedPage) < 3)
-            //{
-            //    //(this.radPageView1.ViewElement as RadPageViewStripElement).ContentArea.BackColor = Color.White;
-            //}
-            //else
-            //{
-            //    (this.radPageView1.ViewElement as RadPageViewStripElement).ContentArea.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local);
-            //}
+
 
             if (this.radPageView1.SelectedPage == this.radPageViewPageDashboard)
             {
                 this.UpdateTodayAndTomorrowLabels();
             }
-        }
-
-        private void SetPageViewPageVisualStyles(RadPageViewPage page)
-        {
-            //(page.Item as RadPageViewStripItem).ButtonsPanel.CloseButton.Visibility = ElementVisibility.Collapsed;
-            //page.Item.Padding = new Padding(14, 10, 14, 10);
-            //page.Item.BackColor = Color.FromArgb(36, 24, 58);
-            //page.Item.SetThemeValueOverride(LightVisualElement.ForeColorProperty, Color.White, "");
-            //page.Item.SetThemeValueOverride(LightVisualElement.ForeColorProperty, Color.FromArgb(11, 187, 221), "Selected");
-            //page.Item.SetThemeValueOverride(LightVisualElement.ForeColorProperty, Color.FromArgb(11, 187, 221), "MouseOver");
-            //page.Item.SetThemeValueOverride(LightVisualElement.ForeColorProperty, Color.FromArgb(11, 187, 221), "MouseDown");
         }
 
         private void SetCurrentPageViewPage(RadPageViewPage page)
@@ -672,119 +784,29 @@ namespace MedicalAssistant
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-        public bool rec_text()
+
+
+        public void sp_txt_ok()
         {
-            ticks = 0;
-            timer2.Enabled = false;
-            
-            if (message_rev != "")
-            {
-                SoundPlayer Send = new SoundPlayer("Sounds\\SOUND1.wav");
-                SoundPlayer Rcv = new SoundPlayer("Sounds\\SOUND2.wav");
-                send(message_rev);
-                Send.Play();
+            AddIncomming("حسنا");
 
-                var t = new System.Windows.Forms.Timer();
-                t.Interval = 1000 + (message_rev.Length * 100);
-                txtTyping.Show();
-
-                t.Tick += (s, d) =>
-                {
-                    txtTyping.Hide();
-                    if (CommendsWords.Contains(message_rev) == true)
-                    {
-                        Debug.WriteLine("Yes");
-                        if (message_rev == CommendsWords[0])
-                        {
-
-                            this.SetCurrentPageViewPage(this.radPageViewPageSchedule);
-                            AddIncomming("حسنا");
-                        }
-
-                        if (message_rev == CommendsWords[1])
-                        {
-
-                            this.SetCurrentPageViewPage(this.radPageViewPageCharts);
-
-                        }
-                        new recognitionArabic().CloudTextToSpeech("حسنا");
-
-                    }
-                    else
-                    {
-                        message_send = new database().Database(message_send, message_rev);
-                        new recognitionArabic().CloudTextToSpeech(message_send);
-                        Debug.WriteLine("message_send " + message_send);
-                        AddIncomming(message_send);
-                    }
-                    Rcv.Play();
-                    t.Stop();
-                };
-                t.Start(); // Start Timer
-                
-
-
-            }
-            return true;
-        }
-        private void bunifuPictureBox1_Click(object sender, EventArgs e)
-        {
-
+            spt = new recognitionArabic().CloudTextToSpeech("حسنا");
+            timer3.Start();
 
         }
 
-        //private void bunifuPictureBox2_Click(object sender, EventArgs e)
-        //{
-        //    ticks = 0;
-        //    timer2.Enabled = false;
-        //    message_rev = new recognitionArabic().Louding(false, true);
-        //    if (message_rev != "")
-        //    {
-        //        bunifuPictureBox1.Enabled = true;
-        //        bunifuPictureBox2.Enabled = false;
-        //        SoundPlayer Send = new SoundPlayer("Sounds\\SOUND1.wav");
-        //        SoundPlayer Rcv = new SoundPlayer("Sounds\\SOUND2.wav");
-        //        send(message_rev);
-        //        Send.Play();
-
-        //        var t = new System.Windows.Forms.Timer();
-        //        t.Interval = 1000 + (message_rev.Length * 100);
-        //        txtTyping.Show();
-
-        //        t.Tick += (s, d) =>
-        //        {
-        //            txtTyping.Hide();
-        //            message_send = new database().Database(message_send, message_rev);
-        //            new recognitionArabic().CloudTextToSpeech(message_send);
-        //            Debug.WriteLine("message_send " + message_send);
-        //            AddIncomming(message_send);
-        //            Rcv.Play();
-        //            t.Stop();
-        //        };
-        //        t.Start(); // Start Timer
-
-
-        //    }
-
-        //    bunifuPictureBox1.Enabled = true;
-        //    bunifuPictureBox2.Enabled = false;
-        //}
-
-        private void txtTyping_Click(object sender, EventArgs e)
+        public async void f()
         {
-
+            AppointmentForm addAppointmentForm = new AppointmentForm();
+            //addAppointmentForm.StartPosition = FormStartPosition.CenterParent;
+            addAppointmentForm.ShowDialog();
         }
+
+
         bool talk = false;
-        private void bunifuImageButton1_Click(object sender, EventArgs e)
-        {
 
 
-        }
 
-        private void InputTxt_MouseUp(object sender, MouseEventArgs e)
-        {
-
-        }
 
         private void InputTxt_MouseLeave(object sender, EventArgs e)
         {
@@ -800,7 +822,7 @@ namespace MedicalAssistant
             }
         }
 
-       
+
 
         private void InputTxt_KeyDown(object sender, KeyEventArgs e)
         {
@@ -821,94 +843,27 @@ namespace MedicalAssistant
             }
         }
 
-        private void bunifuGradientPanel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radButtonNewAppointment_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void radListView1_SelectedItemChanged(object sender, EventArgs e)
         {
-            if (radListView1.SelectedItem != null)
-            {
-                message_rev = radListView1.SelectedItem.Text;
 
 
-                InputTxt.Enabled = false;
-                rec_text();
-                talk = false;
-                InputTxt.Enabled = true;
-                InputTxt.HintText = "اكتب رسالتك هنا";
-
-            }
-
-        }
-
-        private void radButton1_MouseDown(object sender, MouseEventArgs e)
-        {
-            //radButton1.BackColor = Color.DodgerBlue;
         }
 
         private void radButton1_MouseHover(object sender, EventArgs e)
         {
             radButton1.BackColor = Color.FromArgb(105, 181, 255);
             radButton1.ForeColor = Color.White;
-            //radButton1.BorderColor = Color.Red;
-            //this.radButton1.ButtonElement.BorderElement.PaintUsingParentShape = false;
-            //this.radButton1.ButtonElement.ShowBorder = true;
-            //this.radButton1.ButtonElement.BorderElement.BoxStyle = BorderBoxStyle.FourBorders;
-            //this.radButton1.ButtonElement.BorderElement.TopColor = Color.Transparent;
-            //this.radButton1.ButtonElement.BorderElement.BottomColor = Color.Transparent;
-
-            //this.radButton1.ButtonElement.BorderElement.LeftShadowColor = Color.Transparent;
-
-            //this.radButton1.ButtonElement.BorderElement.TopShadowColor = Color.Transparent;
-            //this.radButton1.ButtonElement.BorderElement.RightShadowColor = Color.Transparent;
-            //this.radButton1.ButtonElement.BorderElement.BottomShadowColor = Color.Transparent;
-            //this.radButton1.ButtonElement.BorderElement.ForeColor4 = Color.Transparent;
-            //this.radButton1.ButtonElement.BorderElement.ForeColor2 = Color.Transparent;
-            //this.radButton1.ButtonElement.BorderElement.ForeColor3 = Color.Transparent;
-            //this.radButton1.ButtonElement.BorderElement.InnerColor = Color.Transparent;
-            //this.radButton1.ButtonElement.BorderElement.InnerColor2 = Color.Transparent;
-            //this.radButton1.ButtonElement.BorderElement.RightColor = Color.Transparent;
-            //this.radButton1.ButtonElement.BorderElement.InnerColor4 = Color.Transparent;
-            //this.radButton1.ButtonElement.BorderElement.LeftColor = Color.Transparent;
-            //this.radButton1.ButtonElement.BorderElement.InnerColor3 = Color.Transparent;
-            //this.radButton1.ButtonElement.BorderElement.TopColor = Color.Transparent;
-            //this.radButton1.ButtonElement.BorderElement.TopColor = Color.Transparent;
-            //this.radButton1.ButtonElement.BorderElement.TopColor = Color.Transparent;
-
-            //this.radButton1.ButtonElement.BorderElement.TopWidth = 1;
-            //this.radButton1.ButtonElement.BorderElement.BottomColor = Color.FromArgb(105, 181, 255);
-            //this.radButton1.ButtonElement.BorderElement.BottomWidth = 1;
-            //this.radButton1.ButtonElement.BorderElement.LeftColor = Color.FromArgb(105, 181, 255);
-            //this.radButton1.ButtonElement.BorderElement.LeftWidth = 1;
-            //this.radButton1.ButtonElement.BorderElement.RightColor = Color.FromArgb(105, 181, 255);
-            //this.radButton1.ButtonElement.BorderElement.RightWidth = 1;
         }
 
         private void radButton1_MouseLeave(object sender, EventArgs e)
         {
-            //this.radButton1.ButtonElement.ShowBorder = true;
 
             radButton1.BackColor = Color.Transparent;
             radButton1.ForeColor = Color.FromArgb(105, 181, 255);
 
         }
 
-        private void button1_MouseHover(object sender, EventArgs e)
-        {
-            //button1.BackColor = Color.FromArgb(105, 181, 255);
-            //button1.ForeColor = Color.White;
 
-
-
-
-        }
 
         private void button1_MouseLeave(object sender, EventArgs e)
         {
@@ -922,10 +877,6 @@ namespace MedicalAssistant
 
         }
 
-        private void guna2CirclePictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -953,11 +904,7 @@ namespace MedicalAssistant
                 voice = false;
                 timer2.Enabled = true;
                 new recognitionArabic().Louding(true, false);
-                //bunifuPictureBox1.Enabled = false;
-                //bunifuPictureBox2.Enabled = true;
                 pictureBox2.Image = Resources.block_microphone;
-
-                //bunifuPictureBox2.FillColor = Color.Red;
             }
             else
             {
@@ -983,61 +930,160 @@ namespace MedicalAssistant
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-    }
+        int time1 = 0;
 
-    public class MyFormBehavior : RadFormBehavior
-    {
-        public MyFormBehavior(IComponentTreeHandler treeHandler, bool shouldCreateChildren) :
-            base(treeHandler, shouldCreateChildren)
+        private void timer1_Tick(object sender, EventArgs e)
         {
+            time1 = time1 + 1;
+            if (tip != "")
+            {
+                if (time1 < len)
+                {
+                    label1.Text = tip.Substring(0, time1);
+                    if (label1.ForeColor == Color.Black)
+                    {
+                        label1.ForeColor = Color.FromArgb(15, 82, 186);
+                    }
+                    else
+                    {
+                        label1.ForeColor = Color.Black;
+                    }
+                    System.Threading.Thread.Sleep(100);
+
+                    //time1 = 0;
+                    //timer1.Stop();
+                }
+                else
+                {
+                    time1 = 0;
+                    timer1.Stop();
+                    label1.ForeColor = Color.Black;
+                }
+            }
+
+
         }
 
-        public override Padding BorderWidth
+        private void radListView1_SelectedItemsChanged(object sender, EventArgs e)
         {
-            get
+        }
+        int slc;
+        private void radListView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (slc != radListView1.SelectedIndex)
             {
-                return new Padding(1);
+                if (spt.PlaybackState == PlaybackState.Stopped)
+                {
+                    {
+                        this.pictureBox2.Enabled = false;
+                        this.pictureBox1.Enabled = false;
+
+                        Console.WriteLine(slc);
+
+                        //radListView1.ShowItemToolTips = false;
+
+                        //if (radListView1.SelectedItem != null)
+
+                        message_rev = radListView1.SelectedItem.Text;
+                        //radListView1.ShowItemToolTips = false;
+
+                        rec_text();
+                        //radListView1.ShowItemToolTips = true;
+
+
+
+                        //Thread thread1 = new Thread(waitSpech);
+                        //thread1.IsBackground = true;
+                        //thread1.Start();
+
+
+
+
+                        //radListView1.SelectedItem.Text = "اختر الموعد";
+
+
+                        slc = radListView1.SelectedIndex;
+                    }
+                    //radListView1.Visible = true;
+                    //radListView1.Enabled = true;
+                    //radListView1.ShowItemToolTips = true;
+                    //pictureBox2.Enabled = true;
+
+                    //radListView1.Enabled = true;
+                }
+                //this.radListView1.Enabled = false;
+                //this.pictureBox2.Enabled = false;
+
+
+
+            }
+
+
+
+        }
+
+   
+
+        public class MyFormBehavior : RadFormBehavior
+        {
+            public MyFormBehavior(IComponentTreeHandler treeHandler, bool shouldCreateChildren) :
+                base(treeHandler, shouldCreateChildren)
+            {
+            }
+
+            public override Padding BorderWidth
+            {
+                get
+                {
+                    return new Padding(1);
+                }
             }
         }
-    }
 
-    public class PatientsListViewVisualItem : SimpleListViewVisualItem
-    {
-        LightVisualElement topRightElement;
-
-        public LightVisualElement TopRightElement
+        public class PatientsListViewVisualItem : SimpleListViewVisualItem
         {
-            get
+            LightVisualElement topRightElement;
+
+            public LightVisualElement TopRightElement
             {
-                return this.topRightElement;
+                get
+                {
+                    return this.topRightElement;
+                }
+            }
+
+            protected override Type ThemeEffectiveType
+            {
+                get
+                {
+                    return typeof(SimpleListViewVisualItem);
+                }
+            }
+
+            protected override void CreateChildElements()
+            {
+                base.CreateChildElements();
             }
         }
 
-        protected override Type ThemeEffectiveType
+        private void timer3_Tick_1(object sender, EventArgs e)
         {
-            get
+            if (spt.PlaybackState != PlaybackState.Playing)
             {
-                return typeof(SimpleListViewVisualItem);
+
+                this.radListView1.Enabled = true;
+                this.pictureBox2.Enabled = true;
+                InputTxt.Enabled = true;
+                pictureBox1.Enabled = true;
+                talk = false;
+
+                InputTxt.Enabled = true;
+                InputTxt.HintText = "اكتب رسالتك هنا";
+                timer3.Stop();
             }
-        }
-
-        protected override void CreateChildElements()
-        {
-            base.CreateChildElements();
-
-            //this.topRightElement = new LightVisualElement();
-            //this.topRightElement.StretchHorizontally = false;
-            //this.topRightElement.StretchVertically = false;
-            //this.topRightElement.DrawFill = true;
-            //this.topRightElement.NumberOfColors = 1;
-            //this.topRightElement.BackColor = Color.FromArgb(27, 4, 69);
-            //this.topRightElement.ForeColor = Color.White;
-            //this.topRightElement.Font = new Font("Segoe UI Semibold", 11f);
-            //this.topRightElement.Alignment = ContentAlignment.TopRight;
-            //this.topRightElement.Padding = new Padding(2);
-
-            //this.Children.Add(this.topRightElement);
+            
         }
     }
-
 }
+    

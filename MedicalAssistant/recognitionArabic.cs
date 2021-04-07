@@ -18,12 +18,60 @@ namespace MedicalAssistant
         private Process process;
 
         public string MyrecoHex;
-        static void MixAudioFiles(string speechMp3)
+        static WaveOutEvent MixAudioFiles(string speechMp3)
         {
-            var reader = new Mp3FileReader(speechMp3);
-            var waveOut = new WaveOut(); // or WaveOutEvent()
+
+            //using (var output = new WaveOutEvent())
+            //using (var player = new AudioFilePlayer(speechMp3))
+            //{
+            //    output.Init(player);
+            //    output.Play();
+            //    while (output.PlaybackState == PlaybackState.Playing)
+            //    {
+            //        Thread.Sleep(500);
+            //    }
+            //}
+
+            //WaveOutEvent waveputEvent = new WaveOutEvent();
+            ////using (var outputplay = new WaveOutEvent())
+            //var player = new Mp3FileReader(speechMp3);
+
+            //waveputEvent.Init(player);
+            //waveputEvent.Play();
+
+            //while (waveputEvent.PlaybackState == PlaybackState.Playing)
+            //{
+            //    Thread.Sleep(500);
+            //}
+            Mp3FileReader reader = new Mp3FileReader(speechMp3);
+            WaveOutEvent waveOut = new WaveOutEvent(); // or WaveOutEvent()
             waveOut.Init(reader);
             waveOut.Play();
+
+            return waveOut;
+
+
+            //var reader = new Mp3FileReader(speechMp3);
+            //var waveOut = new WaveOut(); // or WaveOutEvent()
+            //waveOut.Init(reader);
+            //waveOut.Play();
+            //TimeSpan totalTime1 = reader.TotalTime;
+
+            ////Debug.WriteLine(totalTime1);
+
+            ////TimeSpan ts = new TimeSpan(0, 0, 1);
+
+            ////Thread.Sleep(totalTime1);
+            //while (true)
+            //{
+            //    if(waveOut.PlaybackState == PlaybackState.Stopped)
+            //    {
+            //        break;
+            //    }
+            //    Console.WriteLine(waveOut.PlaybackState);
+            //}
+            ////while (waveOut.PlaybackState != PlaybackState.Stopped) ; // Wait untill the playing isn't finished. 
+
         }
 
 
@@ -39,7 +87,7 @@ namespace MedicalAssistant
                 client.DownloadFile(url, outFileName);
             }
         }
-        public void CloudTextToSpeech(string text)
+        public WaveOutEvent CloudTextToSpeech(string text)
         {
             string lang = "ar";
             double pitch = 0.6;
@@ -53,7 +101,7 @@ namespace MedicalAssistant
             //Console.WriteLine(timestamp);
 
             CloudTextToSpeech(timestamp, text, lang, speed, pitch, rate, maxresults, xjerr);
-            MixAudioFiles(timestamp);
+            return MixAudioFiles(timestamp);
 
         }
         public void Recognition()

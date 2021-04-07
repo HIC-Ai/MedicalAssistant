@@ -30,6 +30,8 @@ namespace MedicalAssistant.chat
         private void InitializeComponent()
         {
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.object_352f6104_ea2e_4514_aace_d8f9a4acc7c9 = new Telerik.WinControls.RootRadElement();
+            this.object_11f07201_80a4_4592_92d2_139d8edccf17 = new Telerik.WinControls.RootRadElement();
             this.Label3 = new Guna.UI.WinForms.GunaLabel();
             this.bunifuUserControl1 = new Bunifu.UI.WinForms.BunifuUserControl();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
@@ -47,16 +49,29 @@ namespace MedicalAssistant.chat
             this.gunaCirclePictureBox1.TabStop = false;
             this.gunaCirclePictureBox1.UseTransfarantBackground = false;
             // 
+            // object_352f6104_ea2e_4514_aace_d8f9a4acc7c9
+            // 
+            this.object_352f6104_ea2e_4514_aace_d8f9a4acc7c9.Name = "object_352f6104_ea2e_4514_aace_d8f9a4acc7c9";
+            this.object_352f6104_ea2e_4514_aace_d8f9a4acc7c9.StretchHorizontally = true;
+            this.object_352f6104_ea2e_4514_aace_d8f9a4acc7c9.StretchVertically = true;
+            // 
+            // object_11f07201_80a4_4592_92d2_139d8edccf17
+            // 
+            this.object_11f07201_80a4_4592_92d2_139d8edccf17.Name = "object_11f07201_80a4_4592_92d2_139d8edccf17";
+            this.object_11f07201_80a4_4592_92d2_139d8edccf17.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.object_11f07201_80a4_4592_92d2_139d8edccf17.StretchHorizontally = true;
+            this.object_11f07201_80a4_4592_92d2_139d8edccf17.StretchVertically = true;
+            // 
             // Label3
             // 
             this.Label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.Label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Label3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Label3.Location = new System.Drawing.Point(73, 22);
+            this.Label3.Location = new System.Drawing.Point(65, 23);
             this.Label3.Name = "Label3";
             this.Label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Label3.Size = new System.Drawing.Size(182, 22);
+            this.Label3.Size = new System.Drawing.Size(157, 13);
             this.Label3.TabIndex = 4;
             this.Label3.Text = "السلام عليكم ";
             this.Label3.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
@@ -66,8 +81,6 @@ namespace MedicalAssistant.chat
             this.bunifuUserControl1.AllowAnimations = false;
             this.bunifuUserControl1.AllowBorderColorChanges = false;
             this.bunifuUserControl1.AllowMouseEffects = false;
-            this.bunifuUserControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.bunifuUserControl1.AnimationSpeed = 200;
             this.bunifuUserControl1.AutoSize = true;
             this.bunifuUserControl1.BackColor = System.Drawing.Color.Transparent;
@@ -81,10 +94,10 @@ namespace MedicalAssistant.chat
             this.bunifuUserControl1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuUserControl1.Image = null;
             this.bunifuUserControl1.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.bunifuUserControl1.Location = new System.Drawing.Point(50, 4);
+            this.bunifuUserControl1.Location = new System.Drawing.Point(55, 8);
             this.bunifuUserControl1.Name = "bunifuUserControl1";
             this.bunifuUserControl1.ShowBorders = true;
-            this.bunifuUserControl1.Size = new System.Drawing.Size(218, 54);
+            this.bunifuUserControl1.Size = new System.Drawing.Size(177, 40);
             this.bunifuUserControl1.Style = Bunifu.UI.WinForms.BunifuUserControl.UserControlStyles.Flat;
             this.bunifuUserControl1.TabIndex = 3;
             // 
@@ -97,7 +110,7 @@ namespace MedicalAssistant.chat
             this.Controls.Add(this.bunifuUserControl1);
             this.Controls.Add(this.gunaCirclePictureBox1);
             this.Name = "Incomming";
-            this.Size = new System.Drawing.Size(274, 57);
+            this.Size = new System.Drawing.Size(252, 54);
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -106,6 +119,8 @@ namespace MedicalAssistant.chat
 
         #endregion
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
+        private Telerik.WinControls.RootRadElement object_352f6104_ea2e_4514_aace_d8f9a4acc7c9;
+        private Telerik.WinControls.RootRadElement object_11f07201_80a4_4592_92d2_139d8edccf17;
         private Guna.UI.WinForms.GunaLabel Label3;
         private Bunifu.UI.WinForms.BunifuUserControl bunifuUserControl1;
     }

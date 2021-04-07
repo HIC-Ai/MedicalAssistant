@@ -15,7 +15,7 @@ namespace MedicalAssistant
         {
             using (Graphics g = lbl.CreateGraphics())
             {
-                SizeF size = g.MeasureString(lbl.Text, lbl.Font, 495);
+                SizeF size = g.MeasureString(lbl.Text, lbl.Font, 177);
                 return (int)Math.Ceiling(size.Height);
             }
         }

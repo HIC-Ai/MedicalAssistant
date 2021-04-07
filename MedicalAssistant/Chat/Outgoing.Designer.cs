@@ -84,7 +84,6 @@ namespace MedicalAssistant.chat
             this.Controls.Add(this.bunifuUserControl2);
             this.Name = "Outgoing";
             this.Size = new System.Drawing.Size(276, 49);
-            this.DockChanged += new System.EventHandler(this.Outgoing_DockChanged);
             this.ResumeLayout(false);
 
         }

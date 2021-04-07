@@ -26,11 +26,20 @@ namespace MedicalAssistant.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\Patients.mdb;Persist" +
-            " Security Info=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Database/Patients.mdb;Persist Securi" +
+            "ty Info=True")]
         public string PatientsConnectionString {
             get {
                 return ((string)(this["PatientsConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("DataSource=Database\\\\chatbot.sqlite;Version=3;")]
+        public string sqConnectionString {
+            get {
+                return ((string)(this["sqConnectionString"]));
             }
         }
     }

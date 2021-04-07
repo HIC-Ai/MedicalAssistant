@@ -100,7 +100,7 @@
             // 
             // radLabel5
             // 
-            this.radLabel5.Location = new System.Drawing.Point(161, 78);
+            this.radLabel5.Location = new System.Drawing.Point(122, 78);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(76, 18);
             this.radLabel5.TabIndex = 2;
@@ -111,9 +111,9 @@
             // 
             this.startDateTimePicker.CustomFormat = "dd-MMMM-yyyy HH:mm";
             this.startDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.startDateTimePicker.Location = new System.Drawing.Point(305, 102);
+            this.startDateTimePicker.Location = new System.Drawing.Point(205, 102);
             this.startDateTimePicker.Name = "startDateTimePicker";
-            this.startDateTimePicker.Size = new System.Drawing.Size(225, 20);
+            this.startDateTimePicker.Size = new System.Drawing.Size(325, 20);
             this.startDateTimePicker.TabIndex = 3;
             this.startDateTimePicker.TabStop = false;
             this.startDateTimePicker.Text = "17-يونيو-2015 12:00";
@@ -123,9 +123,9 @@
             // 
             this.endDateTimePicker.CustomFormat = "dd-MMMM-yyyy HH:mm";
             this.endDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.endDateTimePicker.Location = new System.Drawing.Point(305, 152);
+            this.endDateTimePicker.Location = new System.Drawing.Point(205, 152);
             this.endDateTimePicker.Name = "endDateTimePicker";
-            this.endDateTimePicker.Size = new System.Drawing.Size(225, 20);
+            this.endDateTimePicker.Size = new System.Drawing.Size(325, 20);
             this.endDateTimePicker.TabIndex = 4;
             this.endDateTimePicker.TabStop = false;
             this.endDateTimePicker.Text = "17-يونيو-2015 12:30";
@@ -144,7 +144,7 @@
             this.descriptionTextBoxControl.Location = new System.Drawing.Point(12, 102);
             this.descriptionTextBoxControl.Multiline = true;
             this.descriptionTextBoxControl.Name = "descriptionTextBoxControl";
-            this.descriptionTextBoxControl.Size = new System.Drawing.Size(225, 70);
+            this.descriptionTextBoxControl.Size = new System.Drawing.Size(187, 70);
             this.descriptionTextBoxControl.TabIndex = 6;
             this.descriptionTextBoxControl.ThemeName = "MedicalAppTheme";
             // 

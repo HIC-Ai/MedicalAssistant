@@ -174,12 +174,16 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI">
       <HintPath>..\..\..\..\Desktop\New folder (4)\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2">
       <HintPath>..\..\..\..\Desktop\New folder (4)\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="Janus.Data.v4, Version=4.0.52.0, Culture=neutral, PublicKeyToken=21d5517571b185bf" />
     <Reference Include="Janus.Windows.ButtonBar.v4, Version=4.0.52.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Desktop\New folder (4)\Janus.Windows.ButtonBar.v4.dll</HintPath>
@@ -188,6 +192,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Desktop\New folder (4)\Janus.Windows.Common.v4.dll</HintPath>
     </Reference>
+    <Reference Include="Janus.Windows.GridEX.v4, Version=4.0.52.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
     <Reference Include="Janus.Windows.UI.v4, Version=4.0.52.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Desktop\New folder (4)\Janus.Windows.UI.v4.dll</HintPath>
@@ -197,6 +202,9 @@
     </Reference>
     <Reference Include="NAudio.Lame, Version=1.1.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NAudio.Lame.1.1.6\lib\netstandard2.0\NAudio.Lame.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.BulletGraph.Windows, Version=18.4460.0.39, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Shared.Base, Version=18.4460.0.39, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
@@ -217,6 +225,7 @@
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Speech" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -282,8 +291,14 @@
     <Compile Include="Chat\Outgoing.Designer.cs">
       <DependentUpon>Outgoing.cs</DependentUpon>
     </Compile>
-    <Compile Include="database.cs" />
+    <Compile Include="Database\database.cs" />
     <Compile Include="DataSources.cs" />
+    <Compile Include="DemoSchandeler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DemoSchandeler.Designer.cs">
+      <DependentUpon>DemoSchandeler.cs</DependentUpon>
+    </Compile>
     <Compile Include="GradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -292,6 +307,9 @@
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientsDataSet.cs">
+      <DependentUpon>PatientsDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="PatientsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -311,6 +329,9 @@
     <EmbeddedResource Include="Chat\Outgoing.resx">
       <DependentUpon>Outgoing.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DemoSchandeler.resx">
+      <DependentUpon>DemoSchandeler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -326,6 +347,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="bin\Debug\chatbot.sqlite" />
+    <EmbeddedResource Include="Database\chatbot.sqlite">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="Dll\MedicalAppTheme.tssp" />
     <None Include="packages.config" />
     <None Include="PatientsDataSet.xsc">
@@ -390,6 +414,10 @@
     <EmbeddedResource Include="Sounds\SOUND2.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Database\Patients.mdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="Dll\FontAwesome.Sharp.dll" />
     <Content Include="Dll\Guna.UI.dll" />
     <Content Include="Dll\Guna.UI2.dll" />
     <Content Include="Dll\Janus.Windows.ButtonBar.v4.dll" />
@@ -416,9 +444,6 @@
     <Content Include="Dll\UIAutomationProvider.xml" />
     <Content Include="Dll\UIAutomationTypes.dll" />
     <Content Include="Dll\UIAutomationTypes.xml" />
-    <Content Include="Patients.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\icons8_Email_Send_32.png" />
     <None Include="Resources\icons8_medical_doctor_48.png" />
     <None Include="Resources\received_264768345150339.gif" />
@@ -429,6 +454,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Temporary\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
