@@ -901,24 +901,7 @@ namespace MedicalAssistant
         WaveFileWriter writer;
 
 
-        string[] ParseJson(string json)
-        {
-            List<string> list = new List<string>();
-            try
-            {
-                string[] lines = json.Split(new[] { "\"transcript\":\"" }, StringSplitOptions.RemoveEmptyEntries);
 
-
-                for (int i = 1; i < lines.Length; i++)
-                    list.Add(lines[i].Substring(0, lines[i].IndexOf("\"", StringComparison.Ordinal)));
-            }
-            catch
-            {
-
-            }
-
-            return list.ToArray();
-        }
 
         void waveIn_DataAvailable(object sender, WaveInEventArgs e)
         {
@@ -987,27 +970,10 @@ namespace MedicalAssistant
                 writer.Close();
                 writer.Dispose();
 
-                WebRequest request = WebRequest.Create("https://www.google.com/speech-api/v2/recognize?output=json&lang=AR-eg&key=AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw");
-                //
-                request.Method = "POST";
-                byte[] byteArray = File.ReadAllBytes("dddmeo.wav");
-                request.ContentType = "audio/l16; rate=16000"; //"16000";
-                request.ContentLength = byteArray.Length;
-                request.GetRequestStream().Write(byteArray, 0, byteArray.Length);
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                StreamReader reader = new StreamReader(response.GetResponseStream());
-                string str = reader.ReadToEnd();
-                string[] strs = ParseJson(str);
-                string phrase = "";
-
-                if (strs.Length > 0) phrase = strs[0].ToLower();
-
-                Console.WriteLine(phrase);
-                message_rev = phrase;
 
                 voice = true;
                 //message_rev = new recognitionArabic().Louding(false, true);
-                //message_rev = new recognitionArabic().SpeakRecognitionStop(waveIn, writer);
+                message_rev = new recognitionArabic().SpeakRecognition();
 
 
 
