@@ -325,6 +325,7 @@
     <Compile Include="Chat\Outgoing.Designer.cs">
       <DependentUpon>Outgoing.cs</DependentUpon>
     </Compile>
+    <Compile Include="CloudTextToSpeech2Base.cs" />
     <Compile Include="Database\database.cs" />
     <Compile Include="DataSources.cs" />
     <Compile Include="DemoSchandeler.cs">
@@ -353,7 +354,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="recognitionArabic.cs" />
-    <Compile Include="utils.cs" />
     <EmbeddedResource Include="AppointmentForm.resx">
       <DependentUpon>AppointmentForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -414,6 +414,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Sounds\NoInternetArabic.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="Resources\NoInternetArabic.mp3" />
     <None Include="Resources\icons8-chat-50.png" />
     <None Include="Resources\add-to-chat.png" />
     <None Include="Resources\76439.jpg" />

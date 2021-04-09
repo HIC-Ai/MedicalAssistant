@@ -29,6 +29,8 @@ namespace MedicalAssistant
     {
         List<string> CommendsWords = new List<string>();
         string genderVoice = "female";
+        ArrayList TipsWords = new ArrayList();
+
         public class ObjectList
         {
             public int ID { get; set; }
@@ -336,7 +338,7 @@ namespace MedicalAssistant
             while (true)
             {
 
-                ArrayList TipsWords = new ArrayList();
+                
 
 
                 TipsWords = new Database.database().Tips_database();
@@ -355,7 +357,7 @@ namespace MedicalAssistant
 
                         //tip = new database().Tips_database();
                         worker.ReportProgress(i * 1);
-                        Thread.Sleep(300000);
+                        Thread.Sleep(100000);
                     }
 
 
@@ -552,7 +554,7 @@ namespace MedicalAssistant
 
         private void radListViewNextPatients_VisualItemCreating(object sender, ListViewVisualItemCreatingEventArgs e)
         {
-            e.VisualItem = new PatientsListViewVisualItem();
+            //e.VisualItem = new PatientsListViewVisualItem();
         }
 
 
@@ -1099,47 +1101,47 @@ namespace MedicalAssistant
 
         }
 
-        public class MyFormBehavior : RadFormBehavior
-        {
-            public MyFormBehavior(IComponentTreeHandler treeHandler, bool shouldCreateChildren) :
-                base(treeHandler, shouldCreateChildren)
-            {
-            }
+        //public class MyFormBehavior : RadFormBehavior
+        //{
+        //    public MyFormBehavior(IComponentTreeHandler treeHandler, bool shouldCreateChildren) :
+        //        base(treeHandler, shouldCreateChildren)
+        //    {
+        //    }
 
-            public override Padding BorderWidth
-            {
-                get
-                {
-                    return new Padding(1);
-                }
-            }
-        }
+        //    public override Padding BorderWidth
+        //    {
+        //        get
+        //        {
+        //            return new Padding(1);
+        //        }
+        //    }
+        //}
 
-        public class PatientsListViewVisualItem : SimpleListViewVisualItem
-        {
-            LightVisualElement topRightElement;
+        //public class PatientsListViewVisualItem : SimpleListViewVisualItem
+        //{
+        //    LightVisualElement topRightElement;
 
-            public LightVisualElement TopRightElement
-            {
-                get
-                {
-                    return this.topRightElement;
-                }
-            }
+        //    public LightVisualElement TopRightElement
+        //    {
+        //        get
+        //        {
+        //            return this.topRightElement;
+        //        }
+        //    }
 
-            protected override Type ThemeEffectiveType
-            {
-                get
-                {
-                    return typeof(SimpleListViewVisualItem);
-                }
-            }
+        //    protected override Type ThemeEffectiveType
+        //    {
+        //        get
+        //        {
+        //            return typeof(SimpleListViewVisualItem);
+        //        }
+        //    }
 
-            protected override void CreateChildElements()
-            {
-                base.CreateChildElements();
-            }
-        }
+        //    protected override void CreateChildElements()
+        //    {
+        //        base.CreateChildElements();
+        //    }
+        //}
 
        
     }

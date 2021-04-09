@@ -147,7 +147,7 @@ namespace MedicalAssistant
             this.radPanel2.Controls.Add(this.radProgressBar1);
             this.radPanel2.Controls.Add(this.InputTxt);
             this.radPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.radPanel2.Location = new System.Drawing.Point(0, 503);
+            this.radPanel2.Location = new System.Drawing.Point(0, 533);
             this.radPanel2.Name = "radPanel2";
             this.radPanel2.Size = new System.Drawing.Size(293, 51);
             this.radPanel2.TabIndex = 20;
@@ -250,7 +250,7 @@ namespace MedicalAssistant
             // 
             this.panel3.Controls.Add(this.radListView1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 459);
+            this.panel3.Location = new System.Drawing.Point(0, 489);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(293, 44);
             this.panel3.TabIndex = 0;
@@ -872,7 +872,7 @@ namespace MedicalAssistant
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 24);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(293, 554);
+            this.panel2.Size = new System.Drawing.Size(293, 584);
             this.panel2.TabIndex = 22;
             // 
             // uiPanelManager1
@@ -902,7 +902,7 @@ namespace MedicalAssistant
             this.radButton2.BackColor = System.Drawing.SystemColors.Control;
             this.radButton2.Dock = System.Windows.Forms.DockStyle.Right;
             this.radButton2.ForeColor = System.Drawing.Color.SeaGreen;
-            this.radButton2.Location = new System.Drawing.Point(1184, 0);
+            this.radButton2.Location = new System.Drawing.Point(1192, 0);
             this.radButton2.Name = "radButton2";
             this.radButton2.Size = new System.Drawing.Size(124, 24);
             this.radButton2.TabIndex = 17;
@@ -964,7 +964,7 @@ namespace MedicalAssistant
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1308, 24);
+            this.panel5.Size = new System.Drawing.Size(1316, 24);
             this.panel5.TabIndex = 24;
             this.panel5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
             // 
@@ -991,7 +991,7 @@ namespace MedicalAssistant
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1308, 578);
+            this.ClientSize = new System.Drawing.Size(1316, 608);
             this.Controls.Add(this.radButton1);
             this.Controls.Add(this.radPageView1);
             this.Controls.Add(this.panel4);
