@@ -120,9 +120,9 @@ namespace MedicalAssistant
             //this.radChat1.Author = new Author(Properties.Resources.icons8_Chat_32, "Nancy");
             string startupPath = Directory.GetCurrentDirectory();
             //ThemeResolutionService.LoadPackageFile(startupPath.Replace("bin\\Debug", "").ToString() + @"dll\"+ "MedicalAppTheme.tssp");
-            //ThemeResolutionService.LoadPackageResource("MedicalAssistant.Themes.MedicalAppTheme.tssp");
+            ThemeResolutionService.LoadPackageResource("MedicalAssistant.Themes.MedicalAppTheme.tssp");
 
-            //RadMessageBox.Instance.ThemeName = "MedicalAppTheme";
+            RadMessageBox.Instance.ThemeName = "MedicalAppTheme";
             DataSources.PatientsDataSet = this.patientsDataSet;
             DataSources.PatientsDataSet.Appointments.AppointmentsRowChanged += Appointments_AppointmentsRowChanged;
 
