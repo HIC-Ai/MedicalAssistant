@@ -58,7 +58,6 @@ namespace MedicalAssistant.chat
             this.bunifuUserControl2.Size = new System.Drawing.Size(275, 43);
             this.bunifuUserControl2.Style = Bunifu.UI.WinForms.BunifuUserControl.UserControlStyles.Flat;
             this.bunifuUserControl2.TabIndex = 0;
-            this.bunifuUserControl2.Click += new System.EventHandler(this.bunifuUserControl2_Click);
             // 
             // Label2
             // 
@@ -73,7 +72,6 @@ namespace MedicalAssistant.chat
             this.Label2.TabIndex = 2;
             this.Label2.Text = "وعليكم السلام ";
             this.Label2.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
-            this.Label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // Outgoing
             // 

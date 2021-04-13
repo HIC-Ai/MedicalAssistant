@@ -117,10 +117,7 @@ namespace MedicalAssistant
             //this.patientsDropDownList.EndUpdate();
             //this.patientsDropDownList.SelectedItem = selectedItem;
         }
-        private void btn_Click(object sender, EventArgs e)
-        {
 
-        }
         private void saveButton_Click(object sender, EventArgs e)
         {
             if (!this.AreRequiredFieldsValid())

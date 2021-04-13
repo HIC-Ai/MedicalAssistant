@@ -12,15 +12,11 @@ using System.Diagnostics;
 using System.Media;
 using System.Drawing.Drawing2D;
 using MedicalAssistant.Properties;
-using System.Text;
 using System.Collections.Generic;
 using System.Collections;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Web.Script.Serialization;
 using NAudio.Wave;
 using System.Threading;
-using System.Net;
 
 namespace MedicalAssistant
 {
@@ -124,9 +120,9 @@ namespace MedicalAssistant
             //this.radChat1.Author = new Author(Properties.Resources.icons8_Chat_32, "Nancy");
             string startupPath = Directory.GetCurrentDirectory();
             //ThemeResolutionService.LoadPackageFile(startupPath.Replace("bin\\Debug", "").ToString() + @"dll\"+ "MedicalAppTheme.tssp");
-            ThemeResolutionService.LoadPackageResource("MedicalAssistant.Themes.MedicalAppTheme.tssp");
+            //ThemeResolutionService.LoadPackageResource("MedicalAssistant.Themes.MedicalAppTheme.tssp");
 
-            RadMessageBox.Instance.ThemeName = "MedicalAppTheme";
+            //RadMessageBox.Instance.ThemeName = "MedicalAppTheme";
             DataSources.PatientsDataSet = this.patientsDataSet;
             DataSources.PatientsDataSet.Appointments.AppointmentsRowChanged += Appointments_AppointmentsRowChanged;
 
@@ -277,18 +273,6 @@ namespace MedicalAssistant
 
         }
 
-        private void timer3_Tick(object sender, EventArgs e)
-        {
-
-     
-        }
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            e.Graphics.TranslateTransform(panel1.AutoScrollPosition.X, panel1.AutoScrollPosition.Y);
-            e.Graphics.DrawLine(Pens.Red, 100, 0, 100, 100);
-            e.Graphics.DrawLine(Pens.Red, 100, 0, 0, 100);
-
-        }
         Bitmap Gradient2D(Rectangle r, Color c1, Color c2, Color c3, Color c4)
         {
             Bitmap bmp = new Bitmap(r.Width, r.Height);
@@ -494,24 +478,9 @@ namespace MedicalAssistant
         }
 
 
-        private void bunifuGradientPanel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
-        }
-
         private void Appointments_AppointmentsRowChanged(object sender, PatientsDataSet.AppointmentsRowChangeEvent e)
         {
             this.UpdateTodayAndTomorrowLabels();
-        }
-
-        private void dashboardToggleButton_Click(object sender, EventArgs e)
-        {
-            //this.ResetToggleButtons(this.dashboardToggleButton);
-            this.SetCurrentPageViewPage(this.radPageViewPageDashboard);
         }
 
         private void scheduleToggleButton_Click(object sender, EventArgs e)
@@ -520,16 +489,6 @@ namespace MedicalAssistant
             this.SetCurrentPageViewPage(this.radPageViewPageSchedule);
         }
 
-        private void radSplitButton1_DropDownOpening(object sender, EventArgs e)
-        {
-            RadPopupOpeningEventArgs args = e as RadPopupOpeningEventArgs;
-            //args.CustomLocation = new Point(args.CustomLocation.X + this.radSplitButton1.Width - 20, args.CustomLocation.Y);
-        }
-
-        private void radPageView1_SelectedPageChanged(object sender, EventArgs e)
-        {
-            this.UpdateSelectedPageData();
-        }
 
         private void UpdateSelectedPageData()
         {
@@ -568,15 +527,7 @@ namespace MedicalAssistant
             this.SetSchedulerAppointmentsBackground();
         }
 
-        private void radPanelTodaysAppointments_Click(object sender, EventArgs e)
-        {
-            this.SetSchedulerPageActive(CurrentDate);
-        }
 
-        private void radPanelTomorrowAppointments_Click(object sender, EventArgs e)
-        {
-            this.SetSchedulerPageActive(CurrentDate.AddDays(1));
-        }
 
         private void radCalendarDashboard_SelectionChanged(object sender, EventArgs e)
         {
@@ -665,11 +616,6 @@ namespace MedicalAssistant
         private void radScheduler1_AppointmentDeleted(object sender, SchedulerAppointmentEventArgs e)
         {
             this.appointmentsTableAdapter.Update(DataSources.PatientsDataSet.Appointments);
-        }
-
-        private void DayViewButton_Click(object sender, EventArgs e)
-        {
-            this.radScheduler1.ActiveViewType = SchedulerViewType.MultiDay;
         }
 
         private void radCalendarSchedule_SelectionChanged(object sender, EventArgs e)
@@ -776,15 +722,6 @@ namespace MedicalAssistant
             this.SetSchedulerPageActive(CurrentDate);
         }
 
-        private void panel3_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
-        }
-
 
         public void sp_txt_ok()
         {
@@ -795,32 +732,10 @@ namespace MedicalAssistant
 
         }
 
-        public async void f()
-        {
-            AppointmentForm addAppointmentForm = new AppointmentForm();
-            //addAppointmentForm.StartPosition = FormStartPosition.CenterParent;
-            addAppointmentForm.ShowDialog();
-        }
-
 
         bool talk = false;
 
 
-
-
-        private void InputTxt_MouseLeave(object sender, EventArgs e)
-        {
-            //InputTxt.HintText = "";
-
-            //InputTxt.Enabled = false;
-            if (talk == false)
-            {
-                if (InputTxt.Text == "" || InputTxt.Text == null)
-                {
-                    InputTxt.HintText = "اكتب رسالتك هنا";
-                }
-            }
-        }
 
 
 
@@ -843,12 +758,6 @@ namespace MedicalAssistant
             }
         }
 
-        private void radListView1_SelectedItemChanged(object sender, EventArgs e)
-        {
-
-
-        }
-
         private void radButton1_MouseHover(object sender, EventArgs e)
         {
             radButton1.BackColor = Color.FromArgb(105, 181, 255);
@@ -863,13 +772,6 @@ namespace MedicalAssistant
 
         }
 
-
-
-        private void button1_MouseLeave(object sender, EventArgs e)
-        {
-            radButton1.BackColor = Color.Transparent;
-            radButton1.ForeColor = Color.FromArgb(105, 181, 255);
-        }
 
         private void radButton1_Click(object sender, EventArgs e)
         {
@@ -1024,9 +926,6 @@ namespace MedicalAssistant
 
         }
 
-        private void radListView1_SelectedItemsChanged(object sender, EventArgs e)
-        {
-        }
         int slc;
         private void radListView1_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -64,25 +64,5 @@ namespace MedicalAssistant.chat
 
         }
 
-
-        private void Incomming_Resize(object sender, EventArgs e)
-        {
-            AdjustHeight();
-        }
-
-        private void Outgoing_DockChanged(object sender, EventArgs e)
-        {
-            AdjustHeight();
-        }
-
-        private void bunifuUserControl2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
