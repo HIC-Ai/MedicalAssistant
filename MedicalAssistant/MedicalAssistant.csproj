@@ -472,6 +472,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Dll\x64\SQLite.Interop.dll" />
+    <Content Include="Dll\x86\SQLite.Interop.dll" />
     <EmbeddedResource Include="Sounds\NoInternetArabic.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
