@@ -1094,7 +1094,6 @@ namespace MedicalAssistant
         private Telerik.WinControls.UI.RadPanel radPanel2;
         private System.Windows.Forms.Panel panel2;
         private Telerik.WinControls.UI.RadButton radButton2;
-        private Janus.Windows.UI.Dock.UIPanelManager uiPanelManager1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox InputTxt;
         private Telerik.WinControls.RootRadElement object_e3bdc5d3_c56d_48bf_bc43_aa607a6c2b99;
         private Telerik.WinControls.UI.RadButton radButtonNewAppointment;

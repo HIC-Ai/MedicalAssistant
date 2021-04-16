@@ -775,7 +775,7 @@ namespace MedicalAssistant
 
         private void radButton1_Click(object sender, EventArgs e)
         {
-            Environment.Exit(Environment.ExitCode);
+            Application.Exit();
 
         }
 
