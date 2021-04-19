@@ -136,6 +136,7 @@ namespace MedicalAssistant
             new recognitionArabic().CloudTextToSpeech("تم اضافة المَوعِد", "male");
 
             this.Close();
+
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -157,6 +158,7 @@ namespace MedicalAssistant
             this.appointmentsTableAdapter1.Update(DataSources.PatientsDataSet.Appointments);
             this.appointmentsTableAdapter1.Fill(DataSources.PatientsDataSet.Appointments);
             RadMessageBox.Show(this, "Appointment added.");
+            //this.Close();
         }
 
         private void EditAppointment()
@@ -174,6 +176,7 @@ namespace MedicalAssistant
             this.appointmentsTableAdapter1.Update(DataSources.PatientsDataSet.Appointments);
             this.appointmentsTableAdapter1.Fill(DataSources.PatientsDataSet.Appointments);
             RadMessageBox.Show(this, "Appointment changed.");
+
         }
 
         private bool AreRequiredFieldsValid()

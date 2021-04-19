@@ -34,7 +34,7 @@ namespace MedicalAssistant
 
                 if (strs.Length > 0) phrase = strs[0].ToLower();
 
-                Console.WriteLine(phrase);
+                //Console.WriteLine(phrase);
             }
             catch
             { }
@@ -160,7 +160,7 @@ namespace MedicalAssistant
                 double speed = 0.5;
                 double maxresults = 1;
                 double xjerr = 5;
-                Console.WriteLine($"\tprocessing phrase: \"{text}\" ");
+                //Console.WriteLine($"\tprocessing phrase: \"{text}\" ");
                 var timestamp = (DateTime.Now.ToFileTime()).ToString();
 
 
