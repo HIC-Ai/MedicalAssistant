@@ -629,16 +629,16 @@ namespace MedicalAssistant
             pictureBox1.Enabled = false;
 
 
-            //DemoSchandeler2 addAppointmentForm = new DemoSchandeler2();
-            //addAppointmentForm.StartPosition = FormStartPosition.CenterParent;
-            //addAppointmentForm.FormClosed += new FormClosedEventHandler(MyForm_FormClosed);
-            //addAppointmentForm.ShowDialog(this);
-
-            AppointmentForm addAppointmentForm = new AppointmentForm();
+            DemoSchandeler2 addAppointmentForm = new DemoSchandeler2();
             addAppointmentForm.StartPosition = FormStartPosition.CenterParent;
             addAppointmentForm.FormClosed += new FormClosedEventHandler(MyForm_FormClosed);
             addAppointmentForm.ShowDialog(this);
-            this.SetSchedulerAppointmentsBackground();
+
+            //AppointmentForm addAppointmentForm = new AppointmentForm();
+            //addAppointmentForm.StartPosition = FormStartPosition.CenterParent;
+            //addAppointmentForm.FormClosed += new FormClosedEventHandler(MyForm_FormClosed);
+            //addAppointmentForm.ShowDialog(this);
+            //this.SetSchedulerAppointmentsBackground();
 
         }
 
