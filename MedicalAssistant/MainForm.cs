@@ -102,6 +102,7 @@ namespace MedicalAssistant
             CommendsWords.Add("اخبار الصحه");
             CommendsWords.Add("الاعدادات");
             CommendsWords.Add("اضافه موعد");
+            CommendsWords.Add("خروج");
 
             //CommendsWords.Add("الاخبار");
             //CommendsWords.Add("من انا");
@@ -1155,20 +1156,51 @@ namespace MedicalAssistant
                         Console.WriteLine(message_rev);
                         if (message_rev == CommendsWords[0])
                         {
-                            sp_txt_ok();
+                            spt = new recognitionArabic().CloudTextToSpeech("حسنا", genderVoice);
+                            timer3.Start();
+                            //sp_txt_ok();
                             this.SetCurrentPageViewPage(this.radPageViewPageSchedule);
+                        }
+                        if (message_rev == CommendsWords[1])
+                        {
+                            spt = new recognitionArabic().CloudTextToSpeech("حسنا", genderVoice);
+                            timer3.Start();
+                            //sp_txt_ok();
+                            this.SetCurrentPageViewPage(this.radPageViewPageDashboard);
+                        }
+                        if (message_rev == CommendsWords[2])
+                        {
+                            spt = new recognitionArabic().CloudTextToSpeech("حسنا", genderVoice);
+                            timer3.Start();
+                            //sp_txt_ok();
+                            this.SetCurrentPageViewPage(this.radPageViewPageCharts);
+                        }
+                        if (message_rev == CommendsWords[3])
+                        {
+                            spt = new recognitionArabic().CloudTextToSpeech("حسنا", genderVoice);
+                            timer3.Start();
+                            //sp_txt_ok();
+                            this.SetCurrentPageViewPage(this.radPageViewPageSettings);
                         }
                         if (message_rev == CommendsWords[4])
                         {
+                            AddOutgoing("اضافه موعد");
                             sp_txt_ok();
                             AppointmentForm addAppointmentForm = new AppointmentForm();
                             addAppointmentForm.StartPosition = FormStartPosition.CenterParent;
-                            addAppointmentForm.AllowShowFocusCues = true;
-                            addAppointmentForm.ShowIcon = true;
-                            addAppointmentForm.ShowDialog();
+                            //addAppointmentForm.AllowShowFocusCues = true;
+                            //addAppointmentForm.ShowIcon = true;
+                            addAppointmentForm.Show();
 
 
                             this.SetSchedulerAppointmentsBackground();
+                        }
+                        if (message_rev == CommendsWords[5])
+                        {
+                            spt = new recognitionArabic().CloudTextToSpeech("يتم الخروج الان", genderVoice);
+                            timer3.Start();
+                            Thread.Sleep(3000);
+                            Application.Exit();
                         }
                     }
                     recognizer.RecognizeAsync();

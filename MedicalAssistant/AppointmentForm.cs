@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 using Telerik.WinControls;
@@ -87,35 +88,6 @@ namespace MedicalAssistant
                 this.endDateTimePicker.Value = appointment.End;
             }
 
-
-            RadListDataItem selectedItem = null;
-
-            //Button btn = new Button();
-
-            //btn.Text = "Click me";
-
-            //btn.BackColor = SystemColors.ButtonFace;
-
-            //btn.Click += new EventHandler(btn_Click);
-            //btn.Text = "Add";
-            //btn.BackColor = Color.Red;
-            //btn.AutoSize = true;
-
-
-
-            //Point p = this.patientsDropDownList.Items[2];
-
-            //p.X -= 21;
-
-            //btn.Location = p;
-
-            //btn.Size = this.patientsDropDownList.Items[2];
-
-            //this.patientsDropDownList.Controls.Add(btn);
-
-
-            //this.patientsDropDownList.EndUpdate();
-            //this.patientsDropDownList.SelectedItem = selectedItem;
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -148,8 +120,6 @@ namespace MedicalAssistant
         {
             PatientsDataSet.AppointmentsRow appointment = (PatientsDataSet.AppointmentsRow)DataSources.PatientsDataSet.Appointments.Rows.Add();
             appointment.NameDoc = nameTextBoxControl.Text;
-            //appointment.PersonId = (int)this.patientsDropDownList.SelectedItem.Value;
-            //appointment.Subject = this.patientsDropDownList.SelectedItem.Text;
             appointment.Start = this.startDateTimePicker.Value;
             appointment.End = this.endDateTimePicker.Value;
             appointment.Location = this.locationTextBoxControl.Text;
@@ -165,9 +135,6 @@ namespace MedicalAssistant
         {
             PatientsDataSet.AppointmentsRow appointment = DataSources.PatientsDataSet.Appointments.FindById(this.appointmentId);
             appointment.NameDoc = this.nameTextBoxControl.Text;
-
-            //appointment.PersonId = (int)this.patientsDropDownList.SelectedItem.Value;
-            //appointment.Subject = this.patientsDropDownList.SelectedItem.Text;
             appointment.Start = this.startDateTimePicker.Value;
             appointment.End = this.endDateTimePicker.Value;
             appointment.Location = this.locationTextBoxControl.Text;
@@ -199,7 +166,21 @@ namespace MedicalAssistant
 
             return true;
         }
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
 
-
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd,
+                         int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+        private void panel3_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
     }
 }

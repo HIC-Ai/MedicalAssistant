@@ -209,6 +209,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(542, 10);
             this.panel3.TabIndex = 41;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
             // 
             // AppointmentForm
             // 
