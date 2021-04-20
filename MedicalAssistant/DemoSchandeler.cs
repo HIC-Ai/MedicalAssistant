@@ -1,13 +1,19 @@
-﻿using System;
+﻿using MedicalAssistant.Properties;
+using NAudio.Wave;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Speech.Recognition;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls;
+using Telerik.WinControls.UI;
 
 namespace MedicalAssistant
 {
@@ -17,6 +23,16 @@ namespace MedicalAssistant
         {
             InitializeComponent();
         }
+        SpeechRecognitionEngine recognizer = new SpeechRecognitionEngine();
+        public WaveOutEvent spt = new WaveOutEvent(); // or WaveOutEvent()
+        public string message_send = "مرحبا";
+        public string message_rev = "السلام عليكم";
+        WaveIn waveIn;
+        WaveFileWriter writer;
+        bool voice = false;
+        int one = 0;
+
+
         Bitmap Gradient2D(Rectangle r, Color c1, Color c2, Color c3, Color c4)
         {
             Bitmap bmp = new Bitmap(r.Width, r.Height);
@@ -68,7 +84,72 @@ namespace MedicalAssistant
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            if (voice == true)
+            {
 
+                waveIn = new WaveIn();
+                waveIn.DeviceNumber = 0;
+                waveIn.DataAvailable += waveIn_DataAvailable;
+                waveIn.RecordingStopped +=
+                    new EventHandler<NAudio.Wave.StoppedEventArgs>(waveIn_RecordingStopped);
+                waveIn.WaveFormat = new WaveFormat(16000, 1);
+                writer = new WaveFileWriter("test.wav", waveIn.WaveFormat);
+                waveIn.StartRecording();
+
+
+                pictureBox2.Image = Resources.block_microphone;
+            }
+            else
+            {
+                waveIn.StopRecording();
+                waveIn.Dispose();
+                writer.Close();
+                writer.Dispose();
+
+
+                voice = true;
+                message_rev = new recognitionArabic().SpeakRecognition();
+                Label2.Text = message_rev;
+                pictureBox2.Image = Resources.add_record;
+
+
+            }
+        }
+
+        [Obsolete]
+        void waveIn_DataAvailable(object sender, WaveInEventArgs e)
+        {
+            try
+            {
+                writer.WriteData(e.Buffer, 0, e.BytesRecorded);
+
+            }
+            catch
+            {
+
+            }
+        }
+
+        void waveIn_RecordingStopped(object sender, EventArgs e)
+        {
+            try
+            {
+                waveIn.Dispose();
+                waveIn = null;
+                writer.Close();
+                writer = null;
+            }
+            catch
+            {
+
+            }
+
+        }
+
+        [Obsolete]
+
+        private void DemoSchandeler_Load(object sender, EventArgs e)
+        {
         }
     }
 }

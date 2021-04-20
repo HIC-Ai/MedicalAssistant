@@ -619,14 +619,42 @@ namespace MedicalAssistant
 
         private void newAppointment_Click(object sender, EventArgs e)
         {
+            recognizer.RecognizeAsyncCancel();
+            timer4.Enabled = false;
+            pictureBox1.Enabled = false;
+            InputTxt.Enabled = false;
+            voice = false;
+            timer2.Enabled = true;
+            pictureBox2.Enabled = false;
+            pictureBox1.Enabled = false;
+
+
+            //DemoSchandeler2 addAppointmentForm = new DemoSchandeler2();
+            //addAppointmentForm.StartPosition = FormStartPosition.CenterParent;
+            //addAppointmentForm.FormClosed += new FormClosedEventHandler(MyForm_FormClosed);
+            //addAppointmentForm.ShowDialog(this);
+
             AppointmentForm addAppointmentForm = new AppointmentForm();
             addAppointmentForm.StartPosition = FormStartPosition.CenterParent;
+            addAppointmentForm.FormClosed += new FormClosedEventHandler(MyForm_FormClosed);
             addAppointmentForm.ShowDialog(this);
-
             this.SetSchedulerAppointmentsBackground();
+
         }
 
+        private void MyForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Console.WriteLine("lol");
+            recognizer.RecognizeAsync();
+            timer4.Enabled = true;
+            pictureBox1.Enabled = true;
+            InputTxt.Enabled = true;
+            voice = true;
+            timer2.Enabled = false;
 
+            pictureBox2.Enabled = true;
+            pictureBox1.Enabled = true;
+        }
 
         private void radCalendarDashboard_SelectionChanged(object sender, EventArgs e)
         {
@@ -1197,7 +1225,7 @@ namespace MedicalAssistant
                         }
                         if (message_rev == CommendsWords[5])
                         {
-                            spt = new recognitionArabic().CloudTextToSpeech("يتم الخروج الان", genderVoice);
+                            spt = new recognitionArabic().CloudTextToSpeech("يتم الخروج الان و نتمني لك صحة وهناء", genderVoice);
                             timer3.Start();
                             Thread.Sleep(3000);
                             Application.Exit();
@@ -1223,6 +1251,11 @@ namespace MedicalAssistant
     }
 
         private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radListView1_SelectedItemChanged(object sender, EventArgs e)
         {
 
         }

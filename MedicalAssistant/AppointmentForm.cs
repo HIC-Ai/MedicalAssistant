@@ -108,7 +108,6 @@ namespace MedicalAssistant
             new recognitionArabic().CloudTextToSpeech("تم اضافة المَوعِد", "male");
 
             this.Close();
-
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
