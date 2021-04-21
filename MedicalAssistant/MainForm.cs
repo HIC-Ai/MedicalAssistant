@@ -907,7 +907,9 @@ namespace MedicalAssistant
 
         private void radButton1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            spt = new recognitionArabic().CloudTextToSpeech("يتم الخروج الان و نتمني لك صحة وهناء", genderVoice);
+            timer3.Start();
+            timer5.Start();
 
         }
 
@@ -1259,7 +1261,7 @@ namespace MedicalAssistant
         {
             if(timer3.Enabled == false)
             {
-                Thread.Sleep(3000);
+                //Thread.Sleep(3000);
                 Application.Exit();
                 timer5.Stop();
             }
