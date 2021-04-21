@@ -367,12 +367,6 @@
     <Compile Include="CloudTextToSpeech2Base.cs" />
     <Compile Include="Database\database.cs" />
     <Compile Include="DataSources.cs" />
-    <Compile Include="DemoSchandeler.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DemoSchandeler.Designer.cs">
-      <DependentUpon>DemoSchandeler.cs</DependentUpon>
-    </Compile>
     <Compile Include="DemoSchandeler2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -407,9 +401,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chat\Outgoing.resx">
       <DependentUpon>Outgoing.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DemoSchandeler.resx">
-      <DependentUpon>DemoSchandeler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DemoSchandeler2.resx">
       <DependentUpon>DemoSchandeler2.cs</DependentUpon>
