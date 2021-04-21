@@ -74,6 +74,7 @@ namespace MedicalAssistant
         // Configure the audio output.   
 
         // Handle the AudioStateChanged event.  
+        [Obsolete]
         void sre_AudioStateChanged(object sender, AudioStateChangedEventArgs e)
         {
             Console.WriteLine(e.AudioState);
