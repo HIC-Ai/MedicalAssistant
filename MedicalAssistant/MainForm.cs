@@ -26,10 +26,36 @@ namespace MedicalAssistant
 
     public partial class MainForm : RadForm
     {
+        int slc;
+        bool talk = false;
+
+        public int page = 1;
+        int time1 = 0;
+        public DateTime CurrentDate
+        {
+            get { return DateTime.Now; }
+        }
         List<string> CommendsWords = new List<string>();
         string genderVoice = "female";
         ArrayList TipsWords = new ArrayList();
+        int one = 0;
+        public string message_send = "مرحبا";
+        public string message_rev = "السلام عليكم";
+        public bool voice = true;
 
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd,
+                         int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        string tip = "";
+        int i = 0;
+        int len = 0;
         public class ObjectList
         {
             public int ID { get; set; }
@@ -395,23 +421,7 @@ namespace MedicalAssistant
                 }
             return bmp;
         }
-        public string message_send = "مرحبا";
-        public string message_rev = "السلام عليكم";
-        public bool voice = true;
 
-
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
-
-        [DllImportAttribute("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd,
-                         int Msg, int wParam, int lParam);
-        [DllImportAttribute("user32.dll")]
-        public static extern bool ReleaseCapture();
-
-        string tip = "";
-        int i = 0;
-        int len = 0;
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             Thread.Sleep(5000);
@@ -502,11 +512,7 @@ namespace MedicalAssistant
             //}
         }
 
-        public int page = 1;
-        public DateTime CurrentDate
-        {
-            get { return DateTime.Now; }
-        }
+
         private void main5_Load(object sender, EventArgs e)
         {
             AddIncomming("ماذا لديك");
@@ -860,7 +866,6 @@ namespace MedicalAssistant
         }
 
 
-        bool talk = false;
 
 
 
@@ -1027,7 +1032,7 @@ namespace MedicalAssistant
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-        int time1 = 0;
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -1061,7 +1066,6 @@ namespace MedicalAssistant
 
         }
 
-        int slc;
         private void radListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -1134,8 +1138,6 @@ namespace MedicalAssistant
             }
 
         }
-        int one = 0;
-        int two = 0;
 
         [Obsolete]
         private void timer4_Tick(object sender, EventArgs e)
@@ -1165,15 +1167,18 @@ namespace MedicalAssistant
                 //Thread.Sleep(300);
                 try
                 {
+                    if (waveIn != null)
+                    {
 
+                        waveIn.StopRecording();
+                        waveIn.Dispose();
 
-                    waveIn.StopRecording();
-                    waveIn.Dispose();
+                    }
                     writer.Close();
                     writer.Dispose();
 
 
-                voice = true;
+                    voice = true;
                     //message_rev = new recognitionArabic().Louding(false, true);
                     message_rev = new recognitionArabic().SpeakRecognition();
                     //Console.WriteLine(message_rev);
@@ -1227,8 +1232,8 @@ namespace MedicalAssistant
                         {
                             spt = new recognitionArabic().CloudTextToSpeech("يتم الخروج الان و نتمني لك صحة وهناء", genderVoice);
                             timer3.Start();
-                            Thread.Sleep(3000);
-                            Application.Exit();
+                            timer5.Start();
+
                         }
                     }
                     recognizer.RecognizeAsync();
@@ -1243,22 +1248,23 @@ namespace MedicalAssistant
                 //timer4.Stop();
             }
             // Handle event here.  
-        
-        // Handle event here.  
 
-        //Console.WriteLine(recognizer.AudioState);
+            // Handle event here.  
 
-    }
-
-        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
-        {
+            //Console.WriteLine(recognizer.AudioState);
 
         }
 
-        private void radListView1_SelectedItemChanged(object sender, EventArgs e)
+        private void timer5_Tick(object sender, EventArgs e)
         {
-
+            if(timer3.Enabled == false)
+            {
+                Thread.Sleep(3000);
+                Application.Exit();
+                timer5.Stop();
+            }
         }
+
 
 
         //public class MyFormBehavior : RadFormBehavior
