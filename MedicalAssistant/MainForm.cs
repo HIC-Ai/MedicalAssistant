@@ -625,8 +625,7 @@ namespace MedicalAssistant
 
         private void newAppointment_Click(object sender, EventArgs e)
         {
-            recognizer.RecognizeAsyncCancel();
-            timer4.Enabled = false;
+
             pictureBox1.Enabled = false;
             InputTxt.Enabled = false;
             voice = false;
@@ -634,6 +633,9 @@ namespace MedicalAssistant
             pictureBox2.Enabled = false;
             pictureBox1.Enabled = false;
 
+
+            recognizer.RecognizeAsyncCancel();
+            timer4.Enabled = false;
 
             DemoSchandeler2 addAppointmentForm = new DemoSchandeler2();
             addAppointmentForm.StartPosition = FormStartPosition.CenterParent;
@@ -1182,12 +1184,12 @@ namespace MedicalAssistant
 
                     voice = true;
                     //message_rev = new recognitionArabic().Louding(false, true);
-                    message_rev = new recognitionArabic().SpeakRecognition();
+                    string message_rev_real = new recognitionArabic().SpeakRecognition();
                     //Console.WriteLine(message_rev);
 
-                    if (message_rev.Contains("الاستماع"))
+                    if (message_rev_real.Contains("الاستماع"))
                     {
-                        message_rev = message_rev.Replace("الاستماع ", "");
+                        message_rev = message_rev_real.Replace("الاستماع ", "");
                         Console.WriteLine(message_rev);
                         if (message_rev == CommendsWords[0])
                         {
@@ -1219,6 +1221,7 @@ namespace MedicalAssistant
                         }
                         if (message_rev == CommendsWords[4])
                         {
+                            recognizer.RecognizeAsync();
                             AddOutgoing("اضافه موعد");
                             sp_txt_ok();
                             AppointmentForm addAppointmentForm = new AppointmentForm();
