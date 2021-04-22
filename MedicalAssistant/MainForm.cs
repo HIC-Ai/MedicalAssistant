@@ -492,12 +492,13 @@ namespace MedicalAssistant
                     talk = true;
 
 
-
+                    recognizer.RecognizeAsyncStop();
                     spt = new recognitionArabic().CloudTextToSpeech("نصيحة : " + tip, "male");
                     len = tip.Length;
                     //label1.Text = "";
                     timer1.Interval = len;
 
+                    recognizer.RecognizeAsync();
                     timer1.Start();
                     timer3.Start();
 
@@ -980,9 +981,10 @@ namespace MedicalAssistant
         {
             if (voice == true)
             {
+                timer4.Enabled = false;
+
                 recognizer.RecognizeAsyncCancel();
 
-                timer4.Enabled = false;
 
                 InputTxt.HintText = "";
                 pictureBox1.Enabled = false;
@@ -1150,6 +1152,7 @@ namespace MedicalAssistant
 
                 InputTxt.Enabled = true;
                 InputTxt.HintText = "اكتب رسالتك هنا";
+                timer4.Start();
                 timer3.Stop();
             }
 
@@ -1160,24 +1163,25 @@ namespace MedicalAssistant
         {
             //Console.WriteLine(recognizer.AudioState);
 
-            if (recognizer.AudioState.ToString() == "Speech")
-            {
-                if (one == 0)
+                if (recognizer.AudioState.ToString() == "Speech")
                 {
-                    waveIn = new WaveIn();
-                    waveIn.DeviceNumber = 0;
-                    waveIn.DataAvailable += waveIn_DataAvailable;
-                    waveIn.RecordingStopped +=
-                        new EventHandler<NAudio.Wave.StoppedEventArgs>(waveIn_RecordingStopped);
-                    waveIn.WaveFormat = new WaveFormat(16000, 1);
-                    writer = new WaveFileWriter(@"test.wav", waveIn.WaveFormat);
-                    Console.WriteLine("now StartRecording");
+                    if (one == 0)
+                    {
 
-                    waveIn.StartRecording();
+                        waveIn = new WaveIn();
+                        waveIn.DeviceNumber = 0;
+                        waveIn.DataAvailable += waveIn_DataAvailable;
+                        waveIn.RecordingStopped +=
+                            new EventHandler<NAudio.Wave.StoppedEventArgs>(waveIn_RecordingStopped);
+                        waveIn.WaveFormat = new WaveFormat(16000, 1);
+                        writer = new WaveFileWriter(@"test.wav", waveIn.WaveFormat);
+                        Console.WriteLine("now StartRecording");
+
+                        waveIn.StartRecording();
+                    }
+                    //recognizer.RecognizeAsync();
+                    one = 1;
                 }
-                //recognizer.RecognizeAsync();
-                one = 1;
-            }
             if (recognizer.AudioState.ToString() == "Stopped")
             {
                 //Thread.Sleep(300);
@@ -1240,10 +1244,16 @@ namespace MedicalAssistant
                             recognizer.RecognizeAsync();
                             AddOutgoing("اضافه موعد");
                             sp_txt_ok();
-                            AppointmentForm addAppointmentForm = new AppointmentForm
+                            //AppointmentForm addAppointmentForm = new AppointmentForm
+                            //{
+                            //    StartPosition = FormStartPosition.CenterParent
+                            //};
+
+                            DemoSchandeler2 addAppointmentForm = new DemoSchandeler2
                             {
                                 StartPosition = FormStartPosition.CenterParent
                             };
+
                             //addAppointmentForm.AllowShowFocusCues = true;
                             //addAppointmentForm.ShowIcon = true;
                             addAppointmentForm.ShowDialog();
@@ -1256,6 +1266,7 @@ namespace MedicalAssistant
                             spt = new recognitionArabic().CloudTextToSpeech("يتم الخروج الان و نتمني لك صحة وهناء", genderVoice);
                             timer3.Start();
                             timer5.Start();
+                            radButton1.Enabled = false;
 
                         }
                     }
@@ -1270,6 +1281,7 @@ namespace MedicalAssistant
                 }
                 //timer4.Stop();
             }
+            
             // Handle event here.  
 
             // Handle event here.  
