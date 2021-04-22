@@ -923,6 +923,7 @@ namespace MedicalAssistant
             spt = new recognitionArabic().CloudTextToSpeech("يتم الخروج الان و نتمني لك صحة وهناء", genderVoice);
             timer3.Start();
             timer5.Start();
+            radButton1.Enabled = false;
 
         }
 
