@@ -3,6 +3,7 @@ using NAudio.Wave;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -155,7 +156,7 @@ namespace MedicalAssistant
                 waveIn.RecordingStopped +=
                     new EventHandler<NAudio.Wave.StoppedEventArgs>(waveIn_RecordingStopped);
                 waveIn.WaveFormat = new WaveFormat(16000, 1);
-                writer = new WaveFileWriter("test2.wav", waveIn.WaveFormat);
+                writer = new WaveFileWriter("test.wav", waveIn.WaveFormat);
                 waveIn.StartRecording();
 
 
@@ -176,29 +177,33 @@ namespace MedicalAssistant
                 Console.WriteLine(message_rev);
 
                 //message_rev = "الميعاد مع الدكتور احمد والمكان في شارع المحطه والموضوع عن كشف لابني";
-                string toFind1 = "اليمعاد مع الدكتور";
-                string toFind2 = "والمكان في";
+                string toFind1 = "اسم الدكتور";
+                string toFind2 = "والمكان";
                 int start = message_rev.IndexOf(toFind1) + toFind1.Length + 1 ;
                 int end = message_rev.IndexOf(toFind2, start);
                 name = message_rev.Substring(start, end - start);
 
 
-                toFind1 = "والمكان في ";
+                toFind1 = "والمكان ";
                 toFind2 = "والموضوع ";
                 start = message_rev.IndexOf(toFind1) + toFind1.Length;
                 end = message_rev.IndexOf(toFind2, start);
                 place = message_rev.Substring(start, end - start);
 
-                toFind1 = "والموضوع عن ";
+                toFind1 = "والموضوع ";
                 toFind2 = "";
                 start = message_rev.IndexOf(toFind1) + toFind1.Length;
                 end = message_rev.IndexOf(toFind2, start);
                 sub = message_rev.Substring(start, message_rev.Length - start);
-
                 Console.WriteLine(name + place + sub);
-                pictureBox2.Image = Resources.add_record;
-
                 Label2.Text = name + place + sub;
+
+
+
+                name = String.Join(" ", name.Split(' ').Reverse().ToArray());
+                place = String.Join(" ", place.Split(' ').Reverse().ToArray());
+                sub = String.Join(" ", sub.Split(' ').Reverse().ToArray());
+                pictureBox2.Image = Resources.add_record;
 
             }
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NAudio.Wave;
+using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
@@ -14,6 +15,7 @@ namespace MedicalAssistant
         private int appointmentId = -1;
         private bool editing = false;
         private ErrorProvider errorProvider;
+        public WaveOutEvent spt = new WaveOutEvent(); // or WaveOutEvent()
 
         public AppointmentForm()
         {
@@ -105,7 +107,7 @@ namespace MedicalAssistant
             {
                 this.AddAppointment();
             }
-            new recognitionArabic().CloudTextToSpeech("تم اضافة المَوعِد", "male");
+            spt = new recognitionArabic().CloudTextToSpeech("تم اضافة المَوعِد", "male");
 
             this.Close();
         }

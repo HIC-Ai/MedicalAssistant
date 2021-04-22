@@ -433,30 +433,32 @@ namespace MedicalAssistant
             {
 
 
-
-
-                TipsWords = new Database.database().Tips_database();
-
-                i = i + 1;
-                if (worker.CancellationPending == true)
+                if (tip_call == true)
                 {
-                    e.Cancel = true;
-                    break;
-                }
-                else
-                {
-                    foreach (string fg in TipsWords)
+
+                    TipsWords = new Database.database().Tips_database();
+
+                    i = i + 1;
+                    if (worker.CancellationPending == true)
                     {
-                        tip = fg;
-
-                        //tip = new database().Tips_database();
-                        worker.ReportProgress(i * 1);
-                        Thread.Sleep(100000);
+                        e.Cancel = true;
+                        break;
                     }
+                    else
+                    {
+                        foreach (string fg in TipsWords)
+                        {
+                            tip = fg;
+
+                            //tip = new database().Tips_database();
+                            worker.ReportProgress(i * 1);
+                            Thread.Sleep(100000);
+                        }
 
 
 
-                    //label1.Text = tip;
+                        //label1.Text = tip;
+                    }
                 }
             }
         }
@@ -622,7 +624,7 @@ namespace MedicalAssistant
             //e.VisualItem = new PatientsListViewVisualItem();
         }
 
-
+        bool tip_call = true;
 
         private void newAppointment_Click(object sender, EventArgs e)
         {
@@ -637,11 +639,19 @@ namespace MedicalAssistant
 
             recognizer.RecognizeAsyncCancel();
             timer4.Enabled = false;
-
+            if (spt.PlaybackState == PlaybackState.Playing)
+            {
+                spt.Stop();
+            }
+            //backgroundWorker1.CancelAsync();
+            tip_call = false;
             DemoSchandeler2 addAppointmentForm = new DemoSchandeler2();
             addAppointmentForm.StartPosition = FormStartPosition.CenterParent;
             addAppointmentForm.FormClosed += new FormClosedEventHandler(MyForm_FormClosed);
             addAppointmentForm.ShowDialog(this);
+            tip_call = true;
+
+            //backgroundWorker1_DoWork(null, null);
 
             //AppointmentForm addAppointmentForm = new AppointmentForm();
             //addAppointmentForm.StartPosition = FormStartPosition.CenterParent;
@@ -1222,14 +1232,20 @@ namespace MedicalAssistant
                         }
                         if (message_rev == CommendsWords[4])
                         {
+                            if (spt.PlaybackState == PlaybackState.Playing)
+                            {
+                                spt.Stop();
+                            }
                             recognizer.RecognizeAsync();
                             AddOutgoing("اضافه موعد");
                             sp_txt_ok();
-                            AppointmentForm addAppointmentForm = new AppointmentForm();
-                            addAppointmentForm.StartPosition = FormStartPosition.CenterParent;
+                            AppointmentForm addAppointmentForm = new AppointmentForm
+                            {
+                                StartPosition = FormStartPosition.CenterParent
+                            };
                             //addAppointmentForm.AllowShowFocusCues = true;
                             //addAppointmentForm.ShowIcon = true;
-                            addAppointmentForm.Show();
+                            addAppointmentForm.ShowDialog();
 
 
                             this.SetSchedulerAppointmentsBackground();
@@ -1270,6 +1286,7 @@ namespace MedicalAssistant
                 timer5.Stop();
             }
         }
+
 
 
 

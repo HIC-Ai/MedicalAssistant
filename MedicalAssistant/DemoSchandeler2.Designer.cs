@@ -95,12 +95,12 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.gunaLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel3.Location = new System.Drawing.Point(17, 105);
+            this.gunaLabel3.Location = new System.Drawing.Point(17, 102);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gunaLabel3.Size = new System.Drawing.Size(401, 33);
+            this.gunaLabel3.Size = new System.Drawing.Size(401, 18);
             this.gunaLabel3.TabIndex = 73;
-            this.gunaLabel3.Text = "مثال : اليمعاد مع الدكتور احمد والمكان في شارع المحطه والموضوع عن كشف لابني احمد";
+            this.gunaLabel3.Text = "مثال : اسم الدكتور احمد والمكان شارع المحطه والموضوع كشف عظام";
             this.gunaLabel3.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
             // 
             // bunifuUserControl2
@@ -124,7 +124,7 @@
             this.bunifuUserControl2.Location = new System.Drawing.Point(7, 90);
             this.bunifuUserControl2.Name = "bunifuUserControl2";
             this.bunifuUserControl2.ShowBorders = true;
-            this.bunifuUserControl2.Size = new System.Drawing.Size(421, 67);
+            this.bunifuUserControl2.Size = new System.Drawing.Size(421, 41);
             this.bunifuUserControl2.Style = Bunifu.UI.WinForms.BunifuUserControl.UserControlStyles.Flat;
             this.bunifuUserControl2.TabIndex = 71;
             this.bunifuUserControl2.Click += new System.EventHandler(this.bunifuUserControl2_Click);
@@ -135,10 +135,10 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.gunaLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel1.Location = new System.Drawing.Point(17, 34);
+            this.gunaLabel1.Location = new System.Drawing.Point(17, 30);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gunaLabel1.Size = new System.Drawing.Size(404, 28);
+            this.gunaLabel1.Size = new System.Drawing.Size(404, 19);
             this.gunaLabel1.TabIndex = 74;
             this.gunaLabel1.Text = " اسم الدكتور ثم الموعد ثم الموضوع  ";
             this.gunaLabel1.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
@@ -164,14 +164,14 @@
             this.bunifuUserControl1.Location = new System.Drawing.Point(7, 19);
             this.bunifuUserControl1.Name = "bunifuUserControl1";
             this.bunifuUserControl1.ShowBorders = true;
-            this.bunifuUserControl1.Size = new System.Drawing.Size(421, 55);
+            this.bunifuUserControl1.Size = new System.Drawing.Size(421, 41);
             this.bunifuUserControl1.Style = Bunifu.UI.WinForms.BunifuUserControl.UserControlStyles.Flat;
             this.bunifuUserControl1.TabIndex = 72;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::MedicalAssistant.Properties.Resources.add_record;
-            this.pictureBox2.Location = new System.Drawing.Point(198, 163);
+            this.pictureBox2.Location = new System.Drawing.Point(198, 154);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 30);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -183,7 +183,7 @@
             // 
             this.endDateTimePicker.CustomFormat = "dd-MMMM-yyyy HH:mm";
             this.endDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.endDateTimePicker.Location = new System.Drawing.Point(59, 253);
+            this.endDateTimePicker.Location = new System.Drawing.Point(59, 244);
             this.endDateTimePicker.Name = "endDateTimePicker";
             this.endDateTimePicker.Size = new System.Drawing.Size(325, 20);
             this.endDateTimePicker.TabIndex = 67;
@@ -195,7 +195,7 @@
             // 
             this.startDateTimePicker.CustomFormat = "dd-MMMM-yyyy HH:mm";
             this.startDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.startDateTimePicker.Location = new System.Drawing.Point(59, 203);
+            this.startDateTimePicker.Location = new System.Drawing.Point(59, 194);
             this.startDateTimePicker.Name = "startDateTimePicker";
             this.startDateTimePicker.Size = new System.Drawing.Size(325, 20);
             this.startDateTimePicker.TabIndex = 66;
@@ -205,7 +205,7 @@
             // 
             // radLabel3
             // 
-            this.radLabel3.Location = new System.Drawing.Point(349, 229);
+            this.radLabel3.Location = new System.Drawing.Point(349, 220);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(33, 18);
             this.radLabel3.TabIndex = 64;
@@ -214,7 +214,7 @@
             // 
             // radLabel2
             // 
-            this.radLabel2.Location = new System.Drawing.Point(363, 179);
+            this.radLabel2.Location = new System.Drawing.Point(363, 170);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(22, 18);
             this.radLabel2.TabIndex = 65;
@@ -226,7 +226,7 @@
             this.panel1.Controls.Add(this.cancelButton);
             this.panel1.Controls.Add(this.saveButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 362);
+            this.panel1.Location = new System.Drawing.Point(0, 348);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(438, 37);
             this.panel1.TabIndex = 77;
@@ -259,10 +259,10 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.Label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
             this.Label2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Label2.Location = new System.Drawing.Point(17, 307);
+            this.Label2.Location = new System.Drawing.Point(14, 296);
             this.Label2.Name = "Label2";
             this.Label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Label2.Size = new System.Drawing.Size(387, 21);
+            this.Label2.Size = new System.Drawing.Size(401, 18);
             this.Label2.TabIndex = 76;
             this.Label2.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
             // 
@@ -285,10 +285,10 @@
             this.bunifuUserControl3.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuUserControl3.Image = null;
             this.bunifuUserControl3.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.bunifuUserControl3.Location = new System.Drawing.Point(3, 293);
+            this.bunifuUserControl3.Location = new System.Drawing.Point(3, 284);
             this.bunifuUserControl3.Name = "bunifuUserControl3";
             this.bunifuUserControl3.ShowBorders = true;
-            this.bunifuUserControl3.Size = new System.Drawing.Size(421, 51);
+            this.bunifuUserControl3.Size = new System.Drawing.Size(421, 41);
             this.bunifuUserControl3.Style = Bunifu.UI.WinForms.BunifuUserControl.UserControlStyles.Flat;
             this.bunifuUserControl3.TabIndex = 75;
             // 
@@ -301,7 +301,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(438, 399);
+            this.ClientSize = new System.Drawing.Size(438, 385);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.bunifuUserControl3);
