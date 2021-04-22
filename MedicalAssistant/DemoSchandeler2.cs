@@ -117,9 +117,36 @@ namespace MedicalAssistant
 
         }
         string name, place, sub;
+        private ErrorProvider errorProvider;
 
+        private bool AreRequiredFieldsValid()
+        {
+            if (this.Label2.Text == "")
+            {
+                new recognitionArabic().CloudTextToSpeech("برجاء قول البيانات بشكل صحيح", "male");
+                return false;
+            }
+            if (this.startDateTimePicker.DateTimePickerElement.Value == null)
+            {
+                this.errorProvider.SetError(this.startDateTimePicker, "Start Date is required");
+                return false;
+            }
+            if (this.endDateTimePicker.DateTimePickerElement.Value == null)
+            {
+                this.errorProvider.SetError(this.endDateTimePicker, "End Date is required");
+                return false;
+            }
+
+            return true;
+        }
         private void saveButton_Click(object sender, EventArgs e)
         {
+
+            if (!this.AreRequiredFieldsValid())
+            {
+                return;
+            }
+
             PatientsDataSet.AppointmentsRow appointment = (PatientsDataSet.AppointmentsRow)DataSources.PatientsDataSet.Appointments.Rows.Add();
             appointment.NameDoc = name;
             appointment.Start = this.startDateTimePicker.Value;
@@ -175,34 +202,37 @@ namespace MedicalAssistant
                 message_rev = new recognitionArabic().SpeakRecognition();
 
                 Console.WriteLine(message_rev);
-
-                //message_rev = "الميعاد مع الدكتور احمد والمكان في شارع المحطه والموضوع عن كشف لابني";
-                string toFind1 = "اسم الدكتور";
-                string toFind2 = "والمكان";
-                int start = message_rev.IndexOf(toFind1) + toFind1.Length + 1 ;
-                int end = message_rev.IndexOf(toFind2, start);
-                name = message_rev.Substring(start, end - start);
-
-
-                toFind1 = "والمكان ";
-                toFind2 = "والموضوع ";
-                start = message_rev.IndexOf(toFind1) + toFind1.Length;
-                end = message_rev.IndexOf(toFind2, start);
-                place = message_rev.Substring(start, end - start);
-
-                toFind1 = "والموضوع ";
-                toFind2 = "";
-                start = message_rev.IndexOf(toFind1) + toFind1.Length;
-                end = message_rev.IndexOf(toFind2, start);
-                sub = message_rev.Substring(start, message_rev.Length - start);
-                Console.WriteLine(name + place + sub);
-                Label2.Text = name + place + sub;
+                try
+                {
+                    //message_rev = "الميعاد مع الدكتور احمد والمكان في شارع المحطه والموضوع عن كشف لابني";
+                    string toFind1 = "اسم الدكتور";
+                    string toFind2 = "والمكان";
+                    int start = message_rev.IndexOf(toFind1) + toFind1.Length + 1;
+                    int end = message_rev.IndexOf(toFind2, start);
+                    name = message_rev.Substring(start, end - start);
 
 
+                    toFind1 = "والمكان ";
+                    toFind2 = "والموضوع ";
+                    start = message_rev.IndexOf(toFind1) + toFind1.Length;
+                    end = message_rev.IndexOf(toFind2, start);
+                    place = message_rev.Substring(start, end - start);
 
-                name = String.Join(" ", name.Split(' ').Reverse().ToArray());
-                place = String.Join(" ", place.Split(' ').Reverse().ToArray());
-                sub = String.Join(" ", sub.Split(' ').Reverse().ToArray());
+                    toFind1 = "والموضوع ";
+                    toFind2 = "";
+                    start = message_rev.IndexOf(toFind1) + toFind1.Length;
+                    end = message_rev.IndexOf(toFind2, start);
+                    sub = message_rev.Substring(start, message_rev.Length - start);
+                    Console.WriteLine(name + place + sub);
+                    Label2.Text = name + place + sub;
+
+
+
+                    name = String.Join(" ", name.Split(' ').Reverse().ToArray());
+                    place = String.Join(" ", place.Split(' ').Reverse().ToArray());
+                    sub = String.Join(" ", sub.Split(' ').Reverse().ToArray());
+                }
+                catch { }
                 pictureBox2.Image = Resources.add_record;
 
             }

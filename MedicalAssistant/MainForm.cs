@@ -644,6 +644,8 @@ namespace MedicalAssistant
             {
                 spt.Stop();
             }
+
+
             //backgroundWorker1.CancelAsync();
             tip_call = false;
             DemoSchandeler2 addAppointmentForm = new DemoSchandeler2();
