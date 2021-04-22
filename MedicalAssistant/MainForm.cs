@@ -247,8 +247,10 @@ namespace MedicalAssistant
             backgroundWorker1.WorkerReportsProgress = true;
             backgroundWorker1.WorkerSupportsCancellation = true;
 
+
+
         }
-        public void rec_text()
+         public void rec_text()
         {
             //radListView1.Enabled = false;
 
@@ -545,7 +547,14 @@ namespace MedicalAssistant
                 backgroundWorker1.ProgressChanged += new ProgressChangedEventHandler(backgroundWorker1_ProgressChanged);
                 backgroundWorker1.RunWorkerAsync();
             }
-
+            var t = new System.Windows.Forms.Timer();
+            t.Interval = 1000;
+            t.Tick += (s, d) =>
+            {
+                spt = new recognitionArabic().CloudTextToSpeech("لديك اليوم " + radLabelTodayAppointmentsCount.Text + "مواعيد", "male");
+                t.Stop();
+            };
+            t.Start();
         }
 
         int ticks = 0;

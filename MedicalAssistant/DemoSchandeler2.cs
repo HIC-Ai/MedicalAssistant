@@ -123,7 +123,7 @@ namespace MedicalAssistant
         {
             if (this.Label2.Text == "")
             {
-                new recognitionArabic().CloudTextToSpeech("برجاء قول البيانات بشكل صحيح", "male");
+                spt = new recognitionArabic().CloudTextToSpeech("برجاء قول البيانات بشكل صحيح", "male");
                 return false;
             }
             if (this.startDateTimePicker.DateTimePickerElement.Value == null)
