@@ -25,20 +25,20 @@ namespace MedicalAssistant.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("\nProvider=Microsoft.ACE.OLEDB.12.0;Data Source=Database/Patients.mdb")]
-        public string PatientsConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("DataSource=Database\\\\chatbot.sqlite;Version=3;")]
+        public string sqConnectionString {
             get {
-                return ((string)(this["PatientsConnectionString"]));
+                return ((string)(this["sqConnectionString"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("DataSource=Database\\\\chatbot.sqlite;Version=3;")]
-        public string sqConnectionString {
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("\nProvider=Microsoft.ACE.OLEDB.12.0;Data Source=Database/Patients.mdb")]
+        public string PatientsConnectionString {
             get {
-                return ((string)(this["sqConnectionString"]));
+                return ((string)(this["PatientsConnectionString"]));
             }
         }
     }

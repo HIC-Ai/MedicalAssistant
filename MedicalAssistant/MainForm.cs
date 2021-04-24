@@ -20,6 +20,7 @@ using System.Threading;
 //using Microsoft.Speech.Synthesis;
 using System.Speech.Synthesis;
 using System.Speech.Recognition;
+using System.Linq;
 
 namespace MedicalAssistant
 {
@@ -28,7 +29,6 @@ namespace MedicalAssistant
     {
         int slc;
         bool talk = false;
-
         public int page = 1;
         int time1 = 0;
         public DateTime CurrentDate
@@ -74,7 +74,6 @@ namespace MedicalAssistant
         // Configure the audio output.   
 
         // Handle the AudioStateChanged event.  
-        [Obsolete]
         void sre_AudioStateChanged(object sender, AudioStateChangedEventArgs e)
         {
             Console.WriteLine(e.AudioState);
@@ -130,6 +129,8 @@ namespace MedicalAssistant
             CommendsWords.Add("الاعدادات");
             CommendsWords.Add("اضافه موعد");
             CommendsWords.Add("خروج");
+            CommendsWords.Add("ما هي مواعيد اليوم");
+
 
             //CommendsWords.Add("الاخبار");
             //CommendsWords.Add("من انا");
@@ -427,7 +428,7 @@ namespace MedicalAssistant
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            Thread.Sleep(5000);
+            Thread.Sleep(6000);
 
             BackgroundWorker worker = sender as BackgroundWorker;
 
@@ -437,7 +438,6 @@ namespace MedicalAssistant
 
                 if (tip_call == true)
                 {
-
                     TipsWords = new Database.database().Tips_database();
 
                     i = i + 1;
@@ -460,6 +460,7 @@ namespace MedicalAssistant
 
 
                         //label1.Text = tip;
+
                     }
                 }
             }
@@ -484,7 +485,7 @@ namespace MedicalAssistant
             //    tip = fg;
             if (tip != "")
             {
-                Debug.WriteLine(tip);
+                Console.WriteLine(tip);
                 if (spt.PlaybackState == PlaybackState.Stopped)
                 {
                     this.radListView1.Enabled = false;
@@ -493,14 +494,15 @@ namespace MedicalAssistant
                     this.InputTxt.Enabled = false;
                     talk = true;
 
-
+                    recognizer.RecognizeAsyncCancel();
                     recognizer.RecognizeAsyncStop();
+
                     spt = new recognitionArabic().CloudTextToSpeech("نصيحة : " + tip, "male");
                     len = tip.Length;
                     //label1.Text = "";
                     timer1.Interval = len;
 
-                    recognizer.RecognizeAsync();
+                    timer_recognizer.Enabled = true;
                     timer1.Start();
                     timer3.Start();
 
@@ -518,7 +520,16 @@ namespace MedicalAssistant
             //}
         }
 
-
+        public void Delayed(int delay, Action action)
+        {
+            var timer = new System.Windows.Forms.Timer();
+            timer.Interval = delay;
+            timer.Tick += (s, e) => {
+                action();
+                timer.Stop();
+            };
+            timer.Start();
+        }
         private void main5_Load(object sender, EventArgs e)
         {
             AddIncomming("ماذا لديك");
@@ -547,6 +558,7 @@ namespace MedicalAssistant
                 backgroundWorker1.ProgressChanged += new ProgressChangedEventHandler(backgroundWorker1_ProgressChanged);
                 backgroundWorker1.RunWorkerAsync();
             }
+            //TipsTimer.Enabled = true;
             var t = new System.Windows.Forms.Timer();
             t.Interval = 1000;
             t.Tick += (s, d) =>
@@ -676,7 +688,7 @@ namespace MedicalAssistant
         private void MyForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Console.WriteLine("lol");
-            recognizer.RecognizeAsync();
+            //recognizer.RecognizeAsync();
             timer4.Enabled = true;
             pictureBox1.Enabled = true;
             InputTxt.Enabled = true;
@@ -685,6 +697,11 @@ namespace MedicalAssistant
 
             pictureBox2.Enabled = true;
             pictureBox1.Enabled = true;
+            tip_call = true;
+
+            this.SetSchedulerAppointmentsBackground();
+
+
         }
 
         private void radCalendarDashboard_SelectionChanged(object sender, EventArgs e)
@@ -957,7 +974,7 @@ namespace MedicalAssistant
         WaveIn waveIn;
         WaveFileWriter writer;
 
-        [Obsolete]
+ 
         void waveIn_DataAvailable(object sender, WaveInEventArgs e)
         {
             try
@@ -976,9 +993,9 @@ namespace MedicalAssistant
             try
             {
                 waveIn.Dispose();
-                waveIn = null;
+                //waveIn = null;
                 writer.Close();
-                writer = null;
+                //writer = null;
             }
             catch
             {
@@ -987,7 +1004,6 @@ namespace MedicalAssistant
 
         }
 
-        [Obsolete]
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             if (voice == true)
@@ -1169,11 +1185,11 @@ namespace MedicalAssistant
 
         }
 
-        [Obsolete]
         private void timer4_Tick(object sender, EventArgs e)
         {
             //Console.WriteLine(recognizer.AudioState);
-
+            if (recognizer != null)
+            {
                 if (recognizer.AudioState.ToString() == "Speech")
                 {
                     if (one == 0)
@@ -1182,113 +1198,198 @@ namespace MedicalAssistant
                         waveIn = new WaveIn();
                         waveIn.DeviceNumber = 0;
                         waveIn.DataAvailable += waveIn_DataAvailable;
-                        waveIn.RecordingStopped +=
-                            new EventHandler<NAudio.Wave.StoppedEventArgs>(waveIn_RecordingStopped);
+                        //waveIn.RecordingStopped +=
+                        //    new EventHandler<NAudio.Wave.StoppedEventArgs>(waveIn_RecordingStopped);
                         waveIn.WaveFormat = new WaveFormat(16000, 1);
-                        writer = new WaveFileWriter(@"test.wav", waveIn.WaveFormat);
+                        writer = new WaveFileWriter(@"testReail.wav", waveIn.WaveFormat);
                         Console.WriteLine("now StartRecording");
 
                         waveIn.StartRecording();
                     }
                     //recognizer.RecognizeAsync();
                     one = 1;
+
                 }
-            if (recognizer.AudioState.ToString() == "Stopped")
-            {
-                //Thread.Sleep(300);
-                try
+
+                if (recognizer.AudioState.ToString() == "Stopped")
                 {
-                    if (waveIn != null)
+                    //Thread.Sleep(300);
+                    try
                     {
+                        if (waveIn != null)
+                        {
 
-                        waveIn.StopRecording();
-                        waveIn.Dispose();
-
-                    }
-                    writer.Close();
-                    writer.Dispose();
+                            waveIn.StopRecording();
+                            waveIn.Dispose();
 
 
-                    voice = true;
-                    //message_rev = new recognitionArabic().Louding(false, true);
-                    string message_rev_real = new recognitionArabic().SpeakRecognition();
-                    //Console.WriteLine(message_rev);
+                            writer.Close();
+                            writer.Dispose();
 
-                    if (message_rev_real.Contains("الاستماع"))
-                    {
-                        message_rev = message_rev_real.Replace("الاستماع ", "");
-                        Console.WriteLine(message_rev);
-                        if (message_rev == CommendsWords[0])
-                        {
-                            spt = new recognitionArabic().CloudTextToSpeech("حسنا", genderVoice);
-                            timer3.Start();
-                            //sp_txt_ok();
-                            this.SetCurrentPageViewPage(this.radPageViewPageSchedule);
-                        }
-                        if (message_rev == CommendsWords[1])
-                        {
-                            spt = new recognitionArabic().CloudTextToSpeech("حسنا", genderVoice);
-                            timer3.Start();
-                            //sp_txt_ok();
-                            this.SetCurrentPageViewPage(this.radPageViewPageDashboard);
-                        }
-                        if (message_rev == CommendsWords[2])
-                        {
-                            spt = new recognitionArabic().CloudTextToSpeech("حسنا", genderVoice);
-                            timer3.Start();
-                            //sp_txt_ok();
-                            this.SetCurrentPageViewPage(this.radPageViewPageCharts);
-                        }
-                        if (message_rev == CommendsWords[3])
-                        {
-                            spt = new recognitionArabic().CloudTextToSpeech("حسنا", genderVoice);
-                            timer3.Start();
-                            //sp_txt_ok();
-                            this.SetCurrentPageViewPage(this.radPageViewPageSettings);
-                        }
-                        if (message_rev == CommendsWords[4])
-                        {
-                            if (spt.PlaybackState == PlaybackState.Playing)
+
+                            voice = true;
+                            //message_rev = new recognitionArabic().Louding(false, true);
+                            string message_rev_real = new recognitionArabic().SpeakRecognition("testReail.wav");
+                            //Console.WriteLine(message_rev);
+
+                            if (message_rev_real.Contains("الاستماع"))
                             {
-                                spt.Stop();
+                                message_rev = message_rev_real.Replace("الاستماع ", "");
+                                Console.WriteLine(message_rev);
+                                if (message_rev == CommendsWords[0])
+                                {
+                                    spt = new recognitionArabic().CloudTextToSpeech("حسنا", genderVoice);
+                                    timer3.Start();
+                                    //sp_txt_ok();
+                                    this.SetCurrentPageViewPage(this.radPageViewPageSchedule);
+                                }
+                                if (message_rev == CommendsWords[1])
+                                {
+                                    spt = new recognitionArabic().CloudTextToSpeech("حسنا", genderVoice);
+                                    timer3.Start();
+                                    //sp_txt_ok();
+                                    this.SetCurrentPageViewPage(this.radPageViewPageDashboard);
+                                }
+                                if (message_rev == CommendsWords[2])
+                                {
+                                    spt = new recognitionArabic().CloudTextToSpeech("حسنا", genderVoice);
+                                    timer3.Start();
+                                    //sp_txt_ok();
+                                    this.SetCurrentPageViewPage(this.radPageViewPageCharts);
+                                }
+                                if (message_rev == CommendsWords[3])
+                                {
+                                    spt = new recognitionArabic().CloudTextToSpeech("حسنا", genderVoice);
+                                    timer3.Start();
+                                    //sp_txt_ok();
+                                    this.SetCurrentPageViewPage(this.radPageViewPageSettings);
+                                }
+                                if (message_rev == CommendsWords[4])
+                                {
+
+                                    pictureBox1.Enabled = false;
+                                    InputTxt.Enabled = false;
+                                    voice = false;
+                                    timer2.Enabled = true;
+                                    pictureBox2.Enabled = false;
+                                    pictureBox1.Enabled = false;
+
+
+                                    recognizer.RecognizeAsyncCancel();
+                                    timer4.Enabled = false;
+                                    if (spt.PlaybackState == PlaybackState.Playing)
+                                    {
+                                        spt.Stop();
+                                    }
+
+
+                                    //backgroundWorker1.CancelAsync();
+                                    tip_call = false;
+
+
+
+
+                                    DemoSchandeler2 addAppointmentForm = new DemoSchandeler2();
+                                    addAppointmentForm.StartPosition = FormStartPosition.CenterParent;
+                                    addAppointmentForm.FormClosed += new FormClosedEventHandler(MyForm_FormClosed);
+                                    addAppointmentForm.ShowDialog();
+
+
+
+
+
+                                    //recognizer.RecognizeAsync();
+                                    //timer4.Enabled = true;
+
+
+
+
+                                    //Console.WriteLine("lol");
+
+                                    //pictureBox1.Enabled = true;
+                                    //InputTxt.Enabled = true;
+                                    //voice = true;
+                                    //timer2.Enabled = false;
+
+                                    //pictureBox2.Enabled = true;
+                                    //pictureBox1.Enabled = true;
+                                    //tip_call = true;
+
+
+                                    //if (spt.PlaybackState == PlaybackState.Playing)
+                                    //{
+                                    //    spt.Stop();
+                                    //}
+                                    ////recognizer.RecognizeAsync();
+                                    //AddOutgoing("اضافه موعد");
+                                    //sp_txt_ok();
+                                    ////AppointmentForm addAppointmentForm = new AppointmentForm
+                                    ////{
+                                    ////    StartPosition = FormStartPosition.CenterParent
+                                    ////};
+                                    //tip_talk = false;
+                                    //DemoSchandeler2 addAppointmentForm = new DemoSchandeler2();
+                                    //addAppointmentForm.StartPosition = FormStartPosition.CenterParent;
+                                    //addAppointmentForm.FormClosed += new FormClosedEventHandler(MyForm_FormClosed);
+                                    //addAppointmentForm.ShowDialog();
+
+
+
+
+                                }
+                                if (message_rev == CommendsWords[5])
+                                {
+                                    spt = new recognitionArabic().CloudTextToSpeech("يتم الخروج الان و نتمني لك صحة وهناء", genderVoice);
+                                    timer3.Start();
+                                    timer5.Start();
+                                    radButton1.Enabled = false;
+
+                                }
+
+                                if (message_rev == CommendsWords[6])
+                                {
+                                    Console.WriteLine(message_rev);
+                                    DataRow[] todaysAndTomorrowsAppointments = this.patientsDataSet.Appointments.Select("Start > #" + CurrentDate.ToString("d", CultureInfo.InvariantCulture) + "# AND Start < #" + CurrentDate.AddDays(2).ToString("d", CultureInfo.InvariantCulture) + "#");
+                                    int todayAppointmentsCount = 0;
+                                    DateTime lastAppointmentTodayDateTime = DateTime.MinValue;
+                                    DateTime firstAppointmentTodayDateTime = DateTime.MaxValue;
+                                    foreach (PatientsDataSet.AppointmentsRow appointment in todaysAndTomorrowsAppointments)
+                                    {
+                                        if (appointment.Start.Day == CurrentDate.Day)
+                                        {
+                                            todayAppointmentsCount++;
+                                            if (lastAppointmentTodayDateTime < appointment.Start)
+                                            {
+
+                                                string name, place;
+                                                name = String.Join(" ", appointment.NameDoc.Split(' ').Reverse().ToArray());
+                                                place = String.Join(" ", appointment.Description.Split(' ').Reverse().ToArray());
+
+                                                spt = new recognitionArabic().CloudTextToSpeech("لديك ميعاد مع الدكتور " + name + "والموضوع عن " + place + "الساعة  " + appointment.Start.Hour, gender: "male");
+                                                break;
+                                            }
+                                        }
+                                    }
+
+
+
+                                }
                             }
                             recognizer.RecognizeAsync();
-                            AddOutgoing("اضافه موعد");
-                            sp_txt_ok();
-                            //AppointmentForm addAppointmentForm = new AppointmentForm
-                            //{
-                            //    StartPosition = FormStartPosition.CenterParent
-                            //};
-
-                            DemoSchandeler2 addAppointmentForm = new DemoSchandeler2
-                            {
-                                StartPosition = FormStartPosition.CenterParent
-                            };
-
-                            //addAppointmentForm.AllowShowFocusCues = true;
-                            //addAppointmentForm.ShowIcon = true;
-                            addAppointmentForm.ShowDialog();
-
-
-                            this.SetSchedulerAppointmentsBackground();
+                            Thread.Sleep(100);
+                            one = 0;
                         }
-                        if (message_rev == CommendsWords[5])
+                        else
                         {
-                            spt = new recognitionArabic().CloudTextToSpeech("يتم الخروج الان و نتمني لك صحة وهناء", genderVoice);
-                            timer3.Start();
-                            timer5.Start();
-                            radButton1.Enabled = false;
+                            //recognizer.RecognizeAsync();
 
                         }
                     }
-                    recognizer.RecognizeAsync();
-                    Thread.Sleep(100);
-                    one = 0;
-                }
-                catch
-                {
-                    //recognizer.RecognizeAsync();
+                    catch
+                    {
+                        //recognizer.RecognizeAsync();
 
+                    }
                 }
                 //timer4.Stop();
             }
@@ -1308,6 +1409,15 @@ namespace MedicalAssistant
                 //Thread.Sleep(3000);
                 Application.Exit();
                 timer5.Stop();
+            }
+        }
+
+        private void timer_recognizer_Tick(object sender, EventArgs e)
+        {
+            if (spt.PlaybackState == PlaybackState.Stopped)
+            {
+                recognizer.RequestRecognizerUpdate();
+                timer_recognizer.Enabled = false;
             }
         }
 

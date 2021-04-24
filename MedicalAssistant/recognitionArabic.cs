@@ -15,14 +15,14 @@ namespace MedicalAssistant
         string phrase = "";
         public bool haveNet = true;
 
-        public string SpeakRecognition()
+        public string SpeakRecognition(string file = "test.wav")
         {
             try
             {
                 WebRequest request = WebRequest.Create("https://www.google.com/speech-api/v2/recognize?output=json&lang=AR-eg&key=AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw");
                 //
                 request.Method = "POST";
-                byte[] byteArray = File.ReadAllBytes("test.wav");
+                byte[] byteArray = File.ReadAllBytes(file);
                 request.ContentType = "audio/l16; rate=16000"; //"16000";
                 request.ContentLength = byteArray.Length;
                 request.GetRequestStream().Write(byteArray, 0, byteArray.Length);

@@ -127,7 +127,6 @@
             this.bunifuUserControl2.Size = new System.Drawing.Size(421, 41);
             this.bunifuUserControl2.Style = Bunifu.UI.WinForms.BunifuUserControl.UserControlStyles.Flat;
             this.bunifuUserControl2.TabIndex = 71;
-            this.bunifuUserControl2.Click += new System.EventHandler(this.bunifuUserControl2_Click);
             // 
             // gunaLabel1
             // 

@@ -6,7 +6,6 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
 
@@ -58,17 +57,25 @@ namespace MedicalAssistant
             endDateTimePicker.Value = DateTime.Now.AddHours(1);
             this.startDateTimePicker.DateTimePickerElement.ShowTimePicker = true;
             this.endDateTimePicker.DateTimePickerElement.ShowTimePicker = true;
+            PatientsDataSet.AppointmentsRow appointmentsRow = this.Tag as PatientsDataSet.AppointmentsRow;
+            if (appointmentsRow != null)
+            {
+                this.Text = "Edit Appointment";
+                this.startDateTimePicker.Value = appointmentsRow.Start;
+                this.endDateTimePicker.Value = appointmentsRow.End;
+                //selectedPatientId = appointmentsRow.PersonId;
+            }
+
+            Appointment appointment = this.Tag as Appointment;
+            if (appointment != null)
+            {
+                this.startDateTimePicker.Value = appointment.Start;
 
 
 
+
+            }
         }
-
-
-        private void cancelButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
 
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -87,7 +94,6 @@ namespace MedicalAssistant
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-        [Obsolete]
         void waveIn_DataAvailable(object sender, WaveInEventArgs e)
         {
             try
@@ -117,23 +123,12 @@ namespace MedicalAssistant
 
         }
         string name, place, sub;
-        private ErrorProvider errorProvider;
 
         private bool AreRequiredFieldsValid()
         {
             if (this.Label2.Text == "")
             {
                 spt = new recognitionArabic().CloudTextToSpeech("برجاء قول البيانات بشكل صحيح", "male");
-                return false;
-            }
-            if (this.startDateTimePicker.DateTimePickerElement.Value == null)
-            {
-                this.errorProvider.SetError(this.startDateTimePicker, "Start Date is required");
-                return false;
-            }
-            if (this.endDateTimePicker.DateTimePickerElement.Value == null)
-            {
-                this.errorProvider.SetError(this.endDateTimePicker, "End Date is required");
                 return false;
             }
 
@@ -156,9 +151,10 @@ namespace MedicalAssistant
 
             this.appointmentsTableAdapter1.Update(DataSources.PatientsDataSet.Appointments);
             this.appointmentsTableAdapter1.Fill(DataSources.PatientsDataSet.Appointments);
+            spt = new recognitionArabic().CloudTextToSpeech("تم اضافة المَوعِد", "male");
+
             RadMessageBox.Show(this, "Appointment added.");
 
-            new recognitionArabic().CloudTextToSpeech("تم اضافة المَوعِد", "male");
 
             this.Close();
         }
@@ -169,7 +165,6 @@ namespace MedicalAssistant
 
         }
 
-        [Obsolete]
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
@@ -238,9 +233,5 @@ namespace MedicalAssistant
             }
         }
 
-        private void bunifuUserControl2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
