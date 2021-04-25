@@ -178,7 +178,7 @@ namespace MedicalAssistant
                 waveIn.RecordingStopped +=
                     new EventHandler<NAudio.Wave.StoppedEventArgs>(waveIn_RecordingStopped);
                 waveIn.WaveFormat = new WaveFormat(16000, 1);
-                writer = new WaveFileWriter("test.wav", waveIn.WaveFormat);
+                writer = new WaveFileWriter("testAppointment.wav", waveIn.WaveFormat);
                 waveIn.StartRecording();
 
 
@@ -194,7 +194,7 @@ namespace MedicalAssistant
 
 
                 voice = true;
-                message_rev = new recognitionArabic().SpeakRecognition();
+                message_rev = new recognitionArabic().SpeakRecognition(file: "testAppointment.wav");
 
                 Console.WriteLine(message_rev);
                 try

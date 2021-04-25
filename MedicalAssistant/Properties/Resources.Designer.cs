@@ -173,26 +173,6 @@ namespace MedicalAssistant.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap home {
-            get {
-                object obj = ResourceManager.GetObject("home", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap home__1_ {
-            get {
-                object obj = ResourceManager.GetObject("home__1_", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap home__2_ {
             get {
                 object obj = ResourceManager.GetObject("home__2_", resourceCulture);
@@ -276,36 +256,6 @@ namespace MedicalAssistant.Properties {
         public static System.Drawing.Bitmap rsz_126356 {
             get {
                 object obj = ResourceManager.GetObject("rsz_126356", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap schedule {
-            get {
-                object obj = ResourceManager.GetObject("schedule", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap schedule__1_ {
-            get {
-                object obj = ResourceManager.GetObject("schedule__1_", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap schedule__2_ {
-            get {
-                object obj = ResourceManager.GetObject("schedule__2_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
