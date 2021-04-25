@@ -949,10 +949,16 @@ namespace MedicalAssistant
 
         private void radButton1_Click(object sender, EventArgs e)
         {
+            radButton1.Enabled = false;
+            tip_call = false;
+            if (spt.PlaybackState == PlaybackState.Playing)
+            {
+                spt.Stop();
+            }
+
             spt = new recognitionArabic().CloudTextToSpeech("يتم الخروج الان و نتمني لك صحة وهناء", genderVoice);
             timer3.Start();
             timer5.Start();
-            radButton1.Enabled = false;
 
         }
 
