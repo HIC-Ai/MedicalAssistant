@@ -1011,6 +1011,7 @@ namespace MedicalAssistant
                 timer4.Enabled = false;
 
                 recognizer.RecognizeAsyncCancel();
+                recognizer.RecognizeAsyncStop();
 
 
                 InputTxt.HintText = "";
@@ -1033,7 +1034,7 @@ namespace MedicalAssistant
                 waveIn.RecordingStopped +=
                     new EventHandler<NAudio.Wave.StoppedEventArgs>(waveIn_RecordingStopped);
                 waveIn.WaveFormat = new WaveFormat(16000, 1);
-                writer = new WaveFileWriter("test.wav", waveIn.WaveFormat);
+                writer = new WaveFileWriter("testRecordButton.wav", waveIn.WaveFormat);
                 waveIn.StartRecording();
 
 
@@ -1051,7 +1052,7 @@ namespace MedicalAssistant
 
                 voice = true;
                 //message_rev = new recognitionArabic().Louding(false, true);
-                message_rev = new recognitionArabic().SpeakRecognition();
+                message_rev = new recognitionArabic().SpeakRecognition(file: "testRecordButton.wav");
 
 
 
@@ -1062,7 +1063,7 @@ namespace MedicalAssistant
                 radProgressBar1.Visible = false;
                 pictureBox1.Enabled = true;
                 InputTxt.HintText = "اكتب رسالتك هنا";
-                recognizer.RecognizeAsync();
+                recognizer.RequestRecognizerUpdate();
                 timer4.Enabled = true;
 
 
@@ -1192,22 +1193,26 @@ namespace MedicalAssistant
             {
                 if (recognizer.AudioState.ToString() == "Speech")
                 {
-                    if (one == 0)
+                    try
                     {
+                        if (one == 0)
+                        {
 
-                        waveIn = new WaveIn();
-                        waveIn.DeviceNumber = 0;
-                        waveIn.DataAvailable += waveIn_DataAvailable;
-                        //waveIn.RecordingStopped +=
-                        //    new EventHandler<NAudio.Wave.StoppedEventArgs>(waveIn_RecordingStopped);
-                        waveIn.WaveFormat = new WaveFormat(16000, 1);
-                        writer = new WaveFileWriter(@"testReail.wav", waveIn.WaveFormat);
-                        Console.WriteLine("now StartRecording");
+                            waveIn = new WaveIn();
+                            waveIn.DeviceNumber = 0;
+                            waveIn.DataAvailable += waveIn_DataAvailable;
+                            //waveIn.RecordingStopped +=
+                            //    new EventHandler<NAudio.Wave.StoppedEventArgs>(waveIn_RecordingStopped);
+                            waveIn.WaveFormat = new WaveFormat(16000, 1);
+                            writer = new WaveFileWriter(@"testReail.wav", waveIn.WaveFormat);
+                            Console.WriteLine("now StartRecording");
 
-                        waveIn.StartRecording();
+                            waveIn.StartRecording();
+                        }
+                        //recognizer.RecognizeAsync();
+                        one = 1;
                     }
-                    //recognizer.RecognizeAsync();
-                    one = 1;
+                    catch { }
 
                 }
 
