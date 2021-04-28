@@ -31,12 +31,12 @@ namespace MedicalAssistant
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.ListViewDataItem listViewDataItem1 = new Telerik.WinControls.UI.ListViewDataItem("المهام");
-            Telerik.WinControls.UI.SchedulerDailyPrintStyle schedulerDailyPrintStyle1 = new Telerik.WinControls.UI.SchedulerDailyPrintStyle();
-            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn1 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "Name");
-            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn2 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "Age");
-            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn3 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "Gender");
-            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn4 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 3", "EncounterTime");
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem2 = new Telerik.WinControls.UI.ListViewDataItem("المهام");
+            Telerik.WinControls.UI.SchedulerDailyPrintStyle schedulerDailyPrintStyle2 = new Telerik.WinControls.UI.SchedulerDailyPrintStyle();
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn5 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "Name");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn6 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "Age");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn7 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "Gender");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn8 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 3", "EncounterTime");
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -47,7 +47,6 @@ namespace MedicalAssistant
             this.panel3 = new System.Windows.Forms.Panel();
             this.radListView1 = new Telerik.WinControls.UI.RadListView();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.object_ed72cbad_facf_4a15_8078_4f0e9b98e184 = new Telerik.WinControls.RootRadElement();
@@ -93,6 +92,7 @@ namespace MedicalAssistant
             this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.timer5 = new System.Windows.Forms.Timer(this.components);
             this.timer_recognizer = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
             this.radPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -149,7 +149,7 @@ namespace MedicalAssistant
             this.radPanel2.Controls.Add(this.radProgressBar1);
             this.radPanel2.Controls.Add(this.InputTxt);
             this.radPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.radPanel2.Location = new System.Drawing.Point(0, 502);
+            this.radPanel2.Location = new System.Drawing.Point(0, 508);
             this.radPanel2.Name = "radPanel2";
             this.radPanel2.Size = new System.Drawing.Size(293, 51);
             this.radPanel2.TabIndex = 20;
@@ -252,7 +252,7 @@ namespace MedicalAssistant
             // 
             this.panel3.Controls.Add(this.radListView1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 458);
+            this.panel3.Location = new System.Drawing.Point(0, 464);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(293, 44);
             this.panel3.TabIndex = 0;
@@ -265,11 +265,11 @@ namespace MedicalAssistant
             this.radListView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radListView1.FullRowSelect = false;
             this.radListView1.GroupItemSize = new System.Drawing.Size(200, 28);
-            listViewDataItem1.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            listViewDataItem1.Text = "المهام";
-            listViewDataItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            listViewDataItem2.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            listViewDataItem2.Text = "المهام";
+            listViewDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.radListView1.Items.AddRange(new Telerik.WinControls.UI.ListViewDataItem[] {
-            listViewDataItem1});
+            listViewDataItem2});
             this.radListView1.ItemSize = new System.Drawing.Size(50, 50);
             this.radListView1.ItemSpacing = 4;
             this.radListView1.Location = new System.Drawing.Point(0, 0);
@@ -296,23 +296,6 @@ namespace MedicalAssistant
             this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
             this.guna2GradientPanel1.Size = new System.Drawing.Size(859, 47);
             this.guna2GradientPanel1.TabIndex = 15;
-            // 
-            // label1
-            // 
-            this.label1.AccessibleDescription = "السلام عليكم";
-            this.label1.AccessibleRole = System.Windows.Forms.AccessibleRole.Graphic;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(154, 8);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(631, 34);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "صندوق النصائح";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.UseMnemonic = false;
             // 
             // guna2CirclePictureBox2
             // 
@@ -793,12 +776,12 @@ namespace MedicalAssistant
             this.radScheduler1.Location = new System.Drawing.Point(-8, 90);
             this.radScheduler1.Margin = new System.Windows.Forms.Padding(0);
             this.radScheduler1.Name = "radScheduler1";
-            schedulerDailyPrintStyle1.AppointmentFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            schedulerDailyPrintStyle1.DateEndRange = new System.DateTime(2015, 8, 22, 0, 0, 0, 0);
-            schedulerDailyPrintStyle1.DateHeadingFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            schedulerDailyPrintStyle1.DateStartRange = new System.DateTime(2015, 8, 17, 0, 0, 0, 0);
-            schedulerDailyPrintStyle1.PageHeadingFont = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold);
-            this.radScheduler1.PrintStyle = schedulerDailyPrintStyle1;
+            schedulerDailyPrintStyle2.AppointmentFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            schedulerDailyPrintStyle2.DateEndRange = new System.DateTime(2015, 8, 22, 0, 0, 0, 0);
+            schedulerDailyPrintStyle2.DateHeadingFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            schedulerDailyPrintStyle2.DateStartRange = new System.DateTime(2015, 8, 17, 0, 0, 0, 0);
+            schedulerDailyPrintStyle2.PageHeadingFont = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold);
+            this.radScheduler1.PrintStyle = schedulerDailyPrintStyle2;
             this.radScheduler1.Size = new System.Drawing.Size(600, 373);
             this.radScheduler1.TabIndex = 6;
             this.radScheduler1.ThemeName = "MedicalAppTheme";
@@ -836,15 +819,15 @@ namespace MedicalAssistant
             this.radListViewNextPatients.AllowArbitraryItemHeight = true;
             this.radListViewNextPatients.AllowEdit = false;
             this.radListViewNextPatients.AllowRemove = false;
-            listViewDetailColumn1.HeaderText = "Name";
-            listViewDetailColumn2.HeaderText = "Age";
-            listViewDetailColumn3.HeaderText = "Gender";
-            listViewDetailColumn4.HeaderText = "EncounterTime";
+            listViewDetailColumn5.HeaderText = "Name";
+            listViewDetailColumn6.HeaderText = "Age";
+            listViewDetailColumn7.HeaderText = "Gender";
+            listViewDetailColumn8.HeaderText = "EncounterTime";
             this.radListViewNextPatients.Columns.AddRange(new Telerik.WinControls.UI.ListViewDetailColumn[] {
-            listViewDetailColumn1,
-            listViewDetailColumn2,
-            listViewDetailColumn3,
-            listViewDetailColumn4});
+            listViewDetailColumn5,
+            listViewDetailColumn6,
+            listViewDetailColumn7,
+            listViewDetailColumn8});
             this.radListViewNextPatients.ItemSize = new System.Drawing.Size(200, 95);
             this.radListViewNextPatients.Location = new System.Drawing.Point(19, 87);
             this.radListViewNextPatients.Name = "radListViewNextPatients";
@@ -854,6 +837,11 @@ namespace MedicalAssistant
             this.radListViewNextPatients.ThemeName = "MedicalAppTheme";
             this.radListViewNextPatients.VerticalScrollState = Telerik.WinControls.UI.ScrollState.AlwaysHide;
             this.radListViewNextPatients.VisualItemCreating += new Telerik.WinControls.UI.ListViewVisualItemCreatingEventHandler(this.radListViewNextPatients_VisualItemCreating);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork_1);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged_1);
             // 
             // timer1
             // 
@@ -874,7 +862,7 @@ namespace MedicalAssistant
             this.panelChatMain.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelChatMain.Location = new System.Drawing.Point(0, 23);
             this.panelChatMain.Name = "panelChatMain";
-            this.panelChatMain.Size = new System.Drawing.Size(293, 553);
+            this.panelChatMain.Size = new System.Drawing.Size(293, 559);
             this.panelChatMain.TabIndex = 22;
             // 
             // guna2CirclePictureBox1
@@ -901,7 +889,7 @@ namespace MedicalAssistant
             this.radButton2.BackColor = System.Drawing.SystemColors.Control;
             this.radButton2.Dock = System.Windows.Forms.DockStyle.Right;
             this.radButton2.ForeColor = System.Drawing.Color.SeaGreen;
-            this.radButton2.Location = new System.Drawing.Point(1182, 0);
+            this.radButton2.Location = new System.Drawing.Point(1194, 0);
             this.radButton2.Name = "radButton2";
             this.radButton2.Size = new System.Drawing.Size(124, 23);
             this.radButton2.TabIndex = 17;
@@ -964,7 +952,7 @@ namespace MedicalAssistant
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1306, 23);
+            this.panel5.Size = new System.Drawing.Size(1318, 23);
             this.panel5.TabIndex = 24;
             this.panel5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
             // 
@@ -999,12 +987,29 @@ namespace MedicalAssistant
             // 
             this.timer_recognizer.Tick += new System.EventHandler(this.timer_recognizer_Tick);
             // 
+            // label1
+            // 
+            this.label1.AccessibleDescription = "السلام عليكم";
+            this.label1.AccessibleRole = System.Windows.Forms.AccessibleRole.Graphic;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(154, 8);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label1.Size = new System.Drawing.Size(631, 34);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "صندوق النصائح";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.UseMnemonic = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1306, 576);
+            this.ClientSize = new System.Drawing.Size(1318, 582);
             this.Controls.Add(this.radButton1);
             this.Controls.Add(this.radPageView1);
             this.Controls.Add(this.panel4);
@@ -1077,7 +1082,6 @@ namespace MedicalAssistant
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
         private System.Windows.Forms.Panel panel4;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label txtTyping;
         private Telerik.WinControls.RootRadElement object_ed72cbad_facf_4a15_8078_4f0e9b98e184;
         private Telerik.WinControls.UI.RadPageView radPageView1;
@@ -1130,5 +1134,6 @@ namespace MedicalAssistant
         private System.Windows.Forms.Timer timer4;
         private System.Windows.Forms.Timer timer5;
         private System.Windows.Forms.Timer timer_recognizer;
+        private System.Windows.Forms.Label label1;
     }
 }

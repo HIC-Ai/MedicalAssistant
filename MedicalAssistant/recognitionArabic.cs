@@ -19,6 +19,7 @@ namespace MedicalAssistant
         {
             try
             {
+                Console.WriteLine(file);
                 WebRequest request = WebRequest.Create("https://www.google.com/speech-api/v2/recognize?output=json&lang=AR-eg&key=AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw");
                 //
                 request.Method = "POST";

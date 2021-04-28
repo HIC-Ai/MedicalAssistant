@@ -113,7 +113,7 @@ namespace MedicalAssistant
                     Console.WriteLine(message_rev.Replace("الاستماع", ""));
 
                 }
-                recognizer.RecognizeAsync();
+                recognizer.RecognizeAsync(RecognizeMode.Multiple);
                 Thread.Sleep(100);
 
                 //timer4.Stop();
@@ -151,9 +151,6 @@ namespace MedicalAssistant
             //Console.WriteLine(jsonObj);
 
 
-            recognizer.LoadGrammarAsync(new DictationGrammar());
-            recognizer.SetInputToDefaultAudioDevice();
-            recognizer.RecognizeAsync();
 
             //using (SpeechSynthesizer synth = new SpeechSynthesizer())
             //{
@@ -180,7 +177,6 @@ namespace MedicalAssistant
 
 
 
-            timer4.Start();
             foreach (var rootObject in RootObjects)
             {
                 if (rootObject.QS != null)
@@ -304,28 +300,50 @@ namespace MedicalAssistant
                             }
                         }
 
+                        if (message_rev == CommendsWords[4])
+                        {
 
+                            pictureBox1.Enabled = false;
+                            InputTxt.Enabled = false;
+                            voice = false;
+                            timer2.Enabled = true;
+                            pictureBox2.Enabled = false;
+                            pictureBox1.Enabled = false;
+
+
+                            timer4.Enabled = false;
+                            if (spt.PlaybackState == PlaybackState.Playing)
+                            {
+                                spt.Stop();
+                            }
+
+
+                            //backgroundWorker1.CancelAsync();
+                            tip_call = false;
+
+
+                            Console.WriteLine("lol");
+
+                            //DemoSchandeler2 addAppointmentForm = new DemoSchandeler2();
+                            //addAppointmentForm.StartPosition = FormStartPosition.CenterParent;
+                            //addAppointmentForm.FormClosed += new FormClosedEventHandler(MyForm_FormClosed);
+                            //addAppointmentForm.ShowDialog();
+                        }
 
                         if (message_rev == CommendsWords[0])
                         {
                             sp_txt_ok();
                             this.SetCurrentPageViewPage(this.radPageViewPageSchedule);
                         }
-                        if (message_rev == CommendsWords[4])
-                        {
-                            sp_txt_ok();
-                            AppointmentForm addAppointmentForm = new AppointmentForm();
-                            addAppointmentForm.StartPosition = FormStartPosition.CenterParent;
-                            addAppointmentForm.ShowDialog(this);
+                        //if (message_rev == CommendsWords[4])
+                        //{
+                        //    sp_txt_ok();
+                        //    AppointmentForm addAppointmentForm = new AppointmentForm();
+                        //    addAppointmentForm.StartPosition = FormStartPosition.CenterParent;
+                        //    addAppointmentForm.ShowDialog(this);
 
-                            this.SetSchedulerAppointmentsBackground();
-                        }
-
-                        if (message_rev == "لدي صداع")
-                        {
-                            sp_txt_ok();
-                            this.SetCurrentPageViewPage(this.radPageViewPageSchedule);
-                        }
+                        //    this.SetSchedulerAppointmentsBackground();
+                        //}
 
                         //if (message_rev == CommendsWords[1])
                         //{
@@ -425,100 +443,7 @@ namespace MedicalAssistant
                 }
             return bmp;
         }
-
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-            Thread.Sleep(6000);
-
-            BackgroundWorker worker = sender as BackgroundWorker;
-
-            while (true)
-            {
-
-
-                if (tip_call == true)
-                {
-                    TipsWords = new Database.database().Tips_database();
-
-                    i = i + 1;
-                    if (worker.CancellationPending == true)
-                    {
-                        e.Cancel = true;
-                        break;
-                    }
-                    else
-                    {
-                        foreach (string fg in TipsWords)
-                        {
-                            tip = fg;
-
-                            //tip = new database().Tips_database();
-                            worker.ReportProgress(i * 1);
-                            Thread.Sleep(100000);
-                        }
-
-
-
-                        //label1.Text = tip;
-
-                    }
-                }
-            }
-        }
-        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            //ArrayList TipsWords = new ArrayList();
-
-
-            //TipsWords = new Database.database().Tips_database();
-            //Debug.WriteLine(TipsWords);
-
-
-            //label1.Text = (e.ProgressPercentage.ToString());
-
-            //txt = tip;
-
-
-
-            //foreach (string fg in TipsWords)
-            //{
-            //    tip = fg;
-            if (tip != "")
-            {
-                Console.WriteLine(tip);
-                if (spt.PlaybackState == PlaybackState.Stopped)
-                {
-                    this.radListView1.Enabled = false;
-                    this.pictureBox2.Enabled = false;
-                    this.pictureBox1.Enabled = false; InputTxt.Enabled = false;
-                    this.InputTxt.Enabled = false;
-                    talk = true;
-
-                    recognizer.RecognizeAsyncCancel();
-                    recognizer.RecognizeAsyncStop();
-
-                    spt = new recognitionArabic().CloudTextToSpeech("نصيحة : " + tip, "male");
-                    len = tip.Length;
-                    //label1.Text = "";
-                    timer1.Interval = len;
-
-                    timer_recognizer.Enabled = true;
-                    timer1.Start();
-                    timer3.Start();
-
-                }
-
-
-                //System.Threading.Thread.Sleep(20000);
-
-            }
-            //}
-            //if (time1 > len)
-            //{
-            //    time1 = 0;
-            //    timer1.Stop();
-            //}
-        }
+  
 
         public void Delayed(int delay, Action action)
         {
@@ -554,8 +479,8 @@ namespace MedicalAssistant
 
             if (backgroundWorker1.IsBusy != true)
             {
-                backgroundWorker1.DoWork += new DoWorkEventHandler(backgroundWorker1_DoWork);
-                backgroundWorker1.ProgressChanged += new ProgressChangedEventHandler(backgroundWorker1_ProgressChanged);
+                //backgroundWorker1.DoWork += new DoWorkEventHandler(backgroundWorker1_DoWork);
+                //backgroundWorker1.ProgressChanged += new ProgressChangedEventHandler(backgroundWorker1_ProgressChanged);
                 backgroundWorker1.RunWorkerAsync();
             }
             //TipsTimer.Enabled = true;
@@ -567,6 +492,16 @@ namespace MedicalAssistant
                 t.Stop();
             };
             t.Start();
+
+            recognizer.LoadGrammarAsync(new DictationGrammar());
+            recognizer.SetInputToDefaultAudioDevice();
+            //recognizer.RecognizeAsync(RecognizeMode.Multiple);
+            recognizer.RecognizeAsync();
+
+            timer4.Start();
+
+
+
         }
 
         int ticks = 0;
@@ -980,12 +915,25 @@ namespace MedicalAssistant
         WaveIn waveIn;
         WaveFileWriter writer;
 
- 
+        WaveIn waveIn2;
+        WaveFileWriter writer2;
         void waveIn_DataAvailable(object sender, WaveInEventArgs e)
         {
             try
             {
                 writer.WriteData(e.Buffer, 0, e.BytesRecorded);
+
+            }
+            catch
+            {
+
+            }
+        }
+        void waveIn2_DataAvailable(object sender, WaveInEventArgs e)
+        {
+            try
+            {
+                writer2.WriteData(e.Buffer, 0, e.BytesRecorded);
 
             }
             catch
@@ -1015,17 +963,20 @@ namespace MedicalAssistant
             if (voice == true)
             {
                 timer4.Enabled = false;
-
-                recognizer.RecognizeAsyncCancel();
                 recognizer.RecognizeAsyncStop();
+                recognizer.RecognizeAsyncCancel();
 
+
+                pictureBox1.Enabled = false;
 
                 InputTxt.HintText = "";
-                pictureBox1.Enabled = false;
                 radProgressBar1.Visible = true;
                 InputTxt.Enabled = false;
                 voice = false;
                 timer2.Enabled = true;
+
+
+
                 //new recognitionArabic().Louding(true, false);
                 //var result = new recognitionArabic().SpeakRecognitionRecord();
 
@@ -1037,8 +988,8 @@ namespace MedicalAssistant
                 waveIn = new WaveIn();
                 waveIn.DeviceNumber = 0;
                 waveIn.DataAvailable += waveIn_DataAvailable;
-                waveIn.RecordingStopped +=
-                    new EventHandler<NAudio.Wave.StoppedEventArgs>(waveIn_RecordingStopped);
+                //waveIn.RecordingStopped +=
+                //    new EventHandler<NAudio.Wave.StoppedEventArgs>(waveIn_RecordingStopped);
                 waveIn.WaveFormat = new WaveFormat(16000, 1);
                 writer = new WaveFileWriter("testRecordButton.wav", waveIn.WaveFormat);
                 waveIn.StartRecording();
@@ -1047,29 +998,37 @@ namespace MedicalAssistant
                 pictureBox2.Image = Resources.block_microphone;
 
 
+
+
             }
             else
             {
-                waveIn.StopRecording();
-                waveIn.Dispose();
-                writer.Close();
-                writer.Dispose();
+                if (waveIn != null)
+                {
+                    if (writer != null)
+                    {
+                        waveIn.StopRecording();
+                        waveIn.Dispose();
+                        writer.Close();
+                        writer.Dispose();
 
 
-                voice = true;
-                //message_rev = new recognitionArabic().Louding(false, true);
-                message_rev = new recognitionArabic().SpeakRecognition(file: "testRecordButton.wav");
+                        voice = true;
+                        //message_rev = new recognitionArabic().Louding(false, true);
+                        message_rev = new recognitionArabic().SpeakRecognition(file: "testRecordButton.wav");
 
 
 
 
-                rec_text();
-                pictureBox2.Image = Resources.add_record;
-                InputTxt.Enabled = true;
-                radProgressBar1.Visible = false;
-                pictureBox1.Enabled = true;
-                InputTxt.HintText = "اكتب رسالتك هنا";
-                recognizer.RequestRecognizerUpdate();
+                        rec_text();
+                        pictureBox2.Image = Resources.add_record;
+                        InputTxt.Enabled = true;
+                        radProgressBar1.Visible = false;
+                        pictureBox1.Enabled = true;
+                        InputTxt.HintText = "اكتب رسالتك هنا";
+                    }
+                }
+                recognizer.RecognizeAsync();
                 timer4.Enabled = true;
 
 
@@ -1088,12 +1047,18 @@ namespace MedicalAssistant
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            
             time1 = time1 + 1;
+            Console.WriteLine(len);
+            if(len >= 53)
+            {
+                label1.Font = new Font("Segoe UI",9 , FontStyle.Bold);
+            }
             if (tip != "")
             {
                 if (time1 < len)
                 {
-                    label1.Text = tip.Substring(0, time1);
+                    label1.Text = tip.Substring(0, time1 * 4);
                     if (label1.ForeColor == Color.Black)
                     {
                         label1.ForeColor = Color.FromArgb(15, 82, 186);
@@ -1175,23 +1140,31 @@ namespace MedicalAssistant
 
         private void timer3_Tick_1(object sender, EventArgs e)
         {
-            if (spt.PlaybackState != PlaybackState.Playing)
+            if (spt != null)
             {
+                if (spt.PlaybackState != PlaybackState.Playing)
+                {
 
-                this.radListView1.Enabled = true;
-                this.pictureBox2.Enabled = true;
-                InputTxt.Enabled = true;
-                pictureBox1.Enabled = true;
-                talk = false;
+                    this.radListView1.Enabled = true;
+                    this.pictureBox2.Enabled = true;
+                    InputTxt.Enabled = true;
+                    pictureBox1.Enabled = true;
+                    talk = false;
 
-                InputTxt.Enabled = true;
-                InputTxt.HintText = "اكتب رسالتك هنا";
-                timer4.Start();
+                    InputTxt.Enabled = true;
+                    InputTxt.HintText = "اكتب رسالتك هنا";
+                    //timer4.Start();
+                    timer3.Stop();
+                }
+            }
+            else
+            {
                 timer3.Stop();
+
             }
 
         }
-
+        string message_rev_real = "";
         private void timer4_Tick(object sender, EventArgs e)
         {
             //Console.WriteLine(recognizer.AudioState);
@@ -1203,19 +1176,18 @@ namespace MedicalAssistant
                     {
                         if (one == 0)
                         {
-
-                            waveIn = new WaveIn();
-                            waveIn.DeviceNumber = 0;
-                            waveIn.DataAvailable += waveIn_DataAvailable;
+                            waveIn2 = new WaveIn();
+                            waveIn2.DeviceNumber = 0;
+                            waveIn2.DataAvailable += waveIn2_DataAvailable;
                             //waveIn.RecordingStopped +=
                             //    new EventHandler<NAudio.Wave.StoppedEventArgs>(waveIn_RecordingStopped);
-                            waveIn.WaveFormat = new WaveFormat(16000, 1);
-                            writer = new WaveFileWriter(@"testReail.wav", waveIn.WaveFormat);
+                            waveIn2.WaveFormat = new WaveFormat(16000, 1);
+                            writer2 = new WaveFileWriter(@"testReail.wav", waveIn2.WaveFormat);
                             Console.WriteLine("now StartRecording");
 
-                            waveIn.StartRecording();
+                            waveIn2.StartRecording();
+
                         }
-                        //recognizer.RecognizeAsync();
                         one = 1;
                     }
                     catch { }
@@ -1225,27 +1197,28 @@ namespace MedicalAssistant
                 if (recognizer.AudioState.ToString() == "Stopped")
                 {
                     //Thread.Sleep(300);
-                    try
+
+                    if (waveIn2 != null)
                     {
-                        if (waveIn != null)
+
+                        waveIn2.StopRecording();
+                        waveIn2.Dispose();
+
+
+                        writer2.Close();
+                        writer2.Dispose();
+
+
+                        voice = true;
+                        //message_rev = new recognitionArabic().Louding(false, true);
+                        string message_rev_real2 = new recognitionArabic().SpeakRecognition("testReail.wav");
+                        if (message_rev_real != message_rev_real2)
                         {
-
-                            waveIn.StopRecording();
-                            waveIn.Dispose();
-
-
-                            writer.Close();
-                            writer.Dispose();
-
-
-                            voice = true;
-                            //message_rev = new recognitionArabic().Louding(false, true);
-                            string message_rev_real = new recognitionArabic().SpeakRecognition("testReail.wav");
                             //Console.WriteLine(message_rev);
 
-                            if (message_rev_real.Contains("الاستماع"))
+                            if (message_rev_real2.Contains("الاستماع"))
                             {
-                                message_rev = message_rev_real.Replace("الاستماع ", "");
+                                message_rev = message_rev_real2.Replace("الاستماع ", "");
                                 Console.WriteLine(message_rev);
                                 if (message_rev == CommendsWords[0])
                                 {
@@ -1286,7 +1259,6 @@ namespace MedicalAssistant
                                     pictureBox1.Enabled = false;
 
 
-                                    recognizer.RecognizeAsyncCancel();
                                     timer4.Enabled = false;
                                     if (spt.PlaybackState == PlaybackState.Playing)
                                     {
@@ -1356,7 +1328,6 @@ namespace MedicalAssistant
                                     radButton1.Enabled = false;
 
                                 }
-
                                 if (message_rev == CommendsWords[6])
                                 {
                                     Console.WriteLine(message_rev);
@@ -1385,22 +1356,26 @@ namespace MedicalAssistant
 
 
                                 }
+                                message_rev_real = message_rev_real2;
                             }
-                            recognizer.RecognizeAsync();
-                            Thread.Sleep(100);
-                            one = 0;
+
+
+
                         }
-                        else
+                        Console.WriteLine(recognizer.AudioState);
+
+                        if (recognizer.AudioState.ToString() != "Silence")
                         {
-                            //recognizer.RecognizeAsync();
-
+                            recognizer.RecognizeAsync();
                         }
-                    }
-                    catch
-                    {
-                        //recognizer.RecognizeAsync();
 
+
+                        //recognizer.RecognizeAsync(RecognizeMode.Multiple);
+                        Thread.Sleep(100);
+                        one = 0;
                     }
+
+
                 }
                 //timer4.Stop();
             }
@@ -1429,6 +1404,101 @@ namespace MedicalAssistant
             {
                 recognizer.RequestRecognizerUpdate();
                 timer_recognizer.Enabled = false;
+            }
+        }
+
+        private void backgroundWorker1_ProgressChanged_1(object sender, ProgressChangedEventArgs e)
+        {
+            //ArrayList TipsWords = new ArrayList();
+
+
+            //TipsWords = new Database.database().Tips_database();
+            //Debug.WriteLine(TipsWords);
+
+
+            //label1.Text = (e.ProgressPercentage.ToString());
+
+            //txt = tip;
+
+
+
+            //foreach (string fg in TipsWords)
+            //{
+            //    tip = fg;
+            if (tip != "")
+            {
+                Console.WriteLine(tip);
+                if (spt.PlaybackState == PlaybackState.Stopped)
+                {
+                    this.radListView1.Enabled = false;
+                    this.pictureBox2.Enabled = false;
+                    this.pictureBox1.Enabled = false; InputTxt.Enabled = false;
+                    this.InputTxt.Enabled = false;
+                    talk = true;
+
+                    recognizer.RecognizeAsyncCancel();
+                    recognizer.RecognizeAsyncStop();
+
+                    spt = new recognitionArabic().CloudTextToSpeech("نصيحة : " + tip, "male");
+                    len = tip.Length / 4;
+                    //label1.Text = "";
+                    timer1.Interval = len;
+
+                    timer_recognizer.Enabled = true;
+                    timer1.Start();
+                    timer3.Start();
+
+                }
+
+
+                //System.Threading.Thread.Sleep(20000);
+
+            }
+            //}
+            //if (time1 > len)
+            //{
+            //    time1 = 0;
+            //    timer1.Stop();
+            //}
+        }
+
+        private void backgroundWorker1_DoWork_1(object sender, DoWorkEventArgs e)
+        {
+            Thread.Sleep(6000);
+
+            BackgroundWorker worker = sender as BackgroundWorker;
+
+            while (true)
+            {
+
+
+                if (tip_call == true)
+                {
+                    TipsWords = new Database.database().Tips_database();
+
+                    i = i + 1;
+                    if (worker.CancellationPending == true)
+                    {
+                        e.Cancel = true;
+                        break;
+                    }
+                    else
+                    {
+                        foreach (string fg in TipsWords)
+                        {
+                            tip = fg;
+
+                            //tip = new database().Tips_database();
+                            worker.ReportProgress(i * 1);
+                            Thread.Sleep(100000);
+                        }
+
+
+
+                        //label1.Text = tip;
+
+                    }
+                }
             }
         }
 
