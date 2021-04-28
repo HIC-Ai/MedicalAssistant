@@ -1050,7 +1050,7 @@ namespace MedicalAssistant
             
             time1 = time1 + 1;
             Console.WriteLine(len);
-            if(len >= 53)
+            if(len >= 25)
             {
                 label1.Font = new Font("Segoe UI",9 , FontStyle.Bold);
             }
