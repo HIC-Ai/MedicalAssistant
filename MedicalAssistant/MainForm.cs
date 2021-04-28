@@ -268,7 +268,6 @@ namespace MedicalAssistant
             bool sm = false;
             t.Tick += (s, d) =>
             {
-                Console.WriteLine("Tick");
                 txtTyping.Hide();
                 if (message_rev != string.Empty)
                 {
@@ -354,7 +353,7 @@ namespace MedicalAssistant
                                 message_rev = string.Empty;
                                 DemoSchandeler2 addAppointmentForm = new DemoSchandeler2();
                                 addAppointmentForm.StartPosition = FormStartPosition.CenterParent;
-                                //addAppointmentForm.FormClosed += new FormClosedEventHandler(MyForm_FormClosed);
+                                addAppointmentForm.FormClosed += new FormClosedEventHandler(MyForm_FormClosed);
                                 addAppointmentForm.ShowDialog();
 
 
@@ -482,7 +481,7 @@ namespace MedicalAssistant
             {
                 //backgroundWorker1.DoWork += new DoWorkEventHandler(backgroundWorker1_DoWork);
                 //backgroundWorker1.ProgressChanged += new ProgressChangedEventHandler(backgroundWorker1_ProgressChanged);
-                //backgroundWorker1.RunWorkerAsync();
+                backgroundWorker1.RunWorkerAsync();
             }
             //TipsTimer.Enabled = true;
             var t = new System.Windows.Forms.Timer();
@@ -1049,7 +1048,6 @@ namespace MedicalAssistant
         {
             
             time1 = time1 + 1;
-            Console.WriteLine(len);
             if(len >= 25)
             {
                 label1.Font = new Font("Segoe UI",9 , FontStyle.Bold);
