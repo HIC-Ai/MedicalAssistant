@@ -488,7 +488,15 @@ namespace MedicalAssistant
             t.Interval = 1000;
             t.Tick += (s, d) =>
             {
-                spt = new recognitionArabic().CloudTextToSpeech("لديك اليوم " + radLabelTodayAppointmentsCount.Text + "مواعيد", "male");
+                if (radLabelTodayAppointmentsCount.Text != "0".ToString())
+                {
+                    spt = new recognitionArabic().CloudTextToSpeech("لديك اليوم " + radLabelTodayAppointmentsCount.Text + "مواعيد", "male");
+                }
+                else
+                {
+                    spt = new recognitionArabic().CloudTextToSpeech("ليس لديك مواعيد اليوم", "male");
+
+                }
                 t.Stop();
             };
             t.Start();
@@ -604,7 +612,7 @@ namespace MedicalAssistant
 
             //backgroundWorker1.CancelAsync();
             tip_call = false;
-            DemoSchandeler2 addAppointmentForm = new DemoSchandeler2();
+            AppointmentForm addAppointmentForm = new AppointmentForm();
             addAppointmentForm.StartPosition = FormStartPosition.CenterParent;
             addAppointmentForm.FormClosed += new FormClosedEventHandler(MyForm_FormClosed);
             addAppointmentForm.ShowDialog(this);
@@ -1344,7 +1352,6 @@ namespace MedicalAssistant
                                                 string name, place;
                                                 name = String.Join(" ", appointment.NameDoc.Split(' ').Reverse().ToArray());
                                                 place = String.Join(" ", appointment.Description.Split(' ').Reverse().ToArray());
-
                                                 spt = new recognitionArabic().CloudTextToSpeech("لديك ميعاد مع الدكتور " + name + "والموضوع عن " + place + "الساعة  " + appointment.Start.Hour, gender: "male");
                                                 break;
                                             }
