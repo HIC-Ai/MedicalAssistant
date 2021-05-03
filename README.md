@@ -5,8 +5,9 @@
 ###### 1 - You should download telerik for winforms , The file size is a minimum, from 300 to 400 MB 
 <a href="https://github.com/HIC-Ai/MedicalAssistant/releases/download/1.0/Telerik_UI_For_WinForms_2021_1_326_Trial.msi" target="_blank">Go</a>
 
-[go](https://github.com/HIC-Ai/MedicalAssistant/releases/download/1.0/Telerik_UI_For_WinForms_2021_1_326_Trial.msi){:target="_blank" rel="noopener"}
 ###### 2 - You should create e-mail trial for bunifuframework by any temp e-mail and go to
+<a href="https://bunifuframework.com/free-download/" target="_blank"></a>
+
 
 <a href="https://bunifuframework.com/free-download/" target="_blank">Go</a>
 
