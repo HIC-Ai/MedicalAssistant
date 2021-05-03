@@ -8,7 +8,7 @@
 ###### 2 - You should create e-mail trial for bunifuframework by any temp e-mail and go to
 <a href="https://bunifuframework.com/free-download/" target="_blank"></a>
 
-
+[test](https://bunifuframework.com/free-download/){:target="_blank"}
 <a href="https://bunifuframework.com/free-download/" target="_blank">Go</a>
 
 https://bunifuframework.com/free-download/ Then activate the message in the temp e-mail
