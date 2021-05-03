@@ -6,7 +6,11 @@
 <a href="https://github.com/HIC-Ai/MedicalAssistant/releases/download/1.0/Telerik_UI_For_WinForms_2021_1_326_Trial.msi" target="_blank">Go</a>
 
 [go](https://github.com/HIC-Ai/MedicalAssistant/releases/download/1.0/Telerik_UI_For_WinForms_2021_1_326_Trial.msi){:target="_blank" rel="noopener"}
-###### 2 - You should create e-mail trial for bunifuframework by any temp e-mail and go to https://bunifuframework.com/free-download/ Then activate the message in the temp e-mail
+###### 2 - You should create e-mail trial for bunifuframework by any temp e-mail and go to
+
+<a href="https://bunifuframework.com/free-download/" target="_blank">Go</a>
+
+https://bunifuframework.com/free-download/ Then activate the message in the temp e-mail
 ###### 3 - For DataBase chat and tips , sqlitebrowser x86 https://github.com/sqlitebrowser/sqlitebrowser/releases/download/v3.12.1/DB.Browser.for.SQLite-3.12.1-win32-v2.msi or x64 https://github.com/sqlitebrowser/sqlitebrowser/releases/download/v3.12.1/DB.Browser.for.SQLite-3.12.1-win64-v2.msi
 ###### 4 -Start project and enjoy
 ##################################################################################
