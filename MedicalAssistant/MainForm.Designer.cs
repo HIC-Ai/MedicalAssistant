@@ -1,4 +1,6 @@
 ﻿
+using MedicalAssistant;
+
 namespace MedicalAssistant
 {
     partial class MainForm
@@ -32,15 +34,15 @@ namespace MedicalAssistant
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            Telerik.WinControls.UI.ListViewDataItem listViewDataItem1 = new Telerik.WinControls.UI.ListViewDataItem("المهام");
-            Telerik.WinControls.UI.SchedulerDailyPrintStyle schedulerDailyPrintStyle1 = new Telerik.WinControls.UI.SchedulerDailyPrintStyle();
-            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn1 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "Name");
-            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn2 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "Age");
-            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn3 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "Gender");
-            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn4 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 3", "EncounterTime");
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem2 = new Telerik.WinControls.UI.ListViewDataItem("المهام");
+            Telerik.WinControls.UI.SchedulerDailyPrintStyle schedulerDailyPrintStyle2 = new Telerik.WinControls.UI.SchedulerDailyPrintStyle();
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn5 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "Name");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn6 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "Age");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn7 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "Gender");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn8 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 3", "EncounterTime");
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.send_message = new System.Windows.Forms.PictureBox();
+            this.start_record_stop = new System.Windows.Forms.PictureBox();
             this.txtTyping = new System.Windows.Forms.Label();
             this.radProgressBar1 = new Telerik.WinControls.UI.RadProgressBar();
             this.InputTxt = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -77,9 +79,9 @@ namespace MedicalAssistant
             this.radPageViewPageCharts = new Telerik.WinControls.UI.RadPageViewPage();
             this.radPageViewPageSettings = new Telerik.WinControls.UI.RadPageViewPage();
             this.radListViewNextPatients = new Telerik.WinControls.UI.RadListView();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.Tips_call_in_pack = new System.ComponentModel.BackgroundWorker();
+            this.timer1_tips_enim = new System.Windows.Forms.Timer(this.components);
+            this.timer2_radProgressBar = new System.Windows.Forms.Timer(this.components);
             this.panelChatMain = new System.Windows.Forms.Panel();
             this.object_e3bdc5d3_c56d_48bf_bc43_aa607a6c2b99 = new Telerik.WinControls.RootRadElement();
             this.radButton2 = new Telerik.WinControls.UI.RadButton();
@@ -89,14 +91,14 @@ namespace MedicalAssistant
             this.patientsDataSet = new MedicalAssistant.PatientsDataSet();
             this.appointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.appointmentsTableAdapter = new MedicalAssistant.PatientsDataSetTableAdapters.AppointmentsTableAdapter();
-            this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.timer4 = new System.Windows.Forms.Timer(this.components);
-            this.timer5 = new System.Windows.Forms.Timer(this.components);
-            this.timer_recognizer = new System.Windows.Forms.Timer(this.components);
+            this.timer3_wait_spech = new System.Windows.Forms.Timer(this.components);
+            this.timer5_exit = new System.Windows.Forms.Timer(this.components);
+            this.timer_recognizer_stop = new System.Windows.Forms.Timer(this.components);
+            this.timer4_realTime_recognizer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
             this.radPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.send_message)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.start_record_stop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radProgressBar1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radListView1)).BeginInit();
@@ -143,29 +145,29 @@ namespace MedicalAssistant
             // radPanel2
             // 
             this.radPanel2.BackColor = System.Drawing.SystemColors.Control;
-            this.radPanel2.Controls.Add(this.pictureBox2);
-            this.radPanel2.Controls.Add(this.pictureBox1);
+            this.radPanel2.Controls.Add(this.start_record_stop);
             this.radPanel2.Controls.Add(this.txtTyping);
+            this.radPanel2.Controls.Add(this.send_message);
             this.radPanel2.Controls.Add(this.radProgressBar1);
             this.radPanel2.Controls.Add(this.InputTxt);
             resources.ApplyResources(this.radPanel2, "radPanel2");
             this.radPanel2.Name = "radPanel2";
             // 
-            // pictureBox2
+            // send_message
             // 
-            this.pictureBox2.Image = global::MedicalAssistant.Properties.Resources.add_record;
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.send_message.Image = global::MedicalAssistant.Properties.Resources.add_record;
+            resources.ApplyResources(this.send_message, "send_message");
+            this.send_message.Name = "send_message";
+            this.send_message.TabStop = false;
+            this.send_message.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // pictureBox1
+            // start_record_stop
             // 
-            this.pictureBox1.Image = global::MedicalAssistant.Properties.Resources.filled_sent;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.start_record_stop.Image = global::MedicalAssistant.Properties.Resources.filled_sent;
+            resources.ApplyResources(this.start_record_stop, "start_record_stop");
+            this.start_record_stop.Name = "start_record_stop";
+            this.start_record_stop.TabStop = false;
+            this.start_record_stop.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // txtTyping
             // 
@@ -212,6 +214,7 @@ namespace MedicalAssistant
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Name = "panel1";
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel3
             // 
@@ -227,11 +230,11 @@ namespace MedicalAssistant
             resources.ApplyResources(this.radListView1, "radListView1");
             this.radListView1.FullRowSelect = false;
             this.radListView1.GroupItemSize = new System.Drawing.Size(200, 28);
-            listViewDataItem1.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            listViewDataItem1.Text = "المهام";
-            listViewDataItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            listViewDataItem2.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            listViewDataItem2.Text = "المهام";
+            listViewDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.radListView1.Items.AddRange(new Telerik.WinControls.UI.ListViewDataItem[] {
-            listViewDataItem1});
+            listViewDataItem2});
             this.radListView1.ItemSize = new System.Drawing.Size(50, 50);
             this.radListView1.ItemSpacing = 4;
             this.radListView1.Name = "radListView1";
@@ -303,7 +306,7 @@ namespace MedicalAssistant
             this.radPageView1.RootElement.FocusBorderColor = System.Drawing.Color.Transparent;
             this.radPageView1.RootElement.HighlightColor = System.Drawing.Color.Transparent;
             this.radPageView1.RootElement.RippleAnimationColor = System.Drawing.Color.Transparent;
-            this.radPageView1.SelectedPage = this.radPageViewPageSchedule;
+            this.radPageView1.SelectedPage = this.radPageViewPageDashboard;
             this.radPageView1.ViewMode = Telerik.WinControls.UI.PageViewMode.Backstage;
             ((Telerik.WinControls.UI.RadPageViewBackstageElement)(this.radPageView1.GetChildAt(0))).ItemAlignment = Telerik.WinControls.UI.StripViewItemAlignment.Center;
             ((Telerik.WinControls.UI.RadPageViewBackstageElement)(this.radPageView1.GetChildAt(0))).ItemFitMode = Telerik.WinControls.UI.StripViewItemFitMode.Shrink;
@@ -368,7 +371,7 @@ namespace MedicalAssistant
             ((Telerik.WinControls.UI.RadPageViewContentAreaElement)(this.radPageView1.GetChildAt(0).GetChildAt(1))).BackColor = System.Drawing.Color.Transparent;
             ((Telerik.WinControls.UI.RadPageViewLabelElement)(this.radPageView1.GetChildAt(0).GetChildAt(2))).BackColor2 = System.Drawing.Color.Transparent;
             ((Telerik.WinControls.UI.RadPageViewLabelElement)(this.radPageView1.GetChildAt(0).GetChildAt(2))).TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            ((Telerik.WinControls.UI.RadPageViewLabelElement)(this.radPageView1.GetChildAt(0).GetChildAt(2))).Text = resources.GetString("resource.Text5");
+            ((Telerik.WinControls.UI.RadPageViewLabelElement)(this.radPageView1.GetChildAt(0).GetChildAt(2))).Text = resources.GetString("resource.Text2");
             ((Telerik.WinControls.UI.RadPageViewLabelElement)(this.radPageView1.GetChildAt(0).GetChildAt(2))).BackColor = System.Drawing.Color.Transparent;
             // 
             // radPageViewPageDashboard
@@ -525,7 +528,7 @@ namespace MedicalAssistant
             resources.ApplyResources(this.radButtonNewAppointmentScheduler, "radButtonNewAppointmentScheduler");
             this.radButtonNewAppointmentScheduler.Name = "radButtonNewAppointmentScheduler";
             this.radButtonNewAppointmentScheduler.Click += new System.EventHandler(this.newAppointment_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButtonNewAppointmentScheduler.GetChildAt(0))).Text = resources.GetString("resource.Text2");
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButtonNewAppointmentScheduler.GetChildAt(0))).Text = resources.GetString("resource.Text3");
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.radButtonNewAppointmentScheduler.GetChildAt(0).GetChildAt(0))).BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(241)))), ((int)(((byte)(252)))));
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.radButtonNewAppointmentScheduler.GetChildAt(0).GetChildAt(0))).BackColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(226)))), ((int)(((byte)(244)))));
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.radButtonNewAppointmentScheduler.GetChildAt(0).GetChildAt(0))).BackColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(240)))), ((int)(((byte)(251)))));
@@ -570,7 +573,7 @@ namespace MedicalAssistant
             ((Telerik.WinControls.UI.LightVisualElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(5))).ForeColor = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.UI.RadCheckBoxElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(5).GetChildAt(0))).ForeColor = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(5).GetChildAt(0).GetChildAt(1).GetChildAt(1).GetChildAt(1))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.UI.RadLabelElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(0))).Text = resources.GetString("resource.Text3");
+            ((Telerik.WinControls.UI.RadLabelElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(0))).Text = resources.GetString("resource.Text4");
             ((Telerik.WinControls.UI.RadLabelElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(0).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(0).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
@@ -627,7 +630,7 @@ namespace MedicalAssistant
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(2))).ForeColor = System.Drawing.SystemColors.Control;
             ((Telerik.WinControls.Primitives.FocusPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(3))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             ((Telerik.WinControls.UI.RadLabelElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2))).TextAlignment = ((System.Drawing.ContentAlignment)(resources.GetObject("resource.TextAlignment")));
-            ((Telerik.WinControls.UI.RadLabelElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2))).Text = resources.GetString("resource.Text4");
+            ((Telerik.WinControls.UI.RadLabelElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2))).Text = resources.GetString("resource.Text5");
             ((Telerik.WinControls.UI.RadLabelElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(78)))));
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(78)))));
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(78)))));
@@ -660,12 +663,12 @@ namespace MedicalAssistant
             this.radScheduler1.HeaderFormat = "dddd M\\/d";
             resources.ApplyResources(this.radScheduler1, "radScheduler1");
             this.radScheduler1.Name = "radScheduler1";
-            schedulerDailyPrintStyle1.AppointmentFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            schedulerDailyPrintStyle1.DateEndRange = new System.DateTime(2015, 8, 22, 0, 0, 0, 0);
-            schedulerDailyPrintStyle1.DateHeadingFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            schedulerDailyPrintStyle1.DateStartRange = new System.DateTime(2015, 8, 17, 0, 0, 0, 0);
-            schedulerDailyPrintStyle1.PageHeadingFont = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold);
-            this.radScheduler1.PrintStyle = schedulerDailyPrintStyle1;
+            schedulerDailyPrintStyle2.AppointmentFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            schedulerDailyPrintStyle2.DateEndRange = new System.DateTime(2015, 8, 22, 0, 0, 0, 0);
+            schedulerDailyPrintStyle2.DateHeadingFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            schedulerDailyPrintStyle2.DateStartRange = new System.DateTime(2015, 8, 17, 0, 0, 0, 0);
+            schedulerDailyPrintStyle2.PageHeadingFont = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold);
+            this.radScheduler1.PrintStyle = schedulerDailyPrintStyle2;
             this.radScheduler1.ThemeName = "MedicalAppTheme";
             this.radScheduler1.AppointmentDeleted += new System.EventHandler<Telerik.WinControls.UI.SchedulerAppointmentEventArgs>(this.radScheduler1_AppointmentDeleted);
             this.radScheduler1.DataBindingComplete += new System.EventHandler(this.radScheduler1_DataBindingComplete);
@@ -696,37 +699,36 @@ namespace MedicalAssistant
             this.radListViewNextPatients.AllowArbitraryItemHeight = true;
             this.radListViewNextPatients.AllowEdit = false;
             this.radListViewNextPatients.AllowRemove = false;
-            listViewDetailColumn1.HeaderText = "Name";
-            listViewDetailColumn2.HeaderText = "Age";
-            listViewDetailColumn3.HeaderText = "Gender";
-            listViewDetailColumn4.HeaderText = "EncounterTime";
+            listViewDetailColumn5.HeaderText = "Name";
+            listViewDetailColumn6.HeaderText = "Age";
+            listViewDetailColumn7.HeaderText = "Gender";
+            listViewDetailColumn8.HeaderText = "EncounterTime";
             this.radListViewNextPatients.Columns.AddRange(new Telerik.WinControls.UI.ListViewDetailColumn[] {
-            listViewDetailColumn1,
-            listViewDetailColumn2,
-            listViewDetailColumn3,
-            listViewDetailColumn4});
+            listViewDetailColumn5,
+            listViewDetailColumn6,
+            listViewDetailColumn7,
+            listViewDetailColumn8});
             this.radListViewNextPatients.ItemSize = new System.Drawing.Size(200, 95);
             resources.ApplyResources(this.radListViewNextPatients, "radListViewNextPatients");
             this.radListViewNextPatients.Name = "radListViewNextPatients";
             this.radListViewNextPatients.SelectLastAddedItem = false;
             this.radListViewNextPatients.ThemeName = "MedicalAppTheme";
             this.radListViewNextPatients.VerticalScrollState = Telerik.WinControls.UI.ScrollState.AlwaysHide;
-            this.radListViewNextPatients.VisualItemCreating += new Telerik.WinControls.UI.ListViewVisualItemCreatingEventHandler(this.radListViewNextPatients_VisualItemCreating);
             // 
-            // backgroundWorker1
+            // Tips_call_in_pack
             // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork_1);
-            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged_1);
+            this.Tips_call_in_pack.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork_1_Tips_call_in_pack);
+            this.Tips_call_in_pack.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged_1_Tips_call_in_pack);
             // 
-            // timer1
+            // timer1_tips_enim
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 2000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1_tips_enim.Enabled = true;
+            this.timer1_tips_enim.Interval = 2000;
+            this.timer1_tips_enim.Tick += new System.EventHandler(this.timer1_Tick__tips_enim);
             // 
-            // timer2
+            // timer2_radProgressBar
             // 
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            this.timer2_radProgressBar.Tick += new System.EventHandler(this.timer2_Tick_radProgressBar);
             // 
             // panelChatMain
             // 
@@ -829,22 +831,22 @@ namespace MedicalAssistant
             // 
             this.appointmentsTableAdapter.ClearBeforeFill = true;
             // 
-            // timer3
+            // timer3_wait_spech
             // 
-            this.timer3.Tick += new System.EventHandler(this.timer3_Tick_1);
+            this.timer3_wait_spech.Tick += new System.EventHandler(this.timer3_Tick_1);
             // 
-            // timer4
+            // timer5_exit
             // 
-            this.timer4.Interval = 1;
-            this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
+            this.timer5_exit.Tick += new System.EventHandler(this.timer5_Tick_exit);
             // 
-            // timer5
+            // timer_recognizer_stop
             // 
-            this.timer5.Tick += new System.EventHandler(this.timer5_Tick);
+            this.timer_recognizer_stop.Tick += new System.EventHandler(this.timer_recognizer_Tick);
             // 
-            // timer_recognizer
+            // timer4_realTime_recognizer
             // 
-            this.timer_recognizer.Tick += new System.EventHandler(this.timer_recognizer_Tick);
+            this.timer4_realTime_recognizer.Interval = 1;
+            this.timer4_realTime_recognizer.Tick += new System.EventHandler(this.timer4_Tick_realTime_recognizer);
             // 
             // MainForm
             // 
@@ -866,8 +868,8 @@ namespace MedicalAssistant
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).EndInit();
             this.radPanel2.ResumeLayout(false);
             this.radPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.send_message)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.start_record_stop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radProgressBar1)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radListView1)).EndInit();
@@ -947,15 +949,15 @@ namespace MedicalAssistant
         private Telerik.WinControls.UI.RadCalendar radCalendarSchedule;
         private Telerik.WinControls.UI.RadSchedulerNavigator radSchedulerNavigator1;
         private Telerik.WinControls.UI.RadListView radListViewNextPatients;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Timer timer1;
+        private System.ComponentModel.BackgroundWorker Tips_call_in_pack;
+        private System.Windows.Forms.Timer timer1_tips_enim;
         private System.Windows.Forms.Panel panel1;
         private Telerik.WinControls.UI.RadProgressBar radProgressBar1;
-        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer2_radProgressBar;
         private Telerik.WinControls.UI.RadScheduler radScheduler1;
         private PatientsDataSet patientsDataSet;
         private System.Windows.Forms.BindingSource appointmentsBindingSource;
-        private PatientsDataSetTableAdapters.AppointmentsTableAdapter appointmentsTableAdapter;
+        private MedicalAssistant.PatientsDataSetTableAdapters.AppointmentsTableAdapter appointmentsTableAdapter;
         private Telerik.WinControls.UI.RadPanel radPanel2;
         private System.Windows.Forms.Panel panelChatMain;
         private Telerik.WinControls.UI.RadButton radButton2;
@@ -966,13 +968,13 @@ namespace MedicalAssistant
         private Telerik.WinControls.UI.RadListView radListView1;
         private Telerik.WinControls.UI.RadButton radButton1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox start_record_stop;
+        private System.Windows.Forms.PictureBox send_message;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Timer timer3;
-        private System.Windows.Forms.Timer timer4;
-        private System.Windows.Forms.Timer timer5;
-        private System.Windows.Forms.Timer timer_recognizer;
+        private System.Windows.Forms.Timer timer3_wait_spech;
+        private System.Windows.Forms.Timer timer5_exit;
+        private System.Windows.Forms.Timer timer_recognizer_stop;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer4_realTime_recognizer;
     }
 }
