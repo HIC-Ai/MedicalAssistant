@@ -21,7 +21,7 @@ using System.Threading;
 using System.Speech.Synthesis;
 using System.Speech.Recognition;
 using System.Linq;
-
+ 
 namespace MedicalAssistant
 {
 
