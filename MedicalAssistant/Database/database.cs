@@ -236,34 +236,30 @@ namespace MedicalAssistant.Database
             return sentence;
         }
         string tip = "";
-        public ArrayList Tips_database()
+        public ArrayList Tips_database()  // funtion جلب النصائح
         {
 
-            SQLiteConnection myConn = new SQLiteConnection(Settings.Default.sqConnectionString);
-            //string query = "SELECT id, name FROM tips ORDER BY RANDOM() LIMIT 1";
+            SQLiteConnection myConn = new SQLiteConnection(Settings.Default.sqConnectionString); // عمل اتصال اللداتا بيز
+            string query = "SELECT id, name FROM tips";  // امر sql لجلب الصنائح كامله من الداتا بيز
 
-            string query = "SELECT id, name FROM tips";
+            SQLiteCommand sqCommand = new SQLiteCommand(query);  // تجهيز امر sql لارساله
+            sqCommand = new SQLiteCommand(query); // // تجهيز امر sql لارساله
+            sqCommand.Connection = myConn; // ربط sql ب اتصال داتا بيز
+            myConn.Open(); // فتح داتا بيز
+            SQLiteDataReader sqReader = sqCommand.ExecuteReader(); // قراءه النتائج
 
-
-
-            SQLiteCommand sqCommand = new SQLiteCommand(query);
-            sqCommand = new SQLiteCommand(query);
-            sqCommand.Connection = myConn;
-            myConn.Open();
-            SQLiteDataReader sqReader = sqCommand.ExecuteReader();
-
-            while (sqReader.Read())
+            while (sqReader.Read()) // حلقه تكراريه علي النتائج
             {
-                tip = sqReader["name"].ToString();
-                //output.Append(sqReader["name"]);
-                TipsWords.Add(tip);
+                tip = sqReader["name"].ToString(); // جلب اسم كل نصيحه من النتائج
+                TipsWords.Add(tip); // اضافه اسم كل نصيحه الي ليست الناصئح
             }
 
-            sqReader.Close();
-            myConn.Close();
-            return TipsWords;
+            sqReader.Close(); // قفل قراءه نتائج النصائج 
+            myConn.Close(); // قفل اتصال قاعده البيانات
+            return TipsWords; // ارجاع جميع النصائح المنتهية
 
         }
+
 
         public List<Dictionary<string, object>> Questions()
         {
