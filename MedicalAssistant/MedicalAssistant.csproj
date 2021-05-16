@@ -396,6 +396,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="recognitionArabic.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="Tips.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tips.Designer.cs">
+      <DependentUpon>Tips.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TipsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TipsUserControl.Designer.cs">
+      <DependentUpon>TipsUserControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AppointmentForm.resx">
       <DependentUpon>AppointmentForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -425,9 +437,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="bin\Debug\chatbot.sqlite" />
     <EmbeddedResource Include="Database\chatbot.sqlite">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tips.resx">
+      <DependentUpon>Tips.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipsUserControl.resx">
+      <DependentUpon>TipsUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Dll\Bunifu.UI.WinForms.4.1.1\README.md">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -744,6 +761,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Debug\" />
     <Folder Include="Resources\Temporary\" />
   </ItemGroup>
   <ItemGroup>
