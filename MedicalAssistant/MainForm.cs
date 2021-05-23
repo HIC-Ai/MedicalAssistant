@@ -247,7 +247,7 @@ namespace MedicalAssistant
                         gMapControl1.Zoom = 15;
                         gMapControl1.AutoScroll = true;
 
-                        markerOverlay = new GMapOverlay("Marcador");
+                        markerOverlay = new GMapOverlay("موقعك");
                         marker = new GMarkerGoogle(new PointLatLng(LatInicial, LngInicial), GMarkerGoogleType.blue);
                         markerOverlay.Markers.Add(marker);
                         marker.ToolTipMode = MarkerTooltipMode.Always;
