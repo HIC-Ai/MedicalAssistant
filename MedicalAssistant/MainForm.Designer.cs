@@ -34,12 +34,12 @@ namespace MedicalAssistant
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            Telerik.WinControls.UI.ListViewDataItem listViewDataItem1 = new Telerik.WinControls.UI.ListViewDataItem("المهام");
-            Telerik.WinControls.UI.SchedulerDailyPrintStyle schedulerDailyPrintStyle1 = new Telerik.WinControls.UI.SchedulerDailyPrintStyle();
-            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn1 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "Name");
-            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn2 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "Age");
-            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn3 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "Gender");
-            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn4 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 3", "EncounterTime");
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem2 = new Telerik.WinControls.UI.ListViewDataItem("المهام");
+            Telerik.WinControls.UI.SchedulerDailyPrintStyle schedulerDailyPrintStyle2 = new Telerik.WinControls.UI.SchedulerDailyPrintStyle();
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn5 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "Name");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn6 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "Age");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn7 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "Gender");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn8 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 3", "EncounterTime");
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
             this.start_record_stop = new System.Windows.Forms.PictureBox();
             this.txtTyping = new System.Windows.Forms.Label();
@@ -72,10 +72,10 @@ namespace MedicalAssistant
             this.radLabelTomorrowAppointmentsCount = new Telerik.WinControls.UI.RadLabel();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.radPageViewPageSchedule = new Telerik.WinControls.UI.RadPageViewPage();
-            this.radCalendarSchedule = new Telerik.WinControls.UI.RadCalendar();
-            this.radButtonNewAppointmentScheduler = new Telerik.WinControls.UI.RadButton();
-            this.radSchedulerNavigator1 = new Telerik.WinControls.UI.RadSchedulerNavigator();
+            this.radSchedulerNavigator2 = new Telerik.WinControls.UI.RadSchedulerNavigator();
             this.radScheduler1 = new Telerik.WinControls.UI.RadScheduler();
+            this.radPageViewPageMaps = new Telerik.WinControls.UI.RadPageViewPage();
+            this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.radPageViewPageCharts = new Telerik.WinControls.UI.RadPageViewPage();
             this.radPageViewPageSettings = new Telerik.WinControls.UI.RadPageViewPage();
             this.radListViewNextPatients = new Telerik.WinControls.UI.RadListView();
@@ -95,6 +95,7 @@ namespace MedicalAssistant
             this.timer5_exit = new System.Windows.Forms.Timer(this.components);
             this.timer_recognizer_stop = new System.Windows.Forms.Timer(this.components);
             this.timer4_realTime_recognizer = new System.Windows.Forms.Timer(this.components);
+            this.object_e922f11e_a01e_4722_8e26_9562c5280f99 = new Telerik.WinControls.RootRadElement();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
             this.radPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.start_record_stop)).BeginInit();
@@ -127,10 +128,9 @@ namespace MedicalAssistant
             ((System.ComponentModel.ISupportInitialize)(this.radLabelTomorrowAppointmentsCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             this.radPageViewPageSchedule.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radCalendarSchedule)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButtonNewAppointmentScheduler)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radSchedulerNavigator1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radSchedulerNavigator2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radScheduler1)).BeginInit();
+            this.radPageViewPageMaps.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radListViewNextPatients)).BeginInit();
             this.panelChatMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
@@ -230,11 +230,11 @@ namespace MedicalAssistant
             resources.ApplyResources(this.radListView1, "radListView1");
             this.radListView1.FullRowSelect = false;
             this.radListView1.GroupItemSize = new System.Drawing.Size(200, 28);
-            listViewDataItem1.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            listViewDataItem1.Text = "المهام";
-            listViewDataItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            listViewDataItem2.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            listViewDataItem2.Text = "المهام";
+            listViewDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.radListView1.Items.AddRange(new Telerik.WinControls.UI.ListViewDataItem[] {
-            listViewDataItem1});
+            listViewDataItem2});
             this.radListView1.ItemSize = new System.Drawing.Size(50, 50);
             this.radListView1.ItemSpacing = 4;
             this.radListView1.Name = "radListView1";
@@ -255,6 +255,7 @@ namespace MedicalAssistant
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
+            this.guna2GradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
             // 
             // label1
             // 
@@ -265,6 +266,7 @@ namespace MedicalAssistant
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Name = "label1";
             this.label1.UseMnemonic = false;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // guna2CirclePictureBox2
             // 
@@ -279,9 +281,9 @@ namespace MedicalAssistant
             // 
             // panel4
             // 
+            resources.ApplyResources(this.panel4, "panel4");
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Controls.Add(this.guna2GradientPanel1);
-            resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
             // 
             // object_ed72cbad_facf_4a15_8078_4f0e9b98e184
@@ -292,12 +294,13 @@ namespace MedicalAssistant
             // 
             // radPageView1
             // 
+            resources.ApplyResources(this.radPageView1, "radPageView1");
             this.radPageView1.BackColor = System.Drawing.Color.Transparent;
             this.radPageView1.Controls.Add(this.radPageViewPageDashboard);
             this.radPageView1.Controls.Add(this.radPageViewPageSchedule);
+            this.radPageView1.Controls.Add(this.radPageViewPageMaps);
             this.radPageView1.Controls.Add(this.radPageViewPageCharts);
             this.radPageView1.Controls.Add(this.radPageViewPageSettings);
-            resources.ApplyResources(this.radPageView1, "radPageView1");
             this.radPageView1.Name = "radPageView1";
             // 
             // 
@@ -308,6 +311,7 @@ namespace MedicalAssistant
             this.radPageView1.RootElement.RippleAnimationColor = System.Drawing.Color.Transparent;
             this.radPageView1.SelectedPage = this.radPageViewPageDashboard;
             this.radPageView1.ViewMode = Telerik.WinControls.UI.PageViewMode.Backstage;
+            this.radPageView1.SelectedPageChanged += new System.EventHandler(this.radPageView1_SelectedPageChanged);
             ((Telerik.WinControls.UI.RadPageViewBackstageElement)(this.radPageView1.GetChildAt(0))).ItemAlignment = Telerik.WinControls.UI.StripViewItemAlignment.Center;
             ((Telerik.WinControls.UI.RadPageViewBackstageElement)(this.radPageView1.GetChildAt(0))).ItemFitMode = Telerik.WinControls.UI.StripViewItemFitMode.Shrink;
             ((Telerik.WinControls.UI.RadPageViewBackstageElement)(this.radPageView1.GetChildAt(0))).StripAlignment = Telerik.WinControls.UI.StripViewAlignment.Right;
@@ -371,7 +375,7 @@ namespace MedicalAssistant
             ((Telerik.WinControls.UI.RadPageViewContentAreaElement)(this.radPageView1.GetChildAt(0).GetChildAt(1))).BackColor = System.Drawing.Color.Transparent;
             ((Telerik.WinControls.UI.RadPageViewLabelElement)(this.radPageView1.GetChildAt(0).GetChildAt(2))).BackColor2 = System.Drawing.Color.Transparent;
             ((Telerik.WinControls.UI.RadPageViewLabelElement)(this.radPageView1.GetChildAt(0).GetChildAt(2))).TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            ((Telerik.WinControls.UI.RadPageViewLabelElement)(this.radPageView1.GetChildAt(0).GetChildAt(2))).Text = resources.GetString("resource.Text5");
+            ((Telerik.WinControls.UI.RadPageViewLabelElement)(this.radPageView1.GetChildAt(0).GetChildAt(2))).Text = resources.GetString("resource.Text2");
             ((Telerik.WinControls.UI.RadPageViewLabelElement)(this.radPageView1.GetChildAt(0).GetChildAt(2))).BackColor = System.Drawing.Color.Transparent;
             // 
             // radPageViewPageDashboard
@@ -502,9 +506,7 @@ namespace MedicalAssistant
             // radPageViewPageSchedule
             // 
             this.radPageViewPageSchedule.BackColor = System.Drawing.SystemColors.Control;
-            this.radPageViewPageSchedule.Controls.Add(this.radCalendarSchedule);
-            this.radPageViewPageSchedule.Controls.Add(this.radButtonNewAppointmentScheduler);
-            this.radPageViewPageSchedule.Controls.Add(this.radSchedulerNavigator1);
+            this.radPageViewPageSchedule.Controls.Add(this.radSchedulerNavigator2);
             this.radPageViewPageSchedule.Controls.Add(this.radScheduler1);
             this.radPageViewPageSchedule.ForeColor = System.Drawing.Color.Transparent;
             this.radPageViewPageSchedule.Image = global::MedicalAssistant.Properties.Resources.schedule__3_;
@@ -513,168 +515,99 @@ namespace MedicalAssistant
             this.radPageViewPageSchedule.Name = "radPageViewPageSchedule";
             this.radPageViewPageSchedule.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // radCalendarSchedule
+            // radSchedulerNavigator2
             // 
-            this.radCalendarSchedule.DayNameFormat = Telerik.WinControls.UI.DayNameFormat.FirstTwoLetters;
-            resources.ApplyResources(this.radCalendarSchedule, "radCalendarSchedule");
-            this.radCalendarSchedule.Name = "radCalendarSchedule";
-            this.radCalendarSchedule.SelectedDates.AddRange(new System.DateTime[] {
-            new System.DateTime(1900, 1, 1, 0, 0, 0, 0)});
-            this.radCalendarSchedule.ShowRowHeaders = true;
-            this.radCalendarSchedule.SelectionChanged += new System.EventHandler(this.radCalendarSchedule_SelectionChanged);
-            // 
-            // radButtonNewAppointmentScheduler
-            // 
-            resources.ApplyResources(this.radButtonNewAppointmentScheduler, "radButtonNewAppointmentScheduler");
-            this.radButtonNewAppointmentScheduler.Name = "radButtonNewAppointmentScheduler";
-            this.radButtonNewAppointmentScheduler.Click += new System.EventHandler(this.newAppointment_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButtonNewAppointmentScheduler.GetChildAt(0))).Text = resources.GetString("resource.Text2");
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radButtonNewAppointmentScheduler.GetChildAt(0).GetChildAt(0))).BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(241)))), ((int)(((byte)(252)))));
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radButtonNewAppointmentScheduler.GetChildAt(0).GetChildAt(0))).BackColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(226)))), ((int)(((byte)(244)))));
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radButtonNewAppointmentScheduler.GetChildAt(0).GetChildAt(0))).BackColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(240)))), ((int)(((byte)(251)))));
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radButtonNewAppointmentScheduler.GetChildAt(0).GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(241)))), ((int)(((byte)(252)))));
-            // 
-            // radSchedulerNavigator1
-            // 
-            this.radSchedulerNavigator1.AssociatedScheduler = this.radScheduler1;
-            this.radSchedulerNavigator1.DateFormat = "MMMM d, yyyy";
-            this.radSchedulerNavigator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            resources.ApplyResources(this.radSchedulerNavigator1, "radSchedulerNavigator1");
-            this.radSchedulerNavigator1.Name = "radSchedulerNavigator1";
-            this.radSchedulerNavigator1.NavigationStepType = Telerik.WinControls.UI.NavigationStepTypes.Day;
+            this.radSchedulerNavigator2.AssociatedScheduler = this.radScheduler1;
+            this.radSchedulerNavigator2.DateFormat = "yyyy/MM/dd";
+            resources.ApplyResources(this.radSchedulerNavigator2, "radSchedulerNavigator2");
+            this.radSchedulerNavigator2.Name = "radSchedulerNavigator2";
+            this.radSchedulerNavigator2.NavigationStep = 7;
+            this.radSchedulerNavigator2.NavigationStepType = Telerik.WinControls.UI.NavigationStepTypes.Day;
             // 
             // 
             // 
-            this.radSchedulerNavigator1.RootElement.StretchVertically = false;
-            ((Telerik.WinControls.UI.SchedulerNavigatorElement)(this.radSchedulerNavigator1.GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(0))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(1))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.RadItem)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0))).TopColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0))).BottomColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(1))).BackColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.UI.RadToggleButtonElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(0))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2))).InnerColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.UI.RadToggleButtonElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(1))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2))).InnerColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.UI.RadToggleButtonElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(2))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(2).GetChildAt(2))).InnerColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(2).GetChildAt(2))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.UI.RadToggleButtonElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(3))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(3).GetChildAt(2))).InnerColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(3).GetChildAt(2))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.UI.RadToggleButtonElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(4))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(4).GetChildAt(2))).InnerColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(4).GetChildAt(2))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.UI.LightVisualElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(5))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.UI.RadCheckBoxElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(5).GetChildAt(0))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(5).GetChildAt(0).GetChildAt(1).GetChildAt(1).GetChildAt(1))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.UI.RadLabelElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(0))).Text = resources.GetString("resource.Text3");
-            ((Telerik.WinControls.UI.RadLabelElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(0).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(0).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(0).GetChildAt(1))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.Default;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(0).GetChildAt(2).GetChildAt(0))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(0).GetChildAt(2).GetChildAt(0))).Alignment = ((System.Drawing.ContentAlignment)(resources.GetObject("resource.Alignment1")));
-            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(0).GetChildAt(2).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.UI.RadDropDownListElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(1).GetChildAt(0))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(1).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.UI.StackLayoutElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(1).GetChildAt(2))).ImageTransparentColor = System.Drawing.Color.Magenta;
-            ((Telerik.WinControls.UI.StackLayoutElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(1).GetChildAt(2))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(0))).BackColor2 = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(0))).BackColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.UI.SchedulerNavigatorSearchTextbox)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(2))).MaxSize = new System.Drawing.Size(-13, 0);
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(6).GetChildAt(2).GetChildAt(1))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.RadItem)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0))).LeftColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0))).TopColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0))).RightColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0))).BottomColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.Default;
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(1))).BackColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(1))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(0).GetChildAt(0))).BackColor2 = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(0).GetChildAt(0))).BackColor3 = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(0).GetChildAt(0))).BackColor4 = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(0).GetChildAt(0))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(0).GetChildAt(0))).BackColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(0).GetChildAt(1).GetChildAt(0))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(0).GetChildAt(1).GetChildAt(1))).LineLimit = false;
-            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(0).GetChildAt(1).GetChildAt(1))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(0).GetChildAt(1).GetChildAt(1))).Alignment = ((System.Drawing.ContentAlignment)(resources.GetObject("resource.Alignment2")));
-            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(0).GetChildAt(1).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(0).GetChildAt(2))).InnerColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(0).GetChildAt(2))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.FocusPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(0).GetChildAt(3))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(0))).BackColor2 = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(0))).BackColor3 = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(0))).BackColor4 = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(0))).BackColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(1).GetChildAt(0))).TransparentColor = System.Drawing.Color.Magenta;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(1).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(1).GetChildAt(1))).LineLimit = false;
-            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(1).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(1).GetChildAt(1))).Alignment = ((System.Drawing.ContentAlignment)(resources.GetObject("resource.Alignment3")));
-            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(1).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(2))).InnerColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(2))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.Primitives.FocusPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(1).GetChildAt(3))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.UI.RadLabelElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2))).TextAlignment = ((System.Drawing.ContentAlignment)(resources.GetObject("resource.TextAlignment")));
-            ((Telerik.WinControls.UI.RadLabelElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2))).Text = resources.GetString("resource.Text4");
-            ((Telerik.WinControls.UI.RadLabelElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(78)))));
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(78)))));
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(78)))));
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2).GetChildAt(1))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.Default;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2).GetChildAt(2).GetChildAt(0))).TransparentColor = System.Drawing.Color.Magenta;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2).GetChildAt(2).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(78)))));
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2).GetChildAt(2).GetChildAt(0))).Alignment = ((System.Drawing.ContentAlignment)(resources.GetObject("resource.Alignment4")));
-            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2).GetChildAt(2).GetChildAt(1))).TextAlignment = ((System.Drawing.ContentAlignment)(resources.GetObject("resource.TextAlignment1")));
-            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(2).GetChildAt(2).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(78)))));
-            ((Telerik.WinControls.UI.LightVisualElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(3))).ForeColor = System.Drawing.SystemColors.Control;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(3).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(3).GetChildAt(0).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(3).GetChildAt(0).GetChildAt(1).GetChildAt(0))).TransparentColor = System.Drawing.Color.Magenta;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(3).GetChildAt(0).GetChildAt(1).GetChildAt(0))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(3).GetChildAt(0).GetChildAt(1).GetChildAt(1))).LineLimit = false;
-            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(3).GetChildAt(0).GetChildAt(1).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.Primitives.TextPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(3).GetChildAt(0).GetChildAt(1).GetChildAt(1))).Alignment = ((System.Drawing.ContentAlignment)(resources.GetObject("resource.Alignment5")));
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(3).GetChildAt(0).GetChildAt(2))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            ((Telerik.WinControls.Primitives.FocusPrimitive)(this.radSchedulerNavigator1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2).GetChildAt(3).GetChildAt(0).GetChildAt(3))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
+            this.radSchedulerNavigator2.RootElement.StretchVertically = false;
+            this.radSchedulerNavigator2.ThemeName = "Fluent";
+            this.radSchedulerNavigator2.Click += new System.EventHandler(this.radSchedulerNavigator2_Click);
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator2.GetChildAt(0).GetChildAt(1))).BackColor = System.Drawing.SystemColors.Control;
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator2.GetChildAt(0).GetChildAt(1))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None;
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator2.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(1))).BackColor = System.Drawing.SystemColors.Control;
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator2.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(1))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None;
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator2.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(1))).BackColor = System.Drawing.SystemColors.Control;
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radSchedulerNavigator2.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(1))).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None;
             // 
             // radScheduler1
             // 
-            this.radScheduler1.ActiveViewType = Telerik.WinControls.UI.SchedulerViewType.MultiDay;
+            this.radScheduler1.ActiveViewType = Telerik.WinControls.UI.SchedulerViewType.Week;
             this.radScheduler1.AllowAppointmentCreateInline = false;
             this.radScheduler1.AllowAppointmentMove = false;
             this.radScheduler1.AllowAppointmentResize = false;
             this.radScheduler1.AllowAppointmentsMultiSelect = true;
             this.radScheduler1.AllowCopyPaste = Telerik.WinControls.UI.CopyPasteMode.Disallow;
             this.radScheduler1.Culture = new System.Globalization.CultureInfo("");
-            this.radScheduler1.HeaderFormat = "dddd M\\/d";
             resources.ApplyResources(this.radScheduler1, "radScheduler1");
+            this.radScheduler1.HeaderFormat = "dddd M\\/d";
             this.radScheduler1.Name = "radScheduler1";
-            schedulerDailyPrintStyle1.AppointmentFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            schedulerDailyPrintStyle1.DateEndRange = new System.DateTime(2015, 8, 22, 0, 0, 0, 0);
-            schedulerDailyPrintStyle1.DateHeadingFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            schedulerDailyPrintStyle1.DateStartRange = new System.DateTime(2015, 8, 17, 0, 0, 0, 0);
-            schedulerDailyPrintStyle1.PageHeadingFont = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold);
-            this.radScheduler1.PrintStyle = schedulerDailyPrintStyle1;
-            this.radScheduler1.ThemeName = "MedicalAppTheme";
+            schedulerDailyPrintStyle2.AppointmentFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            schedulerDailyPrintStyle2.DateEndRange = new System.DateTime(2015, 8, 22, 0, 0, 0, 0);
+            schedulerDailyPrintStyle2.DateHeadingFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            schedulerDailyPrintStyle2.DateStartRange = new System.DateTime(2015, 8, 17, 0, 0, 0, 0);
+            schedulerDailyPrintStyle2.PageHeadingFont = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold);
+            this.radScheduler1.PrintStyle = schedulerDailyPrintStyle2;
+            this.radScheduler1.ThemeName = "Fluent";
             this.radScheduler1.AppointmentDeleted += new System.EventHandler<Telerik.WinControls.UI.SchedulerAppointmentEventArgs>(this.radScheduler1_AppointmentDeleted);
             this.radScheduler1.DataBindingComplete += new System.EventHandler(this.radScheduler1_DataBindingComplete);
             this.radScheduler1.ContextMenuOpening += new Telerik.WinControls.UI.SchedulerContextMenuOpeningEventHandler(this.radScheduler1_ContextMenuOpening);
             this.radScheduler1.ActiveViewChanged += new System.EventHandler<Telerik.WinControls.UI.SchedulerViewChangedEventArgs>(this.radScheduler1_ActiveViewChanged);
             this.radScheduler1.AppointmentEditDialogShowing += new System.EventHandler<Telerik.WinControls.UI.AppointmentEditDialogShowingEventArgs>(this.radScheduler1_AppointmentEditDialogShowing);
+            ((Telerik.WinControls.UI.RadSchedulerElement)(this.radScheduler1.GetChildAt(0))).BorderBottomColor = System.Drawing.SystemColors.Control;
+            ((Telerik.WinControls.UI.DayViewHeader)(this.radScheduler1.GetChildAt(0).GetChildAt(0).GetChildAt(0))).BackColor = System.Drawing.SystemColors.Control;
+            ((Telerik.WinControls.UI.DayViewHeader)(this.radScheduler1.GetChildAt(0).GetChildAt(0).GetChildAt(0))).StretchVertically = false;
+            ((Telerik.WinControls.UI.SchedulerHeaderCellElement)(this.radScheduler1.GetChildAt(0).GetChildAt(0).GetChildAt(0).GetChildAt(8))).BackColor = System.Drawing.SystemColors.Control;
+            ((Telerik.WinControls.UI.DayViewAllDayHeader)(this.radScheduler1.GetChildAt(0).GetChildAt(0).GetChildAt(1))).BackColor = System.Drawing.SystemColors.Control;
+            ((Telerik.WinControls.UI.DayViewAllDayHeader)(this.radScheduler1.GetChildAt(0).GetChildAt(0).GetChildAt(1))).StretchVertically = false;
+            ((Telerik.WinControls.UI.ViewNavigationElement)(this.radScheduler1.GetChildAt(0).GetChildAt(0).GetChildAt(3))).NavigateForward = false;
+            ((Telerik.WinControls.UI.ViewNavigationElement)(this.radScheduler1.GetChildAt(0).GetChildAt(0).GetChildAt(3))).Text = resources.GetString("resource.Text3");
+            ((Telerik.WinControls.UI.ViewNavigationElement)(this.radScheduler1.GetChildAt(0).GetChildAt(0).GetChildAt(3))).BackColor = System.Drawing.SystemColors.Control;
+            ((Telerik.WinControls.UI.ViewNavigationElement)(this.radScheduler1.GetChildAt(0).GetChildAt(0).GetChildAt(3))).Visibility = Telerik.WinControls.ElementVisibility.Hidden;
+            ((Telerik.WinControls.UI.ViewNavigationElement)(this.radScheduler1.GetChildAt(0).GetChildAt(0).GetChildAt(3))).AngleTransform = ((float)(resources.GetObject("resource.AngleTransform")));
+            ((Telerik.WinControls.UI.ViewNavigationElement)(this.radScheduler1.GetChildAt(0).GetChildAt(0).GetChildAt(4))).NavigateForward = true;
+            ((Telerik.WinControls.UI.ViewNavigationElement)(this.radScheduler1.GetChildAt(0).GetChildAt(0).GetChildAt(4))).Text = resources.GetString("resource.Text4");
+            ((Telerik.WinControls.UI.ViewNavigationElement)(this.radScheduler1.GetChildAt(0).GetChildAt(0).GetChildAt(4))).BackColor = System.Drawing.SystemColors.Control;
+            ((Telerik.WinControls.UI.ViewNavigationElement)(this.radScheduler1.GetChildAt(0).GetChildAt(0).GetChildAt(4))).Visibility = Telerik.WinControls.ElementVisibility.Hidden;
+            ((Telerik.WinControls.UI.ViewNavigationElement)(this.radScheduler1.GetChildAt(0).GetChildAt(0).GetChildAt(4))).AngleTransform = ((float)(resources.GetObject("resource.AngleTransform1")));
+            // 
+            // radPageViewPageMaps
+            // 
+            this.radPageViewPageMaps.Controls.Add(this.gMapControl1);
+            this.radPageViewPageMaps.Image = global::MedicalAssistant.Properties.Resources.icons8_country_48;
+            this.radPageViewPageMaps.ItemSize = new System.Drawing.SizeF(125F, 58F);
+            resources.ApplyResources(this.radPageViewPageMaps, "radPageViewPageMaps");
+            this.radPageViewPageMaps.Name = "radPageViewPageMaps";
+            this.radPageViewPageMaps.Paint += new System.Windows.Forms.PaintEventHandler(this.radPageViewPageMaps_Paint);
+            // 
+            // gMapControl1
+            // 
+            this.gMapControl1.Bearing = 0F;
+            this.gMapControl1.CanDragMap = true;
+            this.gMapControl1.EmptyTileColor = System.Drawing.Color.Navy;
+            this.gMapControl1.GrayScaleMode = false;
+            this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.gMapControl1.LevelsKeepInMemmory = 5;
+            resources.ApplyResources(this.gMapControl1, "gMapControl1");
+            this.gMapControl1.MarkersEnabled = true;
+            this.gMapControl1.MaxZoom = 2;
+            this.gMapControl1.MinZoom = 2;
+            this.gMapControl1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.gMapControl1.Name = "gMapControl1";
+            this.gMapControl1.NegativeMode = false;
+            this.gMapControl1.PolygonsEnabled = true;
+            this.gMapControl1.RetryLoadTile = 0;
+            this.gMapControl1.RoutesEnabled = true;
+            this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.gMapControl1.ShowTileGridLines = false;
+            this.gMapControl1.Zoom = 0D;
             // 
             // radPageViewPageCharts
             // 
@@ -699,15 +632,15 @@ namespace MedicalAssistant
             this.radListViewNextPatients.AllowArbitraryItemHeight = true;
             this.radListViewNextPatients.AllowEdit = false;
             this.radListViewNextPatients.AllowRemove = false;
-            listViewDetailColumn1.HeaderText = "Name";
-            listViewDetailColumn2.HeaderText = "Age";
-            listViewDetailColumn3.HeaderText = "Gender";
-            listViewDetailColumn4.HeaderText = "EncounterTime";
+            listViewDetailColumn5.HeaderText = "Name";
+            listViewDetailColumn6.HeaderText = "Age";
+            listViewDetailColumn7.HeaderText = "Gender";
+            listViewDetailColumn8.HeaderText = "EncounterTime";
             this.radListViewNextPatients.Columns.AddRange(new Telerik.WinControls.UI.ListViewDetailColumn[] {
-            listViewDetailColumn1,
-            listViewDetailColumn2,
-            listViewDetailColumn3,
-            listViewDetailColumn4});
+            listViewDetailColumn5,
+            listViewDetailColumn6,
+            listViewDetailColumn7,
+            listViewDetailColumn8});
             this.radListViewNextPatients.ItemSize = new System.Drawing.Size(200, 95);
             resources.ApplyResources(this.radListViewNextPatients, "radListViewNextPatients");
             this.radListViewNextPatients.Name = "radListViewNextPatients";
@@ -754,9 +687,9 @@ namespace MedicalAssistant
             // 
             // radButton1
             // 
+            resources.ApplyResources(this.radButton1, "radButton1");
             this.radButton1.BackColor = System.Drawing.Color.Transparent;
             this.radButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            resources.ApplyResources(this.radButton1, "radButton1");
             this.radButton1.Name = "radButton1";
             // 
             // 
@@ -772,7 +705,7 @@ namespace MedicalAssistant
             this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
             this.radButton1.MouseLeave += new System.EventHandler(this.radButton1_MouseLeave);
             this.radButton1.MouseHover += new System.EventHandler(this.radButton1_MouseHover);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).Text = resources.GetString("resource.Text6");
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).Text = resources.GetString("resource.Text5");
             ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).RippleAnimationColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             ((Telerik.WinControls.UI.RadButtonElement)(this.radButton1.GetChildAt(0))).FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
@@ -816,6 +749,7 @@ namespace MedicalAssistant
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox1.ShadowDecoration.Parent = this.guna2CirclePictureBox1;
             this.guna2CirclePictureBox1.TabStop = false;
+            this.guna2CirclePictureBox1.Click += new System.EventHandler(this.guna2CirclePictureBox1_Click);
             // 
             // patientsDataSet
             // 
@@ -847,6 +781,13 @@ namespace MedicalAssistant
             // 
             this.timer4_realTime_recognizer.Interval = 1;
             this.timer4_realTime_recognizer.Tick += new System.EventHandler(this.timer4_Tick_realTime_recognizer);
+            // 
+            // object_e922f11e_a01e_4722_8e26_9562c5280f99
+            // 
+            this.object_e922f11e_a01e_4722_8e26_9562c5280f99.BorderHighlightColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.object_e922f11e_a01e_4722_8e26_9562c5280f99.Name = "object_e922f11e_a01e_4722_8e26_9562c5280f99";
+            this.object_e922f11e_a01e_4722_8e26_9562c5280f99.StretchHorizontally = true;
+            this.object_e922f11e_a01e_4722_8e26_9562c5280f99.StretchVertically = true;
             // 
             // MainForm
             // 
@@ -903,10 +844,9 @@ namespace MedicalAssistant
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
             this.radPageViewPageSchedule.ResumeLayout(false);
             this.radPageViewPageSchedule.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radCalendarSchedule)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButtonNewAppointmentScheduler)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radSchedulerNavigator1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radSchedulerNavigator2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radScheduler1)).EndInit();
+            this.radPageViewPageMaps.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radListViewNextPatients)).EndInit();
             this.panelChatMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
@@ -945,9 +885,6 @@ namespace MedicalAssistant
         private Telerik.WinControls.UI.RadLabel radLabel9;
         private Telerik.WinControls.UI.RadLabel radLabelTomorrowAppointmentsCount;
         private Telerik.WinControls.UI.RadLabel radLabel4;
-        private Telerik.WinControls.UI.RadButton radButtonNewAppointmentScheduler;
-        private Telerik.WinControls.UI.RadCalendar radCalendarSchedule;
-        private Telerik.WinControls.UI.RadSchedulerNavigator radSchedulerNavigator1;
         private Telerik.WinControls.UI.RadListView radListViewNextPatients;
         private System.ComponentModel.BackgroundWorker Tips_call_in_pack;
         private System.Windows.Forms.Timer timer1_tips_enim;
@@ -976,5 +913,9 @@ namespace MedicalAssistant
         private System.Windows.Forms.Timer timer_recognizer_stop;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer4_realTime_recognizer;
+        private Telerik.WinControls.RootRadElement object_e922f11e_a01e_4722_8e26_9562c5280f99;
+        private Telerik.WinControls.UI.RadSchedulerNavigator radSchedulerNavigator2;
+        private Telerik.WinControls.UI.RadPageViewPage radPageViewPageMaps;
+        private GMap.NET.WindowsForms.GMapControl gMapControl1;
     }
 }

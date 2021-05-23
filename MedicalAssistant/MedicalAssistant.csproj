@@ -184,6 +184,12 @@
     <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
+    <Reference Include="GMap.NET.Core, Version=1.7.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.WindowsForms.1.7.1\lib\net40\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsForms, Version=1.7.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.WindowsForms.1.7.1\lib\net40\GMap.NET.WindowsForms.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI">
       <HintPath>..\..\..\..\Desktop\New folder (4)\Guna.UI.dll</HintPath>
     </Reference>
@@ -221,6 +227,7 @@
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.113.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Design" />
+    <Reference Include="System.Device" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
@@ -354,6 +361,12 @@
     <Compile Include="AppointmentForm.Designer.cs">
       <DependentUpon>AppointmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppointmentFormEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppointmentFormEdit.Designer.cs">
+      <DependentUpon>AppointmentFormEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Chat\Incomming.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -384,6 +397,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewsUserControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewsUserControl.Designer.cs">
+      <DependentUpon>NewsUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="PatientsDataSet.cs">
       <DependentUpon>PatientsDataSet.xsd</DependentUpon>
     </Compile>
@@ -395,6 +414,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="recognitionArabic.cs" />
+    <Compile Include="Scheduler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scheduler.Designer.cs">
+      <DependentUpon>Scheduler.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Tips.cs">
       <SubType>Form</SubType>
@@ -411,6 +436,9 @@
     <EmbeddedResource Include="AppointmentForm.resx">
       <DependentUpon>AppointmentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppointmentFormEdit.resx">
+      <DependentUpon>AppointmentFormEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Chat\Incomming.resx">
       <DependentUpon>Incomming.cs</DependentUpon>
     </EmbeddedResource>
@@ -426,6 +454,9 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewsUserControl.resx">
+      <DependentUpon>NewsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -439,6 +470,9 @@
     </Compile>
     <EmbeddedResource Include="Database\chatbot.sqlite">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scheduler.resx">
+      <DependentUpon>Scheduler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tips.resx">
       <DependentUpon>Tips.cs</DependentUpon>
@@ -682,6 +716,7 @@
     </Content>
     <Content Include="Dll\x64\SQLite.Interop.dll" />
     <Content Include="Dll\x86\SQLite.Interop.dll" />
+    <None Include="Resources\icons8-country-48.png" />
     <EmbeddedResource Include="Sounds\NoInternetArabic.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>

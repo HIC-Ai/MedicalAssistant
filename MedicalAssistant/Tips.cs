@@ -25,6 +25,16 @@ namespace MedicalAssistant
         int len = 0;
         private void Tips_Load(object sender, EventArgs e)
         {
+            this.tipsTableAdapter1.Fill(this.patientsDataSet1.Tips); // ملي جدول ب البيانات 
+            Console.WriteLine(this.patientsDataSet1.Tips);
+  
+            foreach (DataRow dr in patientsDataSet1.Tips)
+            {
+                var ParentId = dr["name"].ToString();
+                Console.WriteLine(ParentId.ToString());
+
+            }
+
             Tips_call.WorkerReportsProgress = true;
             Tips_call.WorkerSupportsCancellation = true;
             if (Tips_call.IsBusy != true)

@@ -23,6 +23,12 @@ using System.Speech.Recognition;
 using System.Linq;
 using MedicalAssistant;
 
+using GMap.NET;
+using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
+using System.Device.Location;
+
 namespace MedicalAssistant
 {
 
@@ -79,6 +85,14 @@ namespace MedicalAssistant
 
         SpeechRecognitionEngine recognizer = new SpeechRecognitionEngine();
 
+
+        private double LatInicial;
+        private double LngInicial;
+
+        GMarkerGoogle marker;
+        GMapOverlay markerOverlay;
+
+        private GeoCoordinateWatcher watcher = new GeoCoordinateWatcher();
         public MainForm()
         {
             CommendsWords.Add("المهام");
@@ -129,8 +143,8 @@ namespace MedicalAssistant
 
 
             //وضع ثيم لبعض التصميم جاهز
-            ThemeResolutionService.LoadPackageFile(Directory.GetCurrentDirectory() + @"\Themes\MedicalAppTheme.tssp");
-            RadMessageBox.Instance.ThemeName = "MedicalAppTheme";
+            //ThemeResolutionService.LoadPackageFile(Directory.GetCurrentDirectory() + @"\Themes\MedicalAppTheme.tssp");
+            //RadMessageBox.Instance.ThemeName = "MedicalAppTheme";
             DataSources.PatientsDataSet = this.patientsDataSet;
             DataSources.PatientsDataSet.Appointments.AppointmentsRowChanged += Appointments_AppointmentsRowChanged;
 
@@ -147,6 +161,15 @@ namespace MedicalAssistant
         }
         private void main5_Load(object sender, EventArgs e)
         {
+
+            watcher = new GeoCoordinateWatcher();
+            // Catch the StatusChanged event.  
+            watcher.StatusChanged += Watcher_StatusChanged;
+            // Start the watcher.  
+            watcher.Start();
+
+            //panelChatMain.Visible = false;
+            this.Size = new Size(1322, 572);
             AddIncomming("ماذا لديك");
 
 
@@ -158,9 +181,9 @@ namespace MedicalAssistant
             this.radCalendarDashboard.FocusedDate = CurrentDate;
 
             // Schedule
-            this.radCalendarSchedule.FocusedDate = CurrentDate;
+            //this.radCalendarSchedule.FocusedDate = CurrentDate;
             this.CustomizeCurrentSchedulerView();
-            this.radSchedulerNavigator1.TimelineViewButton.Visibility = ElementVisibility.Hidden;
+            this.radSchedulerNavigator2.TimelineViewButton.Visibility = ElementVisibility.Hidden;
             this.AddSchedulerAppointmentBackgrounds();
             this.BindScheduler();
 
@@ -197,6 +220,54 @@ namespace MedicalAssistant
 
         }
 
+        private void Watcher_StatusChanged(object sender, GeoPositionStatusChangedEventArgs e) // Find GeoLocation of Device  
+        {
+            try
+            {
+                if (e.Status == GeoPositionStatus.Ready)
+                {
+                    // Display the latitude and longitude.  
+                    if (watcher.Position.Location.IsUnknown)
+                    {
+                        LatInicial = 0;
+                        LngInicial = 0;
+                    }
+                    else
+                    {
+                        LatInicial = watcher.Position.Location.Latitude;
+                        LngInicial = watcher.Position.Location.Longitude;
+
+
+                        gMapControl1.DragButton = MouseButtons.Left;
+                        gMapControl1.CanDragMap = true;
+                        gMapControl1.MapProvider = GMapProviders.GoogleMap;
+                        gMapControl1.Position = new PointLatLng(LatInicial, LngInicial);
+                        gMapControl1.MinZoom = 0;
+                        gMapControl1.MaxZoom = 24;
+                        gMapControl1.Zoom = 15;
+                        gMapControl1.AutoScroll = true;
+
+                        markerOverlay = new GMapOverlay("Marcador");
+                        marker = new GMarkerGoogle(new PointLatLng(LatInicial, LngInicial), GMarkerGoogleType.blue);
+                        markerOverlay.Markers.Add(marker);
+                        marker.ToolTipMode = MarkerTooltipMode.Always;
+                        marker.ToolTipText = string.Format("موقعك الان:\n Latitud:{0}\n Longitud:{1}", LatInicial, LngInicial);
+
+                        gMapControl1.Overlays.Add(markerOverlay);
+                    }
+                }
+                else
+                {
+                    LatInicial = 0;
+                    LngInicial = 0;
+                }
+            }
+            catch (Exception)
+            {
+                LatInicial = 0;
+                LngInicial = 0;
+            }
+        }
 
         void AddIncomming(string message)
         {
@@ -804,7 +875,7 @@ namespace MedicalAssistant
                 recognizer.RecognizeAsyncCancel();
                 this.Hide();
                 Application.Exit();
-                timer5_exit.Stop();;
+                timer5_exit.Stop(); ;
 
             }
         }
@@ -1061,7 +1132,7 @@ namespace MedicalAssistant
 
         private void radCalendarSchedule_SelectionChanged(object sender, EventArgs e)
         {
-            this.radScheduler1.FocusedDate = this.radCalendarSchedule.SelectedDate;
+            //this.radScheduler1.FocusedDate = this.radCalendarSchedule.SelectedDate;
         }
 
         private void BindScheduler()
@@ -1233,6 +1304,47 @@ namespace MedicalAssistant
         {
 
         }
+
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void radSchedulerNavigator2_Click(object sender, EventArgs e)
+        {
+
+        }
+        bool Chat_ = false;
+        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        {
+            if (panelChatMain.Visible == false)
+            {
+                panelChatMain.Visible = true;
+                this.Size = new Size(1310, 569);
+            }
+            else
+            {
+                panelChatMain.Visible = false;
+                this.Size = new Size(1009, 569);
+
+            }
+
+
+        }
+
+        private void radPageView1_SelectedPageChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radPageViewPageMaps_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
-

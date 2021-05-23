@@ -44,6 +44,7 @@
             this.radButton2 = new Telerik.WinControls.UI.RadButton();
             this.nameTextBoxControl = new Telerik.WinControls.UI.RadTextBoxControl();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.radButton3 = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
@@ -58,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameTextBoxControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,6 +137,7 @@
             // 
             this.locationTextBoxControl.Location = new System.Drawing.Point(12, 46);
             this.locationTextBoxControl.Name = "locationTextBoxControl";
+            this.locationTextBoxControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.locationTextBoxControl.Size = new System.Drawing.Size(225, 20);
             this.locationTextBoxControl.TabIndex = 5;
             this.locationTextBoxControl.ThemeName = "MedicalAppTheme";
@@ -144,6 +147,7 @@
             this.descriptionTextBoxControl.Location = new System.Drawing.Point(12, 102);
             this.descriptionTextBoxControl.Multiline = true;
             this.descriptionTextBoxControl.Name = "descriptionTextBoxControl";
+            this.descriptionTextBoxControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.descriptionTextBoxControl.Size = new System.Drawing.Size(187, 70);
             this.descriptionTextBoxControl.TabIndex = 6;
             this.descriptionTextBoxControl.ThemeName = "MedicalAppTheme";
@@ -198,6 +202,7 @@
             // 
             this.nameTextBoxControl.Location = new System.Drawing.Point(301, 46);
             this.nameTextBoxControl.Name = "nameTextBoxControl";
+            this.nameTextBoxControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.nameTextBoxControl.Size = new System.Drawing.Size(225, 20);
             this.nameTextBoxControl.TabIndex = 5;
             this.nameTextBoxControl.ThemeName = "MedicalAppTheme";
@@ -211,12 +216,24 @@
             this.panel3.TabIndex = 41;
             this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
             // 
+            // radButton3
+            // 
+            this.radButton3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.radButton3.Location = new System.Drawing.Point(12, 193);
+            this.radButton3.Name = "radButton3";
+            this.radButton3.Size = new System.Drawing.Size(70, 21);
+            this.radButton3.TabIndex = 42;
+            this.radButton3.Text = "حذف";
+            this.radButton3.ThemeName = "MedicalAppTheme";
+            this.radButton3.Click += new System.EventHandler(this.radButton3_Click);
+            // 
             // AppointmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(542, 226);
+            this.Controls.Add(this.radButton3);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
@@ -255,6 +272,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameTextBoxControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -278,5 +296,6 @@
         private Telerik.WinControls.UI.RadButton radButton1;
         private Telerik.WinControls.UI.RadTextBoxControl nameTextBoxControl;
         private System.Windows.Forms.Panel panel3;
+        private Telerik.WinControls.UI.RadButton radButton3;
     }
 }

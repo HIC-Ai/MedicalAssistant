@@ -292,7 +292,7 @@
     <value>Bottom</value>
   </data>
   <data name="radPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 538</value>
+    <value>0, 498</value>
   </data>
   <data name="radPanel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>293, 51</value>
@@ -345,6 +345,48 @@
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;radListView1.Name" xml:space="preserve">
+    <value>radListView1</value>
+  </data>
+  <data name="&gt;&gt;radListView1.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadListView, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radListView1.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;radListView1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="resource.Alignment" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="resource.RightToLeft" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 454</value>
+  </data>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>293, 44</value>
+  </data>
+  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
+    <value>panelChatMain</value>
+  </data>
+  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="radListView1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -375,50 +417,26 @@
   <data name="resource.RightToLeft" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 494</value>
-  </data>
-  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>293, 44</value>
-  </data>
-  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
-    <value>panelChatMain</value>
-  </data>
-  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="label1.AccessibleDescription" xml:space="preserve">
     <value>السلام عليكم</value>
   </data>
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 15.75pt, style=Italic</value>
+    <value>Arial, 9.75pt, style=Italic</value>
   </data>
   <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>149, 6</value>
+    <value>22, 13</value>
   </data>
   <data name="label1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>585, 30</value>
+    <value>736, 26</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>4</value>
   </data>
   <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -445,10 +463,10 @@
     <value>NoControl</value>
   </data>
   <data name="guna2CirclePictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>810, 0</value>
+    <value>789, 0</value>
   </data>
   <data name="guna2CirclePictureBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 43</value>
+    <value>67, 48</value>
   </data>
   <data name="guna2CirclePictureBox2.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -475,7 +493,7 @@
     <value>0, 0</value>
   </data>
   <data name="guna2GradientPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>859, 43</value>
+    <value>856, 48</value>
   </data>
   <data name="guna2GradientPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -492,11 +510,14 @@
   <data name="&gt;&gt;guna2GradientPanel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="panel4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
   <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>299, 538</value>
+    <value>311, 523</value>
   </data>
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>859, 43</value>
+    <value>856, 48</value>
   </data>
   <data name="panel4.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -512,6 +533,240 @@
   </data>
   <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="radPageView1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Right</value>
+  </data>
+  <data name="&gt;&gt;radButtonNewAppointment.Name" xml:space="preserve">
+    <value>radButtonNewAppointment</value>
+  </data>
+  <data name="&gt;&gt;radButtonNewAppointment.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadButton, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radButtonNewAppointment.Parent" xml:space="preserve">
+    <value>radPageViewPageDashboard</value>
+  </data>
+  <data name="&gt;&gt;radButtonNewAppointment.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dashboardClockCalendarPanel.Name" xml:space="preserve">
+    <value>dashboardClockCalendarPanel</value>
+  </data>
+  <data name="&gt;&gt;dashboardClockCalendarPanel.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadPanel, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;dashboardClockCalendarPanel.Parent" xml:space="preserve">
+    <value>radPageViewPageDashboard</value>
+  </data>
+  <data name="&gt;&gt;dashboardClockCalendarPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;radPanelTodaysAppointments.Name" xml:space="preserve">
+    <value>radPanelTodaysAppointments</value>
+  </data>
+  <data name="&gt;&gt;radPanelTodaysAppointments.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadPanel, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radPanelTodaysAppointments.Parent" xml:space="preserve">
+    <value>radPageViewPageDashboard</value>
+  </data>
+  <data name="&gt;&gt;radPanelTodaysAppointments.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;radLabel2.Name" xml:space="preserve">
+    <value>radLabel2</value>
+  </data>
+  <data name="&gt;&gt;radLabel2.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadLabel, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radLabel2.Parent" xml:space="preserve">
+    <value>radPageViewPageDashboard</value>
+  </data>
+  <data name="&gt;&gt;radLabel2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;radPanelTomorrowAppointments.Name" xml:space="preserve">
+    <value>radPanelTomorrowAppointments</value>
+  </data>
+  <data name="&gt;&gt;radPanelTomorrowAppointments.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadPanel, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radPanelTomorrowAppointments.Parent" xml:space="preserve">
+    <value>radPageViewPageDashboard</value>
+  </data>
+  <data name="&gt;&gt;radPanelTomorrowAppointments.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="radPageViewPageDashboard.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 4</value>
+  </data>
+  <data name="radPageViewPageDashboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>854, 487</value>
+  </data>
+  <data name="radPageViewPageDashboard.Text" xml:space="preserve">
+    <value>الصفحه الرئسية</value>
+  </data>
+  <data name="&gt;&gt;radPageViewPageDashboard.Name" xml:space="preserve">
+    <value>radPageViewPageDashboard</value>
+  </data>
+  <data name="&gt;&gt;radPageViewPageDashboard.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadPageViewPage, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radPageViewPageDashboard.Parent" xml:space="preserve">
+    <value>radPageView1</value>
+  </data>
+  <data name="&gt;&gt;radPageViewPageDashboard.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;radSchedulerNavigator2.Name" xml:space="preserve">
+    <value>radSchedulerNavigator2</value>
+  </data>
+  <data name="&gt;&gt;radSchedulerNavigator2.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadSchedulerNavigator, Telerik.WinControls.Scheduler, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radSchedulerNavigator2.Parent" xml:space="preserve">
+    <value>radPageViewPageSchedule</value>
+  </data>
+  <data name="&gt;&gt;radSchedulerNavigator2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="radPageViewPageSchedule.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 4</value>
+  </data>
+  <data name="radPageViewPageSchedule.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
+  </data>
+  <data name="radPageViewPageSchedule.Size" type="System.Drawing.Size, System.Drawing">
+    <value>854, 487</value>
+  </data>
+  <data name="radPageViewPageSchedule.Text" xml:space="preserve">
+    <value>المهام</value>
+  </data>
+  <data name="&gt;&gt;radPageViewPageSchedule.Name" xml:space="preserve">
+    <value>radPageViewPageSchedule</value>
+  </data>
+  <data name="&gt;&gt;radPageViewPageSchedule.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadPageViewPage, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radPageViewPageSchedule.Parent" xml:space="preserve">
+    <value>radPageView1</value>
+  </data>
+  <data name="&gt;&gt;radPageViewPageSchedule.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;gMapControl1.Name" xml:space="preserve">
+    <value>gMapControl1</value>
+  </data>
+  <data name="&gt;&gt;gMapControl1.Type" xml:space="preserve">
+    <value>GMap.NET.WindowsForms.GMapControl, GMap.NET.WindowsForms, Version=1.7.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef</value>
+  </data>
+  <data name="&gt;&gt;gMapControl1.Parent" xml:space="preserve">
+    <value>radPageViewPageMaps</value>
+  </data>
+  <data name="&gt;&gt;gMapControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="radPageViewPageMaps.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 4</value>
+  </data>
+  <data name="radPageViewPageMaps.Size" type="System.Drawing.Size, System.Drawing">
+    <value>854, 487</value>
+  </data>
+  <data name="radPageViewPageMaps.Text" xml:space="preserve">
+    <value>الخريطة</value>
+  </data>
+  <data name="&gt;&gt;radPageViewPageMaps.Name" xml:space="preserve">
+    <value>radPageViewPageMaps</value>
+  </data>
+  <data name="&gt;&gt;radPageViewPageMaps.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadPageViewPage, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radPageViewPageMaps.Parent" xml:space="preserve">
+    <value>radPageView1</value>
+  </data>
+  <data name="&gt;&gt;radPageViewPageMaps.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="radPageViewPageCharts.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="radPageViewPageCharts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 4</value>
+  </data>
+  <data name="radPageViewPageCharts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>854, 487</value>
+  </data>
+  <data name="radPageViewPageCharts.Text" xml:space="preserve">
+    <value>اخبار الصحة</value>
+  </data>
+  <data name="&gt;&gt;radPageViewPageCharts.Name" xml:space="preserve">
+    <value>radPageViewPageCharts</value>
+  </data>
+  <data name="&gt;&gt;radPageViewPageCharts.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadPageViewPage, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radPageViewPageCharts.Parent" xml:space="preserve">
+    <value>radPageView1</value>
+  </data>
+  <data name="&gt;&gt;radPageViewPageCharts.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="radPageViewPageSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 4</value>
+  </data>
+  <data name="radPageViewPageSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>854, 474</value>
+  </data>
+  <data name="radPageViewPageSettings.Text" xml:space="preserve">
+    <value>الاعدادات</value>
+  </data>
+  <data name="&gt;&gt;radPageViewPageSettings.Name" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;radPageViewPageSettings.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadPageViewPage, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radPageViewPageSettings.Parent" xml:space="preserve">
+    <value>radPageView1</value>
+  </data>
+  <data name="&gt;&gt;radPageViewPageSettings.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="radPageView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>307, 26</value>
+  </data>
+  <data name="radPageView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1013, 495</value>
+  </data>
+  <data name="radPageView1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;radPageView1.Name" xml:space="preserve">
+    <value>radPageView1</value>
+  </data>
+  <data name="&gt;&gt;radPageView1.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadPageView, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radPageView1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;radPageView1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="resource.ToolTipText" xml:space="preserve">
+    <value>Scroll Strip Left</value>
+  </data>
+  <data name="resource.ToolTipText1" xml:space="preserve">
+    <value>Scroll Strip Right</value>
+  </data>
+  <data name="resource.ToolTipText2" xml:space="preserve">
+    <value>Available Pages</value>
+  </data>
+  <data name="resource.ToolTipText3" xml:space="preserve">
+    <value>Close Selected Page</value>
+  </data>
+  <data name="resource.Text2" xml:space="preserve">
+    <value>الصفحه الرئسية</value>
   </data>
   <data name="radButtonNewAppointment.Location" type="System.Drawing.Point, System.Drawing">
     <value>646, 52</value>
@@ -912,89 +1167,17 @@
   <data name="&gt;&gt;radPanelTomorrowAppointments.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="radPageViewPageDashboard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 4</value>
-  </data>
-  <data name="radPageViewPageDashboard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>848, 462</value>
-  </data>
-  <data name="radPageViewPageDashboard.Text" xml:space="preserve">
-    <value>الصفحه الرئسية</value>
-  </data>
-  <data name="&gt;&gt;radPageViewPageDashboard.Name" xml:space="preserve">
-    <value>radPageViewPageDashboard</value>
-  </data>
-  <data name="&gt;&gt;radPageViewPageDashboard.Type" xml:space="preserve">
-    <value>Telerik.WinControls.UI.RadPageViewPage, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
-  </data>
-  <data name="&gt;&gt;radPageViewPageDashboard.Parent" xml:space="preserve">
-    <value>radPageView1</value>
-  </data>
-  <data name="&gt;&gt;radPageViewPageDashboard.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="radCalendarSchedule.Location" type="System.Drawing.Point, System.Drawing">
-    <value>600, 174</value>
-  </data>
-  <data name="radCalendarSchedule.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>20, 3, 3, 3</value>
-  </data>
-  <data name="radCalendarSchedule.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 170</value>
-  </data>
-  <data name="radCalendarSchedule.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;radCalendarSchedule.Name" xml:space="preserve">
-    <value>radCalendarSchedule</value>
-  </data>
-  <data name="&gt;&gt;radCalendarSchedule.Type" xml:space="preserve">
-    <value>Telerik.WinControls.UI.RadCalendar, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
-  </data>
-  <data name="&gt;&gt;radCalendarSchedule.Parent" xml:space="preserve">
-    <value>radPageViewPageSchedule</value>
-  </data>
-  <data name="&gt;&gt;radCalendarSchedule.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="radButtonNewAppointmentScheduler.Location" type="System.Drawing.Point, System.Drawing">
-    <value>600, 37</value>
-  </data>
-  <data name="radButtonNewAppointmentScheduler.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>20, 3, 3, 3</value>
-  </data>
-  <data name="radButtonNewAppointmentScheduler.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 33</value>
-  </data>
-  <data name="radButtonNewAppointmentScheduler.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="radButtonNewAppointmentScheduler.Text" xml:space="preserve">
-    <value>أبريل 13, 2021</value>
-  </data>
-  <data name="&gt;&gt;radButtonNewAppointmentScheduler.Name" xml:space="preserve">
-    <value>radButtonNewAppointmentScheduler</value>
-  </data>
-  <data name="&gt;&gt;radButtonNewAppointmentScheduler.Type" xml:space="preserve">
-    <value>Telerik.WinControls.UI.RadButton, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
-  </data>
-  <data name="&gt;&gt;radButtonNewAppointmentScheduler.Parent" xml:space="preserve">
-    <value>radPageViewPageSchedule</value>
-  </data>
-  <data name="&gt;&gt;radButtonNewAppointmentScheduler.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="resource.Text2" xml:space="preserve">
-    <value>أبريل 13, 2021</value>
+  <data name="radScheduler1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
   </data>
   <data name="radScheduler1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-8, 90</value>
+    <value>0, 81</value>
   </data>
   <data name="radScheduler1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="radScheduler1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>600, 373</value>
+    <value>854, 406</value>
   </data>
   <data name="radScheduler1.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1009,163 +1192,64 @@
     <value>radPageViewPageSchedule</value>
   </data>
   <data name="&gt;&gt;radScheduler1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="radSchedulerNavigator1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-2, 13</value>
-  </data>
-  <data name="radSchedulerNavigator1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="radSchedulerNavigator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>594, 77</value>
-  </data>
-  <data name="radSchedulerNavigator1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;radSchedulerNavigator1.Name" xml:space="preserve">
-    <value>radSchedulerNavigator1</value>
-  </data>
-  <data name="&gt;&gt;radSchedulerNavigator1.Type" xml:space="preserve">
-    <value>Telerik.WinControls.UI.RadSchedulerNavigator, Telerik.WinControls.Scheduler, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
-  </data>
-  <data name="&gt;&gt;radSchedulerNavigator1.Parent" xml:space="preserve">
-    <value>radPageViewPageSchedule</value>
-  </data>
-  <data name="&gt;&gt;radSchedulerNavigator1.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="resource.Text3" xml:space="preserve">
-    <value>(UTC+02:00) Cairo</value>
+    <value>Previous Appointment</value>
   </data>
-  <data name="resource.Alignment1" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="resource.Alignment2" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="resource.Alignment3" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="resource.TextAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
+  <data name="resource.AngleTransform" type="System.Single, mscorlib">
+    <value>270</value>
   </data>
   <data name="resource.Text4" xml:space="preserve">
-    <value>خروج</value>
+    <value>Next Appointment</value>
   </data>
-  <data name="resource.Alignment4" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="resource.AngleTransform1" type="System.Single, mscorlib">
+    <value>90</value>
   </data>
-  <data name="resource.TextAlignment1" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
+  <data name="radSchedulerNavigator2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
   </data>
-  <data name="resource.Alignment5" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
+  <data name="radSchedulerNavigator2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="radPageViewPageSchedule.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 4</value>
+  <data name="radSchedulerNavigator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>854, 78</value>
   </data>
-  <data name="radPageViewPageSchedule.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Yes</value>
+  <data name="radSchedulerNavigator2.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
-  <data name="radPageViewPageSchedule.Size" type="System.Drawing.Size, System.Drawing">
-    <value>848, 462</value>
+  <data name="&gt;&gt;radSchedulerNavigator2.Name" xml:space="preserve">
+    <value>radSchedulerNavigator2</value>
   </data>
-  <data name="radPageViewPageSchedule.Text" xml:space="preserve">
-    <value>المهام</value>
+  <data name="&gt;&gt;radSchedulerNavigator2.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadSchedulerNavigator, Telerik.WinControls.Scheduler, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
   </data>
-  <data name="&gt;&gt;radPageViewPageSchedule.Name" xml:space="preserve">
+  <data name="&gt;&gt;radSchedulerNavigator2.Parent" xml:space="preserve">
     <value>radPageViewPageSchedule</value>
   </data>
-  <data name="&gt;&gt;radPageViewPageSchedule.Type" xml:space="preserve">
-    <value>Telerik.WinControls.UI.RadPageViewPage, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
-  </data>
-  <data name="&gt;&gt;radPageViewPageSchedule.Parent" xml:space="preserve">
-    <value>radPageView1</value>
-  </data>
-  <data name="&gt;&gt;radPageViewPageSchedule.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="radPageViewPageCharts.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="radPageViewPageCharts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 4</value>
-  </data>
-  <data name="radPageViewPageCharts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>848, 462</value>
-  </data>
-  <data name="radPageViewPageCharts.Text" xml:space="preserve">
-    <value>اخبار الصحة</value>
-  </data>
-  <data name="&gt;&gt;radPageViewPageCharts.Name" xml:space="preserve">
-    <value>radPageViewPageCharts</value>
-  </data>
-  <data name="&gt;&gt;radPageViewPageCharts.Type" xml:space="preserve">
-    <value>Telerik.WinControls.UI.RadPageViewPage, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
-  </data>
-  <data name="&gt;&gt;radPageViewPageCharts.Parent" xml:space="preserve">
-    <value>radPageView1</value>
-  </data>
-  <data name="&gt;&gt;radPageViewPageCharts.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="radPageViewPageSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 4</value>
-  </data>
-  <data name="radPageViewPageSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>848, 462</value>
-  </data>
-  <data name="radPageViewPageSettings.Text" xml:space="preserve">
-    <value>الاعدادات</value>
-  </data>
-  <data name="&gt;&gt;radPageViewPageSettings.Name" xml:space="preserve">
-    <value>radPageViewPageSettings</value>
-  </data>
-  <data name="&gt;&gt;radPageViewPageSettings.Type" xml:space="preserve">
-    <value>Telerik.WinControls.UI.RadPageViewPage, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
-  </data>
-  <data name="&gt;&gt;radPageViewPageSettings.Parent" xml:space="preserve">
-    <value>radPageView1</value>
-  </data>
-  <data name="&gt;&gt;radPageViewPageSettings.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="radPageView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>299, 33</value>
-  </data>
-  <data name="radPageView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1007, 470</value>
-  </data>
-  <data name="radPageView1.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;radSchedulerNavigator2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;radPageView1.Name" xml:space="preserve">
-    <value>radPageView1</value>
+  <data name="gMapControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 12</value>
   </data>
-  <data name="&gt;&gt;radPageView1.Type" xml:space="preserve">
-    <value>Telerik.WinControls.UI.RadPageView, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  <data name="gMapControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>781, 451</value>
   </data>
-  <data name="&gt;&gt;radPageView1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;radPageView1.ZOrder" xml:space="preserve">
+  <data name="gMapControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="resource.ToolTipText" xml:space="preserve">
-    <value>Scroll Strip Left</value>
+  <data name="&gt;&gt;gMapControl1.Name" xml:space="preserve">
+    <value>gMapControl1</value>
   </data>
-  <data name="resource.ToolTipText1" xml:space="preserve">
-    <value>Scroll Strip Right</value>
+  <data name="&gt;&gt;gMapControl1.Type" xml:space="preserve">
+    <value>GMap.NET.WindowsForms.GMapControl, GMap.NET.WindowsForms, Version=1.7.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef</value>
   </data>
-  <data name="resource.ToolTipText2" xml:space="preserve">
-    <value>Available Pages</value>
+  <data name="&gt;&gt;gMapControl1.Parent" xml:space="preserve">
+    <value>radPageViewPageMaps</value>
   </data>
-  <data name="resource.ToolTipText3" xml:space="preserve">
-    <value>Close Selected Page</value>
-  </data>
-  <data name="resource.Text5" xml:space="preserve">
-    <value>الصفحه الرئسية</value>
+  <data name="&gt;&gt;gMapControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="radListViewNextPatients.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 87</value>
@@ -1198,7 +1282,7 @@
     <value>0, 23</value>
   </data>
   <data name="panelChatMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>293, 589</value>
+    <value>293, 549</value>
   </data>
   <data name="panelChatMain.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -1219,7 +1303,7 @@
     <value>Right</value>
   </data>
   <data name="radButton2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1192, 0</value>
+    <value>1198, 0</value>
   </data>
   <data name="radButton2.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 23</value>
@@ -1242,11 +1326,14 @@
   <data name="&gt;&gt;radButton2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="radButton1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
   <data name="radButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1159, 538</value>
+    <value>1169, 524</value>
   </data>
   <data name="radButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 42</value>
+    <value>148, 47</value>
   </data>
   <data name="radButton1.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -1266,8 +1353,44 @@
   <data name="&gt;&gt;radButton1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="resource.Text6" xml:space="preserve">
+  <data name="resource.Text5" xml:space="preserve">
     <value>خروج</value>
+  </data>
+  <data name="&gt;&gt;guna2CirclePictureBox1.Name" xml:space="preserve">
+    <value>guna2CirclePictureBox1</value>
+  </data>
+  <data name="&gt;&gt;guna2CirclePictureBox1.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CirclePictureBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;guna2CirclePictureBox1.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;guna2CirclePictureBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1322, 23</value>
+  </data>
+  <data name="panel5.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="guna2CirclePictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1296,30 +1419,6 @@
   <data name="&gt;&gt;guna2CirclePictureBox1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="panel5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1316, 23</value>
-  </data>
-  <data name="panel5.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
-    <value>panel5</value>
-  </data>
-  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel5.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <metadata name="patientsDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1112, 17</value>
   </metadata>
@@ -1345,13 +1444,16 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>49</value>
+    <value>82</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1316, 612</value>
+    <value>1322, 572</value>
+  </data>
+  <data name="$this.RightToLeftLayout" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>المساعد الطبي</value>
@@ -1427,6 +1529,12 @@
   </data>
   <data name="&gt;&gt;timer4_realTime_recognizer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;object_e922f11e_a01e_4722_8e26_9562c5280f99.Name" xml:space="preserve">
+    <value>object_e922f11e_a01e_4722_8e26_9562c5280f99</value>
+  </data>
+  <data name="&gt;&gt;object_e922f11e_a01e_4722_8e26_9562c5280f99.Type" xml:space="preserve">
+    <value>Telerik.WinControls.RootRadElement, Telerik.WinControls, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

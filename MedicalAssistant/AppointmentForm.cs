@@ -143,6 +143,10 @@ namespace MedicalAssistant
 
             this.appointmentsTableAdapter1.Update(DataSources.PatientsDataSet.Appointments);
             this.appointmentsTableAdapter1.Fill(DataSources.PatientsDataSet.Appointments);
+
+
+
+
             RadMessageBox.Show(this, "Appointment changed.");
 
         }
@@ -182,6 +186,30 @@ namespace MedicalAssistant
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
+        }
+
+        private void radButton3_Click(object sender, EventArgs e)
+        {
+            if (!this.AreRequiredFieldsValid())
+            {
+                return;
+            }
+
+            if (this.editing)
+            {
+                PatientsDataSet.AppointmentsRow appointment2 = DataSources.PatientsDataSet.Appointments.FindById(this.appointmentId);
+
+                if (appointment2 != null)
+                {
+                    appointment2.Delete();
+                    this.appointmentsTableAdapter1.Update(DataSources.PatientsDataSet.Appointments);
+                    this.appointmentsTableAdapter1.Fill(DataSources.PatientsDataSet.Appointments);
+                    RadMessageBox.Show(this, "Appointment Deleted.");
+                    this.Close();
+
+                }
+            }
+
         }
     }
 }

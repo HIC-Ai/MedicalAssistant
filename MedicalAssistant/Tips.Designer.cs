@@ -31,14 +31,17 @@ namespace MedicalAssistant
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.Tips_call = new System.ComponentModel.BackgroundWorker();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tipsTableAdapter1 = new MedicalAssistant.PatientsDataSetTableAdapters.TipsTableAdapter();
+            this.patientsDataSet1 = new MedicalAssistant.PatientsDataSet();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientsDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -49,19 +52,6 @@ namespace MedicalAssistant
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1045, 56);
             this.panel1.TabIndex = 0;
-            // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2CirclePictureBox1.Image = global::MedicalAssistant.Properties.Resources.received_264768345150339;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(954, 0);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.ShadowDecoration.Parent = this.guna2CirclePictureBox1;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(91, 56);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox1.TabIndex = 0;
-            this.guna2CirclePictureBox1.TabStop = false;
             // 
             // guna2GradientPanel1
             // 
@@ -87,6 +77,19 @@ namespace MedicalAssistant
             this.label1.Size = new System.Drawing.Size(0, 24);
             this.label1.TabIndex = 0;
             // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2CirclePictureBox1.Image = global::MedicalAssistant.Properties.Resources.received_264768345150339;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(954, 0);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.ShadowDecoration.Parent = this.guna2CirclePictureBox1;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(91, 56);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox1.TabIndex = 0;
+            this.guna2CirclePictureBox1.TabStop = false;
+            // 
             // Tips_call
             // 
             this.Tips_call.DoWork += new System.ComponentModel.DoWorkEventHandler(this.Tips_call_DoWork);
@@ -95,6 +98,15 @@ namespace MedicalAssistant
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // tipsTableAdapter1
+            // 
+            this.tipsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // patientsDataSet1
+            // 
+            this.patientsDataSet1.DataSetName = "PatientsDataSet";
+            this.patientsDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Tips
             // 
@@ -106,9 +118,10 @@ namespace MedicalAssistant
             this.Text = "Tips";
             this.Load += new System.EventHandler(this.Tips_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientsDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -121,5 +134,7 @@ namespace MedicalAssistant
         private System.Windows.Forms.Label label1;
         private System.ComponentModel.BackgroundWorker Tips_call;
         private System.Windows.Forms.Timer timer1;
+        private PatientsDataSetTableAdapters.TipsTableAdapter tipsTableAdapter1;
+        private PatientsDataSet patientsDataSet1;
     }
 }
