@@ -28,6 +28,8 @@ using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using System.Device.Location;
+using System.Net;
+using Newtonsoft.Json.Linq;
 
 namespace MedicalAssistant
 {
@@ -238,22 +240,73 @@ namespace MedicalAssistant
                         LngInicial = watcher.Position.Location.Longitude;
 
 
+                        JArray array = new JArray();
+
+
+                        WebRequest request = WebRequest.Create(string.Format("https://api.geoapify.com/v2/places?categories=healthcare.hospital&filter=circle:{0},{1},10000&limit=20&apiKey=1b48259b810e48ddb151889f9ea58db0", LngInicial, LatInicial));
+                        //
+                        request.Method = "GET";
+                        HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                        StreamReader reader = new StreamReader(response.GetResponseStream());
+                        string str = reader.ReadToEnd();
+                        //Console.WriteLine(str);
+                        dynamic stuff = JsonConvert.DeserializeObject(str);
+;
+                        //JObject joResponse = JObject.Parse(str);
+                        //JObject result = (JObject)joResponse["features"];
+                        //array = (JArray)result["Detail"];
+                        //string statu = array[0]["dlrStat"].ToString();
+                        //RootObjects = JsonConvert.DeserializeObject<List<ObjectList>>(JsonConvert.SerializeObject(str));
+
+
+
+
+                        foreach (var rootObject in stuff["features"])
+                        {
+                            {
+                                double LngInicial_ = (rootObject["properties"]["lon"]);
+                                double LatInicial_ = (rootObject["properties"]["lat"]);
+                                string name = (rootObject["properties"]["name"]);
+
+
+                                //gMapControl1.DragButton = MouseButtons.Left;
+                                //gMapControl1.CanDragMap = true;
+                                //gMapControl1.MapProvider = GMapProviders.GoogleMap;
+                                gMapControl1.Position = new PointLatLng(LatInicial, LngInicial);
+
+                                markerOverlay = new GMapOverlay("موقعك");
+                                marker = new GMarkerGoogle(new PointLatLng(LatInicial_, LngInicial_), GMarkerGoogleType.blue);
+                                markerOverlay.Markers.Add(marker);
+                                marker.ToolTipMode = MarkerTooltipMode.Always;
+                                marker.ToolTipText = name;
+                                //marker.ToolTip.Foreground = Brushes.Fuchsia;
+
+                                gMapControl1.Overlays.Add(markerOverlay);
+
+                            }
+                        }
+
                         gMapControl1.DragButton = MouseButtons.Left;
                         gMapControl1.CanDragMap = true;
                         gMapControl1.MapProvider = GMapProviders.GoogleMap;
                         gMapControl1.Position = new PointLatLng(LatInicial, LngInicial);
                         gMapControl1.MinZoom = 0;
                         gMapControl1.MaxZoom = 24;
-                        gMapControl1.Zoom = 15;
+                        gMapControl1.Zoom = 18;
                         gMapControl1.AutoScroll = true;
 
                         markerOverlay = new GMapOverlay("موقعك");
                         marker = new GMarkerGoogle(new PointLatLng(LatInicial, LngInicial), GMarkerGoogleType.blue);
                         markerOverlay.Markers.Add(marker);
                         marker.ToolTipMode = MarkerTooltipMode.Always;
-                        marker.ToolTipText = string.Format("موقعك الان:\n Latitud:{0}\n Longitud:{1}", LatInicial, LngInicial);
-
+                        //marker.ToolTipText = string.Format("موقعك الان:\n Latitud:{0}\n Longitud:{1}", LatInicial, LngInicial);
+                        marker.ToolTipText = string.Format("موقعك الان");
                         gMapControl1.Overlays.Add(markerOverlay);
+
+
+
+
+
                     }
                 }
                 else
