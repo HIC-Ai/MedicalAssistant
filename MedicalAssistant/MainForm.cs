@@ -104,6 +104,8 @@ namespace MedicalAssistant
             CommendsWords.Add("اضافه موعد");
             CommendsWords.Add("خروج");
             CommendsWords.Add("ما هي مواعيد اليوم");
+            CommendsWords.Add("الخريطه");
+
 
 
             RootObjects = JsonConvert.DeserializeObject<List<ObjectList>>(JsonConvert.SerializeObject(new Database.database().Questions()));
@@ -484,7 +486,13 @@ namespace MedicalAssistant
                             }
                         }
 
+                        if (message_rev == CommendsWords[7])
+                        {
+                            spt = new recognitionArabic().CloudTextToSpeech("حسنا", genderVoice);
+                            timer3_wait_spech.Start();
+                            this.SetCurrentPageViewPage(this.radPageViewPageMaps);
 
+                        }
                         else
                         {
                             message_send = "خسنا سوف اتذكر ذالك";
@@ -891,6 +899,14 @@ namespace MedicalAssistant
                                     }
 
 
+
+                                }
+
+                                if (message_rev == CommendsWords[7])
+                                {
+                                    spt = new recognitionArabic().CloudTextToSpeech("حسنا", genderVoice);
+                                    timer3_wait_spech.Start();
+                                    this.SetCurrentPageViewPage(this.radPageViewPageMaps);
 
                                 }
                                 message_rev_real = message_rev_real2;
