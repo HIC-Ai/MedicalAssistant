@@ -42,5 +42,77 @@ namespace MedicalAssistant.Properties {
                 return ((string)(this["PatientsConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool Call_Tips {
+            get {
+                return ((bool)(this["Call_Tips"]));
+            }
+            set {
+                this["Call_Tips"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool RealTime_Recognizer {
+            get {
+                return ((bool)(this["RealTime_Recognizer"]));
+            }
+            set {
+                this["RealTime_Recognizer"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool Call_Schandeler {
+            get {
+                return ((bool)(this["Call_Schandeler"]));
+            }
+            set {
+                this["Call_Schandeler"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public string Tips_wait {
+            get {
+                return ((string)(this["Tips_wait"]));
+            }
+            set {
+                this["Tips_wait"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("مرحبا")]
+        public string Chat_first {
+            get {
+                return ((string)(this["Chat_first"]));
+            }
+            set {
+                this["Chat_first"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("صديقي")]
+        public string Name_Person {
+            get {
+                return ((string)(this["Name_Person"]));
+            }
+            set {
+                this["Name_Person"] = value;
+            }
+        }
     }
 }

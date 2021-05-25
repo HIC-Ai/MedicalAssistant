@@ -90,11 +90,10 @@ namespace MedicalAssistant
 
         private double LatInicial;
         private double LngInicial;
-
         GMarkerGoogle marker;
         GMapOverlay markerOverlay;
-
         private GeoCoordinateWatcher watcher = new GeoCoordinateWatcher();
+
         public MainForm()
         {
             CommendsWords.Add("المهام");
@@ -165,16 +164,21 @@ namespace MedicalAssistant
         }
         private void main5_Load(object sender, EventArgs e)
         {
+            bunifuTextBox1.Text = Settings.Default.Tips_wait;
+            bunifuTextBox2.Text = Settings.Default.Chat_first;
+            bunifuTextBox3.Text = Settings.Default.Name_Person;
 
-            watcher = new GeoCoordinateWatcher();
-            // Catch the StatusChanged event.  
-            watcher.StatusChanged += Watcher_StatusChanged;
-            // Start the watcher.  
-            watcher.Start();
+            bunifuToggleSwitch1.Checked = Settings.Default.Call_Tips;
+            bunifuToggleSwitch2.Checked = Settings.Default.RealTime_Recognizer;
+            bunifuToggleSwitch3.Checked = Settings.Default.Call_Schandeler;
+
+
+
+
 
             //panelChatMain.Visible = false;
             this.Size = new Size(1322, 572);
-            AddIncomming("ماذا لديك");
+            AddIncomming(Settings.Default.Chat_first + " "+ Settings.Default.Name_Person);
 
 
             this.appointmentsTableAdapter.Fill(this.patientsDataSet.Appointments);
@@ -197,39 +201,58 @@ namespace MedicalAssistant
             {
                 Tips_call_in_pack.RunWorkerAsync();
             }
-            var t = new System.Windows.Forms.Timer();
-            t.Interval = 1000;
-            t.Tick += (s, d) =>
+            if (Settings.Default.Call_Schandeler == true)
             {
-                if (radLabelTodayAppointmentsCount.Text != "0".ToString())
+                var t = new System.Windows.Forms.Timer();
+                t.Interval = 1000;
+                t.Tick += (s, d) =>
                 {
-                    spt = new recognitionArabic().CloudTextToSpeech("لديك اليوم " + radLabelTodayAppointmentsCount.Text + "مواعيد", "male");
-                }
-                else
-                {
-                    spt = new recognitionArabic().CloudTextToSpeech("ليس لديك مواعيد اليوم", "male");
+                    if (radLabelTodayAppointmentsCount.Text != "0".ToString())
+                    {
+                        spt = new recognitionArabic().CloudTextToSpeech("لديك اليوم " + radLabelTodayAppointmentsCount.Text + "مواعيد", "male");
+                    }
+                    else
+                    {
+                        spt = new recognitionArabic().CloudTextToSpeech("ليس لديك مواعيد اليوم", "male");
 
-                }
-                t.Stop();
-            };
-            t.Start();
+                    }
+                    t.Stop();
+                };
+                t.Start();
+            }
+            if (Settings.Default.RealTime_Recognizer == true)
+            {
+                recognizer.LoadGrammarAsync(new DictationGrammar());
+                recognizer.SetInputToDefaultAudioDevice();
+                recognizer.RecognizeAsync();
 
-            recognizer.LoadGrammarAsync(new DictationGrammar());
-            recognizer.SetInputToDefaultAudioDevice();
-            recognizer.RecognizeAsync();
-
-            timer4_realTime_recognizer.Start();
+                timer4_realTime_recognizer.Start();
+            }
 
 
+            watcher = new GeoCoordinateWatcher();
+            //watcher.TryStart(false, TimeSpan.FromSeconds(3));
 
+            watcher.StatusChanged += Watcher_StatusChanged;
+            //watcher.TryStart(false, TimeSpan.FromMilliseconds(1000));
+
+            watcher.Start();
         }
 
         private void Watcher_StatusChanged(object sender, GeoPositionStatusChangedEventArgs e) // Find GeoLocation of Device  
         {
+
             try
             {
                 if (e.Status == GeoPositionStatus.Ready)
                 {
+                    //if (watcher.Position.Location.HorizontalAccuracy > 500)
+                    //{
+                    //    watcher.Start();
+
+                    //    return;
+                    //}
+
                     // Display the latitude and longitude.  
                     if (watcher.Position.Location.IsUnknown)
                     {
@@ -261,7 +284,7 @@ namespace MedicalAssistant
                         //RootObjects = JsonConvert.DeserializeObject<List<ObjectList>>(JsonConvert.SerializeObject(str));
 
 
-
+                        markerOverlay = new GMapOverlay("MedicalAssistant");
 
                         foreach (var rootObject in stuff["features"])
                         {
@@ -274,9 +297,8 @@ namespace MedicalAssistant
                                 //gMapControl1.DragButton = MouseButtons.Left;
                                 //gMapControl1.CanDragMap = true;
                                 //gMapControl1.MapProvider = GMapProviders.GoogleMap;
-                                gMapControl1.Position = new PointLatLng(LatInicial, LngInicial);
+                                //gMapControl1.Position = new PointLatLng(LatInicial_, LngInicial_);
 
-                                markerOverlay = new GMapOverlay("موقعك");
                                 marker = new GMarkerGoogle(new PointLatLng(LatInicial_, LngInicial_), GMarkerGoogleType.blue);
                                 markerOverlay.Markers.Add(marker);
                                 marker.ToolTipMode = MarkerTooltipMode.Always;
@@ -297,7 +319,6 @@ namespace MedicalAssistant
                         gMapControl1.Zoom = 18;
                         gMapControl1.AutoScroll = true;
 
-                        markerOverlay = new GMapOverlay("موقعك");
                         marker = new GMarkerGoogle(new PointLatLng(LatInicial, LngInicial), GMarkerGoogleType.blue);
                         markerOverlay.Markers.Add(marker);
                         marker.ToolTipMode = MarkerTooltipMode.Always;
@@ -305,7 +326,12 @@ namespace MedicalAssistant
                         marker.ToolTipText = string.Format("موقعك الان");
                         gMapControl1.Overlays.Add(markerOverlay);
 
+                        Console.WriteLine(LatInicial);
+                        Console.WriteLine(LngInicial);
+                        Console.WriteLine(watcher.Position.Location.HorizontalAccuracy);
 
+                        
+                        watcher.Stop();
 
 
 
@@ -765,6 +791,11 @@ namespace MedicalAssistant
         string message_rev_real = "";
         private void timer4_Tick_realTime_recognizer(object sender, EventArgs e)
         {
+            if (Settings.Default.RealTime_Recognizer == false)
+            {
+                recognizer.RecognizeAsyncCancel();
+                timer4_realTime_recognizer.Stop();
+            }
             if (recognizer != null)
             {
                 if (recognizer.AudioState.ToString() == "Speech")
@@ -977,8 +1008,8 @@ namespace MedicalAssistant
 
                     recognizer.RecognizeAsyncCancel(); // قفل الاستماع في الخليفه 
                     recognizer.RecognizeAsyncStop();   // قفل الاستماع في الخليفه 
-
-                    spt = new recognitionArabic().CloudTextToSpeech("نصيحة : " + tip, "male");    // قول النصيحه بصوت رجل
+                    if (Settings.Default.Call_Tips == true)
+                        spt = new recognitionArabic().CloudTextToSpeech("نصيحة : " + tip, "male");    // قول النصيحه بصوت رجل
                     len = tip.Length / 4; // حساب مدي كلمه النصيحه لعمل اينيميشن للنصيحه
                     //label1.Text = "";
                     timer1_tips_enim.Interval = len; // اعطاء المدي ل للاينينمشن
@@ -1021,7 +1052,7 @@ namespace MedicalAssistant
                         {
                             tip = fg;
                             worker.ReportProgress(i * 1); // الدخول الي حدث النصائح والعطاء النصيحه في التصميم
-                            Thread.Sleep(100000);
+                            Thread.Sleep(int.Parse(Settings.Default.Tips_wait) * 1000 * 60);
                         }
 
 
@@ -1401,18 +1432,43 @@ namespace MedicalAssistant
 
         }
 
-        private void radPageView1_SelectedPageChanged(object sender, EventArgs e)
+        private void bunifuToggleSwitch1_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs e)
+        {
+            Settings.Default.Call_Tips = bunifuToggleSwitch1.Checked;
+
+        }
+
+        private void bunifuToggleSwitch2_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs e)
+        {
+            Settings.Default.RealTime_Recognizer = bunifuToggleSwitch2.Checked;
+        }
+
+        private void radSplitButton1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void radMenuItem1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void radPageViewPageMaps_Paint(object sender, PaintEventArgs e)
+        private void bunifuToggleSwitch3_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs e)
         {
+            Settings.Default.Call_Schandeler = bunifuToggleSwitch3.Checked;
+        }
+
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+            Settings.Default.Tips_wait = bunifuTextBox1.Text;
+            Settings.Default.Chat_first = bunifuTextBox2.Text;
+            Settings.Default.Name_Person = bunifuTextBox3.Text;
+
+            Settings.Default.Save();
+            RadMessageBox.Show(this, "تم الحفظ");
+            //this.Controls.Clear();
+            //InitializeComponent();
+
 
         }
     }

@@ -13,5 +13,23 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Database\Patients.mdb</Value>
     </Setting>
+    <Setting Name="Call_Tips" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="RealTime_Recognizer" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Call_Schandeler" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Tips_wait" Type="System.String" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="Chat_first" Type="System.String" Scope="User">
+      <Value Profile="(Default)">مرحبا</Value>
+    </Setting>
+    <Setting Name="Name_Person" Type="System.String" Scope="User">
+      <Value Profile="(Default)">صديقي</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

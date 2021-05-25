@@ -34,12 +34,33 @@ namespace MedicalAssistant
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            Telerik.WinControls.UI.ListViewDataItem listViewDataItem2 = new Telerik.WinControls.UI.ListViewDataItem("المهام");
-            Telerik.WinControls.UI.SchedulerDailyPrintStyle schedulerDailyPrintStyle2 = new Telerik.WinControls.UI.SchedulerDailyPrintStyle();
-            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn5 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "Name");
-            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn6 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "Age");
-            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn7 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "Gender");
-            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn8 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 3", "EncounterTime");
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem1 = new Telerik.WinControls.UI.ListViewDataItem("المهام");
+            Telerik.WinControls.UI.SchedulerDailyPrintStyle schedulerDailyPrintStyle1 = new Telerik.WinControls.UI.SchedulerDailyPrintStyle();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties25 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties26 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties27 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties28 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties29 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties30 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties31 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties32 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties33 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties34 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties35 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties36 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState19 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState20 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState21 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState22 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState23 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState24 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState25 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState26 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState27 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn1 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "Name");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn2 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "Age");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn3 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "Gender");
+            Telerik.WinControls.UI.ListViewDetailColumn listViewDetailColumn4 = new Telerik.WinControls.UI.ListViewDetailColumn("Column 3", "EncounterTime");
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
             this.start_record_stop = new System.Windows.Forms.PictureBox();
             this.txtTyping = new System.Windows.Forms.Label();
@@ -78,6 +99,19 @@ namespace MedicalAssistant
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.radPageViewPageCharts = new Telerik.WinControls.UI.RadPageViewPage();
             this.radPageViewPageSettings = new Telerik.WinControls.UI.RadPageViewPage();
+            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.bunifuTextBox3 = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.bunifuTextBox2 = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.bunifuTextBox1 = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.radLabel11 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
+            this.bunifuToggleSwitch2 = new Bunifu.UI.WinForms.BunifuToggleSwitch();
+            this.bunifuToggleSwitch3 = new Bunifu.UI.WinForms.BunifuToggleSwitch();
+            this.bunifuToggleSwitch1 = new Bunifu.UI.WinForms.BunifuToggleSwitch();
             this.radListViewNextPatients = new Telerik.WinControls.UI.RadListView();
             this.Tips_call_in_pack = new System.ComponentModel.BackgroundWorker();
             this.timer1_tips_enim = new System.Windows.Forms.Timer(this.components);
@@ -88,14 +122,14 @@ namespace MedicalAssistant
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.patientsDataSet = new MedicalAssistant.PatientsDataSet();
-            this.appointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.appointmentsTableAdapter = new MedicalAssistant.PatientsDataSetTableAdapters.AppointmentsTableAdapter();
             this.timer3_wait_spech = new System.Windows.Forms.Timer(this.components);
             this.timer5_exit = new System.Windows.Forms.Timer(this.components);
             this.timer_recognizer_stop = new System.Windows.Forms.Timer(this.components);
             this.timer4_realTime_recognizer = new System.Windows.Forms.Timer(this.components);
             this.object_e922f11e_a01e_4722_8e26_9562c5280f99 = new Telerik.WinControls.RootRadElement();
+            this.patientsDataSet = new MedicalAssistant.PatientsDataSet();
+            this.appointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.appointmentsTableAdapter = new MedicalAssistant.PatientsDataSetTableAdapters.AppointmentsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
             this.radPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.start_record_stop)).BeginInit();
@@ -131,6 +165,13 @@ namespace MedicalAssistant
             ((System.ComponentModel.ISupportInitialize)(this.radSchedulerNavigator2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radScheduler1)).BeginInit();
             this.radPageViewPageMaps.SuspendLayout();
+            this.radPageViewPageSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radListViewNextPatients)).BeginInit();
             this.panelChatMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
@@ -230,11 +271,11 @@ namespace MedicalAssistant
             resources.ApplyResources(this.radListView1, "radListView1");
             this.radListView1.FullRowSelect = false;
             this.radListView1.GroupItemSize = new System.Drawing.Size(200, 28);
-            listViewDataItem2.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            listViewDataItem2.Text = "المهام";
-            listViewDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            listViewDataItem1.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            listViewDataItem1.Text = "المهام";
+            listViewDataItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.radListView1.Items.AddRange(new Telerik.WinControls.UI.ListViewDataItem[] {
-            listViewDataItem2});
+            listViewDataItem1});
             this.radListView1.ItemSize = new System.Drawing.Size(50, 50);
             this.radListView1.ItemSpacing = 4;
             this.radListView1.Name = "radListView1";
@@ -266,7 +307,6 @@ namespace MedicalAssistant
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Name = "label1";
             this.label1.UseMnemonic = false;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // guna2CirclePictureBox2
             // 
@@ -309,9 +349,8 @@ namespace MedicalAssistant
             this.radPageView1.RootElement.FocusBorderColor = System.Drawing.Color.Transparent;
             this.radPageView1.RootElement.HighlightColor = System.Drawing.Color.Transparent;
             this.radPageView1.RootElement.RippleAnimationColor = System.Drawing.Color.Transparent;
-            this.radPageView1.SelectedPage = this.radPageViewPageDashboard;
+            this.radPageView1.SelectedPage = this.radPageViewPageMaps;
             this.radPageView1.ViewMode = Telerik.WinControls.UI.PageViewMode.Backstage;
-            this.radPageView1.SelectedPageChanged += new System.EventHandler(this.radPageView1_SelectedPageChanged);
             ((Telerik.WinControls.UI.RadPageViewBackstageElement)(this.radPageView1.GetChildAt(0))).ItemAlignment = Telerik.WinControls.UI.StripViewItemAlignment.Center;
             ((Telerik.WinControls.UI.RadPageViewBackstageElement)(this.radPageView1.GetChildAt(0))).ItemFitMode = Telerik.WinControls.UI.StripViewItemFitMode.Shrink;
             ((Telerik.WinControls.UI.RadPageViewBackstageElement)(this.radPageView1.GetChildAt(0))).StripAlignment = Telerik.WinControls.UI.StripViewAlignment.Right;
@@ -548,12 +587,12 @@ namespace MedicalAssistant
             resources.ApplyResources(this.radScheduler1, "radScheduler1");
             this.radScheduler1.HeaderFormat = "dddd M\\/d";
             this.radScheduler1.Name = "radScheduler1";
-            schedulerDailyPrintStyle2.AppointmentFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            schedulerDailyPrintStyle2.DateEndRange = new System.DateTime(2015, 8, 22, 0, 0, 0, 0);
-            schedulerDailyPrintStyle2.DateHeadingFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            schedulerDailyPrintStyle2.DateStartRange = new System.DateTime(2015, 8, 17, 0, 0, 0, 0);
-            schedulerDailyPrintStyle2.PageHeadingFont = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold);
-            this.radScheduler1.PrintStyle = schedulerDailyPrintStyle2;
+            schedulerDailyPrintStyle1.AppointmentFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            schedulerDailyPrintStyle1.DateEndRange = new System.DateTime(2015, 8, 22, 0, 0, 0, 0);
+            schedulerDailyPrintStyle1.DateHeadingFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            schedulerDailyPrintStyle1.DateStartRange = new System.DateTime(2015, 8, 17, 0, 0, 0, 0);
+            schedulerDailyPrintStyle1.PageHeadingFont = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold);
+            this.radScheduler1.PrintStyle = schedulerDailyPrintStyle1;
             this.radScheduler1.ThemeName = "Fluent";
             this.radScheduler1.AppointmentDeleted += new System.EventHandler<Telerik.WinControls.UI.SchedulerAppointmentEventArgs>(this.radScheduler1_AppointmentDeleted);
             this.radScheduler1.DataBindingComplete += new System.EventHandler(this.radScheduler1_DataBindingComplete);
@@ -584,7 +623,6 @@ namespace MedicalAssistant
             this.radPageViewPageMaps.ItemSize = new System.Drawing.SizeF(125F, 58F);
             resources.ApplyResources(this.radPageViewPageMaps, "radPageViewPageMaps");
             this.radPageViewPageMaps.Name = "radPageViewPageMaps";
-            this.radPageViewPageMaps.Paint += new System.Windows.Forms.PaintEventHandler(this.radPageViewPageMaps_Paint);
             // 
             // gMapControl1
             // 
@@ -621,26 +659,417 @@ namespace MedicalAssistant
             // radPageViewPageSettings
             // 
             this.radPageViewPageSettings.BackColor = System.Drawing.Color.Transparent;
+            this.radPageViewPageSettings.Controls.Add(this.bunifuThinButton21);
+            this.radPageViewPageSettings.Controls.Add(this.bunifuTextBox3);
+            this.radPageViewPageSettings.Controls.Add(this.bunifuTextBox2);
+            this.radPageViewPageSettings.Controls.Add(this.bunifuTextBox1);
+            this.radPageViewPageSettings.Controls.Add(this.radLabel11);
+            this.radPageViewPageSettings.Controls.Add(this.radLabel5);
+            this.radPageViewPageSettings.Controls.Add(this.radLabel10);
+            this.radPageViewPageSettings.Controls.Add(this.radLabel7);
+            this.radPageViewPageSettings.Controls.Add(this.radLabel8);
+            this.radPageViewPageSettings.Controls.Add(this.radLabel1);
+            this.radPageViewPageSettings.Controls.Add(this.bunifuToggleSwitch2);
+            this.radPageViewPageSettings.Controls.Add(this.bunifuToggleSwitch3);
+            this.radPageViewPageSettings.Controls.Add(this.bunifuToggleSwitch1);
             this.radPageViewPageSettings.Image = global::MedicalAssistant.Properties.Resources.settings;
             this.radPageViewPageSettings.ItemSize = new System.Drawing.SizeF(125F, 45F);
             resources.ApplyResources(this.radPageViewPageSettings, "radPageViewPageSettings");
             this.radPageViewPageSettings.Name = "radPageViewPageSettings";
             this.radPageViewPageSettings.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // bunifuThinButton21
+            // 
+            this.bunifuThinButton21.ActiveBorderThickness = 1;
+            this.bunifuThinButton21.ActiveCornerRadius = 20;
+            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
+            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.bunifuThinButton21, "bunifuThinButton21");
+            this.bunifuThinButton21.ButtonText = "حفظ";
+            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.IdleBorderThickness = 1;
+            this.bunifuThinButton21.IdleCornerRadius = 20;
+            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.White;
+            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.Name = "bunifuThinButton21";
+            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click);
+            // 
+            // bunifuTextBox3
+            // 
+            this.bunifuTextBox3.AcceptsReturn = false;
+            this.bunifuTextBox3.AcceptsTab = false;
+            this.bunifuTextBox3.AnimationSpeed = 200;
+            this.bunifuTextBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.bunifuTextBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.bunifuTextBox3.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.bunifuTextBox3, "bunifuTextBox3");
+            this.bunifuTextBox3.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.bunifuTextBox3.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.bunifuTextBox3.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.bunifuTextBox3.BorderColorIdle = System.Drawing.Color.Silver;
+            this.bunifuTextBox3.BorderRadius = 1;
+            this.bunifuTextBox3.BorderThickness = 1;
+            this.bunifuTextBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.bunifuTextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuTextBox3.DefaultFont = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.bunifuTextBox3.DefaultText = "";
+            this.bunifuTextBox3.FillColor = System.Drawing.Color.White;
+            this.bunifuTextBox3.HideSelection = true;
+            this.bunifuTextBox3.IconLeft = null;
+            this.bunifuTextBox3.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuTextBox3.IconPadding = 10;
+            this.bunifuTextBox3.IconRight = null;
+            this.bunifuTextBox3.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuTextBox3.Lines = new string[0];
+            this.bunifuTextBox3.MaxLength = 32767;
+            this.bunifuTextBox3.Modified = false;
+            this.bunifuTextBox3.Multiline = false;
+            this.bunifuTextBox3.Name = "bunifuTextBox3";
+            stateProperties25.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties25.FillColor = System.Drawing.Color.Empty;
+            stateProperties25.ForeColor = System.Drawing.Color.Empty;
+            stateProperties25.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.bunifuTextBox3.OnActiveState = stateProperties25;
+            stateProperties26.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties26.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties26.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.bunifuTextBox3.OnDisabledState = stateProperties26;
+            stateProperties27.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties27.FillColor = System.Drawing.Color.Empty;
+            stateProperties27.ForeColor = System.Drawing.Color.Empty;
+            stateProperties27.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.bunifuTextBox3.OnHoverState = stateProperties27;
+            stateProperties28.BorderColor = System.Drawing.Color.Silver;
+            stateProperties28.FillColor = System.Drawing.Color.White;
+            stateProperties28.ForeColor = System.Drawing.Color.Empty;
+            stateProperties28.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.bunifuTextBox3.OnIdleState = stateProperties28;
+            this.bunifuTextBox3.PasswordChar = '\0';
+            this.bunifuTextBox3.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.bunifuTextBox3.PlaceholderText = "";
+            this.bunifuTextBox3.ReadOnly = false;
+            this.bunifuTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.bunifuTextBox3.SelectedText = "";
+            this.bunifuTextBox3.SelectionLength = 0;
+            this.bunifuTextBox3.SelectionStart = 0;
+            this.bunifuTextBox3.ShortcutsEnabled = true;
+            this.bunifuTextBox3.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.bunifuTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuTextBox3.TextMarginBottom = 0;
+            this.bunifuTextBox3.TextMarginLeft = 3;
+            this.bunifuTextBox3.TextMarginTop = 0;
+            this.bunifuTextBox3.TextPlaceholder = "";
+            this.bunifuTextBox3.UseSystemPasswordChar = false;
+            this.bunifuTextBox3.WordWrap = true;
+            // 
+            // bunifuTextBox2
+            // 
+            this.bunifuTextBox2.AcceptsReturn = false;
+            this.bunifuTextBox2.AcceptsTab = false;
+            this.bunifuTextBox2.AnimationSpeed = 200;
+            this.bunifuTextBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.bunifuTextBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.bunifuTextBox2.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.bunifuTextBox2, "bunifuTextBox2");
+            this.bunifuTextBox2.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.bunifuTextBox2.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.bunifuTextBox2.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.bunifuTextBox2.BorderColorIdle = System.Drawing.Color.Silver;
+            this.bunifuTextBox2.BorderRadius = 1;
+            this.bunifuTextBox2.BorderThickness = 1;
+            this.bunifuTextBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.bunifuTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuTextBox2.DefaultFont = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.bunifuTextBox2.DefaultText = "";
+            this.bunifuTextBox2.FillColor = System.Drawing.Color.White;
+            this.bunifuTextBox2.HideSelection = true;
+            this.bunifuTextBox2.IconLeft = null;
+            this.bunifuTextBox2.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuTextBox2.IconPadding = 10;
+            this.bunifuTextBox2.IconRight = null;
+            this.bunifuTextBox2.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuTextBox2.Lines = new string[0];
+            this.bunifuTextBox2.MaxLength = 32767;
+            this.bunifuTextBox2.Modified = false;
+            this.bunifuTextBox2.Multiline = false;
+            this.bunifuTextBox2.Name = "bunifuTextBox2";
+            stateProperties29.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties29.FillColor = System.Drawing.Color.Empty;
+            stateProperties29.ForeColor = System.Drawing.Color.Empty;
+            stateProperties29.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.bunifuTextBox2.OnActiveState = stateProperties29;
+            stateProperties30.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties30.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties30.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.bunifuTextBox2.OnDisabledState = stateProperties30;
+            stateProperties31.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties31.FillColor = System.Drawing.Color.Empty;
+            stateProperties31.ForeColor = System.Drawing.Color.Empty;
+            stateProperties31.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.bunifuTextBox2.OnHoverState = stateProperties31;
+            stateProperties32.BorderColor = System.Drawing.Color.Silver;
+            stateProperties32.FillColor = System.Drawing.Color.White;
+            stateProperties32.ForeColor = System.Drawing.Color.Empty;
+            stateProperties32.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.bunifuTextBox2.OnIdleState = stateProperties32;
+            this.bunifuTextBox2.PasswordChar = '\0';
+            this.bunifuTextBox2.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.bunifuTextBox2.PlaceholderText = "";
+            this.bunifuTextBox2.ReadOnly = false;
+            this.bunifuTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.bunifuTextBox2.SelectedText = "";
+            this.bunifuTextBox2.SelectionLength = 0;
+            this.bunifuTextBox2.SelectionStart = 0;
+            this.bunifuTextBox2.ShortcutsEnabled = true;
+            this.bunifuTextBox2.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.bunifuTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuTextBox2.TextMarginBottom = 0;
+            this.bunifuTextBox2.TextMarginLeft = 3;
+            this.bunifuTextBox2.TextMarginTop = 0;
+            this.bunifuTextBox2.TextPlaceholder = "";
+            this.bunifuTextBox2.UseSystemPasswordChar = false;
+            this.bunifuTextBox2.WordWrap = true;
+            // 
+            // bunifuTextBox1
+            // 
+            this.bunifuTextBox1.AcceptsReturn = false;
+            this.bunifuTextBox1.AcceptsTab = false;
+            this.bunifuTextBox1.AnimationSpeed = 200;
+            this.bunifuTextBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.bunifuTextBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.bunifuTextBox1.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.bunifuTextBox1, "bunifuTextBox1");
+            this.bunifuTextBox1.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.bunifuTextBox1.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.bunifuTextBox1.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.bunifuTextBox1.BorderColorIdle = System.Drawing.Color.Silver;
+            this.bunifuTextBox1.BorderRadius = 1;
+            this.bunifuTextBox1.BorderThickness = 1;
+            this.bunifuTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.bunifuTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuTextBox1.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.bunifuTextBox1.DefaultText = "";
+            this.bunifuTextBox1.FillColor = System.Drawing.Color.White;
+            this.bunifuTextBox1.HideSelection = true;
+            this.bunifuTextBox1.IconLeft = null;
+            this.bunifuTextBox1.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuTextBox1.IconPadding = 10;
+            this.bunifuTextBox1.IconRight = null;
+            this.bunifuTextBox1.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuTextBox1.Lines = new string[0];
+            this.bunifuTextBox1.MaxLength = 32767;
+            this.bunifuTextBox1.Modified = false;
+            this.bunifuTextBox1.Multiline = false;
+            this.bunifuTextBox1.Name = "bunifuTextBox1";
+            stateProperties33.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties33.FillColor = System.Drawing.Color.Empty;
+            stateProperties33.ForeColor = System.Drawing.Color.Empty;
+            stateProperties33.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.bunifuTextBox1.OnActiveState = stateProperties33;
+            stateProperties34.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties34.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties34.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.bunifuTextBox1.OnDisabledState = stateProperties34;
+            stateProperties35.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties35.FillColor = System.Drawing.Color.Empty;
+            stateProperties35.ForeColor = System.Drawing.Color.Empty;
+            stateProperties35.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.bunifuTextBox1.OnHoverState = stateProperties35;
+            stateProperties36.BorderColor = System.Drawing.Color.Silver;
+            stateProperties36.FillColor = System.Drawing.Color.White;
+            stateProperties36.ForeColor = System.Drawing.Color.Empty;
+            stateProperties36.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.bunifuTextBox1.OnIdleState = stateProperties36;
+            this.bunifuTextBox1.PasswordChar = '\0';
+            this.bunifuTextBox1.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.bunifuTextBox1.PlaceholderText = "";
+            this.bunifuTextBox1.ReadOnly = false;
+            this.bunifuTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.bunifuTextBox1.SelectedText = "";
+            this.bunifuTextBox1.SelectionLength = 0;
+            this.bunifuTextBox1.SelectionStart = 0;
+            this.bunifuTextBox1.ShortcutsEnabled = true;
+            this.bunifuTextBox1.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.bunifuTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuTextBox1.TextMarginBottom = 0;
+            this.bunifuTextBox1.TextMarginLeft = 3;
+            this.bunifuTextBox1.TextMarginTop = 0;
+            this.bunifuTextBox1.TextPlaceholder = "";
+            this.bunifuTextBox1.UseSystemPasswordChar = false;
+            this.bunifuTextBox1.WordWrap = true;
+            // 
+            // radLabel11
+            // 
+            resources.ApplyResources(this.radLabel11, "radLabel11");
+            this.radLabel11.Name = "radLabel11";
+            // 
+            // radLabel5
+            // 
+            resources.ApplyResources(this.radLabel5, "radLabel5");
+            this.radLabel5.Name = "radLabel5";
+            // 
+            // radLabel10
+            // 
+            resources.ApplyResources(this.radLabel10, "radLabel10");
+            this.radLabel10.Name = "radLabel10";
+            // 
+            // radLabel7
+            // 
+            resources.ApplyResources(this.radLabel7, "radLabel7");
+            this.radLabel7.Name = "radLabel7";
+            // 
+            // radLabel8
+            // 
+            resources.ApplyResources(this.radLabel8, "radLabel8");
+            this.radLabel8.Name = "radLabel8";
+            // 
+            // radLabel1
+            // 
+            resources.ApplyResources(this.radLabel1, "radLabel1");
+            this.radLabel1.Name = "radLabel1";
+            // 
+            // bunifuToggleSwitch2
+            // 
+            this.bunifuToggleSwitch2.Animation = 5;
+            this.bunifuToggleSwitch2.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.bunifuToggleSwitch2, "bunifuToggleSwitch2");
+            this.bunifuToggleSwitch2.Checked = true;
+            this.bunifuToggleSwitch2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuToggleSwitch2.InnerCirclePadding = 3;
+            this.bunifuToggleSwitch2.Name = "bunifuToggleSwitch2";
+            this.bunifuToggleSwitch2.ThumbMargin = 3;
+            toggleState19.BackColor = System.Drawing.Color.DarkGray;
+            toggleState19.BackColorInner = System.Drawing.Color.White;
+            toggleState19.BorderColor = System.Drawing.Color.DarkGray;
+            toggleState19.BorderColorInner = System.Drawing.Color.White;
+            toggleState19.BorderRadius = 17;
+            toggleState19.BorderRadiusInner = 11;
+            toggleState19.BorderThickness = 1;
+            toggleState19.BorderThicknessInner = 1;
+            this.bunifuToggleSwitch2.ToggleStateDisabled = toggleState19;
+            toggleState20.BackColor = System.Drawing.Color.Empty;
+            toggleState20.BackColorInner = System.Drawing.Color.Empty;
+            toggleState20.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(0)))), ((int)(((byte)(140)))));
+            toggleState20.BorderColorInner = System.Drawing.Color.Empty;
+            toggleState20.BorderRadius = 1;
+            toggleState20.BorderRadiusInner = 1;
+            toggleState20.BorderThickness = 1;
+            toggleState20.BorderThicknessInner = 1;
+            this.bunifuToggleSwitch2.ToggleStateOff = toggleState20;
+            toggleState21.BackColor = System.Drawing.Color.DodgerBlue;
+            toggleState21.BackColorInner = System.Drawing.Color.White;
+            toggleState21.BorderColor = System.Drawing.Color.DodgerBlue;
+            toggleState21.BorderColorInner = System.Drawing.Color.White;
+            toggleState21.BorderRadius = 17;
+            toggleState21.BorderRadiusInner = 11;
+            toggleState21.BorderThickness = 1;
+            toggleState21.BorderThicknessInner = 1;
+            this.bunifuToggleSwitch2.ToggleStateOn = toggleState21;
+            this.bunifuToggleSwitch2.Value = true;
+            this.bunifuToggleSwitch2.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs>(this.bunifuToggleSwitch2_CheckedChanged);
+            // 
+            // bunifuToggleSwitch3
+            // 
+            this.bunifuToggleSwitch3.Animation = 5;
+            this.bunifuToggleSwitch3.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.bunifuToggleSwitch3, "bunifuToggleSwitch3");
+            this.bunifuToggleSwitch3.Checked = true;
+            this.bunifuToggleSwitch3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuToggleSwitch3.InnerCirclePadding = 3;
+            this.bunifuToggleSwitch3.Name = "bunifuToggleSwitch3";
+            this.bunifuToggleSwitch3.ThumbMargin = 3;
+            toggleState22.BackColor = System.Drawing.Color.DarkGray;
+            toggleState22.BackColorInner = System.Drawing.Color.White;
+            toggleState22.BorderColor = System.Drawing.Color.DarkGray;
+            toggleState22.BorderColorInner = System.Drawing.Color.White;
+            toggleState22.BorderRadius = 17;
+            toggleState22.BorderRadiusInner = 11;
+            toggleState22.BorderThickness = 1;
+            toggleState22.BorderThicknessInner = 1;
+            this.bunifuToggleSwitch3.ToggleStateDisabled = toggleState22;
+            toggleState23.BackColor = System.Drawing.Color.Empty;
+            toggleState23.BackColorInner = System.Drawing.Color.Empty;
+            toggleState23.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(0)))), ((int)(((byte)(140)))));
+            toggleState23.BorderColorInner = System.Drawing.Color.Empty;
+            toggleState23.BorderRadius = 1;
+            toggleState23.BorderRadiusInner = 1;
+            toggleState23.BorderThickness = 1;
+            toggleState23.BorderThicknessInner = 1;
+            this.bunifuToggleSwitch3.ToggleStateOff = toggleState23;
+            toggleState24.BackColor = System.Drawing.Color.DodgerBlue;
+            toggleState24.BackColorInner = System.Drawing.Color.White;
+            toggleState24.BorderColor = System.Drawing.Color.DodgerBlue;
+            toggleState24.BorderColorInner = System.Drawing.Color.White;
+            toggleState24.BorderRadius = 17;
+            toggleState24.BorderRadiusInner = 11;
+            toggleState24.BorderThickness = 1;
+            toggleState24.BorderThicknessInner = 1;
+            this.bunifuToggleSwitch3.ToggleStateOn = toggleState24;
+            this.bunifuToggleSwitch3.Value = true;
+            this.bunifuToggleSwitch3.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs>(this.bunifuToggleSwitch3_CheckedChanged);
+            // 
+            // bunifuToggleSwitch1
+            // 
+            this.bunifuToggleSwitch1.Animation = 5;
+            this.bunifuToggleSwitch1.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.bunifuToggleSwitch1, "bunifuToggleSwitch1");
+            this.bunifuToggleSwitch1.Checked = true;
+            this.bunifuToggleSwitch1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuToggleSwitch1.InnerCirclePadding = 3;
+            this.bunifuToggleSwitch1.Name = "bunifuToggleSwitch1";
+            this.bunifuToggleSwitch1.ThumbMargin = 3;
+            toggleState25.BackColor = System.Drawing.Color.DarkGray;
+            toggleState25.BackColorInner = System.Drawing.Color.White;
+            toggleState25.BorderColor = System.Drawing.Color.DarkGray;
+            toggleState25.BorderColorInner = System.Drawing.Color.White;
+            toggleState25.BorderRadius = 17;
+            toggleState25.BorderRadiusInner = 11;
+            toggleState25.BorderThickness = 1;
+            toggleState25.BorderThicknessInner = 1;
+            this.bunifuToggleSwitch1.ToggleStateDisabled = toggleState25;
+            toggleState26.BackColor = System.Drawing.Color.Empty;
+            toggleState26.BackColorInner = System.Drawing.Color.Empty;
+            toggleState26.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(0)))), ((int)(((byte)(140)))));
+            toggleState26.BorderColorInner = System.Drawing.Color.Empty;
+            toggleState26.BorderRadius = 1;
+            toggleState26.BorderRadiusInner = 1;
+            toggleState26.BorderThickness = 1;
+            toggleState26.BorderThicknessInner = 1;
+            this.bunifuToggleSwitch1.ToggleStateOff = toggleState26;
+            toggleState27.BackColor = System.Drawing.Color.DodgerBlue;
+            toggleState27.BackColorInner = System.Drawing.Color.White;
+            toggleState27.BorderColor = System.Drawing.Color.DodgerBlue;
+            toggleState27.BorderColorInner = System.Drawing.Color.White;
+            toggleState27.BorderRadius = 17;
+            toggleState27.BorderRadiusInner = 11;
+            toggleState27.BorderThickness = 1;
+            toggleState27.BorderThicknessInner = 1;
+            this.bunifuToggleSwitch1.ToggleStateOn = toggleState27;
+            this.bunifuToggleSwitch1.Value = true;
+            this.bunifuToggleSwitch1.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs>(this.bunifuToggleSwitch1_CheckedChanged);
+            // 
             // radListViewNextPatients
             // 
             this.radListViewNextPatients.AllowArbitraryItemHeight = true;
             this.radListViewNextPatients.AllowEdit = false;
             this.radListViewNextPatients.AllowRemove = false;
-            listViewDetailColumn5.HeaderText = "Name";
-            listViewDetailColumn6.HeaderText = "Age";
-            listViewDetailColumn7.HeaderText = "Gender";
-            listViewDetailColumn8.HeaderText = "EncounterTime";
+            listViewDetailColumn1.HeaderText = "Name";
+            listViewDetailColumn2.HeaderText = "Age";
+            listViewDetailColumn3.HeaderText = "Gender";
+            listViewDetailColumn4.HeaderText = "EncounterTime";
             this.radListViewNextPatients.Columns.AddRange(new Telerik.WinControls.UI.ListViewDetailColumn[] {
-            listViewDetailColumn5,
-            listViewDetailColumn6,
-            listViewDetailColumn7,
-            listViewDetailColumn8});
+            listViewDetailColumn1,
+            listViewDetailColumn2,
+            listViewDetailColumn3,
+            listViewDetailColumn4});
             this.radListViewNextPatients.ItemSize = new System.Drawing.Size(200, 95);
             resources.ApplyResources(this.radListViewNextPatients, "radListViewNextPatients");
             this.radListViewNextPatients.Name = "radListViewNextPatients";
@@ -684,6 +1113,7 @@ namespace MedicalAssistant
             resources.ApplyResources(this.radButton2, "radButton2");
             this.radButton2.ForeColor = System.Drawing.Color.SeaGreen;
             this.radButton2.Name = "radButton2";
+            this.radButton2.ThemeName = "Fluent";
             // 
             // radButton1
             // 
@@ -751,20 +1181,6 @@ namespace MedicalAssistant
             this.guna2CirclePictureBox1.TabStop = false;
             this.guna2CirclePictureBox1.Click += new System.EventHandler(this.guna2CirclePictureBox1_Click);
             // 
-            // patientsDataSet
-            // 
-            this.patientsDataSet.DataSetName = "PatientsDataSet";
-            this.patientsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // appointmentsBindingSource
-            // 
-            this.appointmentsBindingSource.DataMember = "Appointments";
-            this.appointmentsBindingSource.DataSource = this.patientsDataSet;
-            // 
-            // appointmentsTableAdapter
-            // 
-            this.appointmentsTableAdapter.ClearBeforeFill = true;
-            // 
             // timer3_wait_spech
             // 
             this.timer3_wait_spech.Tick += new System.EventHandler(this.timer3_Tick_1);
@@ -788,6 +1204,20 @@ namespace MedicalAssistant
             this.object_e922f11e_a01e_4722_8e26_9562c5280f99.Name = "object_e922f11e_a01e_4722_8e26_9562c5280f99";
             this.object_e922f11e_a01e_4722_8e26_9562c5280f99.StretchHorizontally = true;
             this.object_e922f11e_a01e_4722_8e26_9562c5280f99.StretchVertically = true;
+            // 
+            // patientsDataSet
+            // 
+            this.patientsDataSet.DataSetName = "PatientsDataSet";
+            this.patientsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // appointmentsBindingSource
+            // 
+            this.appointmentsBindingSource.DataMember = "Appointments";
+            this.appointmentsBindingSource.DataSource = this.patientsDataSet;
+            // 
+            // appointmentsTableAdapter
+            // 
+            this.appointmentsTableAdapter.ClearBeforeFill = true;
             // 
             // MainForm
             // 
@@ -847,6 +1277,14 @@ namespace MedicalAssistant
             ((System.ComponentModel.ISupportInitialize)(this.radSchedulerNavigator2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radScheduler1)).EndInit();
             this.radPageViewPageMaps.ResumeLayout(false);
+            this.radPageViewPageSettings.ResumeLayout(false);
+            this.radPageViewPageSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radListViewNextPatients)).EndInit();
             this.panelChatMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
@@ -917,5 +1355,18 @@ namespace MedicalAssistant
         private Telerik.WinControls.UI.RadSchedulerNavigator radSchedulerNavigator2;
         private Telerik.WinControls.UI.RadPageViewPage radPageViewPageMaps;
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
+        private Telerik.WinControls.UI.RadLabel radLabel1;
+        private Bunifu.UI.WinForms.BunifuToggleSwitch bunifuToggleSwitch1;
+        private Telerik.WinControls.UI.RadLabel radLabel5;
+        private Bunifu.UI.WinForms.BunifuToggleSwitch bunifuToggleSwitch2;
+        private Telerik.WinControls.UI.RadLabel radLabel7;
+        private Bunifu.UI.WinForms.BunifuToggleSwitch bunifuToggleSwitch3;
+        private Bunifu.UI.WinForms.BunifuTextBox bunifuTextBox1;
+        private Telerik.WinControls.UI.RadLabel radLabel8;
+        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
+        private Bunifu.UI.WinForms.BunifuTextBox bunifuTextBox3;
+        private Bunifu.UI.WinForms.BunifuTextBox bunifuTextBox2;
+        private Telerik.WinControls.UI.RadLabel radLabel11;
+        private Telerik.WinControls.UI.RadLabel radLabel10;
     }
 }

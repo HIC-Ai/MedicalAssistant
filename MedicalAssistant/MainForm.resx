@@ -417,6 +417,54 @@
   <data name="resource.RightToLeft" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>guna2GradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;guna2CirclePictureBox2.Name" xml:space="preserve">
+    <value>guna2CirclePictureBox2</value>
+  </data>
+  <data name="&gt;&gt;guna2CirclePictureBox2.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CirclePictureBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;guna2CirclePictureBox2.Parent" xml:space="preserve">
+    <value>guna2GradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;guna2CirclePictureBox2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="guna2GradientPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="guna2GradientPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="guna2GradientPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>856, 48</value>
+  </data>
+  <data name="guna2GradientPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;guna2GradientPanel1.Name" xml:space="preserve">
+    <value>guna2GradientPanel1</value>
+  </data>
+  <data name="&gt;&gt;guna2GradientPanel1.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2GradientPanel, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;guna2GradientPanel1.Parent" xml:space="preserve">
+    <value>panel4</value>
+  </data>
+  <data name="&gt;&gt;guna2GradientPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="label1.AccessibleDescription" xml:space="preserve">
     <value>السلام عليكم</value>
   </data>
@@ -486,35 +534,11 @@
   <data name="&gt;&gt;guna2CirclePictureBox2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="guna2GradientPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="guna2GradientPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="guna2GradientPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>856, 48</value>
-  </data>
-  <data name="guna2GradientPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;guna2GradientPanel1.Name" xml:space="preserve">
-    <value>guna2GradientPanel1</value>
-  </data>
-  <data name="&gt;&gt;guna2GradientPanel1.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2GradientPanel, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
-  </data>
-  <data name="&gt;&gt;guna2GradientPanel1.Parent" xml:space="preserve">
-    <value>panel4</value>
-  </data>
-  <data name="&gt;&gt;guna2GradientPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="panel4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>311, 523</value>
+    <value>295, 524</value>
   </data>
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
     <value>856, 48</value>
@@ -601,7 +625,7 @@
     <value>5, 4</value>
   </data>
   <data name="radPageViewPageDashboard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>854, 487</value>
+    <value>847, 468</value>
   </data>
   <data name="radPageViewPageDashboard.Text" xml:space="preserve">
     <value>الصفحه الرئسية</value>
@@ -637,7 +661,7 @@
     <value>Yes</value>
   </data>
   <data name="radPageViewPageSchedule.Size" type="System.Drawing.Size, System.Drawing">
-    <value>854, 487</value>
+    <value>847, 487</value>
   </data>
   <data name="radPageViewPageSchedule.Text" xml:space="preserve">
     <value>المهام</value>
@@ -652,6 +676,15 @@
     <value>radPageView1</value>
   </data>
   <data name="&gt;&gt;radPageViewPageSchedule.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gMapControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 12</value>
+  </data>
+  <data name="gMapControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>781, 451</value>
+  </data>
+  <data name="gMapControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="&gt;&gt;gMapControl1.Name" xml:space="preserve">
@@ -670,7 +703,7 @@
     <value>5, 4</value>
   </data>
   <data name="radPageViewPageMaps.Size" type="System.Drawing.Size, System.Drawing">
-    <value>854, 487</value>
+    <value>847, 486</value>
   </data>
   <data name="radPageViewPageMaps.Text" xml:space="preserve">
     <value>الخريطة</value>
@@ -694,7 +727,7 @@
     <value>5, 4</value>
   </data>
   <data name="radPageViewPageCharts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>854, 487</value>
+    <value>847, 487</value>
   </data>
   <data name="radPageViewPageCharts.Text" xml:space="preserve">
     <value>اخبار الصحة</value>
@@ -711,11 +744,167 @@
   <data name="&gt;&gt;radPageViewPageCharts.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="&gt;&gt;bunifuThinButton21.Name" xml:space="preserve">
+    <value>bunifuThinButton21</value>
+  </data>
+  <data name="&gt;&gt;bunifuThinButton21.Type" xml:space="preserve">
+    <value>Bunifu.Framework.UI.BunifuThinButton2, Bunifu.UI.WinForms.1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;bunifuThinButton21.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;bunifuThinButton21.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox3.Name" xml:space="preserve">
+    <value>bunifuTextBox3</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox3.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuTextBox, Bunifu.UI.WinForms.BunifuTextBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox3.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox2.Name" xml:space="preserve">
+    <value>bunifuTextBox2</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox2.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuTextBox, Bunifu.UI.WinForms.BunifuTextBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox2.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox1.Name" xml:space="preserve">
+    <value>bunifuTextBox1</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox1.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuTextBox, Bunifu.UI.WinForms.BunifuTextBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox1.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;radLabel11.Name" xml:space="preserve">
+    <value>radLabel11</value>
+  </data>
+  <data name="&gt;&gt;radLabel11.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadLabel, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radLabel11.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;radLabel11.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;radLabel5.Name" xml:space="preserve">
+    <value>radLabel5</value>
+  </data>
+  <data name="&gt;&gt;radLabel5.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadLabel, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radLabel5.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;radLabel5.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;radLabel10.Name" xml:space="preserve">
+    <value>radLabel10</value>
+  </data>
+  <data name="&gt;&gt;radLabel10.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadLabel, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radLabel10.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;radLabel10.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;radLabel7.Name" xml:space="preserve">
+    <value>radLabel7</value>
+  </data>
+  <data name="&gt;&gt;radLabel7.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadLabel, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radLabel7.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;radLabel7.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;radLabel8.Name" xml:space="preserve">
+    <value>radLabel8</value>
+  </data>
+  <data name="&gt;&gt;radLabel8.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadLabel, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radLabel8.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;radLabel8.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;radLabel1.Name" xml:space="preserve">
+    <value>radLabel1</value>
+  </data>
+  <data name="&gt;&gt;radLabel1.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadLabel, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radLabel1.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;radLabel1.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch2.Name" xml:space="preserve">
+    <value>bunifuToggleSwitch2</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch2.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuToggleSwitch, Bunifu.UI.WinForms.BunifuToggleSwitch, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch2.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch2.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch3.Name" xml:space="preserve">
+    <value>bunifuToggleSwitch3</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch3.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuToggleSwitch, Bunifu.UI.WinForms.BunifuToggleSwitch, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch3.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch3.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch1.Name" xml:space="preserve">
+    <value>bunifuToggleSwitch1</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch1.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuToggleSwitch, Bunifu.UI.WinForms.BunifuToggleSwitch, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch1.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch1.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
   <data name="radPageViewPageSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 4</value>
   </data>
   <data name="radPageViewPageSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>854, 474</value>
+    <value>847, 487</value>
   </data>
   <data name="radPageViewPageSettings.Text" xml:space="preserve">
     <value>الاعدادات</value>
@@ -733,10 +922,10 @@
     <value>4</value>
   </data>
   <data name="radPageView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>307, 26</value>
+    <value>296, 27</value>
   </data>
   <data name="radPageView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1013, 495</value>
+    <value>1006, 494</value>
   </data>
   <data name="radPageView1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -766,7 +955,7 @@
     <value>Close Selected Page</value>
   </data>
   <data name="resource.Text2" xml:space="preserve">
-    <value>الصفحه الرئسية</value>
+    <value>الخريطة</value>
   </data>
   <data name="radButtonNewAppointment.Location" type="System.Drawing.Point, System.Drawing">
     <value>646, 52</value>
@@ -1177,7 +1366,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="radScheduler1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>854, 406</value>
+    <value>847, 406</value>
   </data>
   <data name="radScheduler1.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1213,7 +1402,7 @@
     <value>0, 0</value>
   </data>
   <data name="radSchedulerNavigator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>854, 78</value>
+    <value>847, 0</value>
   </data>
   <data name="radSchedulerNavigator2.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1230,26 +1419,406 @@
   <data name="&gt;&gt;radSchedulerNavigator2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="gMapControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 12</value>
+  <data name="bunifuThinButton21.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAALUAAAApCAYAAABz92iRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKWSURBVHhe7dxPSJNxHMfxHTt27FbHCN2ICK0xNQPxVofa
+        FMStuTmo6BTVIapDUG6zuX+yOvUHvJgS/aEIFJNMqIOISOLBMNghx9gsKdkOT3yf/VqEMeqS+z29X/CD
+        wfM8O32eh+/v9zzfnw0AAAAAAOD/tfuqd4c94u5yJQPPWpJ9c81xb84e8RgMxr8ekj3JYGsqMNkY9vgc
+        sWM7VUz/nD18ovNwwpc/Nx5ef/5+xnj3cdHIFtcMYDtI9iSDE8tvjQtPhr44k/5CU8wbVHGtTe6AtnRw
+        vHfkSiG3UVB/CdSXz5sbxvnHsWJLKji7L3xyl4rvVhLollRgdWx+oqSuBera65U5oyNzetVxw7NHxfhX
+        8oQm0NCNlCVSb6sY/yQ1tJQcldMAvQxM3t1wxk9dU3GurHLIpJAaGrraLJeMzttn8w3R7r1mqGWJRGaU
+        6jigpTtvxsqHEr6YGWpZ+5OlEkBnS58+GM6kf8UMtTPuy67ks+oQoCcpQfYPdpfNUB+41fNV1v0A3cnb
+        RzPU8gOwAkINyyHUsBxCDcsh1LAcQg3LIdSwHEINy6mGWt7CyNsYQHfVUEv/F61asIJqqKUlRjoIAJ3J
+        90vyHZMZ6oODPZejUw++qWOAlh4tTBmupH/UDLX0dx0dDhWoq6Gz0Oj1YsOA+7gZatGaDkaHpkdoFICW
+        ni5Ol46k+1+oOFdIS1d7un9hPrusTgP0IG2IranA2m83uJH+ro7MmRwNA9CFBNpz72LeEfG0qRhv1XjT
+        3Sx7f2RmHjJxRF17uTRbMp/QtQL9g5QirlRfouv+pYLMKOkyR72QDi3ZBk+2w2sfDr366z315A6QJZKm
+        WO+6LGozGNs9pPVQNiyVjUtVTAEAAAAAqMVm+w4uJaaeriz6LAAAAABJRU5ErkJggg==
+</value>
   </data>
-  <data name="gMapControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>781, 451</value>
+  <data name="bunifuThinButton21.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt</value>
   </data>
-  <data name="gMapControl1.TabIndex" type="System.Int32, mscorlib">
+  <data name="bunifuThinButton21.Location" type="System.Drawing.Point, System.Drawing">
+    <value>326, 425</value>
+  </data>
+  <data name="bunifuThinButton21.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="bunifuThinButton21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 41</value>
+  </data>
+  <data name="bunifuThinButton21.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;bunifuThinButton21.Name" xml:space="preserve">
+    <value>bunifuThinButton21</value>
+  </data>
+  <data name="&gt;&gt;bunifuThinButton21.Type" xml:space="preserve">
+    <value>Bunifu.Framework.UI.BunifuThinButton2, Bunifu.UI.WinForms.1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;bunifuThinButton21.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;bunifuThinButton21.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="bunifuTextBox3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAH0AAAAjCAYAAAC5BAWiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACKSURBVHhe7dGxCQMxAARB9V+VHpXhMlyAH4ESt6CdhUsu
+        naFoa63PnPNnd287H/Ix9qH7286HHHol6MGgB4MeDHow6MGgB4MeDHow6MGgB4MeDHow6MGgB4MeDHow
+        6MGgB4MeDHow6MGgB4MeDHow6MGgB4MeDHow6MH+0J/n+e7D7t52PuRqNcYLVbtMi05L6ogAAAAASUVO
+        RK5CYII=
+</value>
+  </data>
+  <data name="bunifuTextBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 317</value>
+  </data>
+  <data name="bunifuTextBox3.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="bunifuTextBox3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="bunifuTextBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 35</value>
+  </data>
+  <data name="bunifuTextBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox3.Name" xml:space="preserve">
+    <value>bunifuTextBox3</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox3.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuTextBox, Bunifu.UI.WinForms.BunifuTextBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox3.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox3.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;gMapControl1.Name" xml:space="preserve">
-    <value>gMapControl1</value>
+  <data name="bunifuTextBox2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAH0AAAAjCAYAAAC5BAWiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACKSURBVHhe7dGxCQMxAARB9V+VHpXhMlyAH4ESt6CdhUsu
+        naFoa63PnPNnd287H/Ix9qH7286HHHol6MGgB4MeDHow6MGgB4MeDHow6MGgB4MeDHow6MGgB4MeDHow
+        6MGgB4MeDHow6MGgB4MeDHow6MGgB4MeDHow6MH+0J/n+e7D7t52PuRqNcYLVbtMi05L6ogAAAAASUVO
+        RK5CYII=
+</value>
   </data>
-  <data name="&gt;&gt;gMapControl1.Type" xml:space="preserve">
-    <value>GMap.NET.WindowsForms.GMapControl, GMap.NET.WindowsForms, Version=1.7.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef</value>
+  <data name="bunifuTextBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>156, 182</value>
   </data>
-  <data name="&gt;&gt;gMapControl1.Parent" xml:space="preserve">
-    <value>radPageViewPageMaps</value>
+  <data name="bunifuTextBox2.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
   </data>
-  <data name="&gt;&gt;gMapControl1.ZOrder" xml:space="preserve">
+  <data name="bunifuTextBox2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="bunifuTextBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 35</value>
+  </data>
+  <data name="bunifuTextBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox2.Name" xml:space="preserve">
+    <value>bunifuTextBox2</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox2.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuTextBox, Bunifu.UI.WinForms.BunifuTextBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox2.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="bunifuTextBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAH0AAAAlCAYAAABvXea/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACOSURBVHhe7dGxCQMxAARB9V+VHpXhMlyAH4ESt6CdhUsu
+        naFoa63PnPNnd287H/Ix9qH7286HHHol6MGgB4MeDHow6MGgB4MeDHow6MGgB4MeDHow6MGgB4MeDHow
+        6MGgB4MeDHow6MGgB4MeDHow6MGgB4MeDHow6MGgB4Me7A/9eZ7vPuzubedDrlZjvLUyHfsanuvuAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="bunifuTextBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>150, 53</value>
+  </data>
+  <data name="bunifuTextBox1.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="bunifuTextBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="bunifuTextBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 37</value>
+  </data>
+  <data name="bunifuTextBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox1.Name" xml:space="preserve">
+    <value>bunifuTextBox1</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox1.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuTextBox, Bunifu.UI.WinForms.BunifuTextBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox1.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;bunifuTextBox1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="radLabel11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>334, 324</value>
+  </data>
+  <data name="radLabel11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 18</value>
+  </data>
+  <data name="radLabel11.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="radLabel11.Text" xml:space="preserve">
+    <value>اسمك</value>
+  </data>
+  <data name="&gt;&gt;radLabel11.Name" xml:space="preserve">
+    <value>radLabel11</value>
+  </data>
+  <data name="&gt;&gt;radLabel11.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadLabel, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radLabel11.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;radLabel11.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="radLabel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>742, 331</value>
+  </data>
+  <data name="radLabel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 18</value>
+  </data>
+  <data name="radLabel5.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="radLabel5.Text" xml:space="preserve">
+    <value>الاستماع في الخلفيه</value>
+  </data>
+  <data name="&gt;&gt;radLabel5.Name" xml:space="preserve">
+    <value>radLabel5</value>
+  </data>
+  <data name="&gt;&gt;radLabel5.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadLabel, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radLabel5.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;radLabel5.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="radLabel10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>332, 191</value>
+  </data>
+  <data name="radLabel10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 18</value>
+  </data>
+  <data name="radLabel10.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="radLabel10.Text" xml:space="preserve">
+    <value>رساله الترحبية</value>
+  </data>
+  <data name="&gt;&gt;radLabel10.Name" xml:space="preserve">
+    <value>radLabel10</value>
+  </data>
+  <data name="&gt;&gt;radLabel10.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadLabel, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radLabel10.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;radLabel10.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="radLabel7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>742, 199</value>
+  </data>
+  <data name="radLabel7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 18</value>
+  </data>
+  <data name="radLabel7.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="radLabel7.Text" xml:space="preserve">
+    <value>مواعيد المهام بالصوت</value>
+  </data>
+  <data name="&gt;&gt;radLabel7.Name" xml:space="preserve">
+    <value>radLabel7</value>
+  </data>
+  <data name="&gt;&gt;radLabel7.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadLabel, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radLabel7.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;radLabel7.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="radLabel8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>326, 62</value>
+  </data>
+  <data name="radLabel8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 18</value>
+  </data>
+  <data name="radLabel8.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="radLabel8.Text" xml:space="preserve">
+    <value>مده بين كل نصيحه</value>
+  </data>
+  <data name="&gt;&gt;radLabel8.Name" xml:space="preserve">
+    <value>radLabel8</value>
+  </data>
+  <data name="&gt;&gt;radLabel8.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadLabel, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radLabel8.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;radLabel8.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="radLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>742, 62</value>
+  </data>
+  <data name="radLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 18</value>
+  </data>
+  <data name="radLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="radLabel1.Text" xml:space="preserve">
+    <value>النصائح بالصوت</value>
+  </data>
+  <data name="&gt;&gt;radLabel1.Name" xml:space="preserve">
+    <value>radLabel1</value>
+  </data>
+  <data name="&gt;&gt;radLabel1.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadLabel, Telerik.WinControls.UI, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;radLabel1.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;radLabel1.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="bunifuToggleSwitch2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAH0AAAAvCAYAAADOxsXZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHDSURBVHhe7dwtT8NQFMbxSiQS0dvyEfYxUASJxJAg+Qh4
+        RNtBZgmaBIfFTiJxS7CwZFt4DWTnck5XAdkJmt7nuclP9cX8uV0RPZm3yvO4ldeyH2o5LWq5K+oYqS+s
+        l4xCFQ/KKm53Sf9eRSWHetFUgy/8m1IfhEqeteEsNPGkS7u+9K9iU2OPQx3n3k2on0K9fNH49+6ut+De
+        RZQG3fkP5UXc6HKvHunc4WnLq+V7GMqwDW4vbfYb7p1IadFH/VQf84NMn/dHGv3VO4nSY/+RZUUjl95B
+        SpWMM/2Bn/gHKU3ypm/t3gFKGaMDYnRAjA6I0QExOiBGB8TogBgdEKMDYnRAjA6I0QExOiBGB8TogBgd
+        EKMDYnRAjA6I0QExOiBGB8TogBgdEKMDYnRAjA6I0QHZ9+lP3gFKk/b+su/Tb7yDlCYbOmTfpx+rD+8E
+        SpGMbJTYgEOGYMzzKu61w4Zs6pBNH3JOopRUctsGt2XzxWzOmHsiJUH7LmySWJd8tVaPeXnUHf/pXUT9
+        ZcHDmex2qX+vdlRoI9ehkZl3MfWLbuKFTZNa2+HeyhvZsVFj9nrv3Yz+N93Zk7KWK5vk3SX9sbLsG+w7
+        seldCJV3AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="bunifuToggleSwitch2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>598, 315</value>
+  </data>
+  <data name="bunifuToggleSwitch2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 47</value>
+  </data>
+  <data name="bunifuToggleSwitch2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch2.Name" xml:space="preserve">
+    <value>bunifuToggleSwitch2</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch2.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuToggleSwitch, Bunifu.UI.WinForms.BunifuToggleSwitch, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch2.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch2.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="bunifuToggleSwitch3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAH0AAAAvCAYAAADOxsXZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHDSURBVHhe7dwtT8NQFMbxSiQS0dvyEfYxUASJxJAg+Qh4
+        RNtBZgmaBIfFTiJxS7CwZFt4DWTnck5XAdkJmt7nuclP9cX8uV0RPZm3yvO4ldeyH2o5LWq5K+oYqS+s
+        l4xCFQ/KKm53Sf9eRSWHetFUgy/8m1IfhEqeteEsNPGkS7u+9K9iU2OPQx3n3k2on0K9fNH49+6ut+De
+        RZQG3fkP5UXc6HKvHunc4WnLq+V7GMqwDW4vbfYb7p1IadFH/VQf84NMn/dHGv3VO4nSY/+RZUUjl95B
+        SpWMM/2Bn/gHKU3ypm/t3gFKGaMDYnRAjA6I0QExOiBGB8TogBgdEKMDYnRAjA6I0QExOiBGB8TogBgd
+        EKMDYnRAjA6I0QExOiBGB8TogBgdEKMDYnRAjA6I0QHZ9+lP3gFKk/b+su/Tb7yDlCYbOmTfpx+rD+8E
+        SpGMbJTYgEOGYMzzKu61w4Zs6pBNH3JOopRUctsGt2XzxWzOmHsiJUH7LmySWJd8tVaPeXnUHf/pXUT9
+        ZcHDmex2qX+vdlRoI9ehkZl3MfWLbuKFTZNa2+HeyhvZsVFj9nrv3Yz+N93Zk7KWK5vk3SX9sbLsG+w7
+        seldCJV3AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="bunifuToggleSwitch3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>598, 182</value>
+  </data>
+  <data name="bunifuToggleSwitch3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 47</value>
+  </data>
+  <data name="bunifuToggleSwitch3.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch3.Name" xml:space="preserve">
+    <value>bunifuToggleSwitch3</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch3.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuToggleSwitch, Bunifu.UI.WinForms.BunifuToggleSwitch, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch3.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch3.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="bunifuToggleSwitch1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAH0AAAAvCAYAAADOxsXZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHDSURBVHhe7dwtT8NQFMbxSiQS0dvyEfYxUASJxJAg+Qh4
+        RNtBZgmaBIfFTiJxS7CwZFt4DWTnck5XAdkJmt7nuclP9cX8uV0RPZm3yvO4ldeyH2o5LWq5K+oYqS+s
+        l4xCFQ/KKm53Sf9eRSWHetFUgy/8m1IfhEqeteEsNPGkS7u+9K9iU2OPQx3n3k2on0K9fNH49+6ut+De
+        RZQG3fkP5UXc6HKvHunc4WnLq+V7GMqwDW4vbfYb7p1IadFH/VQf84NMn/dHGv3VO4nSY/+RZUUjl95B
+        SpWMM/2Bn/gHKU3ypm/t3gFKGaMDYnRAjA6I0QExOiBGB8TogBgdEKMDYnRAjA6I0QExOiBGB8TogBgd
+        EKMDYnRAjA6I0QExOiBGB8TogBgdEKMDYnRAjA6I0QHZ9+lP3gFKk/b+su/Tb7yDlCYbOmTfpx+rD+8E
+        SpGMbJTYgEOGYMzzKu61w4Zs6pBNH3JOopRUctsGt2XzxWzOmHsiJUH7LmySWJd8tVaPeXnUHf/pXUT9
+        ZcHDmex2qX+vdlRoI9ehkZl3MfWLbuKFTZNa2+HeyhvZsVFj9nrv3Yz+N93Zk7KWK5vk3SX9sbLsG+w7
+        seldCJV3AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="bunifuToggleSwitch1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>598, 46</value>
+  </data>
+  <data name="bunifuToggleSwitch1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 47</value>
+  </data>
+  <data name="bunifuToggleSwitch1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch1.Name" xml:space="preserve">
+    <value>bunifuToggleSwitch1</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch1.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuToggleSwitch, Bunifu.UI.WinForms.BunifuToggleSwitch, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch1.Parent" xml:space="preserve">
+    <value>radPageViewPageSettings</value>
+  </data>
+  <data name="&gt;&gt;bunifuToggleSwitch1.ZOrder" xml:space="preserve">
+    <value>12</value>
   </data>
   <data name="radListViewNextPatients.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 87</value>
@@ -1303,7 +1872,7 @@
     <value>Right</value>
   </data>
   <data name="radButton2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1198, 0</value>
+    <value>1179, 0</value>
   </data>
   <data name="radButton2.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 23</value>
@@ -1330,7 +1899,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="radButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1169, 524</value>
+    <value>1154, 524</value>
   </data>
   <data name="radButton1.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 47</value>
@@ -1355,42 +1924,6 @@
   </data>
   <data name="resource.Text5" xml:space="preserve">
     <value>خروج</value>
-  </data>
-  <data name="&gt;&gt;guna2CirclePictureBox1.Name" xml:space="preserve">
-    <value>guna2CirclePictureBox1</value>
-  </data>
-  <data name="&gt;&gt;guna2CirclePictureBox1.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2CirclePictureBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
-  </data>
-  <data name="&gt;&gt;guna2CirclePictureBox1.Parent" xml:space="preserve">
-    <value>panel5</value>
-  </data>
-  <data name="&gt;&gt;guna2CirclePictureBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panel5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1322, 23</value>
-  </data>
-  <data name="panel5.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
-    <value>panel5</value>
-  </data>
-  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel5.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="guna2CirclePictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1419,15 +1952,30 @@
   <data name="&gt;&gt;guna2CirclePictureBox1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="patientsDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1112, 17</value>
-  </metadata>
-  <metadata name="appointmentsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1250, 17</value>
-  </metadata>
-  <metadata name="appointmentsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
+  <data name="panel5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1303, 23</value>
+  </data>
+  <data name="panel5.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <metadata name="timer3_wait_spech.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>477, 17</value>
   </metadata>
@@ -1440,6 +1988,15 @@
   <metadata name="timer4_realTime_recognizer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>911, 17</value>
   </metadata>
+  <metadata name="patientsDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1112, 17</value>
+  </metadata>
+  <metadata name="appointmentsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1250, 17</value>
+  </metadata>
+  <metadata name="appointmentsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1450,7 +2007,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1322, 572</value>
+    <value>1303, 572</value>
   </data>
   <data name="$this.RightToLeftLayout" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1488,24 +2045,6 @@
   <data name="&gt;&gt;object_e3bdc5d3_c56d_48bf_bc43_aa607a6c2b99.Type" xml:space="preserve">
     <value>Telerik.WinControls.RootRadElement, Telerik.WinControls, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
   </data>
-  <data name="&gt;&gt;patientsDataSet.Name" xml:space="preserve">
-    <value>patientsDataSet</value>
-  </data>
-  <data name="&gt;&gt;patientsDataSet.Type" xml:space="preserve">
-    <value>MedicalAssistant.PatientsDataSet, PatientsDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;appointmentsBindingSource.Name" xml:space="preserve">
-    <value>appointmentsBindingSource</value>
-  </data>
-  <data name="&gt;&gt;appointmentsBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;appointmentsTableAdapter.Name" xml:space="preserve">
-    <value>appointmentsTableAdapter</value>
-  </data>
-  <data name="&gt;&gt;appointmentsTableAdapter.Type" xml:space="preserve">
-    <value>MedicalAssistant.PatientsDataSetTableAdapters.AppointmentsTableAdapter, PatientsDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
   <data name="&gt;&gt;timer3_wait_spech.Name" xml:space="preserve">
     <value>timer3_wait_spech</value>
   </data>
@@ -1535,6 +2074,24 @@
   </data>
   <data name="&gt;&gt;object_e922f11e_a01e_4722_8e26_9562c5280f99.Type" xml:space="preserve">
     <value>Telerik.WinControls.RootRadElement, Telerik.WinControls, Version=2021.1.326.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;patientsDataSet.Name" xml:space="preserve">
+    <value>patientsDataSet</value>
+  </data>
+  <data name="&gt;&gt;patientsDataSet.Type" xml:space="preserve">
+    <value>MedicalAssistant.PatientsDataSet, PatientsDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;appointmentsBindingSource.Name" xml:space="preserve">
+    <value>appointmentsBindingSource</value>
+  </data>
+  <data name="&gt;&gt;appointmentsBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;appointmentsTableAdapter.Name" xml:space="preserve">
+    <value>appointmentsTableAdapter</value>
+  </data>
+  <data name="&gt;&gt;appointmentsTableAdapter.Type" xml:space="preserve">
+    <value>MedicalAssistant.PatientsDataSetTableAdapters.AppointmentsTableAdapter, PatientsDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
