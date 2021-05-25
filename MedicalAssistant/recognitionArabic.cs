@@ -175,7 +175,12 @@ namespace MedicalAssistant
                 wClient.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows)");
                 try
                 {
-                    wClient.DownloadFile(url, timestamp);
+
+                    if (!Directory.Exists("Temp_Sounds"))
+                    {
+                        Directory.CreateDirectory("Temp_Sounds");
+                    }
+                    wClient.DownloadFile(url, "Temp_Sounds\\" + timestamp + ".mp3");
                 }
                 catch
                 {
@@ -184,7 +189,7 @@ namespace MedicalAssistant
 
                 if (haveNet)
                 {
-                    Mp3FileReader reader = new Mp3FileReader(timestamp);
+                    Mp3FileReader reader = new Mp3FileReader("Temp_Sounds\\" + timestamp + ".mp3");
                     waveOut.Init(reader);
                     waveOut.Play();
                 }
