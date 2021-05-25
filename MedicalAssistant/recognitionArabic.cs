@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 
@@ -15,7 +16,7 @@ namespace MedicalAssistant
         string phrase = "";
         public bool haveNet = true;
 
-        public string SpeakRecognition(string file = "test.wav")
+        public string SpeakRecognition(string file = "Sounds\\test.wav")
         {
             try
             {
@@ -45,6 +46,7 @@ namespace MedicalAssistant
         public WaveOutEvent MixAudioFiles(string speechMp3)
         {
             WaveOutEvent waveOut = new WaveOutEvent();
+
             if (haveNet)
             {
                 Mp3FileReader reader = new Mp3FileReader(speechMp3);
@@ -173,23 +175,42 @@ namespace MedicalAssistant
 
                 MyWebClient wClient = new MyWebClient(2000);
                 wClient.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows)");
-                try
-                {
 
-                    if (!Directory.Exists("Temp_Sounds"))
-                    {
-                        Directory.CreateDirectory("Temp_Sounds");
-                    }
-                    wClient.DownloadFile(url, "Temp_Sounds\\" + timestamp + ".mp3");
-                }
-                catch
+
+                byte[] bytes = Encoding.UTF8.GetBytes(text);
+                var sha1 = SHA1.Create();
+                byte[] hashBytes = sha1.ComputeHash(bytes);
+                var sb = new StringBuilder();
+                foreach (byte b in hashBytes)
                 {
-                    haveNet = false;
+                    var hex = b.ToString("x2");
+                    sb.Append(hex);
                 }
+                timestamp = sb.ToString();
+
+
+                Console.WriteLine(timestamp);
+                if (!File.Exists("Temp_Sounds" + timestamp + ".mp3"))
+                {
+                    if (!Directory.Exists("Sounds\\Temp_Sounds"))
+                    {
+                        Directory.CreateDirectory("Sounds\\Temp_Sounds");
+                    }
+                    try
+                    {
+                        wClient.DownloadFile(url, "Sounds\\Temp_Sounds\\" + timestamp + ".mp3");
+                    }
+                    catch
+                    {
+                        haveNet = false;
+                    }
+                }
+
+              
 
                 if (haveNet)
                 {
-                    Mp3FileReader reader = new Mp3FileReader("Temp_Sounds\\" + timestamp + ".mp3");
+                    Mp3FileReader reader = new Mp3FileReader("Sounds\\Temp_Sounds\\" + timestamp + ".mp3");
                     waveOut.Init(reader);
                     waveOut.Play();
                 }

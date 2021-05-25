@@ -657,7 +657,7 @@ namespace MedicalAssistant
                 waveIn.DeviceNumber = 0;
                 waveIn.DataAvailable += waveIn_DataAvailable;
                 waveIn.WaveFormat = new WaveFormat(16000, 1);
-                writer = new WaveFileWriter("testRecordButton.wav", waveIn.WaveFormat);
+                writer = new WaveFileWriter("Sounds\\RecordButton.wav", waveIn.WaveFormat);
                 waveIn.StartRecording();
 
 
@@ -680,7 +680,7 @@ namespace MedicalAssistant
 
 
                         voice = true;
-                        message_rev = new recognitionArabic().SpeakRecognition(file: "testRecordButton.wav");
+                        message_rev = new recognitionArabic().SpeakRecognition(file: "Sounds\\RecordButton.wav");
 
 
 
@@ -704,31 +704,37 @@ namespace MedicalAssistant
 
         private void timer1_Tick__tips_enim(object sender, EventArgs e)
         {
-
-            time1 = time1 + 1; // عمل حاويه لتامير اذا تم انتهاء من مدي الصنيجه
-            if (tip != "")
+            try
             {
-                if (time1 < len)  // اذا كان النيحه فارغه لا يكمل
+
+                time1 = time1 + 1; // عمل حاويه لتامير اذا تم انتهاء من مدي الصنيجه
+                if (tip != "")
                 {
-                    label1.Text = tip.Substring(0, time1 * 4); // قطع النصيحه لكل 4 احرف وعمل اينيمشن بها
-                    if (label1.ForeColor == Color.Black) // اذا كان االون اسود بعد القطع الاول يتم تحويله ازرق
+                    if (time1 < len)  // اذا كان النيحه فارغه لا يكمل
                     {
-                        label1.ForeColor = Color.FromArgb(15, 82, 186);
+                        label1.Text = tip.Substring(0, time1 * 4); // قطع النصيحه لكل 4 احرف وعمل اينيمشن بها
+                        if (label1.ForeColor == Color.Black) // اذا كان االون اسود بعد القطع الاول يتم تحويله ازرق
+                        {
+                            label1.ForeColor = Color.FromArgb(15, 82, 186);
+                        }
+                        else
+                        {
+                            label1.ForeColor = Color.Black; // اذا كان االون ازرق بعد القطع الاول يتم تحويله اسود
+                        }
+                        Thread.Sleep(100); // وضع فتره زمنيه لحين الانتهائ من قول النصيحه حتي لا يحدث مشاكل
                     }
                     else
                     {
-                        label1.ForeColor = Color.Black; // اذا كان االون ازرق بعد القطع الاول يتم تحويله اسود
+                        label1.ForeColor = Color.Black; // جعل اخر لون للتصيحه اسود
+                        time1 = 0; // جعل الحاويه فارغه حتي يبدا نصيحه اخري
+                        timer1_tips_enim.Stop(); // ايقاف تايمر الاينمي لبدا نصيحه اخري
                     }
-                    Thread.Sleep(100); // وضع فتره زمنيه لحين الانتهائ من قول النصيحه حتي لا يحدث مشاكل
-                }
-                else
-                {
-                    label1.ForeColor = Color.Black; // جعل اخر لون للتصيحه اسود
-                    time1 = 0; // جعل الحاويه فارغه حتي يبدا نصيحه اخري
-                    timer1_tips_enim.Stop(); // ايقاف تايمر الاينمي لبدا نصيحه اخري
                 }
             }
+            catch
+            {
 
+            }
 
         }
 
@@ -808,7 +814,7 @@ namespace MedicalAssistant
                             waveIn2.DeviceNumber = 0;
                             waveIn2.DataAvailable += waveIn2_DataAvailable;
                             waveIn2.WaveFormat = new WaveFormat(16000, 1);
-                            writer2 = new WaveFileWriter(@"testReail.wav", waveIn2.WaveFormat);
+                            writer2 = new WaveFileWriter("Sounds\\Reail.wav", waveIn2.WaveFormat);
                             Console.WriteLine("now StartRecording");
 
                             waveIn2.StartRecording();
@@ -835,7 +841,7 @@ namespace MedicalAssistant
 
 
                         voice = true;
-                        string message_rev_real2 = new recognitionArabic().SpeakRecognition("testReail.wav");
+                        string message_rev_real2 = new recognitionArabic().SpeakRecognition("Sounds\\Reail.wav");
                         if (message_rev_real != message_rev_real2)
                         {
                             //Console.WriteLine(message_rev);

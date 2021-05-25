@@ -194,7 +194,7 @@ namespace MedicalAssistant
 
 
                 voice = true;
-                message_rev = new recognitionArabic().SpeakRecognition(file: "testAppointment.wav");
+                message_rev = new recognitionArabic().SpeakRecognition(file: "Sounds\\testAppointment.wav");
 
                 Console.WriteLine(message_rev);
                 try
