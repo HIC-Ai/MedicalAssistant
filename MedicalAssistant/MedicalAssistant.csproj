@@ -717,6 +717,78 @@
     </Content>
     <Content Include="Dll\x64\SQLite.Interop.dll" />
     <Content Include="Dll\x86\SQLite.Interop.dll" />
+    <Content Include="Sounds\Temp_Sounds\08736022bc42e8e0db3f81a907e79d2f456439e8.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\1df61bfc220bc4e7d93a5a7c445388fe6eb5d82d.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\3d6b2903d82b6a4e17f60da9340c4cc05652e3af.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\3e5ba1d48afb9ea3011b525cce1f4e55497195e4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\41a13def2dfe2f39bc3d40d1ff1d7441df4aa783.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\472eb124ba941e45cc5adcdf5bfab453e5ed7238.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\549fb4f439a1c4298fa723af1f7d91e372a46551.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\5b92e8695bb9b57c748340278b4d7b19b8f75048.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\70c4d6b0a6e8d10600f40ac3f973e78f3df638fd.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\7c08e916987a9faeebec61794b9e232bb66d91c1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\7f9e999153a038253ba0f8c94e5983ef58f7cd78.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\8403287cf2d7247d98f06b9bc70bf3338d3eebc3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\8a53d34099abaf1c2fb94d1cb159b1ec41e9b7a3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\9acbd1d8c78e77cbf26941e355f0e353b053ed51.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\9b7c8cea95f373008735f6a4bed6ae5f5b31af49.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\9f946ae3d412eec597c91f8a3de9516b0663b7e4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\a9f64e75ce00caae4aaee4a4e0f5436b3d27895d.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\ad41b0a755876b0adc1277d844af013105a088b5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\bde415220b0fb940643e0155b78fb16c8f7c1583.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\c0c82cf7d3f661396bfe460266197fa0a4eb5d0b.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\cb505b087c31c62b0964ee5c54c7e5453a11c3c9.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\cde08e636f34a18bba9ec1262cb71f70e680b4c0.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\ecac101af373c36eb99cb2e7795674959792cb78.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Temp_Sounds\f1bed1cf16bef0d715bd5f425d404d2ea5516f30.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\icons8-country-48.png" />
     <EmbeddedResource Include="Sounds\NoInternetArabic.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
