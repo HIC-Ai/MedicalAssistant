@@ -190,7 +190,7 @@ namespace MedicalAssistant
 
 
                 Console.WriteLine(timestamp);
-                if (!File.Exists("Temp_Sounds" + timestamp + ".mp3"))
+                if (!File.Exists("Sounds\\Temp_Sounds\\" + timestamp + ".mp3"))
                 {
                     if (!Directory.Exists("Sounds\\Temp_Sounds"))
                     {
